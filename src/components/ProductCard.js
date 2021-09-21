@@ -7,16 +7,20 @@ const ProductCard = () => {
     <div>
       <figure class="snip1475">
         <img
-          src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample36.jpg"
+          src="https://akkaara.co.in/wp-content/uploads/2019/01/Pendantlight_full_product.jpg"
           alt="sample36"
         />
         <figcaption>
           <div>
-            <i class="ion-ios-home-outline"></i>
+            {/* <i class="ion-ios-home-outline"></i> */}
           </div>
         </figcaption>
         {/* <a href="#"></a> */}
       </figure>
+      <div>
+        <h3>Sculpted Pendant Lamp</h3>
+        <p>₹7,700.00</p>
+      </div>
     </div>
   );
 };

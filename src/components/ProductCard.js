@@ -18,8 +18,8 @@ const ProductCard = () => {
         {/* <a href="#"></a> */}
       </figure>
       <div>
-        <h3>Sculpted Pendant Lamp</h3>
-        <p>₹7,700.00</p>
+        <p className="text-center">Sculpted Pendant Lamp</p>
+        <p className="text-center">₹7,700.00</p>
       </div>
     </div>
   );

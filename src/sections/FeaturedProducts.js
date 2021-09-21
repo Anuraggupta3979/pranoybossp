@@ -15,7 +15,7 @@ function FeaturedProducts() {
   };
   return (
     <div>
-      <h1>Featured Products</h1>
+      <p className="text-center mt-5 mb-5" style={{fontSize:"25px"}}>Featured Products</p>
       <div style={style.cards}>
         <ProductCard />
         <ProductCard />

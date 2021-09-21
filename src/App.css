@@ -1,4 +1,4 @@
-:root{
+:root {
   --bs-anu: #fff;
 }
 .app {
@@ -8,19 +8,27 @@
 .navbar {
   height: 100px;
   /* background-color: transparent!important; */
-  background-color: black !important;
+  background-color: transparent !important;
   color: black;
+  position: absolute;
+  top: 0px;
+  z-index: 10;
+  background: #fff;
+  width: 100%;
+  transition-timing-function: ease;
+  transition: all 0.5s;
 }
-.nav-link {
-  color:  var(--bs-anu);
+.nav-link,.user {
+  color: var(--bs-anu);
   font-size: 13px;
+  margin-right: 15px;
+  margin: 15px;
 }
 
 .navbar:hover {
   background-color: white !important;
   --bs-anu: rgb(26, 22, 22);
-
 }
-.navbar:hover ~ .nav-link {
-  color: black;
+.active {
+  border-bottom: 1px solid #ff7240;
 }

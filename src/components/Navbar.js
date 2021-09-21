@@ -1,13 +1,10 @@
 import React from "react";
-// import "./Navbar.css";
-// import solo from "./solo.jpeg";
-// import { Link, withRouter } from "react-router-dom";
 import PersonRoundedIcon from "@mui/icons-material/PersonRounded";
 import { Link, withRouter } from "react-router-dom";
 function NavbarH(props) {
   return (
-    <nav class="navbar navbar-expand-lg mt-3 navbarH">
-      <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbarH">
+      <div class="container-fluid ">
         <button
           class="navbar-toggler"
           type="button"
@@ -19,49 +16,49 @@ function NavbarH(props) {
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <div class="collapse navbar-collapse " id="navbarTogglerDemo01">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
             <li
               className={`nav-item  ${
                 props.location.pathname === "/" ? "active" : ""
               }`}
             >
-              <Link className="nav-link mr-5 link" to="/download">
+              <Link className="nav-link mr-5  " to="/">
                 HOME
               </Link>
             </li>
             <li
               className={`nav-item  ${
-                props.location.pathname === "/" ? "active" : ""
+                props.location.pathname === "/about" ? "active" : ""
               }`}
             >
-              <Link className="nav-link mr-5" to="/pricing">
+              <Link className="nav-link mr-5" to="/about">
                 ABOUT US
               </Link>
             </li>
             <li
               className={`nav-item  ${
-                props.location.pathname === "/" ? "active" : ""
+                props.location.pathname === "/collection" ? "active" : ""
               }`}
             >
-              <Link className="nav-link mr-5" to="/features">
+              <Link className="nav-link mr-5" to="/collection">
                 COLLECTION
               </Link>
             </li>
             <li
               className={`nav-item  ${
-                props.location.pathname === "/" ? "active" : ""
+                props.location.pathname === "/blog" ? "active" : ""
               }`}
             >
-              <Link className="nav-link mr-5" to="/about">
+              <Link className="nav-link mr-5" to="/blog">
                 BLOG
               </Link>
             </li>
           </ul>
-          <a
+          {/* <a
             class="navbar-brand"
             href="#"
-            className="d-flex navbar-nav me-auto"
+            className=" navbar-nav me-auto"
           >
             <img
               src="https://spyrestudios.com/wp-content/uploads/07-logo.jpg"
@@ -69,15 +66,15 @@ function NavbarH(props) {
               width="30"
               height="24"
             />
-          </a>
+          </a> */}
 
-          <ul class="d-flex navbar-nav">
+          <ul class=" navbar-nav">
             <li
               className={`nav-item  ${
                 props.location.pathname === "/" ? "active" : ""
               }`}
             >
-              <Link className="nav-link mr-5" to="/login">
+              <Link className="user m-5" to="/login">
                 <PersonRoundedIcon></PersonRoundedIcon>
               </Link>
             </li>

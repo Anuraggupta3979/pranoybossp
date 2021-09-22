@@ -1,0 +1,21 @@
+.snip1352 {
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  min-width: 255px;
+  max-width: 315px;
+  height: 220px;
+  width: 100%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+.snip1352 img {
+  max-width: 100%;
+  vertical-align: top;
+  -webkit-transition: all 2s ease-out;
+  transition: all 2s ease-out;
+}
+.snip1352:hover img,
+.snip1352.hover img {
+  -webkit-transform: scale(1.4);
+  transform: scale(1.4);
+}

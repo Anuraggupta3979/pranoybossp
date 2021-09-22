@@ -4,7 +4,7 @@ import "../assets/css/ProductCard.css";
 
 const ProductCard = () => {
   return (
-    <div>
+    <div className="mb-3">
       <figure class="snip1475">
         <img
           src="https://akkaara.co.in/wp-content/uploads/2019/01/Pendantlight_full_product.jpg"

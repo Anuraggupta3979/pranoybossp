@@ -18,11 +18,12 @@
   transition-timing-function: ease;
   transition: all 0.5s;
 }
-.nav-link,.user {
+.nav-link,
+.user {
   color: var(--bs-anu);
   font-size: 13px;
   margin-right: 15px;
-  margin: 15px;
+  margin-left: 15px;
 }
 
 .navbar:hover {
@@ -31,4 +32,25 @@
 }
 .active {
   border-bottom: 1px solid #ff7240;
+}
+.navbar-toggler {
+  color: black;
+  background-color: rgb(187, 0, 0);
+}
+
+@media (max-width: 1000px) {
+  .nav-link,
+  .user {
+    color: var(--bs-anu);
+    font-size: 13px;
+    margin-right: 0px;
+    margin: 0px;
+  }
+  .active{
+    border-bottom:none;
+  }
+  .navbar:hover {
+    background-color: transparent !important;
+    --bs-anu: white;
+  }
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import "../assets/TearmsAndCondition.css";
-function TearmsAndCondition() {
+function TermsAndCondition() {
   return (
     <div className="tearmsandc">
       <h1 className="headingTop">Terms and conditions </h1>
@@ -134,4 +134,4 @@ function TearmsAndCondition() {
   );
 }
 
-export default TearmsAndCondition;
+export default TermsAndCondition;

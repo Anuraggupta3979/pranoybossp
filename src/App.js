@@ -1,16 +1,19 @@
 import "./App.css";
 import Faqs from "./pages/Faq";
-import FrontCarousel from "./sections/FrontCarousel";
-import FeaturedProducts from "./sections/FeaturedProducts";
-import CollectionCard from "./sections/Collections";
-import NavbarH from "./components/Navbar";
-import Footer from "./components/Footer";
-import TearmsAndCondition from "./components/TearmsAndCondition";
-import AboutUs from "./components/Aboutus/AboutUs";
+import TermsAndCondition from "./pages/TermsAndCondition";
+import AboutUs from "./pages/About";
+import Home from "./pages/Home";
+import {Switch, Route } from "react-router-dom";
+
 function App() {
   return (
     <div className="App">
-     
+        <Switch>
+          <Route path="/" component={Home} exact />
+          <Route path="/about" component={AboutUs} exact />
+          <Route path="/terms" component={TermsAndCondition} exact />
+          <Route path="/faq" component={Faqs} exact />
+        </Switch>
     </div>
   );
 }

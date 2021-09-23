@@ -1,0 +1,19 @@
+.headingTop{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-family: 'Open Sans', sans-serif;
+}
+.tearmsandc{
+    margin: auto;
+    width: 80%;
+}
+.headingH6{
+    color: rgb(88, 85, 85);
+    margin-bottom: 25px;
+    margin-top: 25px;
+    font-weight: bold;
+}
+.teramspera{
+    margin-bottom: 2em;
+    color: grey;
+}

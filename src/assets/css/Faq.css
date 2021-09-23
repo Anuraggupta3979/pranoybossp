@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+.faq{
+    margin: auto;
+    width: 80%;
+    font-family: 'Roboto', sans-serif;
+}
+.question{
+    font-size: 68px;
+}
+.faqtop{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    /* font-family: 'Open Sans', sans-serif; */
+}
+.faqtopic{
+    color: rgb(88, 85, 85);
+    margin-bottom: 25px;
+    margin-top: 25px;
+
+}

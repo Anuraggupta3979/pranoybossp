@@ -2,13 +2,13 @@ import React from "react";
 
 import "../assets/css/Collections.css";
 
-function CollectionCard() {
+function CollectionCard({image, category,}) {
   return (
     <div>
       <figure class="snip1352">
         <img
-          src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample58.jpg"
-          alt="sample58"
+          src={image}
+          alt={category}
         />
         <figcaption>
           <div>

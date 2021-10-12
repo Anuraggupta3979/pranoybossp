@@ -2,12 +2,14 @@ import React from "react";
 
 import "../assets/css/ProductCard.css";
 
-const ProductCard = () => {
+const ProductCard = ({image, name, category}) => {
+
+  // console.log(data.name )
   return (
     <div className="mb-3">
       <figure class="snip1475">
         <img
-          src="https://akkaara.co.in/wp-content/uploads/2019/01/Pendantlight_full_product.jpg"
+          src={image}
           alt="sample36"
         />
         <figcaption>
@@ -18,8 +20,8 @@ const ProductCard = () => {
         {/* <a href="#"></a> */}
       </figure>
       <div>
-        <p className="text-center">Sculpted Pendant Lamp</p>
-        <p className="text-center">₹7,700.00</p>
+        <p className="text-center">{name}</p>
+        <p className="text-center">{category}</p>
       </div>
     </div>
   );

@@ -9,7 +9,7 @@ function FeaturedProducts() {
   useEffect(() => {
     getProductImageUrl("handcrafted-bamboo-shelf.png").then((url) => {
       setProductData1({
-        url: url,
+        image: url,
         name: "Handcrafted Bamboo shelf",
         category: "Cane-Bamboo-Jute",
         desc: `The bamboo chair is handcrafted with extreme care and
@@ -20,7 +20,7 @@ function FeaturedProducts() {
     getProductImageUrl("petal-flowers-montage-metallic-wall-decor.png").then(
       (url) => {
         setProductData2({
-          url: url,
+          image: url,
           name: "Petal flowers Montage Metallic Wall Decor",
           category: "Metallic Wonders",
           desc: `Made of iron wire, coated with resplendent gold colour, this
@@ -39,29 +39,32 @@ function FeaturedProducts() {
   };
   return (
     <div>
-      <p className="text-center mt-5 mb-5" style={{ fontSize: "25px" }}>
+      <p
+        className="text-center mt-5 mb-5"
+        style={{ fontSize: "40px", letterSpacing: "9px" }}
+      >
         Featured Products
       </p>
       <div style={style.cards}>
         <ProductCard
-          url={productData1.url}
+          image={productData1.image}
           name={productData1.name}
           category={productData1.category}
         />
         <ProductCard
-          url={productData2.url}
+          image={productData2.image}
           name={productData2.name}
           category={productData2.category}
         />
         <ProductCard
-          url={productData2.url}
-          name={productData2.name}
-          category={productData2.category}
-        />
-        <ProductCard
-          url={productData1.url}
+          image={productData1.image}
           name={productData1.name}
           category={productData1.category}
+        />
+        <ProductCard
+          image={productData2.image}
+          name={productData2.name}
+          category={productData2.category}
         />
       </div>
     </div>

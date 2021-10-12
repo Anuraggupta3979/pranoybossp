@@ -2,14 +2,14 @@ import React from "react";
 
 import "../assets/css/ProductCard.css";
 
-const ProductCard = ({url, name, category}) => {
+const ProductCard = ({image, name, category}) => {
 
   // console.log(data.name )
   return (
     <div className="mb-3">
       <figure class="snip1475">
         <img
-          src={url}
+          src={image}
           alt="sample36"
         />
         <figcaption>

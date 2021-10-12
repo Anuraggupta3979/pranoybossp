@@ -43,14 +43,26 @@ function FeaturedProducts() {
         Featured Products
       </p>
       <div style={style.cards}>
-        <ProductCard data={productData1} />
-        <ProductCard data={productData2} />
-        <ProductCard data={productData1} />
-        <ProductCard data={productData2} />
-        <ProductCard data={productData1} />
-        <ProductCard data={productData2} />
-        <ProductCard data={productData1} />
-        <ProductCard data={productData2} />
+        <ProductCard
+          url={productData1.url}
+          name={productData1.name}
+          category={productData1.category}
+        />
+        <ProductCard
+          url={productData2.url}
+          name={productData2.name}
+          category={productData2.category}
+        />
+        <ProductCard
+          url={productData2.url}
+          name={productData2.name}
+          category={productData2.category}
+        />
+        <ProductCard
+          url={productData1.url}
+          name={productData1.name}
+          category={productData1.category}
+        />
       </div>
     </div>
   );

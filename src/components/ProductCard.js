@@ -2,14 +2,14 @@ import React from "react";
 
 import "../assets/css/ProductCard.css";
 
-const ProductCard = (data) => {
+const ProductCard = ({url, name, category}) => {
 
-  console.log(data)
+  // console.log(data.name )
   return (
     <div className="mb-3">
       <figure class="snip1475">
         <img
-          src={data.url}
+          src={url}
           alt="sample36"
         />
         <figcaption>
@@ -20,8 +20,8 @@ const ProductCard = (data) => {
         {/* <a href="#"></a> */}
       </figure>
       <div>
-        <p className="text-center">{data.name}</p>
-        <p className="text-center">{data.category}</p>
+        <p className="text-center">{name}</p>
+        <p className="text-center">{category}</p>
       </div>
     </div>
   );

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../../assets/css/About.css";
 import AboutStory from "./AboutStory";
 import AboutCraft from "./AboutCraft";
-import getImageUrl from "../helper/images";
+import { getImageUrl } from "../../helper/images";
 
 function AboutUs() {
   const [bannerUrl, setBannerUrl] = useState("");

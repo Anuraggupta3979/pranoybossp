@@ -5,10 +5,10 @@ function HomeVideoBanner() {
   return (
     <div style={{display:"grid", placeItems: "center"}}>
       <iframe
-        style={{width: "100vw"}}
+        // style={{width: "100vw"}}
         title="Home Video Banner"
         src="https://player.vimeo.com/video/308575647?h=04defe5ef6"
-        width="640"
+        width="1000"
         height="360"
         frameborder="0"
         allow="autoplay;

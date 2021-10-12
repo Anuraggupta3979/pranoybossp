@@ -1,16 +1,13 @@
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
-import firebase from "../../firebase"
+import firebase from "../../firebase";
 
 const storage = getStorage(firebase);
 
 const getImageUrl = (fileName) => {
-  getDownloadURL(ref(storage, "images/" + fileName))
-    .then((url) => {
-      console.log(url);
-      return url;
-    })
+  return getDownloadURL(ref(storage, "images/" + fileName))
+    .then((url) => url)
     .catch((error) => {
-      console.log(error);
+      console.log("error from getImageUrl:", error);
     });
 };
 

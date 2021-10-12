@@ -3,13 +3,13 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Collections from "../sections/Collections";
 import FeaturedProducts from "../sections/FeaturedProducts";
-import FrontCarousel from "../sections/FrontCarousel";
+import HomeVideoBanner from "../sections/HomeVideoBanner";
 
 const Home = () => {
   return (
     <div>
       <Navbar />
-      <FrontCarousel/>
+      <HomeVideoBanner/>
       <FeaturedProducts />
       <Collections />
       <Footer />

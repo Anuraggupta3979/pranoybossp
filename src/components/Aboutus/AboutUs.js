@@ -1,6 +1,7 @@
 import React from "react";
-import "../../assets/css/About.css"
+import "../../assets/css/About.css";
 import AboutStory from "./AboutStory";
+// import AboutCraft from "./AboutCraft";
 import AboutCraft from "./AboutCraft";
 function AboutUs() {
   return (
@@ -11,7 +12,7 @@ function AboutUs() {
           alt="Snow"
           style={{ width: "100%", height: "500px" }}
         />
-
+<p>s</p>
         <div class="centered">About Us</div>
       </div>
       <div className="ourstory">

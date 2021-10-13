@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import CollectionCard from "../components/CollectionCard";
 import { getProductImageUrl } from "../helper/images";
+import {addProducts} from "../helper/products"
 
 function FeaturedProducts() {
   const [productData1, setProductData1] = useState({});
@@ -32,6 +33,7 @@ function FeaturedProducts() {
         });
       }
     );
+    addProducts("123")
   }, []);
   const style = {
     cards: {

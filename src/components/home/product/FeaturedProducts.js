@@ -39,10 +39,7 @@ function FeaturedProducts() {
   };
   return (
     <div>
-      <p
-        className="text-center mt-5 mb-5"
-        style={{ fontSize: "40px", letterSpacing: "9px" }}
-      >
+      <p className="text-center mt-5 mb-5" style={{ fontSize: "40px" }}>
         Featured Products
       </p>
       <div style={style.cards}>

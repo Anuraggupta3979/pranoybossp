@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: "30px",
   },
 }));
-function About() {
+function AboutHeader() {
   const classes = useStyles({});
   return (
     <Grid item className={classes.about}>
@@ -36,4 +36,4 @@ function About() {
   );
 }
 
-export default About;
+export default AboutHeader;

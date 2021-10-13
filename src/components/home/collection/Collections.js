@@ -46,7 +46,7 @@ function FeaturedProducts() {
     <div>
       <p
         className="text-center mt-5 mb-5"
-        style={{ fontSize: "40px", letterSpacing: "9px" }}
+        style={{ fontSize: "40px"}}
       >
         Collections
       </p>

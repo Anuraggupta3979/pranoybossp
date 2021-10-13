@@ -1,25 +1,11 @@
-import React from "react"; // requires a loader
-
+import React from "react";
+import header from "../assets/header.jpg";
+import { Grid, makeStyles, Typography } from "@material-ui/core";
 function HomeVideoBanner() {
   return (
-    <div style={{display:"grid", placeItems: "center"}}>
-      <iframe
-        // style={{width: "100vw"}}
-        title="Home Video Banner"
-        src="https://player.vimeo.com/video/308575647?h=04defe5ef6"
-        width="1000"
-        height="360"
-        frameborder="0"
-        allow="autoplay;
-fullscreen; picture-in-picture"
-        allowfullscreen
-      ></iframe>
-      {/* <p>
-        <a href="https://vimeo.com/308575647">Akkara_Website</a> from
-        <a href="https://vimeo.com/user36062141">Zahoor Sultan</a>
-        on <a href="https://vimeo.com">Vimeo</a>.
-      </p> */}
-    </div>
+    <Grid>
+      <img src={header} style={{ height: "100vh", width: "97vw" }} alt="" />
+    </Grid>
   );
 }
 

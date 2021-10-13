@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import ProductCard from "../components/ProductCard";
-import { getProductImageUrl } from "../helper/images";
+import CollectionCard from "./CollectionCard";
+import { getProductImageUrl } from "../../../helper/images";
+import { addProducts } from "../../../helper/products";
 
 function FeaturedProducts() {
   const [productData1, setProductData1] = useState({});
@@ -10,18 +11,21 @@ function FeaturedProducts() {
     getProductImageUrl("handcrafted-bamboo-shelf.png").then((url) => {
       setProductData1({
         image: url,
-        name: "Handcrafted Bamboo shelf",
         category: "Cane-Bamboo-Jute",
-        desc: `The bamboo chair is handcrafted with extreme care and
-        diligence. This comfortable chair can be used to beautify any
-        space with grace, be it your garden/exteriors or the interiors.`,
+        desc: `Metal crafts of India date back to the time of Indus Valley
+        Civilization as evident from the discovery of the beautiful
+        figurine of the dancing girl- a prehistoric bronze sculpture. And
+        till date, the legacy of metal works can be witnessed in the form
+        of various metalworking Sculptures.
+        Engraving, embossing, and lacquering various metals in the
+        form of idols of deities, wall decor, human figurines, and much
+        more, this art form has been kept alive by our adept artisans.`,
       });
     });
     getProductImageUrl("petal-flowers-montage-metallic-wall-decor.png").then(
       (url) => {
         setProductData2({
           image: url,
-          name: "Petal flowers Montage Metallic Wall Decor",
           category: "Metallic Wonders",
           desc: `Made of iron wire, coated with resplendent gold colour, this
         ultimate piece of wall decor is a perfect combo of aestheticism
@@ -29,6 +33,7 @@ function FeaturedProducts() {
         });
       }
     );
+    addProducts("123");
   }, []);
   const style = {
     cards: {
@@ -41,29 +46,25 @@ function FeaturedProducts() {
     <div>
       <p
         className="text-center mt-5 mb-5"
-        style={{ fontSize: "40px", letterSpacing: "9px" }}
+        style={{ fontSize: "40px"}}
       >
-        Featured Products
+        Collections
       </p>
       <div style={style.cards}>
-        <ProductCard
+        <CollectionCard
           image={productData1.image}
-          name={productData1.name}
           category={productData1.category}
         />
-        <ProductCard
+        <CollectionCard
           image={productData2.image}
-          name={productData2.name}
           category={productData2.category}
         />
-        <ProductCard
-          image={productData1.image}
-          name={productData1.name}
-          category={productData1.category}
-        />
-        <ProductCard
+        <CollectionCard
           image={productData2.image}
-          name={productData2.name}
+          category={productData2.category}
+        />
+        <CollectionCard
+          image={productData2.image}
           category={productData2.category}
         />
       </div>

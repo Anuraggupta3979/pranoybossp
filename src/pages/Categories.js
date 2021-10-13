@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/navbar/Navbar";
 import { getImageUrl, getProductImageUrl } from "../helper/images";
-import ProductCard from "../components/ProductCard";
+import ProductCard from "../components/home/product/ProductCard";
 
 const style = {
   aspectRatio: "default",

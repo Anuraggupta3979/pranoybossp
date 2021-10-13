@@ -3,9 +3,11 @@ import { Card, CardContent, CardHeader } from "@material-ui/core";
 
 const Dashboard = () => (
   <Card>
-    <CardHeader title="Admin Panel" />
-    <CardContent>If you don't know what this page is...</CardContent>
-
+    <div style={{ textAlign: "center" }}>
+      <CardHeader title="Admin Panel" />
+      <CardContent>If you don't know what this page is...</CardContent>
+      <CardContent>then go back</CardContent>
+    </div>
   </Card>
 );
 

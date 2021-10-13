@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import ProductCard from "../components/ProductCard";
-import { getProductImageUrl } from "../helper/images";
+import ProductCard from "./ProductCard";
+import { getProductImageUrl } from "../../../helper/images";
 
 function FeaturedProducts() {
   const [productData1, setProductData1] = useState({});

@@ -188,8 +188,7 @@ const Footer = () => {
                 </Grid>
                 <Grid item xs={9}>
                   <Typography variant="subtitle2">
-                    ADJ Utility Apps Pvt Ltd 1203,22nd Cross Rd,Sector 3,HSR
-                    layout, Bengaluru,Karnataka 560102 GST Number -
+                    Senapati Bhawan Ratanada , Jodhpur,Rajasthan 560102 GST Number -
                     29AAPCA8770K1ZT
                   </Typography>
                 </Grid>

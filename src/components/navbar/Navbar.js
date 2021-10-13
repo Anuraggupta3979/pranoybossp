@@ -41,8 +41,8 @@ function NavbarH(props) {
                 props.location.pathname === "/collection" ? "active" : ""
               }`}
             >
-              <Link className="nav-link mr-5" to="/collection">
-                COLLECTION
+              <Link className="nav-link mr-5" to="/categories">
+                CATEGORIES
               </Link>
             </li>
             <li

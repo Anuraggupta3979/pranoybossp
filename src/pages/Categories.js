@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import Navbar from "../components/navbar/Navbar";
 import { getImageUrl, getProductImageUrl } from "../helper/images";
 import ProductCard from "../components/home/product/ProductCard";
+import CustomButton from "../components/Button";
 
 const style = {
-  aspectRatio: "default",
+  height: "80%",
   width: "98.7vw",
 };
 
@@ -87,27 +88,37 @@ const Categories = () => {
     </div>
   );
   return (
-    <div>
+    <div style={{ display: "grid", placeItems: "center" }}>
       <Navbar />
       <img src={bannerUrl1} alt="#!" style={style} />
       <br />
       <Cards />
       <br />
+      <CustomButton title="Learn More" />
+      <br />
       <img src={bannerUrl2} alt="#!" style={style} />
       <br />
       <Cards />
+      <br />
+      <CustomButton title="Learn More" />
       <br />
       <img src={bannerUrl3} alt="#!" style={style} />
       <br />
       <Cards />
       <br />
+      <CustomButton title="Learn More" />
+      <br />
       <img src={bannerUrl4} alt="#!" style={style} />
       <br />
       <Cards />
       <br />
+      <CustomButton title="Learn More" />
+      <br />
       <img src={bannerUrl5} alt="#!" style={style} />
       <br />
       <Cards />
+      <br />
+      <CustomButton title="Learn More" />
       <br />
     </div>
   );

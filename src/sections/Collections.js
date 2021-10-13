@@ -57,6 +57,14 @@ function FeaturedProducts() {
           image={productData2.image}
           category={productData2.category}
         />
+        <CollectionCard
+          image={productData2.image}
+          category={productData2.category}
+        />
+        <CollectionCard
+          image={productData2.image}
+          category={productData2.category}
+        />
       </div>
     </div>
   );

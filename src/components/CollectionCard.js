@@ -10,11 +10,7 @@ function CollectionCard({image, category,}) {
           src={image}
           alt={category}
         />
-        <figcaption>
-          <div>
-            <i class="ion-ios-home-outline"></i>
-          </div>
-        </figcaption>
+       
       </figure>
     </div>
   );

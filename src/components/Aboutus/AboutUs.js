@@ -25,8 +25,7 @@ function AboutUs() {
         <div class="centered">About Us</div>
       </div>
       <div className="ourstory">
-        <AboutStory />
-        <AboutCraft />
+       
       </div>
     </div>
   );

@@ -8,7 +8,6 @@ import { Switch, Route } from "react-router-dom";
 function App() {
   return (
     <div className="App">
-      <p></p>
       <Switch>
         <Route path="/" component={Home} exact />
         <Route path="/about" component={AboutUs} exact />

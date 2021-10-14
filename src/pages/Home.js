@@ -8,6 +8,7 @@ import AboutHeader from "../components/home/about/AboutHeader";
 import AboutHome from "../components/home/about/AboutHome";
 import { getAllCategories } from "../helper/categories";
 import { getAllProducts } from "../helper/products";
+
 import Team from "../components/Team";
 import Navv from "../components/navbar/Navv";
 
@@ -18,20 +19,28 @@ const Home = () => {
   useEffect(() => {
     getAllCategories().then((data) => {
       setCategoryList(data);
-      // console.log(categoriesList);
-    });
-    getAllProducts().then((data) => {
-      setProductList(data);
-      // console.log(Array);
+      console.log(data);
     });
   }, []);
+  useEffect(() => {
+    const anu = getAllProducts().then((anurag) => {
+      console.log(anurag);
+    });
+    console.log(anu);
+    setProductList(anu);
+    // getAllProducts().then((abcd) => {
+    //   setProductList(abcd);
+    //   console.log(abcd);
+    // });
+  }, []);
+  console.log(productList)
   return (
     <div>
       {/* <Navbar /> */}
       <Navv></Navv>
       <HomeVideoBanner />
       <AboutHeader />
-      <FeaturedProducts productList={productList} />
+      {/* <FeaturedProducts productList={productList} /> */}
       <Collections categoryList={categoryList} />
       <AboutHome></AboutHome>
       <Team></Team>

@@ -1,0 +1,30 @@
+.navbarLinks {
+  margin-left: auto;
+}
+.navbar-toggler {
+  border: none;
+}
+h1,
+h2,
+h3 {
+  font-family: "Google Sans", sans-serif;
+}
+
+h4,
+h5,
+h6,
+p {
+  font-family: "Google Sans", sans-serif;
+}
+
+.navborder {
+  box-shadow: 0 -10px 2px 0 rgb(0 0 0 / 20%), 0 1px 5px 0 rgb(0 0 0 / 19%);
+  border-radius: 0 0 64px 64px;
+  color: white;
+}
+
+@media (max-width: 800px) {
+  .navbarBrand {
+    margin-left: 5px;
+  }
+}

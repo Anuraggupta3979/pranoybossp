@@ -7,15 +7,21 @@ import HomeVideoBanner from "../sections/HomeVideoBanner";
 import AboutHeader from "../components/home/about/AboutHeader";
 import AboutHome from "../components/home/about/AboutHome";
 import Newsletter from "../components/newsletter/Newsletter";
-import { getAllProducts } from "../helper/categories";
+import { getAllCategories } from "../helper/categories";
+import { getAllProducts } from "../helper/products";
 
 const Home = () => {
-  const [categoriesList, setCategoriesList] = useState([]);
+  const [categoryList, setCategoryList] = useState([]);
+  const [productList, setProductList] = useState([]);
 
   useEffect(() => {
-    getAllProducts().then((data) => {
-      setCategoriesList(data);
+    getAllCategories().then((data) => {
+      setCategoryList(data);
       // console.log(categoriesList);
+    });
+    getAllProducts().then((data) => {
+      setProductList(data);
+      // console.log(Array);
     });
   }, []);
   return (
@@ -23,8 +29,8 @@ const Home = () => {
       <Navbar />
       <HomeVideoBanner />
       <AboutHeader />
-      <FeaturedProducts />
-      <Collections categoriesList={categoriesList} />
+      <FeaturedProducts productList={productList} />
+      <Collections categoryList={categoryList} />
       <AboutHome></AboutHome>
       <Newsletter></Newsletter>
       <Footer />

@@ -1,7 +1,6 @@
 import React from "react";
 import { Grid, makeStyles, Typography } from "@material-ui/core";
-// import Link from "components/Link";
-import { Link } from "react-router-dom";
+
 const useStyles = makeStyles((theme) => ({
   footer: {
     padding: "60px 250px",
@@ -128,7 +127,7 @@ const Footer = () => {
               </Link> */}
               <Typography variant="subtitle2">COLLECTIONS</Typography>
             </Grid>
-            
+
             <Grid item>
               {/* <Link
                 href="https://khatabook.com/contact/"
@@ -188,8 +187,8 @@ const Footer = () => {
                 </Grid>
                 <Grid item xs={9}>
                   <Typography variant="subtitle2">
-                    Senapati Bhawan Ratanada , Jodhpur,Rajasthan 560102 GST Number -
-                    29AAPCA8770K1ZT
+                    Senapati Bhawan Ratanada , Jodhpur,Rajasthan 560102 GST
+                    Number - 29AAPCA8770K1ZT
                   </Typography>
                 </Grid>
               </Grid>
@@ -290,57 +289,6 @@ const Footer = () => {
                 </Grid>
                 <Grid item>
                   <Typography variant="subtitle2">Instagram</Typography>
-                </Grid>
-              </Grid>
-            </Grid>
-            <Grid item>
-              <Grid
-                container
-                spacing={1}
-                direction="row"
-                justifyContent="flex-start"
-                alignItems="center"
-                onClick={() =>
-                  window.open("https://t.me/Khatabook_official", "_blank")
-                }
-                style={{ cursor: "pointer" }}
-              >
-                <Grid item className={classes.imageGridSocialMediaIcons}>
-                  <img
-                    src="./telegram.svg"
-                    className={classes.socialMediaimages}
-                    alt="telegram"
-                  />
-                </Grid>
-                <Grid item>
-                  <Typography variant="subtitle2">Telegram</Typography>
-                </Grid>
-              </Grid>
-            </Grid>
-            <Grid item>
-              <Grid
-                container
-                spacing={1}
-                direction="row"
-                justifyContent="flex-start"
-                alignItems="center"
-                onClick={() =>
-                  window.open(
-                    "https://www.linkedin.com/company/khatabook/?originalSubdomain=in",
-                    "_blank"
-                  )
-                }
-                style={{ cursor: "pointer" }}
-              >
-                <Grid item className={classes.imageGridSocialMediaIcons}>
-                  <img
-                    src="./linkedin.svg"
-                    className={classes.socialMediaimages}
-                    alt="linkedin"
-                  />
-                </Grid>
-                <Grid item>
-                  <Typography variant="subtitle2">LinkedIn</Typography>
                 </Grid>
               </Grid>
             </Grid>

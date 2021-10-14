@@ -4,7 +4,7 @@ import "../../../assets/css/Collections.css";
 function CollectionCard({ image, category }) {
   return (
     <div>
-      <figure class="snip1352">
+      <figure className="snip1352">
         <img src={image} alt={category} />
       </figure>
     </div>

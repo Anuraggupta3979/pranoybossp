@@ -33,7 +33,7 @@ function FeaturedProducts() {
   const style = {
     cards: {
       display: "flex",
-      "flex-flow": "row wrap",
+      flexFlow: "row wrap",
       justifyContent: "space-around",
     },
   };

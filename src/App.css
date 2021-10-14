@@ -1,5 +1,5 @@
 :root {
-  --bs-anu: #fff;
+  --bs-anu: rgb(0, 0, 0);
 }
 .app {
   text-align: center;
@@ -8,22 +8,30 @@
 .navbar {
   height: 100px;
   /* background-color: transparent!important; */
-  background-color: transparent !important;
+  /* background-color: transparent !important; */
   color: black;
   position: absolute;
   top: 0px;
   z-index: 10;
-  background: #fff;
+  background-color: #fff;
   width: 100%;
   transition-timing-function: ease;
   transition: all 0.5s;
+  /* border: 2px solid red; */
+  /* border-bottom-right-radius: 50px;
+  border-top-left-radius: 50px; */
 }
 .nav-link,
 .user {
   color: var(--bs-anu);
   font-size: 13px;
+}
+.nav-item {
   margin-right: 15px;
   margin-left: 15px;
+}
+.anu:hover {
+  border-bottom: 2px solid black;
 }
 
 .navbar:hover {
@@ -31,7 +39,7 @@
   --bs-anu: rgb(26, 22, 22);
 }
 .active {
-  border-bottom: 1px solid #ff7240;
+  border-bottom: 2px solid #000000;
 }
 .navbar-toggler {
   color: black;
@@ -46,8 +54,8 @@
     margin-right: 0px;
     margin: 0px;
   }
-  .active{
-    border-bottom:none;
+  .active {
+    border-bottom: none;
   }
   .navbar:hover {
     background-color: transparent !important;

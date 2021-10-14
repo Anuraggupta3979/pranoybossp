@@ -6,6 +6,7 @@ import FeaturedProducts from "../components/home/product/FeaturedProducts";
 import HomeVideoBanner from "../sections/HomeVideoBanner";
 import AboutHeader from "../components/home/about/AboutHeader";
 import AboutHome from "../components/home/about/AboutHome";
+import Newsletter from "../components/newsletter/Newsletter";
 const Home = () => {
   return (
     <div>
@@ -15,6 +16,7 @@ const Home = () => {
       <FeaturedProducts />
       <Collections />
       <AboutHome></AboutHome>
+      <Newsletter></Newsletter>
       <Footer />
     </div>
   );

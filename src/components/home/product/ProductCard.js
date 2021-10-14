@@ -6,10 +6,10 @@ const ProductCard = ({ image, name, category }) => {
   // console.log(data.name )
   return (
     <div className="mb-3">
-      <figure class="snip1475">
+      <figure className="box">
         <img src={image} alt="sample36" />
         <figcaption>
-          <div>{/* <i class="ion-ios-home-outline"></i> */}</div>
+          <div>{/* <i className="ion-ios-home-outline"></i> */}</div>
         </figcaption>
         {/* <a href="#"></a> */}
       </figure>

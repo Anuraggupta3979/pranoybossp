@@ -1,10 +1,10 @@
 import React from "react";
 import header from "../assets/header.jpg";
-import { Grid, makeStyles, Typography } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 function HomeVideoBanner() {
   return (
     <Grid>
-      <img src={header} style={{ height: "100vh", width: "97vw" }} alt="" />
+      <img src={header} style={{ height: "100vh", width: "98.7vw" , objectFit:'cover'}} alt="" />
     </Grid>
   );
 }

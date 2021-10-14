@@ -3,7 +3,7 @@ import Navbar from "../components/navbar/Navbar";
 import { getImageUrl, getProductImageUrl } from "../helper/images";
 import ProductCard from "../components/home/product/ProductCard";
 import CustomButton from "../components/Button";
-
+import Footer from "../components/footer/Footer";
 const style = {
   height: "80%",
   width: "98.7vw",
@@ -61,7 +61,7 @@ const Categories = () => {
     <div
       style={{
         display: "flex",
-        "flex-flow": "row wrap",
+        flexFlow: "row wrap",
         justifyContent: "space-around",
       }}
     >
@@ -120,6 +120,7 @@ const Categories = () => {
       <br />
       <CustomButton title="Learn More" />
       <br />
+      <Footer />
     </div>
   );
 };

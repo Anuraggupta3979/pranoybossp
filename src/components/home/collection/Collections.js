@@ -38,19 +38,24 @@ function FeaturedProducts() {
   const style = {
     cards: {
       display: "flex",
-      "flex-flow": "row wrap",
+      flexFlow: "row wrap",
       justifyContent: "space-around",
     },
   };
   return (
     <div>
-      <p
-        className="text-center mt-5 mb-5"
-        style={{ fontSize: "40px"}}
-      >
+      <p className="text-center mt-5 mb-5" style={{ fontSize: "40px" }}>
         Collections
       </p>
       <div style={style.cards}>
+        <CollectionCard
+          image={productData1.image}
+          category={productData1.category}
+        />
+        <CollectionCard
+          image={productData2.image}
+          category={productData2.category}
+        />
         <CollectionCard
           image={productData1.image}
           category={productData1.category}
@@ -64,8 +69,17 @@ function FeaturedProducts() {
           category={productData2.category}
         />
         <CollectionCard
+          image={productData1.image}
+          category={productData1.category}
+        />
+
+        <CollectionCard
           image={productData2.image}
           category={productData2.category}
+        />
+        <CollectionCard
+          image={productData1.image}
+          category={productData1.category}
         />
       </div>
     </div>

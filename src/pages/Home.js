@@ -22,6 +22,7 @@ const Home = () => {
       console.log(data);
     });
   }, []);
+  
   useEffect(() => {
     const anu = getAllProducts().then((anurag) => {
       console.log(anurag);

@@ -9,5 +9,6 @@ export const getAllCategories = async () => {
     // console.log(doc.id, " => ", doc.data());
     lst.push(doc.data());
   });
+  
   return lst;
 };

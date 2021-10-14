@@ -1,7 +1,7 @@
 import React from "react";
 import CollectionCard from "./CollectionCard";
 
-function FeaturedProducts({ categoriesList }) {
+function FeaturedProducts({ categoryList }) {
   const style = {
     cards: {
       display: "flex",
@@ -15,7 +15,7 @@ function FeaturedProducts({ categoriesList }) {
         Collections
       </p>
       <div style={style.cards}>
-        {categoriesList.map((category) => (
+        {categoryList.map((category) => (
           <CollectionCard
             image={category.image}
             name={category.name}

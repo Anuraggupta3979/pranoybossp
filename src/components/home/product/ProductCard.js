@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import "../../../assets/css/ProductCard.css";
+import { useMediaQuery } from "react-responsive";
 
 const style = {
   main: {
@@ -22,7 +23,7 @@ const style = {
   image: {
     aspectRatio: "default",
     height: "70vh",
-    marginRight: "20px"
+    marginRight: "20px",
   },
   content: {
     marginTop: "20px",
@@ -31,6 +32,9 @@ const style = {
 };
 
 const ProductCard = ({ image, name, category, description }) => {
+  const isTabletOrMobileDevice = useMediaQuery({
+    query: "(max-device-width: 768px)",
+  });
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -50,24 +54,28 @@ const ProductCard = ({ image, name, category, description }) => {
           <p className="text-center">{category}</p>
         </div>
       </button>
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box sx={style.main}>
-          <img src={image} alt="sample36" style={style.image} />
-          <div style={style.content}>
-            <Typography id="modal-modal-title" variant="h6" component="h2">
-              {name}
-            </Typography>
-            <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-              {description}
-            </Typography>
-          </div>
-        </Box>
-      </Modal>
+      {isTabletOrMobileDevice ? (
+        <></>
+      ) : (
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <Box sx={style.main}>
+            <img src={image} alt="sample36" style={style.image} />
+            <div style={style.content}>
+              <Typography id="modal-modal-title" variant="h6" component="h2">
+                {name}
+              </Typography>
+              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                {description}
+              </Typography>
+            </div>
+          </Box>
+        </Modal>
+      )}
     </div>
   );
 };

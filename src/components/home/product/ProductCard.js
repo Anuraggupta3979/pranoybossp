@@ -1,20 +1,33 @@
 import React from "react";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import "../../../assets/css/ProductCard.css";
 
 const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 400,
-  bgcolor: "background.paper",
-  border: "2px solid #000",
-  boxShadow: 24,
-  p: 4,
+  main: {
+    display: "flex",
+    justifyContent: "space-around",
+    align: "space-around",
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: 900,
+    bgcolor: "background.paper",
+    border: "2px solid #000",
+    boxShadow: 24,
+    // p: 4,
+  },
+  image: {
+    aspectRatio: "default",
+    height: "70vh",
+    marginRight: "20px"
+  },
+  content: {
+    marginTop: "20px",
+    marginRight: "20px",
+  },
 };
 
 const ProductCard = ({ image, name, category, description }) => {
@@ -43,13 +56,16 @@ const ProductCard = ({ image, name, category, description }) => {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            {name}
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            {description}
-          </Typography>
+        <Box sx={style.main}>
+          <img src={image} alt="sample36" style={style.image} />
+          <div style={style.content}>
+            <Typography id="modal-modal-title" variant="h6" component="h2">
+              {name}
+            </Typography>
+            <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+              {description}
+            </Typography>
+          </div>
         </Box>
       </Modal>
     </div>

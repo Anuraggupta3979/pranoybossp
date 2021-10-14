@@ -1,60 +1,41 @@
 import React from "react";
-import {
-  AppBar,
-  Toolbar,
-  CssBaseline,
-  Typography,
-  makeStyles,
-} from "@material-ui/core";
-import { Link } from "react-router-dom";
-
-const useStyles = makeStyles((theme) => ({
-  navlinks: {
-    marginLeft: theme.spacing(10),
-    display: "flex",
-  },
-  logo: {
-    flexGrow: "1",
-    cursor: "pointer",
-  },
-  link: {
-    textDecoration: "none",
-    color: "white",
-    fontSize: "20px",
-    marginLeft: theme.spacing(20),
-    "&:hover": {
-      color: "yellow",
-      borderBottom: "1px solid white",
-    },
-  },
-}));
-
+import "./Navbar.css";
+import * as ReactBootStrap from "react-bootstrap";
 function Navv() {
-  const classes = useStyles();
-
   return (
-    <AppBar position="static">
-      <CssBaseline />
-      <Toolbar>
-        <Typography variant="h4" className={classes.logo}>
-          Navbar
-        </Typography>
-        <div className={classes.navlinks}>
-          <Link to="/" className={classes.link}>
-            Home
-          </Link>
-          <Link to="/about" className={classes.link}>
-            About
-          </Link>
-          <Link to="/contact" className={classes.link}>
-            Contact
-          </Link>
-          <Link to="/faq" className={classes.link}>
-            FAQ
-          </Link>
-        </div>
-      </Toolbar>
-    </AppBar>
+    <div>
+      <ReactBootStrap.Navbar
+        collapseOnSelect
+        expand="lg"
+        bg="light"
+        variant="light"
+        className="navbar fixed-top navborder"
+      >
+        <ReactBootStrap.Container>
+          <ReactBootStrap.Navbar.Brand href="#home" className="navbarBrand">
+            Anurag Gupta
+          </ReactBootStrap.Navbar.Brand>
+          <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav">
+            <ReactBootStrap.Nav className=" navbarLinks">
+              <ReactBootStrap.Nav.Link href="#features" className="links">
+                Home
+              </ReactBootStrap.Nav.Link>
+              <ReactBootStrap.Nav.Link href="#pricing">
+                About
+              </ReactBootStrap.Nav.Link>
+              <ReactBootStrap.Nav.Link href="#deets">
+                Certificates
+              </ReactBootStrap.Nav.Link>
+              <ReactBootStrap.Nav.Link eventKey={2} href="#memes">
+                Projects
+              </ReactBootStrap.Nav.Link>
+            </ReactBootStrap.Nav>
+          </ReactBootStrap.Navbar.Collapse>
+        </ReactBootStrap.Container>
+      </ReactBootStrap.Navbar>
+    </div>
   );
 }
+
 export default Navv;

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
 import Collections from "../components/home/collection/Collections";
 import FeaturedProducts from "../components/home/product/FeaturedProducts";
@@ -23,25 +22,14 @@ const Home = () => {
     });
   }, []);
   
-  useEffect(() => {
-    const anu = getAllProducts().then((anurag) => {
-      console.log(anurag);
-    });
-    console.log(anu);
-    setProductList(anu);
-    // getAllProducts().then((abcd) => {
-    //   setProductList(abcd);
-    //   console.log(abcd);
-    // });
-  }, []);
+
   console.log(productList)
   return (
     <div>
-      {/* <Navbar /> */}
       <Navv></Navv>
       <HomeVideoBanner />
       <AboutHeader />
-      {/* <FeaturedProducts productList={productList} /> */}
+      {/* <FeaturedProducts  /> */}
       <Collections categoryList={categoryList} />
       <AboutHome></AboutHome>
       <Team></Team>

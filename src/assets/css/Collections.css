@@ -2,8 +2,8 @@
   position: relative;
   overflow: hidden;
   min-width: 255px;
-  max-width: 415px;
-  height: 350px;
+  max-width: 345px;
+  height: 440px;
   width: 100%;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
   background-color: #000000;
@@ -17,6 +17,7 @@
   transition: all 2s ease-out;
   /* filter: alpha(opacity=50);
   -webkit-opacity: 1; */
+  object-fit: contain;
   opacity: 0.8;
 }
 .snip1352:hover img,

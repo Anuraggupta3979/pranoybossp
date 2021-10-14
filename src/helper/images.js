@@ -18,3 +18,11 @@ export const getProductImageUrl = (fileName) => {
       console.log("error from getProductsUrl:", error);
     });
 };
+
+export const getStorageUrl = (fileName) => {
+  return getDownloadURL(ref(storage, fileName))
+    .then((url) => url)
+    .catch((error) => {
+      console.log("error from getProductsUrl:", error);
+    });
+};

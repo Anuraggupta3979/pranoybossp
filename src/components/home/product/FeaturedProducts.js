@@ -47,21 +47,25 @@ function FeaturedProducts() {
           image={productData1.image}
           name={productData1.name}
           category={productData1.category}
+          description={productData2.desc}
         />
         <ProductCard
           image={productData2.image}
           name={productData2.name}
           category={productData2.category}
+          description={productData2.desc}
         />
         <ProductCard
           image={productData1.image}
           name={productData1.name}
           category={productData1.category}
+          description={productData2.desc}
         />
         <ProductCard
           image={productData2.image}
           name={productData2.name}
           category={productData2.category}
+          description={productData2.desc}
         />
       </div>
     </div>

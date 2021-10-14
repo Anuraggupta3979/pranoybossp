@@ -6,8 +6,9 @@ import FeaturedProducts from "../components/home/product/FeaturedProducts";
 import HomeVideoBanner from "../sections/HomeVideoBanner";
 import AboutHeader from "../components/home/about/AboutHeader";
 import AboutHome from "../components/home/about/AboutHome";
-import Newsletter from "../components/newsletter/Newsletter";
 import { getAllProducts } from "../helper/categories";
+import Team from "../components/Team";
+import Navv from "../components/navbar/Navv";
 
 const Home = () => {
   const [categoriesList, setCategoriesList] = useState([]);
@@ -20,13 +21,14 @@ const Home = () => {
   }, []);
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
+      <Navv></Navv>
       <HomeVideoBanner />
       <AboutHeader />
       <FeaturedProducts />
       <Collections categoriesList={categoriesList} />
       <AboutHome></AboutHome>
-      <Newsletter></Newsletter>
+      <Team></Team>
       <Footer />
     </div>
   );

@@ -8,16 +8,15 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
     flexDirection: "column",
-    marginTop: "50px",
-    marginBottom: "50px",
+
   },
   title: {
     fontSize: "30px",
     fontWeight: "bold",
   },
   titlebox: {
-    marginTop: "50px",
-    marginBottom: "30px",
+    marginTop: "20px",
+    marginBottom: "20px",
   },
   mailbox: {
     display: "flex",

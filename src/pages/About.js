@@ -18,7 +18,7 @@ const About = () => {
       <Navbar />
       <AboutUs />
       <AboutStory />
-      <AboutCraft />
+      {/* <AboutCraft /> */}
       <Footer></Footer>
     </div>
   );

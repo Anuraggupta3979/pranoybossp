@@ -4,6 +4,7 @@ import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import "../../../assets/css/ProductCard.css";
 import { useMediaQuery } from "react-responsive";
+import CloseIcon from "@mui/icons-material/Close";
 
 const style = {
   main: {
@@ -26,8 +27,14 @@ const style = {
     marginRight: "20px",
   },
   content: {
-    marginTop: "20px",
+    marginTop: "60px",
     marginRight: "20px",
+  },
+  close: {
+    fontSize: "35px",
+    position: "absolute",
+    right: "10px",
+    top: "20px",
   },
 };
 
@@ -65,6 +72,8 @@ const ProductCard = ({ image, name, category, description }) => {
         >
           <Box sx={style.main}>
             <img src={image} alt="sample36" style={style.image} />
+
+            <CloseIcon sx={style.close} onClick={handleClose} />
             <div style={style.content}>
               <Typography id="modal-modal-title" variant="h6" component="h2">
                 {name}

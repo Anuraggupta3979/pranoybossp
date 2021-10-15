@@ -10,7 +10,7 @@ import AboutUs from "../components/Aboutus/AboutUs";
 // import AboutStory from "../components/AboutUs/AboutStory";
 // import AboutCraft from "../components/AboutUs/AboutCraft";
 import AboutStory from "../components/Aboutus/AboutStory";
-import AboutCraft from "../components/Aboutus/AboutCraft";
+// import AboutCraft from "../components/Aboutus/AboutCraft";
 
 const About = () => {
   return (

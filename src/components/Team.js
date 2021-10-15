@@ -1,6 +1,6 @@
 import React from "react";
 import "./Team.css";
-import { Grid, makeStyles, Typography } from "@material-ui/core";
+import { Grid, Typography } from "@material-ui/core";
 
 function Team() {
   return (

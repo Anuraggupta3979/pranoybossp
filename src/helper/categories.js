@@ -23,14 +23,14 @@ export const getProductsByCategory = async (categoryName) => {
       categoryId = doc.id;
     }
   });
-  console.log("getProductsByCategory")
+  // console.log("getProductsByCategory")
   const q = await getDocs(
     collection(db, "products"),
     where("categoryId", "==", categoryId)
   );
   q.forEach((doc) => {
     // doc.data() is never undefined for query doc snapshots
-    console.log(doc.id, " => ", doc.data());
+    // console.log(doc.id, " => ", doc.data());
     lst.push(doc.data());
   });
   return lst;

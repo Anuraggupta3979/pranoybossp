@@ -22,7 +22,7 @@ const Home = () => {
     });
     getAllProducts().then((data) => {
       setProductList(data);
-      console.log(data);
+      // console.log(productList);
     });
     getProductsByCategory("1")
   }, []);

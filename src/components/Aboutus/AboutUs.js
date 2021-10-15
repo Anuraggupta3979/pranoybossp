@@ -17,7 +17,7 @@ function AboutUs() {
         <img
           src={bannerUrl}
           alt="Snow"
-          style={{ width: "100%", height: "500px" }}
+          style={{ width: "100%", height: "100vh" }}
         />
         <p>s</p>
         <div className="centered">About Us</div>

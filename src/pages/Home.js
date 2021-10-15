@@ -6,9 +6,9 @@ import HomeVideoBanner from "../sections/HomeVideoBanner";
 import AboutHeader from "../components/home/about/AboutHeader";
 import AboutHome from "../components/home/about/AboutHome";
 import { getAllCategories } from "../helper/categories";
-
+import Navbar from "../components/navbar/Navbar";
 import Team from "../components/Team";
-import Navv from "../components/navbar/Navv";
+
 
 const Home = () => {
   const [categoryList, setCategoryList] = useState([]);
@@ -25,7 +25,7 @@ const Home = () => {
   console.log(productList)
   return (
     <div>
-      <Navv></Navv>
+      <Navbar></Navbar>
       <HomeVideoBanner />
       <AboutHeader />
       <FeaturedProducts  />

@@ -1,88 +1,98 @@
 import React from "react";
-// import PersonRoundedIcon from "@mui/icons-material/PersonRounded";
+// import "./Navbar.css";
+import * as ReactBootStrap from "react-bootstrap";
+import "../../assets/css/Navbar.css";
 import { Link, withRouter } from "react-router-dom";
-function NavbarH(props) {
+function Navv() {
   return (
-    <nav className="navbar navbar-expand-lg navbarH">
-      <div className="container-fluid ">
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarTogglerDemo01"
-          aria-controls="navbarTogglerDemo01"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse " id="navbarTogglerDemo01">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0 ">
-            <li
-              className={`nav-item  ${
-                props.location.pathname === "/" ? "active" : "anu"
-              }`}
-            >
-              <Link className="nav-link mr-5  " to="/">
-                HOME
-              </Link>
-            </li>
-            <li
-              className={`nav-item  ${
-                props.location.pathname === "/about" ? "active" : "anu"
-              }`}
-            >
-              <Link className="nav-link mr-5" to="/about">
-                ABOUT US
-              </Link>
-            </li>
-            <li
-              className={`nav-item  ${
-                props.location.pathname === "/collection" ? "active" : "anu"
-              }`}
-            >
-              <Link className="nav-link mr-5" to="/categories">
-                CATEGORIES
-              </Link>
-            </li>
-            <li
-              className={`  ${
-                props.location.pathname === "/blog" ? "active" : "anu"
-              }`}
-            >
-              <Link className="nav-link mr-5" to="/blog">
-                BLOG
-              </Link>
-            </li>
-          </ul>
-          {/* <a
-            className="navbar-brand"
-            href="#"
-            className=" navbar-nav me-auto"
-          >
+    <div>
+      <ReactBootStrap.Navbar
+        collapseOnSelect
+        expand="lg"
+        bg="light"
+        variant="light"
+        className="navbar fixed-top navborder"
+      >
+        <ReactBootStrap.Container>
+          <ReactBootStrap.Navbar.Brand href="/" className="navbarBrand">
             <img
-              src="https://spyrestudios.com/wp-content/uploads/07-logo.jpg"
-              alt=""
-              width="30"
-              height="24"
+              src="https://th.bing.com/th/id/R.b90e6a70729f5ef2b99b006fec52feff?rik=xkHeTSKG2xHd2g&riu=http%3a%2f%2fwww.transparentpng.com%2fthumb%2fhandicraft%2fgold-handicraft-png-15.png&ehk=IOLDqtT0WYdSNK72mMxrjUd2Lm2wTZZT6fyoStsyX0I%3d&risl=&pid=ImgRaw&r=0"
+              alt="Logo"
+              style={{ width: "150px", height: "50px" }}
             />
-          </a> */}
+            {/* <small>Craftjet</small> */}
+          </ReactBootStrap.Navbar.Brand>
+          <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav">
+            <ReactBootStrap.Nav className=" navbarLinks">
+              <ReactBootStrap.Nav>
+                <Link className="nav-link mr-5 link " to="/">
+                  Home
+                </Link>
+              </ReactBootStrap.Nav>
+              <ReactBootStrap.Nav>
+                <Link className="nav-link mr-5  link" to="/about">
+                  About
+                </Link>
+              </ReactBootStrap.Nav>
 
-          {/* <ul className=" navbar-nav">
-            <li
-              className={`nav-item  ${
-                props.location.pathname === "/" ? "active" : ""
-              }`}
-            >
-              <Link className="user m-5" to="/login">
-                <PersonRoundedIcon></PersonRoundedIcon>
-              </Link>
-            </li>
-          </ul> */}
-        </div>
-      </div>
-    </nav>
+              <ReactBootStrap.NavDropdown
+                title="Categories"
+                id="nav-dropdown"
+                className="link"
+              >
+                <ReactBootStrap.Nav>
+                  <Link className="nav-link  droplink  " to="/about">
+                    About
+                  </Link>
+                </ReactBootStrap.Nav>
+                <ReactBootStrap.Nav>
+                  <Link className="nav-link  droplink  " to="/about">
+                    About
+                  </Link>
+                </ReactBootStrap.Nav>
+                <ReactBootStrap.Nav>
+                  <Link className="nav-link  droplink  " to="/about">
+                    About
+                  </Link>
+                </ReactBootStrap.Nav>
+                <ReactBootStrap.Nav>
+                  <Link className="nav-link droplink  " to="/about">
+                    About
+                  </Link>
+                </ReactBootStrap.Nav>
+                <ReactBootStrap.Nav>
+                  <Link className="nav-link  droplink  " to="/about">
+                    About
+                  </Link>
+                </ReactBootStrap.Nav>
+                <ReactBootStrap.Nav>
+                  <Link className="nav-link  droplink  " to="/about">
+                    About
+                  </Link>
+                </ReactBootStrap.Nav>
+                <ReactBootStrap.Nav>
+                  <Link className="nav-link  droplink  " to="/about">
+                    About
+                  </Link>
+                </ReactBootStrap.Nav>
+                <ReactBootStrap.Nav>
+                  <Link className="nav-link  droplink  " to="/about">
+                    About
+                  </Link>
+                </ReactBootStrap.Nav>
+              </ReactBootStrap.NavDropdown>
+              <ReactBootStrap.Nav>
+                <Link className="nav-link   link" to="/blog">
+                  Blog
+                </Link>
+              </ReactBootStrap.Nav>
+            </ReactBootStrap.Nav>
+          </ReactBootStrap.Navbar.Collapse>
+        </ReactBootStrap.Container>
+      </ReactBootStrap.Navbar>
+    </div>
   );
 }
 
-export default withRouter(NavbarH);
+export default withRouter(Navv);

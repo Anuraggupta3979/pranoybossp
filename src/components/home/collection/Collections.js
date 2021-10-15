@@ -19,6 +19,7 @@ function FeaturedProducts({ categoryList }) {
           <CollectionCard
             image={category.image}
             name={category.name}
+            key={category.name}
           />
         ))}
       </div>

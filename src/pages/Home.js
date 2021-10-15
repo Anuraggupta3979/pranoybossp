@@ -5,10 +5,11 @@ import FeaturedProducts from "../components/home/product/FeaturedProducts";
 import HomeVideoBanner from "../sections/HomeVideoBanner";
 import AboutHeader from "../components/home/about/AboutHeader";
 import AboutHome from "../components/home/about/AboutHome";
-import { getAllCategories } from "../helper/categories";
 import Navbar from "../components/navbar/Navbar";
-import Team from "../components/Team";
+import { getAllCategories, getProductsByCategory } from "../helper/categories";
+import { getAllProducts } from "../helper/products";
 
+import Team from "../components/Team";
 
 const Home = () => {
   const [categoryList, setCategoryList] = useState([]);
@@ -17,18 +18,21 @@ const Home = () => {
   useEffect(() => {
     getAllCategories().then((data) => {
       setCategoryList(data);
-      console.log(data);
+      // console.log(data);
     });
+    getAllProducts().then((data) => {
+      setProductList(data);
+      // console.log(productList);
+    });
+    getProductsByCategory("1");
   }, []);
-  
 
-  console.log(productList)
   return (
     <div>
       <Navbar></Navbar>
       <HomeVideoBanner />
       <AboutHeader />
-      <FeaturedProducts  />
+      <FeaturedProducts productList={productList} />
       <Collections categoryList={categoryList} />
       <AboutHome></AboutHome>
       <Team></Team>

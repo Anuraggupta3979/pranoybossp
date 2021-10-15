@@ -3,26 +3,31 @@
 @-webkit-keyframes slide-in-bottom {
   0% {
     -webkit-transform: translateY(1000px);
-            transform: translateY(1000px);
+    transform: translateY(1000px);
     opacity: 0;
   }
   100% {
     -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateY(0);
     opacity: 1;
   }
 }
 @keyframes slide-in-bottom {
   0% {
     -webkit-transform: translateY(1000px);
-            transform: translateY(1000px);
+    transform: translateY(1000px);
     opacity: 0;
   }
   100% {
     -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateY(0);
     opacity: 1;
   }
+}
+
+.product-modal-button {
+  border: 0;
+  background-color: transparent;
 }
 
 figure.box {
@@ -69,8 +74,8 @@ figure.box figcaption:after {
   height: 50%;
   width: 50%;
   position: absolute;
-  content: '';
-/*   background-color: #080808; */
+  content: "";
+  /*   background-color: #080808; */
 }
 figure.box figcaption:before {
   top: 0;
@@ -89,8 +94,8 @@ figure.box figcaption div:after {
   width: 50%;
   height: 50%;
   position: absolute;
-  content: '';
-/*   background-color: #000000; */
+  content: "";
+  /*   background-color: #000000; */
 }
 figure.box figcaption div:before {
   top: 0;
@@ -132,10 +137,11 @@ figure.box.hover img {
 figure.box:hover i,
 figure.box.hover i {
   opacity: 0.7;
-/*   -webkit-transition-delay: 0.2s;
+  /*   -webkit-transition-delay: 0.2s;
   transition-delay: 0.2s; */
-  -webkit-animation: slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  -webkit-animation: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
+  animation: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 figure.box:hover figcaption:before,
 figure.box.hover figcaption:before,

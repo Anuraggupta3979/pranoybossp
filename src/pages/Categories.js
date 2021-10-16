@@ -13,20 +13,22 @@ const style = {
 const Categories = () => {
   const [productDict, setProductDict] = useState({
     categories: [],
-    productsArray: []
+    productsArray: [],
   });
 
   const getData = async () => {
-    const data = await getAllProductsByCategory()
-    setProductDict(data)
-  }
+    const data = await getAllProductsByCategory();
+    setProductDict(data);
+  };
 
   useEffect(() => {
     getData();
   }, []);
-  useEffect(() => { console.log(productDict) }, [productDict]);
+  useEffect(() => {
+    console.log(productDict);
+  }, [productDict]);
   const ProductCards = ({ productList }) => {
-    console.log(productList)
+    console.log(productList);
     return (
       <>
         <div
@@ -45,13 +47,12 @@ const Categories = () => {
               key={product.name}
             />
           ))}
-
         </div>
         <br />
         <CustomButton title="Learn More" />
       </>
-    )
-  }
+    );
+  };
   return (
     <div style={{ display: "grid", placeItems: "center" }}>
       <Navbar />

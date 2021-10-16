@@ -19,15 +19,33 @@ import {
 } from "react-admin";
 
 import firebase, { db } from "../../firebase";
-import { collection, getDocs, query, orderBy, limit } from "firebase/firestore";
+import {
+  collection,
+  getDocs,
+  query,
+  orderBy,
+  limit,
+  doc,
+  deleteDoc,
+  updateDoc,
+  setDoc,
+  getDoc,
+  where,
+} from "firebase/firestore";
 
-import { getStorage, ref, uploadBytes, getDownloadURL, uploadBytesResumable } from "firebase/storage";
+import {
+  getStorage,
+  ref,
+  uploadBytes,
+  getDownloadURL,
+  uploadBytesResumable,
+} from "firebase/storage";
 
 // // Required for side-effects
 // require("firebase/firestore");
 
 var storage = getStorage(firebase);
-var storageRoot = ref(storage);
+// var storageRoot = ref(storage);
 
 // Disable deprecated features
 // db.settings({
@@ -149,6 +167,138 @@ async function createOrUpdateFile(resource, rawFile, uploadFile) {
   //         );
 }
 
+export const myDataProvider = {
+  getList: (resource, params) => {
+    const { page, perPage } = params.pagination;
+    const { field, order } = params.sort;
+    // const filter = params.filter;
+    // query all the docs from the first to page*perPage
+    var q =
+      field === "id"
+        ? query(collection(db, resource), limit(page * perPage))
+        : query(
+          collection(db, resource),
+          orderBy(field, order.toLowerCase()),
+          limit(page * perPage)
+        );
+    return getDocs(q)
+      .then((QuerySnapshot) => {
+        // slice the results
+        var totalCount = QuerySnapshot.docs.length;
+        var firstDocToDisplayCount =
+          page === 1 ? 1 : Math.min((page - 1) * perPage, totalCount);
+        var firstDocToDisplay = QuerySnapshot.docs.slice(
+          firstDocToDisplayCount - 1
+        );
+        return {
+          data: firstDocToDisplay.map((doc) => getDataWithId(doc)),
+          total: totalCount,
+        };
+      })
+      .catch((error) => Promise.reject(error));
+  },
+  getOne: (resource, params) => {
+    console.log("getOne", params.id)
+    return getDoc(doc(db, resource, params.id))
+      .then((doc) => {
+        if (doc.exists()) {
+          return { data: getDataWithId(doc) };
+        } else {
+          throw new Error({ message: "No such doc", status: 404 });
+        }
+      })
+      .catch((error) => {
+        throw new Error({ message: error, status: 404 });
+      });
+  },
+  getMany: (resource, params) => {
+    console.log("getMany", params.ids)
+    return Promise.all(
+      params.ids.map((id) => getDoc(doc(db, resource, id)))
+    )
+      .then((arrayOfResults) => {
+        return {
+          data: arrayOfResults.map((documentSnapshot) =>
+            getDataWithId(documentSnapshot)
+          ),
+        };
+      })
+      .catch((err) => Promise.reject(err));
+  },
+  getManyReference: (resource, params) => {
+    console.log("getManyReference")
+    const { target, id } = params;
+    const { field, order } = params.sort;
+    return getDocs(
+      query(
+        collection(db, resource),
+        where(target, "==", id),
+        orderBy(field, order.toLowerCase())
+      )
+    )
+      .then((QuerySnapshot) => {
+        console.log("getManyReference", QuerySnapshot);
+        return {
+          data: QuerySnapshot.docs.map((DocumentSnapshot) =>
+            getDataWithId(DocumentSnapshot)
+          ),
+          total: QuerySnapshot.docs.length,
+        };
+      })
+      .catch((err) => Promise.reject(err));
+  },
+  create: (resource, params) => {
+    console.log("Creating the data");
+    console.log(params.data.name);
+    const key = params.data.name.toLowerCase().split(' ').join('-')
+    console.log(key)
+    return setDoc(doc(db, resource, key), {
+      ...params.data,
+    })
+      .then((DocumentReference) => {
+        console.log(DocumentReference);
+        return {
+          data: { id: key, ...params.data },
+        };
+      })
+      .catch((err) => Promise.reject(err));
+  },
+  update: (resource, params) => {
+    console.log("Update record id", params.id);
+    const { id, ...everythingElse } = params.data;
+    return setDoc(doc(db, resource, id), {
+      ...everythingElse,
+    })
+      .then((DocumentReference) => {
+        console.log(DocumentReference);
+        return {
+          data: { id: params.id, ...params.data },
+        };
+      })
+      .catch((err) => Promise.reject(err));
+  },
+  updateMany: (resource, params) => Promise,
+  delete: (resource, params) => {
+    console.log("Delete record id", params.id);
+    const { id } = params.previousData;
+    return deleteDoc(doc(db, resource, id))
+      .then(() => ({ data: params.previousData }))
+      .catch((err) => Promise.reject(err));
+  },
+  deleteMany: (resource, params) => {
+    console.log("Delete Many", params.ids);
+    return Promise.all(
+      params.ids.map((id) => deleteDoc(doc(db, resource, id)))).then(() => ({
+      data: params.ids
+    })).catch((err) => Promise.reject(err));
+    // return {
+    //   data: params.ids.map((id) =>
+    //     deleteDoc(doc(db, resource, params.id)).then(() => id)
+    //   ),
+    // }
+  }
+};
+
 /**
  * Maps react-admin queries to Firebase
  *
@@ -168,17 +318,17 @@ export const firestoreProvider = (type, resource, params) => {
         field === "id"
           ? query(collection(db, resource), limit(page * perPage))
           : query(
-              collection(db, resource),
-              orderBy(field, order.toLowerCase()),
-              limit(page * perPage)
-            );
-            // TODO: Add Filter
-    //   if (filter) {
-    //     q = Object.keys(filter).reduce(
-    //       (q, k) => q.where(k, "==", filter[k]),
-    //       q
-    //     );
-    //   }
+            collection(db, resource),
+            orderBy(field, order.toLowerCase()),
+            limit(page * perPage)
+          );
+      // TODO: Add Filter
+      //   if (filter) {
+      //     q = Object.keys(filter).reduce(
+      //       (q, k) => q.where(k, "==", filter[k]),
+      //       q
+      //     );
+      //   }
       return getDocs(q).then((QuerySnapshot) => {
         // slice the results
         var totalCount = QuerySnapshot.docs.length;
@@ -208,88 +358,81 @@ export const firestoreProvider = (type, resource, params) => {
         });
     }
 
-    case UPDATE:
+    case UPDATE: {
+      console.log("Update record id", params.id);
+      return updateDoc(doc(db, resource, params.id), { ...params.data });
+    }
+
     case CREATE: {
       // Check if there is a file to upload
-      var listOfFiles = Object.keys(params.data).filter(
-        (key) => params.data[key].rawFile
-      );
-      return Promise.all(
-        listOfFiles.map((key) => {
-          // Upload file to the Storage bucket
-          return createOrUpdateFile(
-            resource,
-            params.data[key].rawFile,
-            uploadFileToBucket
-          ).then((downloadURL) => {
-            return { key: key, downloadURL: downloadURL };
-          });
-        })
-      ).then((arrayOfResults) => {
-        arrayOfResults.map((keyAndUrl) => {
-          // Remove rawFile attr as it will raise an error when setting the data
-          delete params.data[keyAndUrl.key].rawFile;
-          // Set the url to get the file
-          params.data[keyAndUrl.key].downloadURL = keyAndUrl.downloadURL;
-          return params.data;
-        });
+      // var listOfFiles = Object.keys(params.data).filter(
+      //   (key) => params.data[key].rawFile
+      // );
+      // return Promise.all(
+      //   listOfFiles.map((key) => {
+      //     // Upload file to the Storage bucket
+      //     return createOrUpdateFile(
+      //       resource,
+      //       params.data[key].rawFile,
+      //       uploadFileToBucket
+      //     ).then((downloadURL) => {
+      //       return { key: key, downloadURL: downloadURL };
+      //     });
+      //   })
+      // ).then((arrayOfResults) => {
+      //   arrayOfResults.map((keyAndUrl) => {
+      //     // Remove rawFile attr as it will raise an error when setting the data
+      //     delete params.data[keyAndUrl.key].rawFile;
+      //     // Set the url to get the file
+      //     params.data[keyAndUrl.key].downloadURL = keyAndUrl.downloadURL;
+      //     return params.data;
+      //   });
 
-        if (type === CREATE) {
-          console.log("Creating the data");
-          return db
-            .collection(resource)
-            .add(params.data)
-            .then((DocumentReference) =>
-              DocumentReference.get().then((DocumentSnapshot) => {
-                return { data: getDataWithId(DocumentSnapshot) };
-              })
-            );
-        }
+      if (type === CREATE) {
+        console.log("Creating the data");
+        return setDoc(doc(db, resource), {
+          ...params.data,
+        }).then((DocumentReference) =>
+          DocumentReference.get().then((DocumentSnapshot) => {
+            return { data: getDataWithId(DocumentSnapshot) };
+          })
+        );
+      }
 
-        if (type === UPDATE) {
-          console.log("Updating the data");
-          return db
-            .collection(resource)
-            .doc(params.id)
-            .set(params.data)
-            .then(() => {
-              return { data: params.data };
-            });
-        }
-      });
+      // if (type === UPDATE) {
+      //   console.log("Updating the data");
+      //   return db
+      //     .collection(resource)
+      //     .doc(params.id)
+      //     .set(params.data)
+      //     .then(() => {
+      //       return { data: params.data };
+      //     });
+      // }
+      // });
     }
 
     case UPDATE_MANY: {
       // Will crash if there is a File Input in the params
       // TODO
       return params.ids.map((id) =>
-        db
-          .collection(resource)
-          .doc(id)
-          .set(params.data)
-          .then(() => id)
+        updateDoc(doc(db, resource, params.id), { ...params.data }).then(
+          () => id
+        )
       );
     }
 
     case DELETE: {
       console.log("Delete record id", params.id);
-      return db
-        .collection(resource)
-        .doc(params.id)
-        .delete()
-        .then(() => {
-          return { data: params.previousData };
-        });
+      return deleteDoc(doc(db, resource, params.id)).then(() => {
+        return Promise.resolve();
+      });
     }
 
     case DELETE_MANY: {
       return {
         data: params.ids.map((id) =>
-          db
-            .collection(resource)
-            .doc(id)
-            .delete()
-            .then(() => id)
+          deleteDoc(doc(db, resource, params.id)).then(() => id)
         ),
       };
     }

@@ -11,7 +11,6 @@ import {
   ReferenceInput,
   SelectInput,
   TextInput,
-  SimpleList,
 } from "react-admin";
 import { useMediaQuery } from "react-responsive";
 
@@ -26,55 +25,59 @@ const PostTitle = ({ record }) => {
   return <span>Post {record ? `"${record.title}"` : ""}</span>;
 };
 
-export const PostList = (props) => {
+export const ProductList = (props) => {
   const isTabletOrMobileDevice = useMediaQuery({
     query: "(max-device-width: 768px)",
   });
   return (
     <List filters={postFilters} {...props}>
-      {!isTabletOrMobileDevice ? (
-        <Datagrid rowClick="edit">
-          <ReferenceField source="userId" reference="users">
-            <TextField source="name" />
-          </ReferenceField>
+      {/* {!isTabletOrMobileDevice ? ( */}
+      <Datagrid rowClick="edit">
+        <TextField source="id" />
+        <TextField source="name" />
+        <TextField source="description" />
+        <ReferenceField source="categoryId" reference="categories">
           <TextField source="id" />
-          <TextField source="title" />
-          <TextField source="body" />
-          <EditButton />
-        </Datagrid>
-      ) : (
-        <SimpleList
-          primaryText={(record) => record.title}
-          secondaryText={(record) => record.id}
-          tertiaryText={(record) => record.body}
-        />
-      )}
+        </ReferenceField>
+        <TextField source="image" />
+        <EditButton />
+      </Datagrid>
     </List>
   );
+  // : (
+  //   <SimpleList
+  //     primaryText={(record) => record.id}
+  //     secondaryText={(record) => record.name}
+  //     tertiaryText={(record) => record.description}
+  //   />
+  // )}
+
+  // );
 };
 
-export const PostEdit = (props) => (
+export const ProductEdit = (props) => (
   <Edit title={<PostTitle />} {...props}>
     <SimpleForm>
       <TextInput disabled source="id" />
-      <ReferenceInput source="userId" reference="users">
+      <TextInput source="name" />
+      <TextInput source="description" />
+      <ReferenceInput source="categoryId" reference="categories">
         <SelectInput optionText="name" />
       </ReferenceInput>
-      <TextInput source="title" />
-      <TextInput multiline source="body" />
+      <TextInput source="image" />
     </SimpleForm>
   </Edit>
 );
 
-export const PostCreate = (props) => (
+export const ProductCreate = (props) => (
   <Create {...props}>
     <SimpleForm>
-      <ReferenceInput source="userId" reference="users">
+      <TextInput source="name" />
+      <TextInput source="description" />
+      <ReferenceInput source="categoryId" reference="categories">
         <SelectInput optionText="name" />
       </ReferenceInput>
-      <TextInput source="id" />
-      <TextInput source="title" />
-      <TextInput source="body" />
+      <TextInput source="image" />
     </SimpleForm>
   </Create>
 );

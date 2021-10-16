@@ -1,26 +1,29 @@
 import * as React from "react";
-import { Admin, Resource, ListGuesser } from "react-admin";
+import { Admin, Resource, EditGuesser, ListGuesser } from "react-admin";
 // import jsonServerProvider from "ra-data-json-server";
 import Dashboard from "./Dashboard";
 import authProvider from "./authProvider";
-// import { UserList } from "./users";
-import { PostList, PostEdit, PostCreate } from "./posts";
-import { firestoreProvider } from "./dataProvider";
-
-// const dataProvider = jsonServerProvider("https://jsonplaceholder.typicode.com");
+import { CategoryList, CategoryCreate, CategoryEdit } from "./category";
+import { ProductList, ProductCreate, ProductEdit } from "./products";
+import { myDataProvider } from "./dataProvider";
 
 const AdminPage = () => (
   <Admin
     authProvider={authProvider}
     dashboard={Dashboard}
-    dataProvider={firestoreProvider}
+    dataProvider={myDataProvider}
   >
-    <Resource name="categories" list={ListGuesser} />
+    <Resource
+      name="categories"
+      list={CategoryList}
+      edit={CategoryEdit}
+      create={CategoryCreate}
+    />
     <Resource
       name="products"
-      list={ListGuesser}
-      // edit={PostEdit}
-      // create={PostCreate}
+      list={ProductList}
+      edit={ProductEdit}
+      create={ProductCreate}
     />
   </Admin>
 );

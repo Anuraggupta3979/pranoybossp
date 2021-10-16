@@ -5,7 +5,17 @@ import { Grid, Typography } from "@material-ui/core";
 function Team() {
   return (
     <Grid>
-      <Typography variant="h4" style={{ textAlign: "center" , fontWeight:"bold", marginTop:"100px", marginBottom:"50px"}}>Our Team</Typography>
+      <Typography
+        variant="h4"
+        style={{
+          textAlign: "center",
+          fontWeight: "bold",
+          marginTop: "100px",
+          marginBottom: "50px",
+        }}
+      >
+        Our Team
+      </Typography>
       <Grid className="content">
         <a className="card" href="#!">
           <Grid

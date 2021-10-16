@@ -4,7 +4,7 @@ import { Admin, Resource, ListGuesser } from "react-admin";
 import Dashboard from "./Dashboard";
 import authProvider from "./authProvider";
 // import { UserList } from "./users";
-import { PostList, PostEdit, PostCreate } from "./posts";
+// import { PostList, PostEdit, PostCreate } from "./posts";
 import { firestoreProvider } from "./dataProvider";
 
 // const dataProvider = jsonServerProvider("https://jsonplaceholder.typicode.com");

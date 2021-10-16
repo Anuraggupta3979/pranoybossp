@@ -27,7 +27,7 @@ import { getStorage, ref, uploadBytes, getDownloadURL, uploadBytesResumable } fr
 // require("firebase/firestore");
 
 var storage = getStorage(firebase);
-var storageRoot = ref(storage);
+// var storageRoot = ref(storage);
 
 // Disable deprecated features
 // db.settings({
@@ -119,6 +119,8 @@ async function createOrUpdateFile(resource, rawFile, uploadFile) {
         case "running":
           console.log("Upload is running");
           break;
+        default:
+          console.log("");
       }
     },
     (error) => {
@@ -162,7 +164,7 @@ export const firestoreProvider = (type, resource, params) => {
     case GET_LIST: {
       const { page, perPage } = params.pagination;
       const { field, order } = params.sort;
-      const filter = params.filter;
+      // const filter = params.filter;
       // query all the docs from the first to page*perPage
       var q =
         field === "id"

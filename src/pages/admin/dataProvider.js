@@ -33,12 +33,7 @@ import {
   where,
 } from "firebase/firestore";
 
-import {
-  getStorage,
-  ref,
-  uploadBytes,
-  getDownloadURL,
-} from "firebase/storage";
+import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 // // Required for side-effects
 // require("firebase/firestore");
@@ -177,10 +172,10 @@ export const myDataProvider = {
       field === "id"
         ? query(collection(db, resource), limit(page * perPage))
         : query(
-          collection(db, resource),
-          orderBy(field, order.toLowerCase()),
-          limit(page * perPage)
-        );
+            collection(db, resource),
+            orderBy(field, order.toLowerCase()),
+            limit(page * perPage)
+          );
     return getDocs(q)
       .then((QuerySnapshot) => {
         // slice the results
@@ -198,7 +193,7 @@ export const myDataProvider = {
       .catch((error) => Promise.reject(error));
   },
   getOne: (resource, params) => {
-    console.log("getOne", params.id)
+    console.log("getOne", params.id);
     return getDoc(doc(db, resource, params.id))
       .then((doc) => {
         if (doc.exists()) {
@@ -212,10 +207,8 @@ export const myDataProvider = {
       });
   },
   getMany: (resource, params) => {
-    console.log("getMany", params.ids)
-    return Promise.all(
-      params.ids.map((id) => getDoc(doc(db, resource, id)))
-    )
+    console.log("getMany", params.ids);
+    return Promise.all(params.ids.map((id) => getDoc(doc(db, resource, id))))
       .then((arrayOfResults) => {
         return {
           data: arrayOfResults.map((documentSnapshot) =>
@@ -226,7 +219,7 @@ export const myDataProvider = {
       .catch((err) => Promise.reject(err));
   },
   getManyReference: (resource, params) => {
-    console.log("getManyReference")
+    console.log("getManyReference");
     const { target, id } = params;
     const { field, order } = params.sort;
     return getDocs(
@@ -248,36 +241,41 @@ export const myDataProvider = {
       .catch((err) => Promise.reject(err));
   },
   create: (resource, params) => {
-    const key = params.data.name.toLowerCase().split(' ').join('-')
-    console.log(`create key: ${key}`)
+    const key = params.data.name.toLowerCase().split(" ").join("-");
+    console.log(`create key: ${key}`);
     // Check if there is a file to upload
     var listOfFiles = Object.keys(params.data).filter(
       (key) => params.data[key].rawFile
     );
-    var storageRef = ref(storage, resource + "/" + params.data[listOfFiles[0]].rawFile.name);
+    var storageRef = ref(
+      storage,
+      resource + "/" + params.data[listOfFiles[0]].rawFile.name
+    );
     // return createOrUpdateFile(
     //   resource,
     //   params.data[listOfFiles[0]].rawFile,
     //   // uploadFileToBucket
     // )
-    console.log(listOfFiles)
-    if (listOfFiles.length === 0) return Promise.reject("Upload a Image First")
-    return uploadFileToBucket(params.data[listOfFiles[0]].rawFile, storageRef)
-      .then((downloadURL) => {
-        console.log("downloadURL: " + downloadURL)
-        delete params.data[listOfFiles[0]].rawFile;
-        params.data.image = downloadURL;
-        return setDoc(doc(db, resource, key), {
-          ...params.data,
-        })
-          .then((DocumentReference) => {
-            console.log(DocumentReference);
-            return {
-              data: { id: key, ...params.data },
-            };
-          })
-          .catch((err) => Promise.reject(err));
+    console.log(listOfFiles);
+    if (listOfFiles.length === 0) return Promise.reject("Upload a Image First");
+    return uploadFileToBucket(
+      params.data[listOfFiles[0]].rawFile,
+      storageRef
+    ).then((downloadURL) => {
+      console.log("downloadURL: " + downloadURL);
+      delete params.data[listOfFiles[0]].rawFile;
+      params.data.image = downloadURL;
+      return setDoc(doc(db, resource, key), {
+        ...params.data,
       })
+        .then((DocumentReference) => {
+          console.log(DocumentReference);
+          return {
+            data: { id: key, ...params.data },
+          };
+        })
+        .catch((err) => Promise.reject(err));
+    });
   },
   update: (resource, params) => {
     console.log("Update record id", params.id);
@@ -303,16 +301,17 @@ export const myDataProvider = {
   },
   deleteMany: (resource, params) => {
     console.log("Delete Many", params.ids);
-    return Promise.all(
-      params.ids.map((id) => deleteDoc(doc(db, resource, id)))).then(() => ({
-        data: params.ids
-      })).catch((err) => Promise.reject(err));
+    return Promise.all(params.ids.map((id) => deleteDoc(doc(db, resource, id))))
+      .then(() => ({
+        data: params.ids,
+      }))
+      .catch((err) => Promise.reject(err));
     // return {
     //   data: params.ids.map((id) =>
     //     deleteDoc(doc(db, resource, params.id)).then(() => id)
     //   ),
     // }
-  }
+  },
 };
 
 /**
@@ -334,10 +333,10 @@ export const firestoreProvider = (type, resource, params) => {
         field === "id"
           ? query(collection(db, resource), limit(page * perPage))
           : query(
-            collection(db, resource),
-            orderBy(field, order.toLowerCase()),
-            limit(page * perPage)
-          );
+              collection(db, resource),
+              orderBy(field, order.toLowerCase()),
+              limit(page * perPage)
+            );
       // TODO: Add Filter
       //   if (filter) {
       //     q = Object.keys(filter).reduce(
@@ -380,54 +379,54 @@ export const firestoreProvider = (type, resource, params) => {
     }
 
     // case CREATE: {
-      // Check if there is a file to upload
-      // var listOfFiles = Object.keys(params.data).filter(
-      //   (key) => params.data[key].rawFile
-      // );
-      // return Promise.all(
-      //   listOfFiles.map((key) => {
-      //     // Upload file to the Storage bucket
-      //     return createOrUpdateFile(
-      //       resource,
-      //       params.data[key].rawFile,
-      //       uploadFileToBucket
-      //     ).then((downloadURL) => {
-      //       return { key: key, downloadURL: downloadURL };
-      //     });
-      //   })
-      // ).then((arrayOfResults) => {
-      //   arrayOfResults.map((keyAndUrl) => {
-      //     // Remove rawFile attr as it will raise an error when setting the data
-      //     delete params.data[keyAndUrl.key].rawFile;
-      //     // Set the url to get the file
-      //     params.data[keyAndUrl.key].downloadURL = keyAndUrl.downloadURL;
-      //     return params.data;
-      //   });
+    // Check if there is a file to upload
+    // var listOfFiles = Object.keys(params.data).filter(
+    //   (key) => params.data[key].rawFile
+    // );
+    // return Promise.all(
+    //   listOfFiles.map((key) => {
+    //     // Upload file to the Storage bucket
+    //     return createOrUpdateFile(
+    //       resource,
+    //       params.data[key].rawFile,
+    //       uploadFileToBucket
+    //     ).then((downloadURL) => {
+    //       return { key: key, downloadURL: downloadURL };
+    //     });
+    //   })
+    // ).then((arrayOfResults) => {
+    //   arrayOfResults.map((keyAndUrl) => {
+    //     // Remove rawFile attr as it will raise an error when setting the data
+    //     delete params.data[keyAndUrl.key].rawFile;
+    //     // Set the url to get the file
+    //     params.data[keyAndUrl.key].downloadURL = keyAndUrl.downloadURL;
+    //     return params.data;
+    //   });
 
-      // if (type === CREATE) {
-      //   console.log("Creating the data");
-      //   return setDoc(doc(db, resource), {
-      //     ...params.data,
-      //   }).then((DocumentReference) =>
-      //     DocumentReference.get().then((DocumentSnapshot) => {
-      //       return { data: getDataWithId(DocumentSnapshot) };
-      //     })
-      //   );
-      // }
-
-      // if (type === UPDATE) {
-      //   console.log("Updating the data");
-      //   return db
-      //     .collection(resource)
-      //     .doc(params.id)
-      //     .set(params.data)
-      //     .then(() => {
-      //       return { data: params.data };
-      //     });
-      // }
-      // });
+    // if (type === CREATE) {
+    //   console.log("Creating the data");
+    //   return setDoc(doc(db, resource), {
+    //     ...params.data,
+    //   }).then((DocumentReference) =>
+    //     DocumentReference.get().then((DocumentSnapshot) => {
+    //       return { data: getDataWithId(DocumentSnapshot) };
+    //     })
+    //   );
     // }
-      // break;
+
+    // if (type === UPDATE) {
+    //   console.log("Updating the data");
+    //   return db
+    //     .collection(resource)
+    //     .doc(params.id)
+    //     .set(params.data)
+    //     .then(() => {
+    //       return { data: params.data };
+    //     });
+    // }
+    // });
+    // }
+    // break;
     case UPDATE_MANY: {
       // Will crash if there is a File Input in the params
       // TODO

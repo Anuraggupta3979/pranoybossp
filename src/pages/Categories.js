@@ -6,7 +6,7 @@ import Footer from "../components/footer/Footer";
 import { getAllProductsByCategory } from "../helper/firestore";
 
 const style = {
-  height: "80%",
+  height: "90%",
   width: "98.7vw",
 };
 

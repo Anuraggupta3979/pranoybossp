@@ -90,14 +90,7 @@ const useStyles = makeStyles((theme) => ({
       margin: "0px",
     },
   },
-  iconbox: {
-    display: "flex",
-    marginTop: "20px",
-    justifyContent: "flex-end",
-    [theme.breakpoints.down("sm")]: {
-      justifyContent: "center",
-    },
-  },
+
 }));
 
 const Footer = () => {
@@ -111,122 +104,12 @@ const Footer = () => {
           className={classes.footerHead}
           style={{ display: "flex" }}
         >
-          <Grid item xs={12} sm={6}>
+          <Grid item xs={12} >
             <img
               src="https://th.bing.com/th/id/R.b90e6a70729f5ef2b99b006fec52feff?rik=xkHeTSKG2xHd2g&riu=http%3a%2f%2fwww.transparentpng.com%2fthumb%2fhandicraft%2fgold-handicraft-png-15.png&ehk=IOLDqtT0WYdSNK72mMxrjUd2Lm2wTZZT6fyoStsyX0I%3d&risl=&pid=ImgRaw&r=0"
               alt="Logo"
               style={{ width: "150px", height: "50px", marginTop: "20px" }}
             />
-          </Grid>
-          <Grid item xs={12} sm={6} className={classes.iconbox}>
-            <Grid item>
-              <Grid
-                container
-                spacing={1}
-                direction="row"
-                justifyContent="flex-start"
-                alignItems="center"
-                onClick={() =>
-                  window.open("https://www.facebook.com/khatabook", "_blank")
-                }
-                className={classes.icon}
-              >
-                <Grid item className={classes.imageGridSocialMediaIcons}>
-                  <img
-                    src="./fb.svg"
-                    className={classes.socialMediaimages}
-                    alt="fb"
-                  />
-                </Grid>
-              </Grid>
-            </Grid>
-            <Grid item>
-              <Grid
-                container
-                spacing={1}
-                direction="row"
-                justifyContent="flex-start"
-                alignItems="center"
-                onClick={() =>
-                  window.open("https://twitter.com/Khatabook", "_blank")
-                }
-                className={classes.icon}
-              >
-                <Grid item className={classes.imageGridSocialMediaIcons}>
-                  <img
-                    src="./twitter.svg"
-                    className={classes.socialMediaimages}
-                    alt="twitter"
-                  />
-                </Grid>
-              </Grid>
-            </Grid>
-            <Grid item>
-              <Grid
-                container
-                spacing={1}
-                direction="row"
-                justifyContent="flex-start"
-                alignItems="center"
-                onClick={() =>
-                  window.open("https://www.instagram.com/khata.book/", "_blank")
-                }
-                className={classes.icon}
-              >
-                <Grid item className={classes.imageGridSocialMediaIcons}>
-                  <img
-                    src="./instagram.svg"
-                    className={classes.socialMediaimages}
-                    alt="insta"
-                  />
-                </Grid>
-              </Grid>
-            </Grid>
-            <Grid item>
-              <Grid
-                container
-                spacing={1}
-                direction="row"
-                justifyContent="flex-start"
-                alignItems="center"
-                onClick={() =>
-                  window.open("https://t.me/Khatabook_official", "_blank")
-                }
-                className={classes.icon}
-              >
-                <Grid item className={classes.imageGridSocialMediaIcons}>
-                  <img
-                    src="./telegram.svg"
-                    className={classes.socialMediaimages}
-                    alt="telegram"
-                  />
-                </Grid>
-              </Grid>
-            </Grid>
-            <Grid item>
-              <Grid
-                container
-                spacing={1}
-                direction="row"
-                justifyContent="flex-start"
-                alignItems="center"
-                onClick={() =>
-                  window.open(
-                    "https://www.linkedin.com/company/khatabook/?originalSubdomain=in",
-                    "_blank"
-                  )
-                }
-                className={classes.icon}
-              >
-                <Grid item className={classes.imageGridSocialMediaIcons}>
-                  <img
-                    src="./linkedin.svg"
-                    className={classes.socialMediaimages}
-                    alt="linkedin"
-                  />
-                </Grid>
-              </Grid>
-            </Grid>
           </Grid>
         </Grid>
       </Grid>
@@ -266,7 +149,7 @@ const Footer = () => {
               >
                 <Typography variant="subtitle2">Home</Typography>
               </Link> */}
-                <Typography variant="subtitle2">HOME</Typography>
+                <Typography variant="subtitle2">FAQ</Typography>
               </Grid>
               <Grid item>
                 {/* <Link
@@ -275,7 +158,7 @@ const Footer = () => {
               >
                 <Typography variant="subtitle2">Blog</Typography>
               </Link> */}
-                <Typography variant="subtitle2">ABOUT US</Typography>
+                <Typography variant="subtitle2">Tearms & condition</Typography>
               </Grid>
               <Grid item>
                 {/* <Link
@@ -306,7 +189,60 @@ const Footer = () => {
               alignItems="flex-start"
               spacing={2}
             >
-              <Grid item>
+              <Grid
+                style={{
+                  display: "flex",
+                  marginTop: "-48px",
+                  marginBottom: "20px",
+                }}
+              >
+                <Grid item>
+                  <Grid
+                    container
+                    spacing={1}
+                    direction="row"
+                    justifyContent="flex-start"
+                    alignItems="center"
+                    onClick={() =>
+                      window.open(
+                        "https://www.facebook.com/khatabook",
+                        "_blank"
+                      )
+                    }
+                    className={classes.icon}
+                  >
+                    <Grid item className={classes.imageGridSocialMediaIcons}>
+                      <img
+                        src="./fb.svg"
+                        className={classes.socialMediaimages}
+                        alt="fb"
+                      />
+                    </Grid>
+                  </Grid>
+                </Grid>
+                <Grid item>
+                  <Grid
+                    container
+                    spacing={1}
+                    direction="row"
+                    justifyContent="flex-start"
+                    alignItems="center"
+                    onClick={() =>
+                      window.open("https://twitter.com/Khatabook", "_blank")
+                    }
+                    className={classes.icon}
+                  >
+                    <Grid item className={classes.imageGridSocialMediaIcons}>
+                      <img
+                        src="./twitter.svg"
+                        className={classes.socialMediaimages}
+                        alt="twitter"
+                      />
+                    </Grid>
+                  </Grid>
+                </Grid>
+              </Grid>
+              <Grid item style={{ marginTop: "-20px" }}>
                 <Typography variant="h6">Newsletter</Typography>
               </Grid>
               <Newsletter></Newsletter>

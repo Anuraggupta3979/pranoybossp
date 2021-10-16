@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Admin, Resource, EditGuesser, ListGuesser } from "react-admin";
+import { Admin, Resource, } from "react-admin";
 // import jsonServerProvider from "ra-data-json-server";
 import Dashboard from "./Dashboard";
 import authProvider from "./authProvider";

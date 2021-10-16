@@ -38,7 +38,6 @@ import {
   ref,
   uploadBytes,
   getDownloadURL,
-  uploadBytesResumable,
 } from "firebase/storage";
 
 // // Required for side-effects
@@ -109,64 +108,64 @@ async function uploadFileToBucket(rawFile, storageRef) {
  * @param {Function} uploadFile the storage reference
  * @returns {Promise}  the promise of the URL where the file can be download from the bucket
  */
-async function createOrUpdateFile(resource, rawFile) {
-  console.log(
-    "Beginning upload file to storage bucket for file :",
-    rawFile.name
-  );
-  var storageRef = ref(storage, resource + "/" + rawFile.name);
-  // Check if the file already exist (same name, same size)
-  // In this case, no need to upload
-  const uploadTask = uploadBytesResumable(storageRef, rawFile);
+// async function createOrUpdateFile(resource, rawFile) {
+//   console.log(
+//     "Beginning upload file to storage bucket for file :",
+//     rawFile.name
+//   );
+//   var storageRef = ref(storage, resource + "/" + rawFile.name);
+//   // Check if the file already exist (same name, same size)
+//   // In this case, no need to upload
+//   const uploadTask = uploadBytesResumable(storageRef, rawFile);
 
-  // Register three observers:
-  // 1. 'state_changed' observer, called any time the state changes
-  // 2. Error observer, called on failure
-  // 3. Completion observer, called on successful completion
-  return uploadTask.on(
-    "state_changed",
-    (snapshot) => {
-      // Observe state change events such as progress, pause, and resume
-      // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
-      const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-      console.log("Upload is " + progress + "% done");
-      switch (snapshot.state) {
-        case "paused":
-          console.log("Upload is paused");
-          break;
-        case "running":
-          console.log("Upload is running");
-          break;
-      }
-    },
-    (error) => {
-      // Handle unsuccessful uploads
-      console.log(error);
-      //   return uploadFile(rawFile, storageRef)
-    },
-    () => {
-      // Handle successful uploads on complete
-      // For instance, get the download URL: https://firebasestorage.googleapis.com/...
-      return getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-        console.log("File available at", downloadURL)
-        return downloadURL
-      });
-    }
-  )
-  //     return storageRef.getMetadata()
-  //         .then( metadata => {
-  //             console.log(metadata)
-  //             if ( metadata && metadata.size === rawFile.size) {
-  //                 console.log("file already exists");
-  //                 return storageRef.getDownloadURL();
-  //             } else {
-  //                 return uploadFile(rawFile, storageRef)
-  //             }
-  //         })
-  //         .catch(
-  //             () => { console.log('File does not exist'); return uploadFile(rawFile, storageRef) }
-  //         );
-}
+//   // Register three observers:
+//   // 1. 'state_changed' observer, called any time the state changes
+//   // 2. Error observer, called on failure
+//   // 3. Completion observer, called on successful completion
+//   return uploadTask.on(
+//     "state_changed",
+//     (snapshot) => {
+//       // Observe state change events such as progress, pause, and resume
+//       // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+//       const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+//       console.log("Upload is " + progress + "% done");
+//       switch (snapshot.state) {
+//         case "paused":
+//           console.log("Upload is paused");
+//           break;
+//         case "running":
+//           console.log("Upload is running");
+//           break;
+//       }
+//     },
+//     (error) => {
+//       // Handle unsuccessful uploads
+//       console.log(error);
+//       //   return uploadFile(rawFile, storageRef)
+//     },
+//     () => {
+//       // Handle successful uploads on complete
+//       // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+//       return getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+//         console.log("File available at", downloadURL)
+//         return downloadURL
+//       });
+//     }
+//   )
+//     return storageRef.getMetadata()
+//         .then( metadata => {
+//             console.log(metadata)
+//             if ( metadata && metadata.size === rawFile.size) {
+//                 console.log("file already exists");
+//                 return storageRef.getDownloadURL();
+//             } else {
+//                 return uploadFile(rawFile, storageRef)
+//             }
+//         })
+//         .catch(
+//             () => { console.log('File does not exist'); return uploadFile(rawFile, storageRef) }
+//         );
+// }
 
 export const myDataProvider = {
   getList: (resource, params) => {
@@ -426,7 +425,7 @@ export const firestoreProvider = (type, resource, params) => {
       // }
       // });
     }
-
+      break;
     case UPDATE_MANY: {
       // Will crash if there is a File Input in the params
       // TODO

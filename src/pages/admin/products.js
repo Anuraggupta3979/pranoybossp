@@ -18,7 +18,7 @@ import { useMediaQuery } from "react-responsive";
 
 const postFilters = [
   <TextInput source="q" label="Search" alwaysOn />,
-  <ReferenceInput source="userId" label="User" reference="users" allowEmpty>
+  <ReferenceInput source="categoryId" label="Category" reference="categories" allowEmpty>
     <SelectInput optionText="name" />
   </ReferenceInput>,
 ];

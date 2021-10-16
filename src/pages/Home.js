@@ -5,11 +5,11 @@ import FeaturedProducts from "../components/home/product/FeaturedProducts";
 import HomeVideoBanner from "../sections/HomeVideoBanner";
 import AboutHeader from "../components/home/about/AboutHeader";
 import AboutHome from "../components/home/about/AboutHome";
-import { getAllCategories,getProductsByCategory } from "../helper/categories";
+import Navbar from "../components/navbar/Navbar";
+import { getAllCategories, getProductsByCategory } from "../helper/categories";
 import { getAllProducts } from "../helper/products";
 
 import Team from "../components/Team";
-import Navv from "../components/navbar/Navv";
 
 const Home = () => {
   const [categoryList, setCategoryList] = useState([]);
@@ -24,12 +24,12 @@ const Home = () => {
       setProductList(data);
       // console.log(productList);
     });
-    getProductsByCategory("1")
+    getProductsByCategory("1");
   }, []);
-  
+
   return (
     <div>
-      <Navv></Navv>
+      <Navbar></Navbar>
       <HomeVideoBanner />
       <AboutHeader />
       <FeaturedProducts productList={productList} />

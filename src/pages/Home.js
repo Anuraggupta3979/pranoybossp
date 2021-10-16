@@ -27,13 +27,13 @@ const Home = () => {
 
   return (
     <div>
-      <Navbar></Navbar>
+      <Navbar />
       <HomeVideoBanner />
       <AboutHeader />
       <FeaturedProducts productList={productList} />
       <Collections categoryList={categoryList} />
-      <AboutHome></AboutHome>
-      <Team></Team>
+      <AboutHome />
+      <Team />
       <Footer />
     </div>
   );

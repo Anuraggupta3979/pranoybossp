@@ -21,6 +21,7 @@ function FeaturedProducts({ productList }) {
             name={product.name}
             category={product.categoryId}
             desc={product.description}
+            key={product.name}
           />
         ))}
       </div>

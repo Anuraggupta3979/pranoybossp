@@ -2,7 +2,7 @@
 import {
   GET_LIST,
   GET_ONE,
-  CREATE,
+  // CREATE,
   UPDATE,
   UPDATE_MANY,
   DELETE,
@@ -260,6 +260,8 @@ export const myDataProvider = {
     //   params.data[listOfFiles[0]].rawFile,
     //   // uploadFileToBucket
     // )
+    console.log(listOfFiles)
+    if (listOfFiles.length === 0) return Promise.reject("Upload a Image First")
     return uploadFileToBucket(params.data[listOfFiles[0]].rawFile, storageRef)
       .then((downloadURL) => {
         console.log("downloadURL: " + downloadURL)
@@ -326,7 +328,7 @@ export const firestoreProvider = (type, resource, params) => {
     case GET_LIST: {
       const { page, perPage } = params.pagination;
       const { field, order } = params.sort;
-      const filter = params.filter;
+      // const filter = params.filter;
       // query all the docs from the first to page*perPage
       var q =
         field === "id"
@@ -377,7 +379,7 @@ export const firestoreProvider = (type, resource, params) => {
       return updateDoc(doc(db, resource, params.id), { ...params.data });
     }
 
-    case CREATE: {
+    // case CREATE: {
       // Check if there is a file to upload
       // var listOfFiles = Object.keys(params.data).filter(
       //   (key) => params.data[key].rawFile
@@ -402,16 +404,16 @@ export const firestoreProvider = (type, resource, params) => {
       //     return params.data;
       //   });
 
-      if (type === CREATE) {
-        console.log("Creating the data");
-        return setDoc(doc(db, resource), {
-          ...params.data,
-        }).then((DocumentReference) =>
-          DocumentReference.get().then((DocumentSnapshot) => {
-            return { data: getDataWithId(DocumentSnapshot) };
-          })
-        );
-      }
+      // if (type === CREATE) {
+      //   console.log("Creating the data");
+      //   return setDoc(doc(db, resource), {
+      //     ...params.data,
+      //   }).then((DocumentReference) =>
+      //     DocumentReference.get().then((DocumentSnapshot) => {
+      //       return { data: getDataWithId(DocumentSnapshot) };
+      //     })
+      //   );
+      // }
 
       // if (type === UPDATE) {
       //   console.log("Updating the data");
@@ -424,8 +426,8 @@ export const firestoreProvider = (type, resource, params) => {
       //     });
       // }
       // });
-    }
-      break;
+    // }
+      // break;
     case UPDATE_MANY: {
       // Will crash if there is a File Input in the params
       // TODO

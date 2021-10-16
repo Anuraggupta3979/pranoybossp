@@ -14,30 +14,22 @@ import {
   ImageField,
   ImageInput,
 } from "react-admin";
-import { useMediaQuery } from "react-responsive";
-
-const postFilters = [
-  <TextInput source="q" label="Search" alwaysOn />,
-  <ReferenceInput source="categoryId" label="Category" reference="categories" allowEmpty>
-    <SelectInput optionText="name" />
-  </ReferenceInput>,
-];
+// import { useMediaQuery } from "react-responsive";
 
 const PostTitle = ({ record }) => {
   return <span>Post {record ? `"${record.title}"` : ""}</span>;
 };
 
 export const ProductList = (props) => {
-  const isTabletOrMobileDevice = useMediaQuery({
-    query: "(max-device-width: 768px)",
-  });
+  // const isTabletOrMobileDevice = useMediaQuery({
+  //   query: "(max-device-width: 768px)",
+  // });
   return (
-    <List filters={postFilters} {...props}>
+    <List {...props}>
       {/* {!isTabletOrMobileDevice ? ( */}
       <Datagrid rowClick="edit">
         <TextField source="id" />
         <TextField source="name" />
-        <TextField source="description" />
         <ReferenceField source="categoryId" reference="categories">
           <TextField source="id" />
         </ReferenceField>
@@ -76,12 +68,12 @@ export const ProductEdit = (props) => (
 export const ProductCreate = (props) => (
   <Create {...props}>
     <SimpleForm>
-      <TextInput source="name" />
-      <TextInput source="description" />
+      <TextInput required source="name" />
+      <TextInput required source="description" />
       <ReferenceInput source="categoryId" reference="categories">
         <SelectInput optionText="name" />
       </ReferenceInput>
-      <ImageInput source="image" label="Images" accept="image/*">
+      <ImageInput required source="image" label="Images" accept="image/*">
         <ImageField source="image" />
       </ImageInput>
     </SimpleForm>

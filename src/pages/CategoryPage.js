@@ -29,7 +29,7 @@ const CategoryPage = () => {
       setCategory(categoryDoc);
     } catch (err) {
       console.log("error", err);
-      // history.push(`/`)
+      history.push(`/`)
     }
   };
 

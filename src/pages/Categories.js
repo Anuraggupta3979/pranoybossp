@@ -11,13 +11,20 @@ const style = {
 };
 
 const Categories = () => {
-  const [productDict, setProductDict] = useState({});
+  const [productDict, setProductDict] = useState({
+    categories: [],
+    productsArray: []
+  });
+
+  const getData = async () => {
+    const data = await getAllProductsByCategory()
+    setProductDict(data)
+  }
+
   useEffect(() => {
-    getAllProductsByCategory().then(data => {
-      setProductDict(data)
-      console.log(data)
-    })
+    getData();
   }, []);
+  useEffect(() => { console.log(productDict) }, [productDict]);
   const ProductCards = ({ productList }) => {
     console.log(productList)
     return (
@@ -54,7 +61,7 @@ const Categories = () => {
           <ProductCards productList={productDict.productsArray[index]} />
         </>
       ))}
-      {JSON.stringify(productDict.categories)}
+      {/* {JSON.stringify(productDict.categories)} */}
       <Footer />
     </div>
   );

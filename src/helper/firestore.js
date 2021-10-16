@@ -37,7 +37,7 @@ export const getAllProductsByCategory = async (length = 4) => {
         where("categoryId", "==", category.id),
         limit(length)
       ))
-    lst.length = 0
+    lst = []
     querySnapshot.forEach((doc) => {
       // doc.data() is never undefined for query doc snapshots
       // console.log(doc.id, " => ", doc.data());

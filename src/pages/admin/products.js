@@ -16,8 +16,8 @@ import {
 } from "react-admin";
 // import { useMediaQuery } from "react-responsive";
 
-const PostTitle = ({ record }) => {
-  return <span>Post {record ? `"${record.title}"` : ""}</span>;
+const ProductTitle = ({ record }) => {
+  return <span>product {record ? `"${record.name}"` : ""}</span>;
 };
 
 export const ProductList = (props) => {
@@ -50,7 +50,7 @@ export const ProductList = (props) => {
 };
 
 export const ProductEdit = (props) => (
-  <Edit title={<PostTitle />} {...props}>
+  <Edit title={<ProductTitle />} {...props}>
     <SimpleForm>
       <TextInput disabled source="id" />
       <TextInput source="name" />
@@ -66,7 +66,7 @@ export const ProductEdit = (props) => (
 );
 
 export const ProductCreate = (props) => (
-  <Create {...props}>
+  <Create title={<ProductTitle />} {...props}>
     <SimpleForm>
       <TextInput required source="name" />
       <TextInput required source="description" />

@@ -12,6 +12,10 @@ import {
   ImageField
 } from "react-admin";
 
+const CategoryTitle = ({ record }) => {
+  return <span>category {record ? `"${record.name}"` : ""}</span>;
+};
+
 export const CategoryList = (props) => (
   <List {...props}>
     <Datagrid rowClick="edit">
@@ -25,7 +29,7 @@ export const CategoryList = (props) => (
 );
 
 export const CategoryEdit = (props) => (
-  <Edit {...props}>
+  <Edit title={<CategoryTitle />} {...props}>
     <SimpleForm>
       <TextInput disabled source="id" />
       <TextInput source="name" />
@@ -39,7 +43,7 @@ export const CategoryEdit = (props) => (
 );
 
 export const CategoryCreate = (props) => (
-  <Create {...props}>
+  <Create title={<CategoryTitle />} {...props}>
     <SimpleForm>
       <TextInput source="name" />
       <TextInput source="description" />

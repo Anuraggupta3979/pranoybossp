@@ -1,13 +1,15 @@
 import React, { useEffect } from "react";
 import { Grid, Typography } from "@material-ui/core";
 import AboutCategoriesCard from "./AboutCategoriesCard";
-import { getAllCategories } from "../../helper/categories";
+import { getAllDocs } from "../../helper/firestore";
 // import { db } from "../../firebase";
 function Categories() {
   const [post, setpost] = React.useState([]);
   useEffect(() => {
-    getAllCategories().then((data) => setpost(data));
-  }, []);
+    getAllDocs("categories").then((data) => {
+      setpost(data);
+    });
+  });
 
   return (
     <Grid>

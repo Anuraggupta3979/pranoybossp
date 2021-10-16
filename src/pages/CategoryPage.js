@@ -3,7 +3,6 @@ import { useHistory, useParams } from "react-router";
 import { getProductsByCategory, getDocById } from "../helper/firestore";
 import Navbar from "../components/navbar/Navbar";
 import ProductCard from "../components/home/product/ProductCard";
-// import CustomButton from "../components/Button";
 import Footer from "../components/footer/Footer";
 
 const style = {

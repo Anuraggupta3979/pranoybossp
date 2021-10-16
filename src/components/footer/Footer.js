@@ -1,6 +1,14 @@
 import React from "react";
 import { Grid, makeStyles, Typography } from "@material-ui/core";
 import Newsletter from "../newsletter/Newsletter";
+// import footerleft from "../../../public/footer-left.png";
+import footerleft from "../../assets/image/footer-left.png";
+import footerright from "../../assets/image/footer-right.png";
+import fb from "../../assets/image/fb.svg";
+import call from "../../assets/image/mobile-footer.png";
+import mail from "../../assets/image/mail-footer.png";
+import address from "../../assets/image/location-footer.png";
+import insta from "../../assets/image/instagram.svg";
 const useStyles = makeStyles((theme) => ({
   footer: {
     padding: "0 60px 0 250px",
@@ -90,7 +98,6 @@ const useStyles = makeStyles((theme) => ({
       margin: "0px",
     },
   },
-
 }));
 
 const Footer = () => {
@@ -104,7 +111,7 @@ const Footer = () => {
           className={classes.footerHead}
           style={{ display: "flex" }}
         >
-          <Grid item xs={12} >
+          <Grid item xs={12}>
             <img
               src="https://th.bing.com/th/id/R.b90e6a70729f5ef2b99b006fec52feff?rik=xkHeTSKG2xHd2g&riu=http%3a%2f%2fwww.transparentpng.com%2fthumb%2fhandicraft%2fgold-handicraft-png-15.png&ehk=IOLDqtT0WYdSNK72mMxrjUd2Lm2wTZZT6fyoStsyX0I%3d&risl=&pid=ImgRaw&r=0"
               alt="Logo"
@@ -120,13 +127,9 @@ const Footer = () => {
           direction="row"
           justifyContent="center"
         >
+          <img src={footerleft} className={classes.leftImg} alt="footer-left" />
           <img
-            src="./footer-left.png"
-            className={classes.leftImg}
-            alt="footer-left"
-          />
-          <img
-            src="./footer-right.png"
+            src={footerright}
             className={classes.rightImg}
             alt="footer-right"
           />
@@ -205,7 +208,7 @@ const Footer = () => {
                     alignItems="center"
                     onClick={() =>
                       window.open(
-                        "https://www.facebook.com/khatabook",
+                        "https://www.facebook.com",
                         "_blank"
                       )
                     }
@@ -213,7 +216,7 @@ const Footer = () => {
                   >
                     <Grid item className={classes.imageGridSocialMediaIcons}>
                       <img
-                        src="./fb.svg"
+                        src={fb}
                         className={classes.socialMediaimages}
                         alt="fb"
                       />
@@ -228,13 +231,13 @@ const Footer = () => {
                     justifyContent="flex-start"
                     alignItems="center"
                     onClick={() =>
-                      window.open("https://twitter.com/Khatabook", "_blank")
+                      window.open("https://instagram.com/", "_blank")
                     }
                     className={classes.icon}
                   >
                     <Grid item className={classes.imageGridSocialMediaIcons}>
                       <img
-                        src="./twitter.svg"
+                        src={insta}
                         className={classes.socialMediaimages}
                         alt="twitter"
                       />
@@ -271,7 +274,7 @@ const Footer = () => {
                 <Grid container spacing={1}>
                   <Grid item>
                     <img
-                      src="./mobile-footer.png"
+                      src={call}
                       className={classes.contactImages}
                       alt="mobile-footer"
                     />
@@ -285,7 +288,7 @@ const Footer = () => {
                 <Grid container spacing={1}>
                   <Grid item>
                     <img
-                      src="./location-footer.png"
+                      src={address}
                       className={classes.contactImages}
                       alt="location"
                     />
@@ -302,7 +305,7 @@ const Footer = () => {
                 <Grid container spacing={1}>
                   <Grid item>
                     <img
-                      src="./mail-footer.png"
+                      src={mail}
                       className={classes.contactImages}
                       alt="mail"
                     />

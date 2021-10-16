@@ -33,6 +33,12 @@ export const getDocById = async (resource, docId) => {
   const object = { id: docInstance.id, ...docInstance.data() };
   return object;
 };
+export const getAllCategory = async (resource, docId) => {
+  const docInstance = await getDocs(collection(db, "category"));
+  // console.log(docInstance.data());
+  console.log(docInstance);
+  // return object;
+};
 
 export const getProductsByCategory = async (categoryId) => {
   var querySnapshot = await getDocs(

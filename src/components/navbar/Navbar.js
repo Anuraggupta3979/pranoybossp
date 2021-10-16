@@ -42,7 +42,7 @@ function Navv() {
                 className="link"
               >
                 <ReactBootStrap.Nav>
-                  <Link className="nav-link  droplink  " to="/categories">
+                  <Link className="nav-link  droplink  " to="/category">
                     Categories
                   </Link>
                 </ReactBootStrap.Nav>

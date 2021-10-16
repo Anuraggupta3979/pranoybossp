@@ -1,8 +1,8 @@
-import { collection, getDocs, where } from "firebase/firestore";
+import { collection, getDocs, where, getDoc } from "firebase/firestore";
 import { db } from "../firebase";
 
-export const getAllCategories = async () => {
-  const querySnapshot = await getDocs(collection(db, "categories"));
+export const getAllDocs = async (resource) => {
+  const querySnapshot = await getDocs(collection(db, resource));
   var lst = [];
   querySnapshot.forEach((doc) => {
     // doc.data() is never undefined for query doc snapshots
@@ -12,6 +12,10 @@ export const getAllCategories = async () => {
 
   return lst;
 };
+
+export const getDocByID = async () => {
+  const q = await getDoc(collection)
+}
 
 export const getProductsByCategory = async (categoryName) => {
   const querySnapshot = await getDocs(collection(db, "categories"));
@@ -35,3 +39,4 @@ export const getProductsByCategory = async (categoryName) => {
   });
   return lst;
 };
+

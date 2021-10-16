@@ -4,6 +4,7 @@ import TermsAndCondition from "./pages/TermsAndCondition";
 import AboutUs from "./pages/About";
 import Home from "./pages/Home";
 import Categories from "./pages/Categories";
+import CategoryPage from "./pages/CategoryPage";
 import AdminPage from "./pages/admin"
 import {Switch, Route } from "react-router-dom";
 
@@ -16,6 +17,7 @@ function App() {
           <Route path="/terms" component={TermsAndCondition} exact />
           <Route path="/faq" component={Faqs} exact />
           <Route path="/categories" component={Categories} exact />
+          <Route path="/category/:categoryId" component={CategoryPage} exact />
           <Route path="/admin" component={AdminPage} exact />
         </Switch>
     </div>

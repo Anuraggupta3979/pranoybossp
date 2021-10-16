@@ -6,8 +6,7 @@ import HomeVideoBanner from "../sections/HomeVideoBanner";
 import AboutHeader from "../components/home/about/AboutHeader";
 import AboutHome from "../components/home/about/AboutHome";
 import Navbar from "../components/navbar/Navbar";
-import { getAllCategories, getProductsByCategory } from "../helper/categories";
-import { getAllProducts } from "../helper/products";
+import { getAllDocs } from "../helper/firestore";
 
 import Team from "../components/Team";
 
@@ -16,15 +15,14 @@ const Home = () => {
   const [productList, setProductList] = useState([]);
 
   useEffect(() => {
-    getAllCategories().then((data) => {
+    getAllDocs("categories").then((data) => {
       setCategoryList(data);
       // console.log(data);
     });
-    getAllProducts().then((data) => {
-      setProductList(data);
+    getAllDocs("products", 4).then((products) => {
+      setProductList(products);
       // console.log(productList);
     });
-    getProductsByCategory("1");
   }, []);
 
   return (

@@ -11,6 +11,8 @@ import {
   ReferenceInput,
   SelectInput,
   TextInput,
+  ImageField,
+  ImageInput,
 } from "react-admin";
 import { useMediaQuery } from "react-responsive";
 
@@ -64,7 +66,9 @@ export const ProductEdit = (props) => (
       <ReferenceInput source="categoryId" reference="categories">
         <SelectInput optionText="name" />
       </ReferenceInput>
-      <TextInput source="image" />
+      {/* <ImageInput source="image" label="Images" accept="image/*"> */}
+        <ImageField source="image" />
+      {/* </ImageInput> */}
     </SimpleForm>
   </Edit>
 );
@@ -77,7 +81,9 @@ export const ProductCreate = (props) => (
       <ReferenceInput source="categoryId" reference="categories">
         <SelectInput optionText="name" />
       </ReferenceInput>
-      <TextInput source="image" />
+      <ImageInput source="image" label="Images" accept="image/*">
+        <ImageField source="image" />
+      </ImageInput>
     </SimpleForm>
   </Create>
 );

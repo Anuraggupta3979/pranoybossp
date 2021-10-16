@@ -8,6 +8,8 @@ import {
   SimpleForm,
   Create,
   TextInput,
+  ImageInput,
+  ImageField
 } from "react-admin";
 
 export const CategoryList = (props) => (
@@ -27,8 +29,11 @@ export const CategoryEdit = (props) => (
     <SimpleForm>
       <TextInput disabled source="id" />
       <TextInput source="name" />
-      <TextInput source="image" />
+      {/* <TextInput source="image" /> */}
       <TextInput source="description" />
+      {/* <ImageInput source="image" label="Images" accept="image/*"> */}
+        <ImageField source="image" />
+      {/* </ImageInput> */}
     </SimpleForm>
   </Edit>
 );
@@ -37,8 +42,10 @@ export const CategoryCreate = (props) => (
   <Create {...props}>
     <SimpleForm>
       <TextInput source="name" />
-      <TextInput source="image" />
       <TextInput source="description" />
+      <ImageInput source="image" label="Images" accept="image/*">
+        <ImageField source="image" />
+      </ImageInput>
     </SimpleForm>
   </Create>
 );

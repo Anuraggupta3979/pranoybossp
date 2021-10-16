@@ -87,7 +87,7 @@ async function uploadFileToBucket(rawFile, storageRef) {
     })
     .catch((error) => {
       console.log(error);
-      throw new Error({ message: error.message_, status: 401 });
+      return new Error({ message: error.message_, status: 401 });
     });
   // return storageRef.put(rawFile)
   //     .then( snapshot => {
@@ -109,7 +109,7 @@ async function uploadFileToBucket(rawFile, storageRef) {
  * @param {Function} uploadFile the storage reference
  * @returns {Promise}  the promise of the URL where the file can be download from the bucket
  */
-async function createOrUpdateFile(resource, rawFile, uploadFile) {
+async function createOrUpdateFile(resource, rawFile) {
   console.log(
     "Beginning upload file to storage bucket for file :",
     rawFile.name
@@ -123,7 +123,7 @@ async function createOrUpdateFile(resource, rawFile, uploadFile) {
   // 1. 'state_changed' observer, called any time the state changes
   // 2. Error observer, called on failure
   // 3. Completion observer, called on successful completion
-  uploadTask.on(
+  return uploadTask.on(
     "state_changed",
     (snapshot) => {
       // Observe state change events such as progress, pause, and resume
@@ -141,17 +141,18 @@ async function createOrUpdateFile(resource, rawFile, uploadFile) {
     },
     (error) => {
       // Handle unsuccessful uploads
-      console.log("File does not exist");
+      console.log(error);
       //   return uploadFile(rawFile, storageRef)
     },
     () => {
       // Handle successful uploads on complete
       // For instance, get the download URL: https://firebasestorage.googleapis.com/...
       return getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-        console.log("File available at", downloadURL);
+        console.log("File available at", downloadURL)
+        return downloadURL
       });
     }
-  );
+  )
   //     return storageRef.getMetadata()
   //         .then( metadata => {
   //             console.log(metadata)
@@ -248,20 +249,34 @@ export const myDataProvider = {
       .catch((err) => Promise.reject(err));
   },
   create: (resource, params) => {
-    console.log("Creating the data");
-    console.log(params.data.name);
     const key = params.data.name.toLowerCase().split(' ').join('-')
-    console.log(key)
-    return setDoc(doc(db, resource, key), {
-      ...params.data,
-    })
-      .then((DocumentReference) => {
-        console.log(DocumentReference);
-        return {
-          data: { id: key, ...params.data },
-        };
+    console.log(`create key: ${key}`)
+    // Check if there is a file to upload
+    var listOfFiles = Object.keys(params.data).filter(
+      (key) => params.data[key].rawFile
+    );
+    var storageRef = ref(storage, resource + "/" + params.data[listOfFiles[0]].rawFile.name);
+    // return createOrUpdateFile(
+    //   resource,
+    //   params.data[listOfFiles[0]].rawFile,
+    //   // uploadFileToBucket
+    // )
+    return uploadFileToBucket(params.data[listOfFiles[0]].rawFile, storageRef)
+      .then((downloadURL) => {
+        console.log("downloadURL: " + downloadURL)
+        delete params.data[listOfFiles[0]].rawFile;
+        params.data.image = downloadURL;
+        return setDoc(doc(db, resource, key), {
+          ...params.data,
+        })
+          .then((DocumentReference) => {
+            console.log(DocumentReference);
+            return {
+              data: { id: key, ...params.data },
+            };
+          })
+          .catch((err) => Promise.reject(err));
       })
-      .catch((err) => Promise.reject(err));
   },
   update: (resource, params) => {
     console.log("Update record id", params.id);
@@ -289,8 +304,8 @@ export const myDataProvider = {
     console.log("Delete Many", params.ids);
     return Promise.all(
       params.ids.map((id) => deleteDoc(doc(db, resource, id)))).then(() => ({
-      data: params.ids
-    })).catch((err) => Promise.reject(err));
+        data: params.ids
+      })).catch((err) => Promise.reject(err));
     // return {
     //   data: params.ids.map((id) =>
     //     deleteDoc(doc(db, resource, params.id)).then(() => id)

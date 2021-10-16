@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 // import "./Navbar.css";
 import * as ReactBootStrap from "react-bootstrap";
 import "../../assets/css/Navbar.css";
 import { Link, withRouter } from "react-router-dom";
+import { getAllDocs } from "../../helper/firestore";
+
 function Navv() {
+  const [categoryList, setCategoryList] = useState([]);
+  useEffect(() => {
+    getAllDocs("categories").then((data) => {
+      console.log("here");
+      setCategoryList(data);
+      // console.log(data);
+    });
+  }, []);
   return (
     <div>
       <ReactBootStrap.Navbar
@@ -42,45 +52,20 @@ function Navv() {
                 className="link"
               >
                 <ReactBootStrap.Nav>
-                  <Link className="nav-link  droplink  " to="/about">
-                    About
+                  <Link className="nav-link droplink" to="/categories">
+                    Categories
                   </Link>
                 </ReactBootStrap.Nav>
-                <ReactBootStrap.Nav>
-                  <Link className="nav-link  droplink  " to="/about">
-                    About
-                  </Link>
-                </ReactBootStrap.Nav>
-                <ReactBootStrap.Nav>
-                  <Link className="nav-link  droplink  " to="/about">
-                    About
-                  </Link>
-                </ReactBootStrap.Nav>
-                <ReactBootStrap.Nav>
-                  <Link className="nav-link droplink  " to="/about">
-                    About
-                  </Link>
-                </ReactBootStrap.Nav>
-                <ReactBootStrap.Nav>
-                  <Link className="nav-link  droplink  " to="/about">
-                    About
-                  </Link>
-                </ReactBootStrap.Nav>
-                <ReactBootStrap.Nav>
-                  <Link className="nav-link  droplink  " to="/about">
-                    About
-                  </Link>
-                </ReactBootStrap.Nav>
-                <ReactBootStrap.Nav>
-                  <Link className="nav-link  droplink  " to="/about">
-                    About
-                  </Link>
-                </ReactBootStrap.Nav>
-                <ReactBootStrap.Nav>
-                  <Link className="nav-link  droplink  " to="/about">
-                    About
-                  </Link>
-                </ReactBootStrap.Nav>
+                {categoryList.map((category) => (
+                  <ReactBootStrap.Nav>
+                    <Link
+                      className="nav-link mr-5 link"
+                      to={`/category/${category.id}`}
+                    >
+                      {category.name}
+                    </Link>
+                  </ReactBootStrap.Nav>
+                ))}
               </ReactBootStrap.NavDropdown>
               <ReactBootStrap.Nav>
                 <Link className="nav-link   link" to="/blog">

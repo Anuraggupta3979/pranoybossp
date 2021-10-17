@@ -31,6 +31,7 @@ export const TeamEdit = (props) => (
     <SimpleForm>
       <TextInput disabled source="id" />
       <TextInput source="name" />
+      <TextInput source="description" />
       <ImageField source="image" />
     </SimpleForm>
   </Edit>
@@ -40,6 +41,8 @@ export const TeamCreate = (props) => (
   <Create title={<TeamTitle />} {...props}>
     <SimpleForm>
       <TextInput source="name" />
+
+      <TextInput source="description" />
       <ImageInput source="image" label="Images" accept="image/*">
         <ImageField source="image" />
       </ImageInput>

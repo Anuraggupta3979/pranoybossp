@@ -21,11 +21,7 @@ const style = {
     boxShadow: 24,
     // p: 4,
   },
-  image: {
-    aspectRatio: "default",
-    height: "70vh",
-    marginRight: "20px",
-  },
+
   content: {
     marginTop: "60px",
     marginRight: "20px",
@@ -51,10 +47,6 @@ const ProductCard = ({ image, name, category, description }) => {
       <button onClick={handleOpen} className="product-modal-button">
         <figure className="box">
           <img src={image} alt="sample36" />
-          <figcaption>
-            <div>{/* <i className="ion-ios-home-outline"></i> */}</div>
-          </figcaption>
-          {/* <a href="#"></a> */}
         </figure>
         <div>
           <p className="text-center">{name}</p>

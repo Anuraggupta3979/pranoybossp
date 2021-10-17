@@ -36,6 +36,7 @@ figure.box {
   margin: 10px;
   min-width: 230px;
   max-width: 345px;
+  min-height: 500px;
   width: 100%;
   color: #ffffff;
   font-size: 16px;
@@ -52,9 +53,19 @@ figure.box *:after {
   transition: all 0.4s ease;
 }
 figure.box img {
-  max-width: 100%;
+  /* max-width: 100%; */
   backface-visibility: hidden;
   vertical-align: top;
+  /* object-fit: cover; */
+}
+figure.box img {
+  max-height: 500px;
+  min-height: 500px;
+  vertical-align: top;
+  /* -webkit-transition: all 2s ease-out; */
+  /* transition: all 2s ease-out; */
+  object-fit: contain;
+  /* opacity: 0.8; */
 }
 figure.box figcaption {
   position: absolute;
@@ -83,50 +94,7 @@ figure.box figcaption:before {
   -webkit-transform: translateY(100%);
   transform: translateY(100%);
 }
-figure.box figcaption:after {
-  bottom: 0;
-  right: 0;
-  -webkit-transform: translateY(-100%);
-  transform: translateY(-100%);
-}
-figure.box figcaption div:before,
-figure.box figcaption div:after {
-  width: 50%;
-  height: 50%;
-  position: absolute;
-  content: "";
-  /*   background-color: #000000; */
-}
-figure.box figcaption div:before {
-  top: 0;
-  right: 0;
-  -webkit-transform: translateX(-100%);
-  transform: translateX(-100%);
-}
-figure.box figcaption div:after {
-  bottom: 0;
-  left: 0;
-  -webkit-transform: translateX(100%);
-  transform: translateX(100%);
-}
-figure.box i {
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  font-size: 4em;
-  z-index: 1;
-  opacity: 0;
-}
-figure.box a {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
-}
+
 figure.box:hover img,
 figure.box.hover img {
   zoom: 1;
@@ -142,16 +110,4 @@ figure.box.hover i {
   -webkit-animation: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
     both;
   animation: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-}
-figure.box:hover figcaption:before,
-figure.box.hover figcaption:before,
-figure.box:hover figcaption:after,
-figure.box.hover figcaption:after,
-figure.box:hover figcaption div:before,
-figure.box.hover figcaption div:before,
-figure.box:hover figcaption div:after,
-figure.box.hover figcaption div:after {
-  -webkit-transform: translate(0, 0);
-  transform: translate(0, 0);
-  opacity: 0.8;
 }

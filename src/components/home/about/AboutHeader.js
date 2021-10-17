@@ -20,7 +20,7 @@ function AboutHeader() {
   const classes = useStyles({});
   return (
     <Grid item className={classes.about}>
-      <Grid item sm={3}>
+      <Grid item sm={4}>
         <Typography className={classes.aboutheading}>
           Adorning the traditional Creativity
         </Typography>

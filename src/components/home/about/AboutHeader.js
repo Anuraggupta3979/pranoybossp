@@ -21,10 +21,13 @@ function AboutHeader() {
   return (
     <Grid item className={classes.about}>
       <Grid item sm={4}>
-        <Typography className={classes.aboutheading}>
+        <Typography
+          className={classes.aboutheading}
+          style={{ fontFamily: ` "Poppins",sans-serif` }}
+        >
           Adorning the traditional Creativity
         </Typography>
-        <Typography>
+        <Typography style={{ fontFamily: ` "Poppins",sans-serif` }}>
           We ensure to satiate your desire with the most exclusive handcraft
           collection, embracing the spirit of magnificent Indian Handicrafts.
           Revamp your surroundings with the authentic and intricate crafts by

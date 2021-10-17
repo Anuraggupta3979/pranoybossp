@@ -81,6 +81,7 @@ const ProductCard = ({ image, name, category, description, id }) => {
               <Typography id="modal-modal-title" variant="h6" component="h2">
                 {name}
               </Typography>
+
               <Typography id="modal-modal-description" sx={{ mt: 2 }}>
                 {description}
               </Typography>

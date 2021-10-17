@@ -31,22 +31,20 @@
 }
 
 .product-card-image {
-  /* width: 40px;
-  height: 150px;
-  margin-right: 20px; */
-  width: 345px; /* width of container */
-  height: 440px; /* height of container */
+  width: 320px; /* width of container */
+  height: 400px; /* height of container */
   object-fit: cover;
-  /* border: 5px solid black; */
 }
 
 .product-anchor {
   text-decoration: none;
-  color: black;
+  color: #23232c;
+  /* font-size: 20px; */
+  font-family: "Poppins", sans-serif;
 }
 
 .product-anchor:hover {
-  text-decoration: underline;
+  border-bottom: 1pxx solid black;
   color: black;
 }
 
@@ -54,10 +52,7 @@ figure.box {
   position: relative;
   overflow: hidden;
   margin: 10px;
-  min-width: 230px;
-  max-width: 345px;
-  min-height: 500px;
-  width: 100%;
+
   color: #ffffff;
   font-size: 16px;
   background-color: #000000;
@@ -73,19 +68,13 @@ figure.box *:after {
   transition: all 0.4s ease;
 }
 figure.box img {
-  /* max-width: 100%; */
   backface-visibility: hidden;
   vertical-align: top;
-  /* object-fit: cover; */
 }
 figure.box img {
-  max-height: 500px;
-  min-height: 500px;
   vertical-align: top;
-  /* -webkit-transition: all 2s ease-out; */
-  /* transition: all 2s ease-out; */
+
   object-fit: contain;
-  /* opacity: 0.8; */
 }
 figure.box figcaption {
   position: absolute;
@@ -106,7 +95,6 @@ figure.box figcaption:after {
   width: 50%;
   position: absolute;
   content: "";
-  /*   background-color: #080808; */
 }
 figure.box figcaption:before {
   top: 0;
@@ -125,8 +113,7 @@ figure.box.hover img {
 figure.box:hover i,
 figure.box.hover i {
   opacity: 0.7;
-  /*   -webkit-transition-delay: 0.2s;
-  transition-delay: 0.2s; */
+
   -webkit-animation: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
     both;
   animation: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;

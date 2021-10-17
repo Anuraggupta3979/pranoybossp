@@ -29,7 +29,7 @@ const Home = () => {
     <Grid>
       <Navbar />
       <HomeVideoBanner />
-      <Grid style={{ width: "95%", margin: "auto" }}>
+      <Grid style={{ width: "97%", margin: "auto" }}>
         <AboutHeader />
         <FeaturedProducts productList={productList} />
         <Collections categoryList={categoryList} />

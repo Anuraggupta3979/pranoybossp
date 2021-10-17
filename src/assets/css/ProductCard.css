@@ -30,6 +30,26 @@
   background-color: transparent;
 }
 
+.product-card-image {
+  /* width: 40px;
+  height: 150px;
+  margin-right: 20px; */
+  width: 345px; /* width of container */
+  height: 440px; /* height of container */
+  object-fit: cover;
+  /* border: 5px solid black; */
+}
+
+.product-anchor {
+  text-decoration: none;
+  color: black;
+}
+
+.product-anchor:hover {
+  text-decoration: underline;
+  color: black;
+}
+
 figure.box {
   position: relative;
   overflow: hidden;

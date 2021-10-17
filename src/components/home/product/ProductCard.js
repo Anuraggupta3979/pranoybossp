@@ -9,7 +9,7 @@ import CloseIcon from "@mui/icons-material/Close";
 const style = {
   main: {
     display: "flex",
-    justifyContent: "space-around",
+    justifyContent: "space-between",
     align: "space-around",
     position: "absolute",
     top: "50%",
@@ -22,13 +22,14 @@ const style = {
     // p: 4,
   },
   image: {
-    aspectRatio: "default",
+    width: "30vw",
     height: "70vh",
-    marginRight: "20px",
+    marginLeft: "10px",
+    objectFit: "cover",
   },
   content: {
     marginTop: "60px",
-    marginRight: "20px",
+    marginRight: "40px",
   },
   close: {
     fontSize: "35px",
@@ -38,7 +39,7 @@ const style = {
   },
 };
 
-const ProductCard = ({ image, name, category, description }) => {
+const ProductCard = ({ image, name, category, description, id }) => {
   const isTabletOrMobileDevice = useMediaQuery({
     query: "(max-device-width: 768px)",
   });
@@ -50,15 +51,19 @@ const ProductCard = ({ image, name, category, description }) => {
     <div className="mb-3">
       <button onClick={handleOpen} className="product-modal-button">
         <figure className="box">
-          <img src={image} alt="sample36" />
+          <img src={image} alt="sample36" className="product-card-image" />
           <figcaption>
             <div>{/* <i className="ion-ios-home-outline"></i> */}</div>
           </figcaption>
           {/* <a href="#"></a> */}
         </figure>
-        <div>
-          <p className="text-center">{name}</p>
-          <p className="text-center">{category}</p>
+        <div style={{ display: "grid" }}>
+          <a className="product-anchor" href={`/product/${id}`}>
+            {name}
+          </a>
+          <a className="product-anchor" href={`/product/${id}`}>
+            {category}
+          </a>
         </div>
       </button>
       {isTabletOrMobileDevice ? (

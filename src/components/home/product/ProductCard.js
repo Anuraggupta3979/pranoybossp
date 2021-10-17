@@ -21,12 +21,14 @@ const style = {
     boxShadow: 24,
     // p: 4,
   },
+
   image: {
     width: "30vw",
     height: "70vh",
     marginLeft: "10px",
     objectFit: "cover",
   },
+
   content: {
     marginTop: "60px",
     marginRight: "40px",
@@ -52,10 +54,6 @@ const ProductCard = ({ image, name, category, description, id }) => {
       <button onClick={handleOpen} className="product-modal-button">
         <figure className="box">
           <img src={image} alt="sample36" className="product-card-image" />
-          <figcaption>
-            <div>{/* <i className="ion-ios-home-outline"></i> */}</div>
-          </figcaption>
-          {/* <a href="#"></a> */}
         </figure>
         <div style={{ display: "grid" }}>
           <a className="product-anchor" href={`/product/${id}`}>

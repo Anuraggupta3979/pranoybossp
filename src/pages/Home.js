@@ -7,7 +7,7 @@ import AboutHeader from "../components/home/about/AboutHeader";
 import AboutHome from "../components/home/about/AboutHome";
 import Navbar from "../components/navbar/Navbar";
 import { getAllDocs } from "../helper/firestore";
-
+import { Grid } from "@material-ui/core";
 import Team from "../components/Team";
 
 const Home = () => {
@@ -26,16 +26,18 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <Grid>
       <Navbar />
       <HomeVideoBanner />
-      <AboutHeader />
-      <FeaturedProducts productList={productList} />
-      <Collections categoryList={categoryList} />
-      <AboutHome />
-      <Team />
+      <Grid style={{ width: "95%", margin: "auto" }}>
+        <AboutHeader />
+        <FeaturedProducts productList={productList} />
+        <Collections categoryList={categoryList} />
+        <AboutHome />
+        <Team />
+      </Grid>
       <Footer />
-    </div>
+    </Grid>
   );
 };
 

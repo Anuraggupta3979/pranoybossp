@@ -56,6 +56,7 @@ function Navv() {
                     Categories
                   </Link>
                 </ReactBootStrap.Nav>
+                <hr />
                 {categoryList.map((category) => (
                   <ReactBootStrap.Nav key={category.id}>
                     <Link

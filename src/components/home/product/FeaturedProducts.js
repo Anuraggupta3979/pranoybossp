@@ -1,6 +1,7 @@
 import React from "react";
 import ProductCard from "./ProductCard";
-
+import Abc from "./Abc";
+import { Grid, Typography } from "@material-ui/core";
 function FeaturedProducts({ productList }) {
   const style = {
     cards: {
@@ -26,6 +27,12 @@ function FeaturedProducts({ productList }) {
           />
         ))}
       </div>
+      <div style={style.cards}>
+        {productList.map((product) => (
+          <Abc></Abc>
+        ))}
+      </div>
+     
     </div>
   );
 }

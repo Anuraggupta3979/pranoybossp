@@ -9,6 +9,16 @@ import {
 } from "firebase/firestore";
 import { db } from "../firebase";
 
+const getDataFromSnapshot = (querySnapshot) => {
+  let lst = [];
+  querySnapshot.forEach((doc) => {
+    // doc.data() is never undefined for query doc snapshots
+    // console.log(doc.id, " => ", doc.data());
+    lst.push({ id: doc.id, ...doc.data() });
+  });
+  return lst;
+};
+
 export const getAllDocs = async (resource, length = null) => {
   var querySnapshot;
   if (length === null) querySnapshot = await getDocs(collection(db, resource));
@@ -16,15 +26,7 @@ export const getAllDocs = async (resource, length = null) => {
     querySnapshot = await getDocs(
       query(collection(db, resource), limit(length))
     );
-  var lst = [];
-  var object = {};
-  querySnapshot.forEach((doc) => {
-    // doc.data() is never undefined for query doc snapshots
-    // console.log(doc.id, " => ", doc.data());
-    object = { id: doc.id, ...doc.data() };
-    lst.push(object);
-  });
-  return lst;
+  return getDataFromSnapshot(querySnapshot);
 };
 
 export const getDocById = async (resource, docId) => {
@@ -56,41 +58,32 @@ export const getProductsByCategory = async (categoryId) => {
   var querySnapshot = await getDocs(
     query(collection(db, "products"), where("categoryId", "==", categoryId))
   );
-  var lst = [];
-  querySnapshot.forEach((doc) => {
-    // doc.data() is never undefined for query doc snapshots
-    // console.log(doc.id, " => ", doc.data());
-    var object = { id: doc.id, ...doc.data() };
-    lst.push(object);
-  });
+  let lst = getDataFromSnapshot(querySnapshot);
   if (lst.length === 0) throw new Error("no products with this categoryId");
   return lst;
 };
 
+/**
+ * @param {integer} length (optional): amount of products to be returned
+ * @return {Object} categories array sync with products array
+ */
 export const getAllProductsByCategory = async (length = 4) => {
   const categories = await getAllDocs("categories");
   const productsArray = [];
   // var querySnapshot
-  var lst;
+
   // var object
   for (const category of categories) {
-    console.log(category.id);
-    var querySnapshot = await getDocs(
+    // console.log(category.id);
+    let querySnapshot = await getDocs(
       query(
         collection(db, "products"),
         where("categoryId", "==", category.id),
         limit(length)
       )
     );
-    lst = [];
-    querySnapshot.forEach((doc) => {
-      // doc.data() is never undefined for query doc snapshots
-      // console.log(doc.id, " => ", doc.data());
-      var object = { id: doc.id, ...doc.data() };
-      lst.push(object);
-    });
-    console.log(lst);
-    productsArray.push(lst);
+    // console.log(lst);
+    productsArray.push(getDataFromSnapshot(querySnapshot));
   }
   return { categories: categories, productsArray: productsArray };
 };

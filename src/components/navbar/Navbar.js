@@ -9,7 +9,7 @@ function Navv() {
   const [categoryList, setCategoryList] = useState([]);
   useEffect(() => {
     getAllDocs("categories").then((data) => {
-      console.log("here");
+      console.log("navbar calling");
       setCategoryList(data);
       // console.log(data);
     });
@@ -58,7 +58,7 @@ function Navv() {
                 </ReactBootStrap.Nav>
                 <hr />
                 {categoryList.map((category) => (
-                  <ReactBootStrap.Nav>
+                  <ReactBootStrap.Nav key={category.id}>
                     <Link
                       className="nav-link mr-5 link"
                       to={`/category/${category.id}`}

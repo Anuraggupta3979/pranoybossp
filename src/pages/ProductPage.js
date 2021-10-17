@@ -38,7 +38,7 @@ function ProductPage() {
         console.log("error", e);
         history.push(`/`);
       });
-  }, [productId]);
+  }, [productId, history]);
   return (
     <div style={style.container}>
       <Navbar />

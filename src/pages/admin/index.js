@@ -5,6 +5,7 @@ import Dashboard from "./Dashboard";
 import authProvider from "./authProvider";
 import { CategoryList, CategoryCreate, CategoryEdit } from "./category";
 import { ProductList, ProductCreate, ProductEdit } from "./products";
+import { TeamList, TeamCreate, TeamEdit } from "./team";
 import { myDataProvider } from "./dataProvider";
 
 const AdminPage = () => (
@@ -25,6 +26,7 @@ const AdminPage = () => (
       edit={ProductEdit}
       create={ProductCreate}
     />
+    <Resource name="team" list={TeamList} edit={TeamEdit} create={TeamCreate} />
   </Admin>
 );
 

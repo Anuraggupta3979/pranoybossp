@@ -21,21 +21,24 @@ const CategoryPage = () => {
     description: "",
   });
 
-  const getData = async () => {
-    try {
-      const lst = await getProductsByCategory(categoryId);
-      setProductList(lst);
-      const categoryDoc = await getDocById("categories", categoryId);
-      setCategory(categoryDoc);
-    } catch (err) {
-      console.log("error", err);
-      history.push(`/`)
-    }
-  };
-
   useEffect(() => {
-    getData();
-  }, []);
+    getProductsByCategory(categoryId)
+      .then((lst) => {
+        setProductList(lst);
+      })
+      .catch((err) => {
+        console.log("error", err);
+        history.push(`/`);
+      });
+    getDocById("categories", categoryId)
+      .then((categoryDoc) => {
+        setCategory(categoryDoc);
+      })
+      .catch((err) => {
+        console.log("error", err);
+        history.push(`/`);
+      });
+  }, [categoryId, history]);
 
   return (
     <div style={{ display: "grid", justifyContent: "center" }}>

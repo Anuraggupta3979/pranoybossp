@@ -33,6 +33,18 @@ export const getDocById = async (resource, docId) => {
   const object = { id: docInstance.id, ...docInstance.data() };
   return object;
 };
+
+export const getProductByIdAndSimilarProducts = async (productId) => {
+  try {
+    const product = await getDocById("products", productId);
+    const lst = await getProductsByCategory(product.categoryId);
+    // console.log({ product: product, similarProducts: lst })
+    return { product: product, similarProducts: lst };
+  } catch (e) {
+    throw new Error(e);
+  }
+};
+
 export const getAllCategory = async (resource, docId) => {
   const docInstance = await getDocs(collection(db, "category"));
   // console.log(docInstance.data());

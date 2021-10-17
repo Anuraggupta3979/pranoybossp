@@ -1,57 +1,76 @@
 import React, { useState, useEffect } from "react";
 import { useHistory, useParams } from "react-router";
-import { getDocById, getProductsByCategory } from "../helper/firestore";
+import { getProductByIdAndSimilarProducts } from "../helper/firestore";
 import Navbar from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
 import { Grid } from "@mui/material";
 import ProductCard from "../components/home/product/ProductCard";
 
+const style = {
+  container: { display: "grid", justifyContent: "center" },
+  image: {
+    maxWidth: "40vw",
+  },
+  content: {
+    marginTop: "30px",
+  },
+  imageAndContent: {
+    display: "flex",
+    flexFlow: "row wrap",
+    justifyContent: "space-between",
+  },
+};
+
 function ProductPage() {
   const { productId } = useParams();
   const history = useHistory();
-  const [product, setProduct] = useState({
-    id: "",
-    name: "",
-    image: "",
-    description: "",
-    categoryId: "",
+  const [productData, setProductData] = useState({
+    product: { id: "", name: "", image: "", description: "", categoryId: "" },
+    similarProducts: [],
   });
-  const [similarProducts, setSimilarProducts] = useState([]);
-  const getData = async () => {
-    try {
-      console.log(productId);
-      const lst = await getDocById("products", productId);
-      setProduct(lst);
-      // const data = await getProductsByCategory(product.categoryId);
-      // setSimilarProducts(data);
-      // console.log(similarProducts);
-    } catch (err) {
-      console.log("error", err);
-      // history.push(`/`)
-    }
-  };
+
   useEffect(() => {
-    getData();
-  }, []);
+    getProductByIdAndSimilarProducts(productId)
+      .then((data) => {
+        setProductData(data);
+      })
+      .catch((e) => {
+        console.log("error", e);
+        history.push(`/`);
+      });
+  }, [productId]);
   return (
-    <>
+    <div style={style.container}>
       <Navbar />
       <br />
       <br />
       <br />
       <br />
-      {/* <Grid>Similar Products</Grid>
-      {similarProducts.map((product) => {
-        <ProductCard
-          image={product.image}
-          name={product.name}
-          category={product.categoryId}
-          desc={product.description}
-          key={product.name}
-        />;
-      })} */}
+      <div style={style.imageAndContent}>
+        <img
+          src={productData.product.image}
+          alt={productData.product.name}
+          style={style.image}
+        />
+        <div style={style.content}>
+          <h1>{productData.product.name}</h1>
+          <p>{productData.product.description}</p>
+        </div>
+      </div>
+      <Grid>Similar Products</Grid>
+      {productData.similarProducts.map((product) => {
+        return (
+          <ProductCard
+            image={product.image}
+            name={product.name}
+            category={product.categoryId}
+            desc={product.description}
+            key={product.id}
+          />
+        );
+      })}
       <Footer />
-    </>
+    </div>
   );
 }
 

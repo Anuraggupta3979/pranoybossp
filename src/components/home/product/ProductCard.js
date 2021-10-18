@@ -46,14 +46,14 @@ const style = {
   },
 };
 
-const ProductCard = ({ image, name, categoryId, description, id }) => {
+const ProductCard = ({ image, name, categoryId, description, id, hot }) => {
   const isTabletOrMobileDevice = useMediaQuery({
     query: "(max-device-width: 768px)",
   });
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  // console.log(data.name )
+  console.log(hot)
   return (
     <div className="mb-3">
       <button onClick={handleOpen} className="product-modal-button">
@@ -64,6 +64,7 @@ const ProductCard = ({ image, name, categoryId, description, id }) => {
           <a className="product-anchor" href={`/product/${id}`}>
             {name}
           </a>
+          <p>{hot}</p>
         </div>
       </button>
       {isTabletOrMobileDevice ? (

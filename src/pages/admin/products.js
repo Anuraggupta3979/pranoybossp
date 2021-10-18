@@ -13,40 +13,41 @@ import {
   TextInput,
   ImageField,
   ImageInput,
+  BooleanInput,
+  BooleanField,
+  SimpleList,
 } from "react-admin";
-// import { useMediaQuery } from "react-responsive";
+import { useMediaQuery } from "react-responsive";
 
 const ProductTitle = ({ record }) => {
   return <span>product {record ? `"${record.name}"` : ""}</span>;
 };
 
 export const ProductList = (props) => {
-  // const isTabletOrMobileDevice = useMediaQuery({
-  //   query: "(max-device-width: 768px)",
-  // });
+  const isTabletOrMobileDevice = useMediaQuery({
+    query: "(max-device-width: 768px)",
+  });
   return (
     <List {...props}>
-      {/* {!isTabletOrMobileDevice ? ( */}
-      <Datagrid rowClick="edit">
-        <TextField source="id" />
-        <TextField source="name" />
-        <ReferenceField source="categoryId" reference="categories">
+      {!isTabletOrMobileDevice ? (
+        <Datagrid rowClick="edit">
           <TextField source="id" />
-        </ReferenceField>
-        <TextField source="image" />
-        <EditButton />
-      </Datagrid>
+          <TextField source="name" />
+          <ReferenceField source="categoryId" reference="categories">
+            <TextField source="id" />
+          </ReferenceField>
+          <BooleanField source="hot" />
+          <EditButton />
+        </Datagrid>
+      ) : (
+        <SimpleList
+          primaryText={(record) => record.name}
+          secondaryText={(record) => record.hot}
+          tertiaryText={(record) => record.categoryId}
+        />
+      )}
     </List>
   );
-  // : (
-  //   <SimpleList
-  //     primaryText={(record) => record.id}
-  //     secondaryText={(record) => record.name}
-  //     tertiaryText={(record) => record.description}
-  //   />
-  // )}
-
-  // );
 };
 
 export const ProductEdit = (props) => (
@@ -58,8 +59,9 @@ export const ProductEdit = (props) => (
       <ReferenceInput source="categoryId" reference="categories">
         <SelectInput optionText="name" />
       </ReferenceInput>
+      <BooleanInput label="hot" source="hot" />
       {/* <ImageInput source="image" label="Images" accept="image/*"> */}
-        <ImageField source="image" />
+      <ImageField source="image" />
       {/* </ImageInput> */}
     </SimpleForm>
   </Edit>
@@ -73,6 +75,7 @@ export const ProductCreate = (props) => (
       <ReferenceInput source="categoryId" reference="categories">
         <SelectInput optionText="name" />
       </ReferenceInput>
+      <BooleanInput label="hot" source="hot" />
       <ImageInput required source="image" label="Images" accept="image/*">
         <ImageField source="image" />
       </ImageInput>

@@ -33,6 +33,7 @@ function FeaturedProducts({ productList }) {
             desc={product.description}
             key={product.name}
             id={product.id}
+            hot={product.hot}
           />
         ))}
       </Grid>

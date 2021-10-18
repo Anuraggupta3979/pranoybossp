@@ -26,7 +26,6 @@ const style = {
     //     width: 320px; /* width of container */
     width: "320px",
     height: "400px",
-    objectFit: "cover",
     // height: 400px; /* height of container */
     // object-fit: cover;
     marginLeft: "10px",
@@ -47,7 +46,7 @@ const style = {
   },
 };
 
-const ProductCard = ({ image, name, category, description, id }) => {
+const ProductCard = ({ image, name, categoryId, description, id }) => {
   const isTabletOrMobileDevice = useMediaQuery({
     query: "(max-device-width: 768px)",
   });
@@ -85,10 +84,10 @@ const ProductCard = ({ image, name, category, description, id }) => {
                 {name}
               </Typography>
               <Typography id="modal-modal-title" variant="h6" component="h2">
-                {name}
+                {categoryId}
               </Typography>
               <Typography id="modal-modal-title" variant="h6" component="h2">
-                {name}
+                {description}
               </Typography>
               <Typography id="modal-modal-title" variant="h6" component="h2">
                 {name}

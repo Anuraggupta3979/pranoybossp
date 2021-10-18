@@ -37,6 +37,7 @@ export const ProductList = (props) => {
             <TextField source="id" />
           </ReferenceField>
           <BooleanField source="hot" />
+          <BooleanField source="featured" />
           <EditButton />
         </Datagrid>
       ) : (
@@ -59,7 +60,11 @@ export const ProductEdit = (props) => (
       <ReferenceInput source="categoryId" reference="categories">
         <SelectInput optionText="name" />
       </ReferenceInput>
+      <TextInput source="material" />
+      <TextInput source="dimensions" />
+      <TextInput source="weight" />
       <BooleanInput label="hot" source="hot" />
+      <BooleanInput label="featured" source="featured" />
       {/* <ImageInput source="image" label="Images" accept="image/*"> */}
       <ImageField source="image" />
       {/* </ImageInput> */}
@@ -75,7 +80,11 @@ export const ProductCreate = (props) => (
       <ReferenceInput source="categoryId" reference="categories">
         <SelectInput optionText="name" />
       </ReferenceInput>
-      <BooleanInput label="hot" source="hot" />
+      <TextInput source="material" />
+      <TextInput source="dimensions" />
+      <TextInput source="weight" />
+      <BooleanInput label="Hot" source="hot" initialValue="true" />
+      <BooleanInput label="Featured" source="featured" initialValue="true" />
       <ImageInput required source="image" label="Images" accept="image/*">
         <ImageField source="image" />
       </ImageInput>

@@ -29,6 +29,13 @@ export const getAllDocs = async (resource, length = null) => {
   return getDataFromSnapshot(querySnapshot);
 };
 
+export const getFeaturedProducts = async () => {
+  var querySnapshot = await getDocs(
+    query(collection(db, "products"), where("featured", "==", true))
+  );
+  return getDataFromSnapshot(querySnapshot);
+};
+
 export const getDocById = async (resource, docId) => {
   const docInstance = await getDoc(doc(db, resource, docId));
   // console.log(docInstance.data());
@@ -39,9 +46,9 @@ export const getDocById = async (resource, docId) => {
 export const getProductByIdAndSimilarProducts = async (productId) => {
   try {
     const product = await getDocById("products", productId);
-    console.log(product)
+    console.log(product);
     const lst = await getProductsByCategory(product.categoryId);
-    console.log({ product: product, similarProducts: lst })
+    console.log({ product: product, similarProducts: lst });
     return { product: product, similarProducts: lst };
   } catch (e) {
     throw new Error(e);

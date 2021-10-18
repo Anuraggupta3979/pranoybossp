@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
+// import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import "../../../assets/css/ProductCard.css";
 import { useMediaQuery } from "react-responsive";
@@ -10,33 +10,58 @@ const style = {
   main: {
     display: "flex",
     justifyContent: "space-between",
-    align: "space-around",
     position: "absolute",
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    width: 900,
+    width: "1000px",
+    height: "720px",
     bgcolor: "background.paper",
     border: "2px solid #000",
     boxShadow: 24,
     // p: 4,
   },
-
   image: {
-    //     width: 320px; /* width of container */
-    width: "320px",
-    height: "400px",
-    // height: 400px; /* height of container */
-    // object-fit: cover;
-    marginLeft: "10px",
+    width: "500px",
+    height: "717px",
     objectFit: "cover",
   },
-
   content: {
-    marginTop: "60px",
-    marginRight: "40px",
-    alignItems: "center",
+    marginTop: "50px",
+    display: "grid",
     justifyContent: "center",
+    // alignItems: "space-between",
+    width: "500px",
+    textAlign: "center",
+  },
+  title: {
+    fontSize: "30px",
+    letterSpacing: "4px",
+  },
+  description: {
+    position: "absolute",
+    top: "170px",
+    fontSize: "20px",
+    color: "rgb(135,134,136)",
+    marginLeft: "10px",
+    marginRight: "10px",
+  },
+  extraInfo: {
+    display: "flex",
+    flexFlow: "row wrap",
+    justifyContent: "center",
+    alignItems: "center",
+    position: "absolute",
+    top: "400px",
+    textAlign: "center",
+  },
+  tag: {
+    color: "rgb(135,134,136)",
+    padding: "10px",
+  },
+  link: {
+    textDecoration: "none",
+    color: "black",
   },
   close: {
     fontSize: "35px",
@@ -46,7 +71,17 @@ const style = {
   },
 };
 
-const ProductCard = ({ image, name, categoryId, description, id, hot }) => {
+const ProductCard = ({
+  image,
+  name,
+  categoryId,
+  description,
+  id,
+  hot,
+  material,
+  weight,
+  dimensions,
+}) => {
   const isTabletOrMobileDevice = useMediaQuery({
     query: "(max-device-width: 768px)",
   });
@@ -62,6 +97,9 @@ const ProductCard = ({ image, name, categoryId, description, id, hot }) => {
 
   // console.log(data.name )
   let latest = hot === true ? 1 : 0;
+
+  console.log({ hot, material, weight, dimensions, description });
+
   return (
     <div className="mb-3" style={{ position: "relative" }}>
       <button onClick={handleOpen} className="product-modal-button">
@@ -86,16 +124,17 @@ const ProductCard = ({ image, name, categoryId, description, id, hot }) => {
             height: "25px",
             alignContent: "center",
             justifyContent: "center",
-            opacity:".8"
+            opacity: ".8",
           }}
         >
-          <p style={{ color: "white" , fontSize:"small"}}>HOT</p>
+          <p style={{ color: "white", fontSize: "small" }}>HOT</p>
         </div>
 
         <div style={{ display: "grid" }}>
           <a className="product-anchor" href={`/product/${id}`}>
             {name}
           </a>
+          <p>{hot}</p>
         </div>
       </button>
       {isTabletOrMobileDevice ? (
@@ -112,25 +151,50 @@ const ProductCard = ({ image, name, categoryId, description, id, hot }) => {
 
             <CloseIcon sx={style.close} onClick={handleClose} />
             <div style={style.content}>
-              <Typography id="modal-modal-title" variant="h6" component="h2">
-                {name}
-              </Typography>
-              <Typography id="modal-modal-title" variant="h6" component="h2">
-                {categoryId}
-              </Typography>
-              <Typography id="modal-modal-title" variant="h6" component="h2">
-                {description}
-              </Typography>
-              <Typography id="modal-modal-title" variant="h6" component="h2">
-                {name}
-              </Typography>
-              <Typography id="modal-modal-title" variant="h6" component="h2">
-                {name}
-              </Typography>
-
-              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                {description}
-              </Typography>
+              <p style={style.title}>{name}</p>
+              <p style={style.description}>{description}</p>
+              <hr />
+              <div style={style.extraInfo}>
+                <div style={style.tag}>
+                  Category:{" "}
+                  <a style={style.link} href={`/category/${categoryId}`}>
+                    {categoryId}
+                  </a>
+                </div>
+                {material ? (
+                  <div style={style.tag}>
+                    Material:{" "}
+                    <a style={style.link} href="#!">
+                      {material}
+                    </a>
+                  </div>
+                ) : (
+                  <></>
+                )}
+                {weight ? (
+                  <div style={style.tag}>
+                    weight:{" "}
+                    <a style={style.link} href="#!">
+                      {weight}
+                    </a>
+                  </div>
+                ) : (
+                  <></>
+                )}
+                {dimensions ? (
+                  <div style={style.tag}>
+                    dimensions:{" "}
+                    <a style={style.link} href="#!">
+                      {dimensions}
+                    </a>
+                  </div>
+                ) : (
+                  <></>
+                )}
+              </div>
+              <a style={style.link} href={`/product/${id}`}>
+                For more info visit here
+              </a>
             </div>
           </Box>
         </Modal>

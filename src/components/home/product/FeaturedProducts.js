@@ -30,9 +30,13 @@ function FeaturedProducts({ productList }) {
             image={product.image}
             name={product.name}
             categoryId={product.categoryId}
-            desc={product.description}
-            key={product.name}
+            description={product.description}
+            key={product.id}
             id={product.id}
+            hot={product.hot}
+            material={product.material}
+            weight={product.weight}
+            dimensions={product.dimensions}
           />
         ))}
       </Grid>

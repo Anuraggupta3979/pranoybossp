@@ -5,8 +5,11 @@ const Dashboard = () => (
   <Card>
     <div style={{ textAlign: "center" }}>
       <CardHeader title="Admin Panel" />
-      <CardContent>If you don't know what this page is...</CardContent>
-      <CardContent>then go back</CardContent>
+      <CardContent>If you don't know what this page does...</CardContent>
+      <CardContent>
+        <a href="/">then go back</a>
+      </CardContent>
+      <br />
     </div>
   </Card>
 );

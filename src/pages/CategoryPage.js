@@ -28,7 +28,7 @@ const CategoryPage = () => {
       })
       .catch((err) => {
         console.log("error", err);
-        history.push(`/`);
+        // history.push(`/`);
       });
     getDocById("categories", categoryId)
       .then((categoryDoc) => {

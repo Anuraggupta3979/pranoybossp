@@ -6,7 +6,7 @@ import HomeVideoBanner from "../sections/HomeVideoBanner";
 import AboutHeader from "../components/home/about/AboutHeader";
 import AboutHome from "../components/home/about/AboutHome";
 import Navbar from "../components/navbar/Navbar";
-import { getAllDocs } from "../helper/firestore";
+import { getAllDocs, getFeaturedProducts } from "../helper/firestore";
 import { Grid } from "@material-ui/core";
 import Team from "../components/Team";
 
@@ -19,7 +19,7 @@ const Home = () => {
       setCategoryList(data);
       // console.log(data);
     });
-    getAllDocs("products", 4).then((products) => {
+    getFeaturedProducts().then((products) => {
       setProductList(products);
       // console.log(productList);
     });

@@ -46,7 +46,7 @@ const style = {
   },
 };
 
-const ProductCard = ({ image, name, categoryId, description, id, hot }) => {
+const ProductCard = ({ image, name, categoryId, description, id, hot, material }) => {
   const isTabletOrMobileDevice = useMediaQuery({
     query: "(max-device-width: 768px)",
   });

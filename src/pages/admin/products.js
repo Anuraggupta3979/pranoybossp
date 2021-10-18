@@ -83,8 +83,8 @@ export const ProductCreate = (props) => (
       <TextInput source="material" />
       <TextInput source="dimensions" />
       <TextInput source="weight" />
-      <BooleanInput label="Hot" source="hot" initialValue="true" />
-      <BooleanInput label="Featured" source="featured" initialValue="true" />
+      <BooleanInput label="Hot" source="hot" initialValue={true} />
+      <BooleanInput label="Featured" source="featured" initialValue={true} />
       <ImageInput required source="image" label="Images" accept="image/*">
         <ImageField source="image" />
       </ImageInput>

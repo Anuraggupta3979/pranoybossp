@@ -31,7 +31,7 @@ export const getAllDocs = async (resource, length = null) => {
 
 export const getFeaturedProducts = async () => {
   var querySnapshot = await getDocs(
-    query(collection(db, "products"), where("featured", "==", "true"))
+    query(collection(db, "products"), where("featured", "==", true))
   );
   return getDataFromSnapshot(querySnapshot);
 };

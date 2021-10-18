@@ -4,11 +4,8 @@ import ProductCard from "../components/home/product/ProductCard";
 import CustomButton from "../components/Button";
 import Footer from "../components/footer/Footer";
 import { getAllProductsByCategory } from "../helper/firestore";
-
-const style = {
-  height: "90%",
-  width: "98.7vw",
-};
+import "../assets/Categories.css";
+// import { useMediaQuery } from "react-responsive";
 
 const Categories = () => {
   const [productDict, setProductDict] = useState({
@@ -27,6 +24,24 @@ const Categories = () => {
   useEffect(() => {
     console.log(productDict);
   }, [productDict]);
+
+  // let imageHeight = "80vh";
+  // const isTabletOrMobileDevice = useMediaQuery({
+  //   query: "(max-device-width: 768px)",
+  // });
+  // if (isTabletOrMobileDevice) {
+  //   imageHeight = "100vh";
+  // }
+  const style = {
+    imageBanner: {
+      width: "98.7vw",
+      maxHeight: imageHeight,
+      objectFit: "cover",
+      opacity: "0.8",
+      backgroundColor: "black",
+    },
+  };
+
   const ProductCards = ({ productList }) => {
     console.log(productList);
     return (
@@ -42,13 +57,13 @@ const Categories = () => {
             <ProductCard
               image={product.image}
               name={product.name}
-              category={product.categoryId}
+              categoryId={product.categoryId}
               desc={product.description}
-              key={product.name}
+              key={product.id}
+              id={product.id}
             />
           ))}
         </div>
-        <br />
         <CustomButton title="Learn More" />
       </>
     );
@@ -58,11 +73,21 @@ const Categories = () => {
       <Navbar />
       {productDict.categories.map((category, index) => (
         <>
-          <img src={category.image} alt="#!" style={style} />
+          <br />
+          <br />
+          <div className="categories-image-container">
+            <img src={category.image} alt="#!" style={style.imageBanner} />
+            <a
+              href={`/category/${category.id}`}
+              className="categories-page-anchor"
+            >
+              {category.name}
+            </a>
+          </div>
+          <br />
           <ProductCards productList={productDict.productsArray[index]} />
         </>
       ))}
-      {/* {JSON.stringify(productDict.categories)} */}
       <Footer />
     </div>
   );

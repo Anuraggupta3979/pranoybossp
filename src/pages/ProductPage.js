@@ -36,7 +36,7 @@ function ProductPage() {
       })
       .catch((e) => {
         console.log("error", e);
-        history.push(`/`);
+        // history.push(`/`);
       });
   }, [productId, history]);
   return (

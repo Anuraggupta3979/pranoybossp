@@ -20,7 +20,7 @@ function FeaturedProducts({ productList }) {
           <ProductCard
             image={product.image}
             name={product.name}
-            category={product.categoryId}
+            categoryId={product.categoryId}
             desc={product.description}
             key={product.name}
             id={product.id}

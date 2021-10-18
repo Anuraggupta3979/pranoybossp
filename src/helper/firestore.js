@@ -39,8 +39,9 @@ export const getDocById = async (resource, docId) => {
 export const getProductByIdAndSimilarProducts = async (productId) => {
   try {
     const product = await getDocById("products", productId);
+    console.log(product)
     const lst = await getProductsByCategory(product.categoryId);
-    // console.log({ product: product, similarProducts: lst })
+    console.log({ product: product, similarProducts: lst })
     return { product: product, similarProducts: lst };
   } catch (e) {
     throw new Error(e);

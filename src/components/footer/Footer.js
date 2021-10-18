@@ -11,7 +11,7 @@ import address from "../../assets/image/location-footer.png";
 import insta from "../../assets/image/instagram.svg";
 const useStyles = makeStyles((theme) => ({
   footer: {
-    padding: "0 60px 0 250px",
+    padding: "0 60px 0 110px",
     position: "relative",
     marginTop: "20px",
 
@@ -84,7 +84,7 @@ const useStyles = makeStyles((theme) => ({
     margin: "0.3vw 0 0 0",
   },
   footerHead: {
-    padding: "0 60px 0 250px",
+    padding: "0 60px 0 110px",
     [theme.breakpoints.down("sm")]: {
       textAlign: "center",
       padding: "30px",
@@ -184,7 +184,7 @@ const Footer = () => {
               </Grid>
             </Grid>
           </Grid>
-          <Grid item className={classes.followGrid} xs={12} md={3}>
+          <Grid item className={classes.followGrid} xs={12} md={4}>
             <Grid
               container
               direction="column"
@@ -251,7 +251,7 @@ const Footer = () => {
               <Newsletter></Newsletter>
             </Grid>
           </Grid>
-          <Grid item className={classes.addressGrid} xs={12} md={6}>
+          <Grid item className={classes.addressGrid} xs={12} md={5}>
             <Grid
               container
               item

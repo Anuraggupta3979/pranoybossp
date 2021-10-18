@@ -37,9 +37,10 @@
 }
 
 .product-anchor {
+  margin-top: 20px;
   text-decoration: none;
   color: #23232c;
-  /* font-size: 20px; */
+  font-size: 18px;
   font-family: "Poppins", sans-serif;
 }
 
@@ -75,32 +76,6 @@ figure.box img {
   vertical-align: top;
 
   object-fit: contain;
-}
-figure.box figcaption {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-figure.box figcaption:before,
-figure.box figcaption:after,
-figure.box figcaption div:before,
-figure.box figcaption div:after {
-  opacity: 0;
-}
-figure.box figcaption:before,
-figure.box figcaption:after {
-  height: 50%;
-  width: 50%;
-  position: absolute;
-  content: "";
-}
-figure.box figcaption:before {
-  top: 0;
-  left: 0;
-  -webkit-transform: translateY(100%);
-  transform: translateY(100%);
 }
 
 figure.box:hover img,

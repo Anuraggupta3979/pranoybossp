@@ -83,7 +83,7 @@ function AboutHome() {
           }}
         >
           <Typography
-            variant="h2"
+            variant="h4"
             style={{
               textAlign: "center",
               marginBottom: "15px",

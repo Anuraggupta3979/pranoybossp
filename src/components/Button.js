@@ -4,15 +4,15 @@ import { Grid, makeStyles, Button } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
   button: {
     marginTop: "30px",
-    padding: "2px",
+    padding: "0px",
     border: "2px solid #23232c",
     color: "#23232c",
     width: "200px",
     transition: ".5s",
     fontWeight: "500",
     textAlign: "center",
-    lineHeight: "60px",
-    maxWidth: "200px",
+    lineHeight: "40px",
+    maxWidth: "150px",
     display: "inline-block",
     cursor: "pointer",
     fontFamily: `"Poppins",sans-serif`,

@@ -23,8 +23,12 @@ const style = {
   },
 
   image: {
-    width: "30vw",
-    height: "70vh",
+    //     width: 320px; /* width of container */
+    width: "320px",
+    height: "400px",
+    objectFit: "cover",
+    // height: 400px; /* height of container */
+    // object-fit: cover;
     marginLeft: "10px",
     objectFit: "cover",
   },
@@ -32,6 +36,8 @@ const style = {
   content: {
     marginTop: "60px",
     marginRight: "40px",
+    alignItems: "center",
+    justifyContent: "center",
   },
   close: {
     fontSize: "35px",
@@ -59,9 +65,6 @@ const ProductCard = ({ image, name, category, description, id }) => {
           <a className="product-anchor" href={`/product/${id}`}>
             {name}
           </a>
-          <a className="product-anchor" href={`/product/${id}`}>
-            {category}
-          </a>
         </div>
       </button>
       {isTabletOrMobileDevice ? (
@@ -78,6 +81,18 @@ const ProductCard = ({ image, name, category, description, id }) => {
 
             <CloseIcon sx={style.close} onClick={handleClose} />
             <div style={style.content}>
+              <Typography id="modal-modal-title" variant="h6" component="h2">
+                {name}
+              </Typography>
+              <Typography id="modal-modal-title" variant="h6" component="h2">
+                {name}
+              </Typography>
+              <Typography id="modal-modal-title" variant="h6" component="h2">
+                {name}
+              </Typography>
+              <Typography id="modal-modal-title" variant="h6" component="h2">
+                {name}
+              </Typography>
               <Typography id="modal-modal-title" variant="h6" component="h2">
                 {name}
               </Typography>

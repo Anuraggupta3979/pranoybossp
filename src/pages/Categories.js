@@ -80,7 +80,7 @@ const Categories = () => {
             <div className="categories-page-banner-content">
               <h3 href={`/category/${category.id}`}>{category.name}</h3>
               <br />
-              <p>{category.description}</p>
+              {/* <p>{category.description}</p> */}
             </div>
           </div>
           <br />

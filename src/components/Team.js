@@ -30,6 +30,7 @@ function Team() {
           display: "flex",
           flexFlow: " row wrap",
           justifyContent: "space-around",
+    
         }}
       >
         {TeamList.map((member) => (

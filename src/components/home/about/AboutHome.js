@@ -52,7 +52,8 @@ function AboutHome() {
       <Grid container item style={{ display: "flex" }}>
         <Grid
           item
-          sm={6}
+          lg={6}
+          sm={12}
           style={{
             justifyContent: "center",
             textAlign: "center",
@@ -70,10 +71,11 @@ function AboutHome() {
             alt="about"
           />
         </Grid>
-        <Grid item sm={1}></Grid>
+        <Grid item lg={1} sm={12}></Grid>
         <Grid
           item
-          sm={5}
+          lg={5}
+          sm={12}
           style={{
             order: 1,
             display: "flex",

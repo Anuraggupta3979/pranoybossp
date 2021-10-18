@@ -19,13 +19,14 @@ const useStyles = makeStyles((theme) => ({
       padding: "30px",
       alignItems: "center",
       justifyContent: "center",
-      marginTop: "-40px",
+      marginTop: "-70px",
       // textAlign: "center",
     },
   },
   footernews: {
     backgroundImage:
       "linear-gradient(to right, rgba(255, 255, 255, 1) , rgba(252, 240, 239, 1));",
+    marginTop: "50px",
   },
   findGrid: {
     order: 1,
@@ -98,6 +99,15 @@ const useStyles = makeStyles((theme) => ({
       margin: "0px",
     },
   },
+  iconBox: {
+    display: "flex",
+    marginTop: "20px",
+    justifyContent: "flex-end",
+    [theme.breakpoints.down("sm")]: {
+      justifyContent: "flex-start",
+      marginTop:"10px"
+    },
+  },
 }));
 
 const Footer = () => {
@@ -111,15 +121,58 @@ const Footer = () => {
           className={classes.footerHead}
           style={{ display: "flex" }}
         >
-          <Grid item xs={12}>
+          <Grid item xs={6}>
             <img
               src="https://th.bing.com/th/id/R.b90e6a70729f5ef2b99b006fec52feff?rik=xkHeTSKG2xHd2g&riu=http%3a%2f%2fwww.transparentpng.com%2fthumb%2fhandicraft%2fgold-handicraft-png-15.png&ehk=IOLDqtT0WYdSNK72mMxrjUd2Lm2wTZZT6fyoStsyX0I%3d&risl=&pid=ImgRaw&r=0"
               alt="Logo"
               style={{ width: "150px", height: "50px", marginTop: "20px" }}
             />
           </Grid>
+          <Grid className={classes.iconBox} sm={6} xs={12}>
+            <Grid item>
+              <Grid
+                container
+                spacing={1}
+                direction="row"
+                justifyContent="flex-start"
+                alignItems="center"
+                onClick={() =>
+                  window.open("https://www.facebook.com", "_blank")
+                }
+                className={classes.icon}
+              >
+                <Grid item className={classes.imageGridSocialMediaIcons}>
+                  <img
+                    src={fb}
+                    className={classes.socialMediaimages}
+                    alt="fb"
+                  />
+                </Grid>
+              </Grid>
+            </Grid>
+            <Grid item>
+              <Grid
+                container
+                spacing={1}
+                direction="row"
+                justifyContent="flex-start"
+                alignItems="center"
+                onClick={() => window.open("https://instagram.com/", "_blank")}
+                className={classes.icon}
+              >
+                <Grid item className={classes.imageGridSocialMediaIcons}>
+                  <img
+                    src={insta}
+                    className={classes.socialMediaimages}
+                    alt="twitter"
+                  />
+                </Grid>
+              </Grid>
+            </Grid>
+          </Grid>
         </Grid>
       </Grid>
+      <hr />
       <Grid className={classes.footernews}>
         <Grid
           className={classes.footer}
@@ -192,60 +245,7 @@ const Footer = () => {
               alignItems="flex-start"
               spacing={2}
             >
-              <Grid
-                style={{
-                  display: "flex",
-                  marginTop: "-48px",
-                  marginBottom: "20px",
-                }}
-              >
-                <Grid item>
-                  <Grid
-                    container
-                    spacing={1}
-                    direction="row"
-                    justifyContent="flex-start"
-                    alignItems="center"
-                    onClick={() =>
-                      window.open(
-                        "https://www.facebook.com",
-                        "_blank"
-                      )
-                    }
-                    className={classes.icon}
-                  >
-                    <Grid item className={classes.imageGridSocialMediaIcons}>
-                      <img
-                        src={fb}
-                        className={classes.socialMediaimages}
-                        alt="fb"
-                      />
-                    </Grid>
-                  </Grid>
-                </Grid>
-                <Grid item>
-                  <Grid
-                    container
-                    spacing={1}
-                    direction="row"
-                    justifyContent="flex-start"
-                    alignItems="center"
-                    onClick={() =>
-                      window.open("https://instagram.com/", "_blank")
-                    }
-                    className={classes.icon}
-                  >
-                    <Grid item className={classes.imageGridSocialMediaIcons}>
-                      <img
-                        src={insta}
-                        className={classes.socialMediaimages}
-                        alt="twitter"
-                      />
-                    </Grid>
-                  </Grid>
-                </Grid>
-              </Grid>
-              <Grid item style={{ marginTop: "-20px" }}>
+              <Grid item>
                 <Typography variant="h6">Newsletter</Typography>
               </Grid>
               <Newsletter></Newsletter>

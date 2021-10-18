@@ -35,7 +35,7 @@ const Categories = () => {
   const style = {
     imageBanner: {
       width: "98.7vw",
-      maxHeight: imageHeight,
+      maxHeight: "80vh",
       objectFit: "cover",
       opacity: "0.8",
       backgroundColor: "black",
@@ -77,12 +77,11 @@ const Categories = () => {
           <br />
           <div className="categories-image-container">
             <img src={category.image} alt="#!" style={style.imageBanner} />
-            <a
-              href={`/category/${category.id}`}
-              className="categories-page-anchor"
-            >
-              {category.name}
-            </a>
+            <div className="categories-page-banner-content">
+              <h3 href={`/category/${category.id}`}>{category.name}</h3>
+              <br />
+              <p>{category.description}</p>
+            </div>
           </div>
           <br />
           <ProductCards productList={productDict.productsArray[index]} />

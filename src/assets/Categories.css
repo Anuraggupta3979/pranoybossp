@@ -4,17 +4,19 @@
   background-color: black;
 }
 
-.categories-page-anchor {
-  text-decoration: none;
+.categories-page-banner-content {
   color: #ffffff;
-  font-size: 25px;
   font-family: "Poppins", sans-serif;
   position: absolute;
   top: 100px;
   left: 30px;
+  width: 600px;
 }
 
-.categories-page-anchor:hover {
-  text-decoration: underline;
-  color: black;
+.categories-page-banner-content p {
+  font-size: 20px;
+}
+
+.categories-page-banner-content h3 {
+  font-size: 25px;
 }

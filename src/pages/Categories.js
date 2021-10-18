@@ -37,7 +37,7 @@ const Categories = () => {
       width: "98.7vw",
       maxHeight: "80vh",
       objectFit: "cover",
-      opacity: "0.8",
+      opacity: "0.75",
       backgroundColor: "black",
     },
   };

@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Team.css";
 import { Grid, Typography } from "@material-ui/core";
+import { getAllDocs } from "../helper/firestore";
 
 function Team() {
+  const [TeamList, setTeamList] = useState([]);
+  useEffect(() => {
+    getAllDocs("team").then((data) => {
+      setTeamList(data);
+      console.log(data);
+    });
+  }, []);
   return (
     <Grid>
       <Typography
@@ -16,6 +24,24 @@ function Team() {
       >
         Our Team
       </Typography>
+
+      {TeamList.map((member) => (
+        <a className="card" href="#!">
+          <Grid
+            className="front"
+            style={{
+              backgroundImage: `url(${member.image})`,
+            }}
+          >
+            <Typography>{member.name}</Typography>
+          </Grid>
+          <Grid className="back">
+            <Grid>
+              <Typography>{member.description}</Typography>
+            </Grid>
+          </Grid>
+        </a>
+      ))}
       <Grid className="content">
         <a className="card" href="#!">
           <Grid

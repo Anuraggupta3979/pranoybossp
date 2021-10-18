@@ -1,23 +1,20 @@
-
 .content {
-  display: flex;
-  margin: 0 auto;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  /* max-width: 1100px; */
+  display: "flex";
+  flex-flow: "row wrap";
+  justify-content: "space-around";
 }
-
 
 .card {
   color: inherit;
   cursor: pointer;
-  width: 340px;
-  min-width:300px;
+  width: 100%;
+  min-width: 255px;
+  max-width: 320px;
   height: 400px;
-  min-height: 400px;
   perspective: 1000px;
-  margin: 1rem;
+  /* margin: 1rem; */
+  overflow: hidden;
+  padding: 0;
   position: relative;
 }
 @media screen and (max-width: 800px) {
@@ -40,8 +37,10 @@
   justify-content: center;
   align-items: center;
   position: absolute;
-  height: 100%;
   width: 100%;
+  min-width: 255px;
+  max-width: 320px;
+  height: 400px;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   transform-style: preserve-3d;

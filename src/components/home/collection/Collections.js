@@ -1,6 +1,6 @@
 import React from "react";
 import CollectionCard from "./CollectionCard";
-
+import { Grid, Typography } from "@material-ui/core";
 function FeaturedProducts({ categoryList }) {
   const style = {
     cards: {
@@ -10,11 +10,19 @@ function FeaturedProducts({ categoryList }) {
     },
   };
   return (
-    <div>
-      <p className="text-center mt-5 mb-5" style={{ fontSize: "40px" }}>
-        Collections
-      </p>
-      <div style={style.cards}>
+    <Grid>
+      <Typography
+        variant="h4"
+        style={{
+          textAlign: "center",
+          fontWeight: "bold",
+          marginTop: "100px",
+          marginBottom: "50px",
+        }}
+      >
+        Categories
+      </Typography>
+      <Grid style={style.cards}>
         {categoryList.map((category) => (
           <CollectionCard
             image={category.image}
@@ -22,8 +30,8 @@ function FeaturedProducts({ categoryList }) {
             key={category.name}
           />
         ))}
-      </div>
-    </div>
+      </Grid>
+    </Grid>
   );
 }
 

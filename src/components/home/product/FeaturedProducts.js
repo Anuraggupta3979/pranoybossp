@@ -1,6 +1,6 @@
 import React from "react";
 import ProductCard from "./ProductCard";
-
+import { Grid, Typography } from "@material-ui/core";
 // import { Grid, Typography } from "@material-ui/core";
 function FeaturedProducts({ productList }) {
   const style = {
@@ -11,11 +11,20 @@ function FeaturedProducts({ productList }) {
     },
   };
   return (
-    <div>
-      <p className="text-center mt-5 mb-5" style={{ fontSize: "40px" }}>
+    <Grid>
+      <Typography
+        variant="h4"
+        style={{
+          textAlign: "center",
+          fontWeight: "bold",
+          marginTop: "100px",
+          marginBottom: "50px",
+        }}
+      >
         Featured Products
-      </p>
-      <div style={style.cards}>
+      </Typography>
+
+      <Grid style={style.cards}>
         {productList.map((product) => (
           <ProductCard
             image={product.image}
@@ -26,8 +35,8 @@ function FeaturedProducts({ productList }) {
             id={product.id}
           />
         ))}
-      </div>
-    </div>
+      </Grid>
+    </Grid>
   );
 }
 

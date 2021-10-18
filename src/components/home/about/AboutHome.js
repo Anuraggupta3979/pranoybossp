@@ -42,12 +42,12 @@ function AboutHome() {
         variant="h4"
         style={{
           textAlign: "center",
-          marginTop: "50px",
-          marginBottom: "50px",
           fontWeight: "bold",
+          marginTop: "100px",
+          marginBottom: "50px",
         }}
       >
-        About US
+        About Us
       </Typography>
       <Grid container item style={{ display: "flex" }}>
         <Grid

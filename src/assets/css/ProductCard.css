@@ -24,7 +24,50 @@
     opacity: 1;
   }
 }
+figure.box {
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
 
+  color: #ffffff;
+  font-size: 16px;
+  background-color: #000000;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+.box {
+  position: relative;
+  overflow: hidden;
+  /* min-width: 255px;
+  max-width: 345px;
+  height: 440px;
+  width: 100%; */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  background-color: #000000;
+  padding: 0;
+  text-align: center;
+}
+.box img {
+  max-height: 100%;
+  vertical-align: top;
+  -webkit-transition: all 2s ease-out;
+  transition: all 2s ease-out;
+  /* filter: alpha(opacity=50);
+  -webkit-opacity: 1; */
+  object-fit: contain;
+  opacity: 0.8;
+}
+.box:hover img,
+.box.hover img {
+  -webkit-transform: scale(1.4);
+  transform: scale(1.4);
+}
+
+.box:hover a,
+.box.hover a {
+  text-decoration: underline;
+  visibility: visible;
+}
 .product-modal-button {
   border: 0;
   background-color: transparent;
@@ -49,47 +92,4 @@
   color: black;
 }
 
-figure.box {
-  position: relative;
-  overflow: hidden;
-  margin: 10px;
 
-  color: #ffffff;
-  font-size: 16px;
-  background-color: #000000;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-}
-figure.box *,
-figure.box *:before,
-figure.box *:after {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-}
-figure.box img {
-  backface-visibility: hidden;
-  vertical-align: top;
-}
-figure.box img {
-  vertical-align: top;
-
-  object-fit: contain;
-}
-
-figure.box:hover img,
-figure.box.hover img {
-  zoom: 1;
-  filter: alpha(opacity=50);
-  -webkit-opacity: 1;
-  opacity: 0.6;
-}
-figure.box:hover i,
-figure.box.hover i {
-  opacity: 0.7;
-
-  -webkit-animation: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
-    both;
-  animation: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-}

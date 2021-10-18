@@ -24,109 +24,31 @@ function Team() {
       >
         Our Team
       </Typography>
-
-      {TeamList.map((member) => (
-        <a className="card" href="#!">
-          <Grid
-            className="front"
-            style={{
-              backgroundImage: `url(${member.image})`,
-            }}
-          >
-            <Typography>{member.name}</Typography>
-          </Grid>
-          <Grid className="back">
-            <Grid>
-              <Typography>{member.description}</Typography>
+      <Grid
+        className="content"
+        style={{
+          display: "flex",
+          flexFlow: " row wrap",
+          justifyContent: "space-around",
+        }}
+      >
+        {TeamList.map((member) => (
+          <a className="card" href="#!">
+            <Grid
+              className="front"
+              style={{
+                backgroundImage: `url(${member.image})`,
+              }}
+            >
+              <Typography>{member.name}</Typography>
             </Grid>
-          </Grid>
-        </a>
-      ))}
-      <Grid className="content">
-        <a className="card" href="#!">
-          <Grid
-            className="front"
-            style={{
-              backgroundImage: `url("//source.unsplash.com/300x401")`,
-            }}
-          >
-            <Typography>Lorem, ipsum dolor.</Typography>
-          </Grid>
-          <Grid className="back">
-            <Grid>
-              <Typography>
-                Consectetur adipisicing elit. Possimus, praesentium?
-              </Typography>
-              <Typography>
-                Provident consectetur natus voluptatem quis tenetur sed beatae
-                eius sint.
-              </Typography>
+            <Grid className="back">
+              <Grid>
+                <Typography>{member.description}</Typography>
+              </Grid>
             </Grid>
-          </Grid>
-        </a>
-        <a className="card" href="#!">
-          <Grid
-            className="front"
-            style={{
-              backgroundImage: `url("//source.unsplash.com/300x401")`,
-            }}
-          >
-            <Typography>Lorem, ipsum dolor.</Typography>
-          </Grid>
-          <Grid className="back">
-            <Grid>
-              <Typography>
-                Consectetur adipisicing elit. Possimus, praesentium?
-              </Typography>
-              <Typography>
-                Provident consectetur natus voluptatem quis tenetur sed beatae
-                eius sint.
-              </Typography>
-            </Grid>
-          </Grid>
-        </a>
-        <a className="card" href="#!">
-          <Grid
-            className="front"
-            style={{
-              backgroundImage: `url("//source.unsplash.com/300x401")`,
-            }}
-          >
-            <Typography>Lorem, ipsum dolor.</Typography>
-          </Grid>
-          <Grid className="back">
-            <Grid>
-              <Typography>
-                Consectetur adipisicing elit. Possimus, praesentium?
-              </Typography>
-              <Typography>
-                Provident consectetur natus voluptatem quis tenetur sed beatae
-                eius sint.
-              </Typography>
-            </Grid>
-          </Grid>
-        </a>
-        <a className="card" href="#!">
-          <Grid
-            className="front"
-            style={{
-              backgroundImage: `url("//source.unsplash.com/300x401")`,
-            }}
-          >
-            <Typography>Lorem, ipsum dolor.</Typography>
-          </Grid>
-          <Grid className="back">
-            <Grid>
-              <Typography>
-                Consectetur adipisicing elit. Possimus, praesentium?
-              </Typography>
-              <Typography>
-                Provident consectetur natus voluptatem quis tenetur sed beatae
-                eius sint.
-              </Typography>
-            </Grid>
-          </Grid>
-        </a>
+          </a>
+        ))}
       </Grid>
     </Grid>
   );

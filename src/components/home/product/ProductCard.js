@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
@@ -46,20 +46,52 @@ const style = {
   },
 };
 
-const ProductCard = ({ image, name, categoryId, description, id }) => {
+const ProductCard = ({ image, name, categoryId, description, id, hot }) => {
   const isTabletOrMobileDevice = useMediaQuery({
     query: "(max-device-width: 768px)",
   });
   const [open, setOpen] = React.useState(false);
+  const [latesthot, sethot] = React.useState(false);
+  useEffect(() => {
+    if (hot === "true") {
+      sethot(true);
+    }
+  });
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
   // console.log(data.name )
+  let latest = hot === true ? 1 : 0;
   return (
-    <div className="mb-3">
+    <div className="mb-3" style={{ position: "relative" }}>
       <button onClick={handleOpen} className="product-modal-button">
-        <figure className="box">
+        <figure
+          className="box"
+          style={{
+            background: `rgba(0,0,0,0.3) url({image})`,
+            backgroundBlendMode: "darken",
+            opacity: "-moz-initial.8",
+          }}
+        >
           <img src={image} alt="sample36" className="product-card-image" />
         </figure>
+
+        <div
+          style={{
+            position: "absolute",
+            top: "22px",
+            left: "16px",
+            backgroundColor: "red",
+            width: "50px",
+            height: "25px",
+            alignContent: "center",
+            justifyContent: "center",
+            opacity:".8"
+          }}
+        >
+          <p style={{ color: "white" , fontSize:"small"}}>HOT</p>
+        </div>
+
         <div style={{ display: "grid" }}>
           <a className="product-anchor" href={`/product/${id}`}>
             {name}

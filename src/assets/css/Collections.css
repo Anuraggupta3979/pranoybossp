@@ -58,8 +58,8 @@
 }
 .categoryCard img {
   vertical-align: top;
-
-  object-fit: contain;
+  max-height: 100%;
+  object-fit: cover;
 }
 
 .categoryCard:hover img,

@@ -4,7 +4,10 @@ import "../../../assets/css/Collections.css";
 function CollectionCard({ image, name }) {
   return (
     <div>
-      <figure className="categoryCard">
+      <figure
+        className="categoryCard"
+      style={{opacity:".9"}}
+      >
         <img src={image} alt={name} />
         <figcaption>
           <div className="collection-card-center">

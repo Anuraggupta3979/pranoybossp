@@ -41,27 +41,30 @@ const CategoryPage = () => {
   }, [categoryId, history]);
 
   return (
-    <div style={{ display: "grid", justifyContent: "center" }}>
+    <div>
       <Navbar />
-      <img src={category.image} alt={category.name} style={style} />
-      <div
-        style={{
-          display: "flex",
-          flexFlow: "row wrap",
-          justifyContent: "space-around",
-        }}
-      >
-        {productList.map((product) => (
-          <ProductCard
-            image={product.image}
-            name={product.name}
-            category={product.categoryId}
-            desc={product.description}
-            key={product.name}
-          />
-        ))}
+
+      <div style={{ display: "grid", justifyContent: "center" }}>
+        <img src={category.image} alt={category.name} style={style} />
+        <div
+          style={{
+            display: "flex",
+            flexFlow: "row wrap",
+            justifyContent: "space-around",
+          }}
+        >
+          {productList.map((product) => (
+            <ProductCard
+              image={product.image}
+              name={product.name}
+              category={product.categoryId}
+              desc={product.description}
+              key={product.name}
+            />
+          ))}
+        </div>
+        <br />
       </div>
-      <br />
       <Footer />
     </div>
   );

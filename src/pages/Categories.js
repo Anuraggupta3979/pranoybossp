@@ -69,24 +69,26 @@ const Categories = () => {
     );
   };
   return (
-    <div style={{ display: "grid", placeItems: "center" }}>
+    <div>
       <Navbar />
-      {productDict.categories.map((category, index) => (
-        <>
-          <br />
-          <br />
-          <div className="categories-image-container">
-            <img src={category.image} alt="#!" style={style.imageBanner} />
-            <div className="categories-page-banner-content">
-              <h3 href={`/category/${category.id}`}>{category.name}</h3>
-              <br />
-              {/* <p>{category.description}</p> */}
+      <div style={{ display: "grid", placeItems: "center" }}>
+        {productDict.categories.map((category, index) => (
+          <>
+            <br />
+            <br />
+            <div className="categories-image-container">
+              <img src={category.image} alt="#!" style={style.imageBanner} />
+              <div className="categories-page-banner-content">
+                <h3 href={`/category/${category.id}`}>{category.name}</h3>
+                <br />
+                {/* <p>{category.description}</p> */}
+              </div>
             </div>
-          </div>
-          <br />
-          <ProductCards productList={productDict.productsArray[index]} />
-        </>
-      ))}
+            <br />
+            <ProductCards productList={productDict.productsArray[index]} />
+          </>
+        ))}
+      </div>
       <Footer />
     </div>
   );

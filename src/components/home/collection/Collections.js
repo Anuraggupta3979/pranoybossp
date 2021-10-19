@@ -28,6 +28,7 @@ function FeaturedProducts({ categoryList }) {
             image={category.image}
             name={category.name}
             key={category.name}
+            id={category.id}
           />
         ))}
       </Grid>

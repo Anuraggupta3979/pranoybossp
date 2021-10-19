@@ -1,0 +1,19 @@
+.dsc-mbm {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+@media screen and (max-width: 1000px) {
+  .craftheading {
+    font-size: large;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .craftheading {
+    font-size: x-large;
+  }
+}
+
+

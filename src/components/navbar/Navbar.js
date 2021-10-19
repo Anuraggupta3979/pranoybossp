@@ -1,19 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 // import "./Navbar.css";
 import * as ReactBootStrap from "react-bootstrap";
 import "../../assets/css/Navbar.css";
 import { Link, withRouter } from "react-router-dom";
-import { getAllDocs } from "../../helper/firestore";
+import NavImage from "../../assets/nav.jpeg";
 
 function Navv() {
-  const [categoryList, setCategoryList] = useState([]);
-  useEffect(() => {
-    getAllDocs("categories").then((data) => {
-      console.log("navbar calling");
-      setCategoryList(data);
-      // console.log(data);
-    });
-  }, []);
   return (
     <div>
       <ReactBootStrap.Navbar
@@ -26,7 +18,7 @@ function Navv() {
         <ReactBootStrap.Container>
           <ReactBootStrap.Navbar.Brand href="/" className="navbarBrand">
             <img
-              src="https://th.bing.com/th/id/R.b90e6a70729f5ef2b99b006fec52feff?rik=xkHeTSKG2xHd2g&riu=http%3a%2f%2fwww.transparentpng.com%2fthumb%2fhandicraft%2fgold-handicraft-png-15.png&ehk=IOLDqtT0WYdSNK72mMxrjUd2Lm2wTZZT6fyoStsyX0I%3d&risl=&pid=ImgRaw&r=0"
+              src={NavImage}
               alt="Logo"
               style={{ width: "150px", height: "50px" }}
             />
@@ -57,16 +49,63 @@ function Navv() {
                   </Link>
                 </ReactBootStrap.Nav>
                 <hr />
-                {categoryList.map((category) => (
-                  <ReactBootStrap.Nav key={category.id}>
-                    <Link
-                      className="nav-link mr-5 link"
-                      to={`/category/${category.id}`}
-                    >
-                      {category.name}
-                    </Link>
-                  </ReactBootStrap.Nav>
-                ))}
+        
+                <ReactBootStrap.Nav>
+                  <Link
+                    className="nav-link mr-5 link"
+                    to="category/cane-bamboo-crafts"
+                  >
+                    Cane and Bamboo Crafts
+                  </Link>
+                </ReactBootStrap.Nav>
+                <ReactBootStrap.Nav>
+                  <Link
+                    className="nav-link mr-5 link"
+                    to="category/cane-bamboo-crafts"
+                  >
+                    Festive Decor-Mania
+                  </Link>
+                </ReactBootStrap.Nav>
+                <ReactBootStrap.Nav>
+                  <Link
+                    className="nav-link mr-5 link"
+                    to="category/cane-bamboo-crafts"
+                  >
+                    Home Accessory-Splash
+                  </Link>
+                </ReactBootStrap.Nav>
+                <ReactBootStrap.Nav>
+                  <Link
+                    className="nav-link mr-5 link"
+                    to="category/cane-bamboo-crafts"
+                  >
+                    Metallic Marvels
+                  </Link>
+                </ReactBootStrap.Nav>
+                <ReactBootStrap.Nav>
+                  <Link
+                    className="nav-link mr-5 link"
+                    to="category/cane-bamboo-crafts"
+                  >
+                    Terracotta Art
+                  </Link>
+                </ReactBootStrap.Nav>
+                <ReactBootStrap.Nav>
+                  <Link
+                    className="nav-link mr-5 link"
+                    to="category/cane-bamboo-crafts"
+                  >
+                    Textile Treasures
+                  </Link>
+                </ReactBootStrap.Nav>
+                <ReactBootStrap.Nav>
+                  <Link
+                    className="nav-link mr-5 link"
+                    to="category/cane-bamboo-crafts"
+                  >
+                    Wooden Realm
+                  </Link>
+                </ReactBootStrap.Nav>
               </ReactBootStrap.NavDropdown>
               <ReactBootStrap.Nav>
                 <Link className="nav-link   link" to="/blog">

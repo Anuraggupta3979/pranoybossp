@@ -3,14 +3,14 @@ import header from "../assets/header.jpg";
 import { Grid, Typography } from "@material-ui/core";
 function HomeVideoBanner() {
   return (
-    <Grid>
+    <Grid style={{ position: "relative", textAlign: "center" }}>
       <img
         src={header}
         style={{
           height: "90vh",
           width: "100%",
-          objectFit: "cover",
-          marginTop: "50px",
+          // objectFit: "cover",
+          // marginTop: "50px",
         }}
         alt="header"
       />
@@ -22,6 +22,7 @@ function HomeVideoBanner() {
           top: "50%",
           left: "50%",
           transform: "translate(-50%. -50%)",
+          justifyContent: "center",
         }}
       >
         <Typography
@@ -37,7 +38,7 @@ function HomeVideoBanner() {
           style={{
             color: "white",
             fontSize: "20px",
-            marginTop:"20px",
+            marginTop: "20px",
             fontFamily: `font-family: "Sofia Pro",Poppins,sans-serif`,
           }}
         >

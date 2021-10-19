@@ -1,44 +1,54 @@
-import * as React from "react";
-
-// import { useTheme } from "@mui/material/styles";
-import Box from "@mui/material/Box";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
-import { Grid } from "@material-ui/core";
-export default function AboutCategoriesCard(props) {
+import React from "react";
+import aabc from "../../assets/aaa.jpg";
+import "../../assets/css/abc.css";
+import { Grid, Typography } from "@mui/material";
+function AboutCategoriesCard(props) {
+  const imageorder = props.imageorder;
+  const textorder = props.textorder;
 
   return (
-    <Card sx={{ display: "flex", marginTop: "50px", marginBottom: "50px" }}>
-      <Grid container item style={{ display: "flex" }}>
-        <Grid item xl={6} lg={6} sm={6}>
-          <CardMedia
-            component="img"
-            sx={{ width: "100%" }}
-            image={props.image}
-            alt="Live from space album cover"
-            style={{ height: "350px", objectFit: "cover" }}
-          />
-        </Grid>
-        <Grid item sm={1}></Grid>
-        <Grid item xl={5} lg={5} sm={5}>
-          <Box sx={{ display: "flex", flexDirection: "column" }}>
-            <CardContent sx={{ flex: "1 0 auto" }}>
-              <Typography component="div" variant="h5">
-                {props.title}
-              </Typography>
-              <Typography
-                variant="subtitle1"
-                color="text.secondary"
-                component="div"
+    <Grid className="mt-5">
+      <Grid className="container-fluid mt-lg-2 mt-md-2 mt-2">
+        <Grid className="row">
+          <Grid className="col-sm-10 col-12 mx-auto">
+            <Grid
+              className="row"
+              style={{
+                overflow: "hidden",
+                boxShadow: "2px 2px 2px 2px #dcdde1",
+              }}
+            >
+              <Grid
+                className="col-xl-5 col-12 col-md-5   "
+                style={{ justifyContent: "center", order: textorder }}
               >
-                {props.description}
-              </Typography>
-            </CardContent>
-          </Box>
+                <h2
+                  className=" mt-0  text-center craftheading"
+                  style={{ color: "grey" }}
+                >
+                  {props.title}
+                </h2>
+                <Typography className="mt-2 py-2 text-justify">
+                  {props.description}
+                </Typography>
+              </Grid>
+              <Grid className="col-lg-1 col-md-1 order-2"></Grid>
+              <Grid
+                className="col-lg-6 col-12 col-md-6 p-2 "
+                style={{ order: imageorder }}
+              >
+                <img
+                  src={props.image}
+                  alt="category"
+                  className="mx-1 img card-img-top "
+                />
+              </Grid>
+            </Grid>
+          </Grid>
         </Grid>
       </Grid>
-    </Card>
+    </Grid>
   );
 }
+
+export default AboutCategoriesCard;

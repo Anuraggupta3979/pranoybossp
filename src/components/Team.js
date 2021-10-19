@@ -1,55 +1,33 @@
 import React, { useState, useEffect } from "react";
 import "./Team.css";
 import { Grid, Typography } from "@material-ui/core";
-import { getAllDocs } from "../helper/firestore";
+import Heading from "./Heading";
+
+import TeamCard from "./team/TeamCard";
 
 function Team() {
-  const [TeamList, setTeamList] = useState([]);
-  useEffect(() => {
-    getAllDocs("team").then((data) => {
-      setTeamList(data);
-      console.log(data);
-    });
-  }, []);
+  const style = {
+    cards: {
+      display: "flex",
+      flexFlow: "row wrap",
+      justifyContent: "space-around",
+    },
+  };
   return (
     <Grid>
-      <Typography
-        variant="h4"
-        style={{
-          textAlign: "center",
-          fontWeight: "bold",
-          marginTop: "100px",
-          marginBottom: "50px",
-        }}
-      >
-        Our Team
-      </Typography>
+      <Heading title="Our Team" />
       <Grid
         className="content"
         style={{
           display: "flex",
           flexFlow: " row wrap",
           justifyContent: "space-around",
-    
         }}
       >
-        {TeamList.map((member) => (
-          <a className="card" href="#!">
-            <Grid
-              className="front"
-              style={{
-                backgroundImage: `url(${member.image})`,
-              }}
-            >
-              <Typography>{member.name}</Typography>
-            </Grid>
-            <Grid className="back">
-              <Grid>
-                <Typography>{member.description}</Typography>
-              </Grid>
-            </Grid>
-          </a>
-        ))}
+        <TeamCard></TeamCard>
+        <TeamCard></TeamCard>
+        <TeamCard></TeamCard>
+        <TeamCard></TeamCard>
       </Grid>
     </Grid>
   );

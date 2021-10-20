@@ -72,7 +72,9 @@ export const getAllProductsByCategory = (categoryList, productList) => {
   let productsArray = [];
   const categories = categoryList.map((category) => {
     categoryId = category.title.toLowerCase().split(" ").join("-");
-    productsArray.push(productList.filter((product) => product.filter));
+    productsArray.push(
+      productList.filter((product) => product.categoryId === categoryId)
+    );
     return { categoryId, ...category };
   });
 

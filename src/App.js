@@ -1,4 +1,3 @@
-import "./App.css";
 import { useState, useEffect } from "react";
 import Faqs from "./pages/Faq";
 import TermsAndCondition from "./pages/TermsAndCondition";
@@ -22,7 +21,7 @@ function App() {
       .then((data) => {
         setProductList(data);
       })
-      .then((e) => console.log(e));
+      .catch((e) => console.log(e));
   }, []);
   return (
     <div className="App">

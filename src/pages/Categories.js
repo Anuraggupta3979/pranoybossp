@@ -8,8 +8,9 @@ import "../assets/Categories.css";
 // import { useMediaQuery } from "react-responsive";
 
 const Categories = ({ categoryList, productList }) => {
+  console.log(productList);
   const productDict = getAllProductsByCategory(categoryList, productList);
-
+  console.log(productDict);
   // let imageHeight = "80vh";
   // const isTabletOrMobileDevice = useMediaQuery({
   //   query: "(max-device-width: 768px)",
@@ -28,7 +29,6 @@ const Categories = ({ categoryList, productList }) => {
   };
 
   const ProductCards = ({ productList }) => {
-    console.log(productList);
     return (
       <>
         <div

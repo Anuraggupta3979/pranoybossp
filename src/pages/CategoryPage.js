@@ -4,10 +4,12 @@ import { getCategoryById, getProductsByCategoryId } from "../helper/firestore";
 import Navbar from "../components/navbar/Navbar";
 import ProductCard from "../components/home/product/ProductCard";
 import Footer from "../components/footer/Footer";
+import Heading from "../components/Heading";
 
 const style = {
   height: "60%",
   width: "98.7vw",
+  objectFit: "cover",
 };
 
 const CategoryPage = ({ categoryList, productList }) => {
@@ -23,9 +25,9 @@ const CategoryPage = ({ categoryList, productList }) => {
   return (
     <div>
       <Navbar />
-
       <div style={{ display: "grid", justifyContent: "center" }}>
         <img src={category.image} alt={category.title} style={style} />
+        <Heading title={category.title} />
         <div
           style={{
             display: "flex",
@@ -40,6 +42,7 @@ const CategoryPage = ({ categoryList, productList }) => {
               category={product.categoryId}
               desc={product.description}
               key={product.name}
+              id={product.id}
             />
           ))}
         </div>

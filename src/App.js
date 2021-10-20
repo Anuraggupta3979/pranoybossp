@@ -65,7 +65,13 @@ function App() {
         />
         <Route
           path="/product/:productId"
-          render={() => <ProductPage productList={productList} />}
+          render={() => (
+            <ProductPage
+              productList={productList}
+              // teamList={teamList}
+              // categoryList={categoryList}
+            />
+          )}
           exact
         />
         {/* <Route path="/admin" component={AdminPage} exact /> */}

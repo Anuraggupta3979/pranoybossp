@@ -1,17 +1,16 @@
 import React from "react";
 import { Grid } from "@mui/material";
 import AboutCategoriesCard from "./AboutCategoriesCard";
-import categoriesList from "../../categoryList";
 import Heading from "../Heading";
 
-function Categories() {
+function Categories({ categoryList }) {
   let i = 3;
   let t = 1;
   let temp = 0;
   return (
     <Grid>
       <Heading title="Categories" />
-      {categoriesList.map(({ title, description, image }) => {
+      {categoryList.map(({ title, description, image }) => {
         temp = i;
         i = t;
         t = temp;
@@ -22,7 +21,7 @@ function Categories() {
             image={image}
             imageorder={i}
             textorder={t}
-          ></AboutCategoriesCard>
+          />
         );
       })}
     </Grid>

@@ -5,7 +5,7 @@ import Heading from "./Heading";
 
 import TeamCard from "./team/TeamCard";
 
-function Team() {
+function Team({teamList}) {
   // const style = {
   //   cards: {
   //     display: "flex",
@@ -24,10 +24,7 @@ function Team() {
           justifyContent: "space-around",
         }}
       >
-        <TeamCard></TeamCard>
-        <TeamCard></TeamCard>
-        <TeamCard></TeamCard>
-        <TeamCard></TeamCard>
+        {teamList.map((member) => (<TeamCard member={member} />))}
       </Grid>
     </Grid>
   );

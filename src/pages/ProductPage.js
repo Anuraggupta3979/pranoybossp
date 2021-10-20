@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { useHistory, useParams } from "react-router";
+import React from "react";
+import { useParams } from "react-router";
 import { getProductByIdAndSimilarProducts } from "../helper/firestore";
 import Navbar from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
@@ -21,24 +21,17 @@ const style = {
   },
 };
 
-function ProductPage() {
+function ProductPage({ productList }) {
   const { productId } = useParams();
-  const history = useHistory();
-  const [productData, setProductData] = useState({
+  let productData = {
     product: { id: "", name: "", image: "", description: "", categoryId: "" },
     similarProducts: [],
-  });
+  };
 
-  useEffect(() => {
-    getProductByIdAndSimilarProducts(productId)
-      .then((data) => {
-        setProductData(data);
-      })
-      .catch((e) => {
-        console.log("error", e);
-        // history.push(`/`);
-      });
-  }, [productId, history]);
+  productData = getProductByIdAndSimilarProducts(
+    productId,
+    productList
+  );
   return (
     <div style={style.container}>
       <Navbar />

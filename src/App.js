@@ -7,7 +7,7 @@ import Home from "./pages/Home";
 import Categories from "./pages/Categories";
 import CategoryPage from "./pages/CategoryPage";
 import ProductPage from "./pages/ProductPage";
-import AdminPage from "./pages/admin";
+// import AdminPage from "./pages/admin";
 import { Switch, Route } from "react-router-dom";
 import categoryList from "./categoryList";
 import teamList from "./teamList";
@@ -46,12 +46,20 @@ function App() {
         />
         <Route
           path="/category/:categoryId"
-          component={CategoryPage}
-          productList={productList}
+          render={() => (
+            <CategoryPage
+              categoryList={categoryList}
+              productList={productList}
+            />
+          )}
           exact
         />
-        <Route path="/product/:productId" component={ProductPage} exact />
-        <Route path="/admin" component={AdminPage} exact />
+        <Route
+          path="/product/:productId"
+          render={() => <ProductPage productList={productList} />}
+          exact
+        />
+        {/* <Route path="/admin" component={AdminPage} exact /> */}
       </Switch>
     </div>
   );

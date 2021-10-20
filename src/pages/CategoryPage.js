@@ -19,7 +19,7 @@ const CategoryPage = ({ categoryList, productList }) => {
     description: "",
   };
   category = getCategoryById(categoryList, categoryId);
-
+  
   return (
     <div>
       <Navbar />

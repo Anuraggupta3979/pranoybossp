@@ -4,7 +4,6 @@ import {
   limit,
   getDoc,
   doc,
-  where,
   query,
 } from "firebase/firestore";
 import { db } from "../firebase";
@@ -45,38 +44,22 @@ export const getDocById = async (resource, docId) => {
 };
 
 export const getCategoryById = (categoryList, categoryId) => {
-  categoryList.forEach((category) => {
-    if (category.title.toLowerCase().split(" ").join("-") === categoryId)
-      return { id: categoryId, ...category };
-  });
+  return categoryList.filter(
+    (category) =>
+      category.title.toLowerCase().split(" ").join("-") === categoryId
+  )[0];
 };
 
-export const getProductByIdAndSimilarProducts = async (productId) => {
-  try {
-    const product = await getDocById("products", productId);
-    console.log(product);
-    const lst = await getProductsByCategory(product.categoryId);
-    console.log({ product: product, similarProducts: lst });
-    return { product: product, similarProducts: lst };
-  } catch (e) {
-    throw new Error(e);
-  }
+export const getProductByIdAndSimilarProducts = (productId, productList) => {
+  const product = productList.filter((product) => product.id === productId)[0];
+  // console.log(product);
+  const lst = getProductsByCategoryId(product.categoryId, productList);
+  console.log({ product: product, similarProducts: lst });
+  return { product: product, similarProducts: lst };
 };
 
-export const getAllCategory = async (resource, docId) => {
-  const docInstance = await getDocs(collection(db, "category"));
-  // console.log(docInstance.data());
-  console.log(docInstance);
-  // return object;
-};
-
-export const getProductsByCategory = async (categoryId) => {
-  var querySnapshot = await getDocs(
-    query(collection(db, "products"), where("categoryId", "==", categoryId))
-  );
-  let lst = getDataFromSnapshot(querySnapshot);
-  if (lst.length === 0) throw new Error("no products with this categoryId");
-  return lst;
+export const getProductsByCategoryId = (categoryId, productList) => {
+  return productList.filter((product) => product.categoryId === categoryId);
 };
 
 /**

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Box from "@mui/material/Box";
 // import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
@@ -86,17 +86,10 @@ const ProductCard = ({
     query: "(max-device-width: 768px)",
   });
   const [open, setOpen] = React.useState(false);
-  const [latesthot, sethot] = React.useState(false);
-  useEffect(() => {
-    if (hot === "true") {
-      sethot(true);
-    }
-  });
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
   // console.log(data.name )
-  let latest = hot === true ? 1 : 0;
 
   console.log({ hot, material, weight, dimensions, description });
 

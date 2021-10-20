@@ -86,10 +86,9 @@ const ProductCard = ({
     query: "(max-device-width: 768px)",
   });
   const [open, setOpen] = React.useState(false);
- 
+
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-
 
   console.log({ hot, material, weight, dimensions, description });
 

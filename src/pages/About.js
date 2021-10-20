@@ -7,18 +7,17 @@ import Categories from "../components/Aboutus/Categories";
 import Team from "../components/Team";
 import HomeVideoBanner from "../sections/HomeVideoBanner";
 
-const About = () => {
+const About = ({categoriesList}) => {
   return (
     <Grid>
       <Navbar />
-      <HomeVideoBanner></HomeVideoBanner>
+      <HomeVideoBanner />
       <Grid style={{ width: "90vw", margin: "auto" }}>
         <AboutStory />
-
-        <Categories></Categories>
-        <Team></Team>
+        <Categories />
+        <Team />
       </Grid>
-      <Footer></Footer>
+      <Footer />
     </Grid>
   );
 };

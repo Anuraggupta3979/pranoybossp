@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { useHistory, useParams } from "react-router";
-import { getProductsByCategory, getCategoryById } from "../helper/firestore";
+import React from "react";
+import { useParams } from "react-router";
+import { getCategoryById } from "../helper/firestore";
 import Navbar from "../components/navbar/Navbar";
 import ProductCard from "../components/home/product/ProductCard";
 import Footer from "../components/footer/Footer";
@@ -10,10 +10,8 @@ const style = {
   width: "98.7vw",
 };
 
-const CategoryPage = ({ categoryList }) => {
+const CategoryPage = ({ categoryList, productList }) => {
   const { categoryId } = useParams();
-  const history = useHistory();
-  const [productList, setProductList] = useState([]);
   let category = {
     id: "",
     name: "",
@@ -21,16 +19,6 @@ const CategoryPage = ({ categoryList }) => {
     description: "",
   };
   category = getCategoryById(categoryList, categoryId);
-  useEffect(() => {
-    getProductsByCategory(categoryId)
-      .then((lst) => {
-        setProductList(lst);
-      })
-      .catch((err) => {
-        console.log("error", err);
-        // history.push(`/`);
-      });
-  }, [categoryId, history]);
 
   return (
     <div>

@@ -83,23 +83,14 @@ export const getProductsByCategory = async (categoryId) => {
  * @param {integer} length (optional): amount of products to be returned
  * @return {Object} categories array sync with products array
  */
-export const getAllProductsByCategory = async (length = 4) => {
-  const categories = await getAllDocs("categories");
-  const productsArray = [];
-  // var querySnapshot
+export const getAllProductsByCategory = (categoryList, productList) => {
+  let categoryId = "";
+  let productsArray = [];
+  const categories = categoryList.map((category) => {
+    categoryId = category.title.toLowerCase().split(" ").join("-");
+    productsArray.push(productList.filter((product) => product.filter));
+    return { categoryId, ...category };
+  });
 
-  // var object
-  for (const category of categories) {
-    // console.log(category.id);
-    let querySnapshot = await getDocs(
-      query(
-        collection(db, "products"),
-        where("categoryId", "==", category.id),
-        limit(length)
-      )
-    );
-    // console.log(lst);
-    productsArray.push(getDataFromSnapshot(querySnapshot));
-  }
   return { categories: categories, productsArray: productsArray };
 };

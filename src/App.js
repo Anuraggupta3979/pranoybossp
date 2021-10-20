@@ -39,10 +39,17 @@ function App() {
         <Route path="/faq" component={Faqs} exact />
         <Route
           path="/categories"
-          render={() => <Categories categoryList={categoryList} />}
+          render={() => (
+            <Categories categoryList={categoryList} productList={productList} />
+          )}
           exact
         />
-        <Route path="/category/:categoryId" component={CategoryPage} exact />
+        <Route
+          path="/category/:categoryId"
+          component={CategoryPage}
+          productList={productList}
+          exact
+        />
         <Route path="/product/:productId" component={ProductPage} exact />
         <Route path="/admin" component={AdminPage} exact />
       </Switch>

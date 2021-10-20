@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Navbar from "../components/navbar/Navbar";
 import ProductCard from "../components/home/product/ProductCard";
 import CustomButton from "../components/Button";
@@ -7,23 +7,8 @@ import { getAllProductsByCategory } from "../helper/firestore";
 import "../assets/Categories.css";
 // import { useMediaQuery } from "react-responsive";
 
-const Categories = () => {
-  const [productDict, setProductDict] = useState({
-    categories: [],
-    productsArray: [],
-  });
-
-  const getData = async () => {
-    const data = await getAllProductsByCategory();
-    setProductDict(data);
-  };
-
-  useEffect(() => {
-    getData();
-  }, []);
-  useEffect(() => {
-    console.log(productDict);
-  }, [productDict]);
+const Categories = ({ categoryList, productList }) => {
+  const productDict = getAllProductsByCategory(categoryList, productList);
 
   // let imageHeight = "80vh";
   // const isTabletOrMobileDevice = useMediaQuery({

@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router";
-import { getCategoryById } from "../helper/firestore";
+import { getCategoryById, getProductsByCategoryId } from "../helper/firestore";
 import Navbar from "../components/navbar/Navbar";
 import ProductCard from "../components/home/product/ProductCard";
 import Footer from "../components/footer/Footer";
@@ -19,7 +19,7 @@ const CategoryPage = ({ categoryList, productList }) => {
     description: "",
   };
   category = getCategoryById(categoryList, categoryId);
-  
+  productList = getProductsByCategoryId(categoryId, productList);
   return (
     <div>
       <Navbar />

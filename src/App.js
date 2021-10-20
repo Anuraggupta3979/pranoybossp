@@ -1,5 +1,5 @@
 import "./App.css";
-// import {useState, useEffect} from "react"
+import { useState, useEffect } from "react";
 import Faqs from "./pages/Faq";
 import TermsAndCondition from "./pages/TermsAndCondition";
 import AboutUs from "./pages/About";
@@ -11,9 +11,19 @@ import ProductPage from "./pages/ProductPage";
 import { Switch, Route } from "react-router-dom";
 import categoryList from "./categoryList";
 import teamList from "./teamList";
+import { getAllDocs } from "./helper/firestore";
 
 function App() {
-  let productList = [];
+  // let productList = [];
+  const [productList, setProductList] = useState([]);
+
+  useEffect(() => {
+    getAllDocs("products")
+      .then((data) => {
+        setProductList(data);
+      })
+      .then((e) => console.log(e));
+  }, []);
   return (
     <div className="App">
       <Switch>

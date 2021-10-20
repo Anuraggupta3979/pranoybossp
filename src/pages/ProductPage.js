@@ -22,16 +22,14 @@ const style = {
 };
 
 function ProductPage({ productList }) {
+  console.log(productList);
   const { productId } = useParams();
   let productData = {
     product: { id: "", name: "", image: "", description: "", categoryId: "" },
     similarProducts: [],
   };
 
-  productData = getProductByIdAndSimilarProducts(
-    productId,
-    productList
-  );
+  productData = getProductByIdAndSimilarProducts(productId, productList);
   return (
     <div style={style.container}>
       <Navbar />

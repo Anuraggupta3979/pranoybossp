@@ -29,11 +29,12 @@ export const getAllDocs = async (resource, length = null) => {
   return getDataFromSnapshot(querySnapshot);
 };
 
-export const getFeaturedProducts = async () => {
-  var querySnapshot = await getDocs(
-    query(collection(db, "products"), where("featured", "==", true))
-  );
-  return getDataFromSnapshot(querySnapshot);
+export const getFeaturedProducts = (productList) => {
+  let lst = [];
+  productList.forEach((product) => {
+    if (product.featured) lst.push(product);
+  });
+  return lst;
 };
 
 export const getDocById = async (resource, docId) => {
@@ -41,6 +42,13 @@ export const getDocById = async (resource, docId) => {
   // console.log(docInstance.data());
   const object = { id: docInstance.id, ...docInstance.data() };
   return object;
+};
+
+export const getCategoryById = (categoryList, categoryId) => {
+  categoryList.forEach((category) => {
+    if (category.title.toLowerCase().split(" ").join("-") === categoryId)
+      return { id: categoryId, ...category };
+  });
 };
 
 export const getProductByIdAndSimilarProducts = async (productId) => {

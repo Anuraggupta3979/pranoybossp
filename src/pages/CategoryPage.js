@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useHistory, useParams } from "react-router";
-import { getProductsByCategory, getDocById } from "../helper/firestore";
+import { getProductsByCategory, getCategoryById } from "../helper/firestore";
 import Navbar from "../components/navbar/Navbar";
 import ProductCard from "../components/home/product/ProductCard";
 import Footer from "../components/footer/Footer";
@@ -10,17 +10,17 @@ const style = {
   width: "98.7vw",
 };
 
-const CategoryPage = () => {
+const CategoryPage = ({ categoryList }) => {
   const { categoryId } = useParams();
   const history = useHistory();
   const [productList, setProductList] = useState([]);
-  const [category, setCategory] = useState({
+  let category = {
     id: "",
     name: "",
     image: "",
     description: "",
-  });
-
+  };
+  category = getCategoryById(categoryList, categoryId);
   useEffect(() => {
     getProductsByCategory(categoryId)
       .then((lst) => {
@@ -30,14 +30,6 @@ const CategoryPage = () => {
         console.log("error", err);
         // history.push(`/`);
       });
-    getDocById("categories", categoryId)
-      .then((categoryDoc) => {
-        setCategory(categoryDoc);
-      })
-      .catch((err) => {
-        console.log("error", err);
-        history.push(`/`);
-      });
   }, [categoryId, history]);
 
   return (
@@ -45,7 +37,7 @@ const CategoryPage = () => {
       <Navbar />
 
       <div style={{ display: "grid", justifyContent: "center" }}>
-        <img src={category.image} alt={category.name} style={style} />
+        <img src={category.image} alt={category.title} style={style} />
         <div
           style={{
             display: "flex",

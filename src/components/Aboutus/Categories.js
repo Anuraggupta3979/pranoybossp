@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid } from "@mui/material";
 import AboutCategoriesCard from "./AboutCategoriesCard";
-import categoriesList from "../../categoriesList";
+import categoriesList from "../../categoryList";
 import Heading from "../Heading";
 
 function Categories() {

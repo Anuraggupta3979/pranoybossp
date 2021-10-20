@@ -4,6 +4,7 @@ import * as ReactBootStrap from "react-bootstrap";
 import "../../assets/css/Navbar.css";
 import { Link, withRouter } from "react-router-dom";
 import NavImage from "../../assets/nav.jpeg";
+import categoriesList from "../../categoryList";
 
 function Navv() {
   return (
@@ -49,63 +50,19 @@ function Navv() {
                   </Link>
                 </ReactBootStrap.Nav>
                 <hr />
-        
-                <ReactBootStrap.Nav>
-                  <Link
-                    className="nav-link mr-5 link"
-                    to="category/cane-bamboo-crafts"
-                  >
-                    Cane and Bamboo Crafts
-                  </Link>
-                </ReactBootStrap.Nav>
-                <ReactBootStrap.Nav>
-                  <Link
-                    className="nav-link mr-5 link"
-                    to="category/cane-bamboo-crafts"
-                  >
-                    Festive Decor-Mania
-                  </Link>
-                </ReactBootStrap.Nav>
-                <ReactBootStrap.Nav>
-                  <Link
-                    className="nav-link mr-5 link"
-                    to="category/cane-bamboo-crafts"
-                  >
-                    Home Accessory-Splash
-                  </Link>
-                </ReactBootStrap.Nav>
-                <ReactBootStrap.Nav>
-                  <Link
-                    className="nav-link mr-5 link"
-                    to="category/cane-bamboo-crafts"
-                  >
-                    Metallic Marvels
-                  </Link>
-                </ReactBootStrap.Nav>
-                <ReactBootStrap.Nav>
-                  <Link
-                    className="nav-link mr-5 link"
-                    to="category/cane-bamboo-crafts"
-                  >
-                    Terracotta Art
-                  </Link>
-                </ReactBootStrap.Nav>
-                <ReactBootStrap.Nav>
-                  <Link
-                    className="nav-link mr-5 link"
-                    to="category/cane-bamboo-crafts"
-                  >
-                    Textile Treasures
-                  </Link>
-                </ReactBootStrap.Nav>
-                <ReactBootStrap.Nav>
-                  <Link
-                    className="nav-link mr-5 link"
-                    to="category/cane-bamboo-crafts"
-                  >
-                    Wooden Realm
-                  </Link>
-                </ReactBootStrap.Nav>
+                {categoriesList.map(({ title }) => (
+                  <ReactBootStrap.Nav>
+                    <Link
+                      className="nav-link mr-5 link "
+                      to={`/category/${title
+                        .toLowerCase()
+                        .split(" ")
+                        .join("-")}`}
+                    >
+                      {title}
+                    </Link>
+                  </ReactBootStrap.Nav>
+                ))}
               </ReactBootStrap.NavDropdown>
               <ReactBootStrap.Nav>
                 <Link className="nav-link   link" to="/blog">

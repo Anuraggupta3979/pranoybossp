@@ -16,6 +16,7 @@ function AboutCategoriesCard(props) {
               style={{
                 overflow: "hidden",
                 boxShadow: "2px 2px 2px 2px #dcdde1",
+                borderRadius: "10px",
               }}
             >
               <Grid
@@ -41,6 +42,7 @@ function AboutCategoriesCard(props) {
                   src={props.image}
                   alt="category"
                   className="mx-1 img card-img-top "
+                  style={{ height: "300px" }}
                 />
               </Grid>
             </Grid>

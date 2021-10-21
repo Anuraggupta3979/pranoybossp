@@ -9,6 +9,7 @@ import call from "../../assets/image/mobile-footer.png";
 import mail from "../../assets/image/mail-footer.png";
 import address from "../../assets/image/location-footer.png";
 import insta from "../../assets/image/instagram.svg";
+import NavImage from "../../assets/nav.png";
 const useStyles = makeStyles((theme) => ({
   footer: {
     padding: "0 60px 0 110px",
@@ -105,7 +106,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "flex-end",
     [theme.breakpoints.down("sm")]: {
       justifyContent: "flex-start",
-      marginTop:"10px"
+      marginTop: "10px",
     },
   },
 }));
@@ -123,7 +124,7 @@ const Footer = () => {
         >
           <Grid item xs={6}>
             <img
-              src="https://th.bing.com/th/id/R.b90e6a70729f5ef2b99b006fec52feff?rik=xkHeTSKG2xHd2g&riu=http%3a%2f%2fwww.transparentpng.com%2fthumb%2fhandicraft%2fgold-handicraft-png-15.png&ehk=IOLDqtT0WYdSNK72mMxrjUd2Lm2wTZZT6fyoStsyX0I%3d&risl=&pid=ImgRaw&r=0"
+              src={NavImage}
               alt="Logo"
               style={{ width: "150px", height: "50px", marginTop: "20px" }}
             />

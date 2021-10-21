@@ -7,10 +7,12 @@ import Textiletreasure from "../../assets/categoryImages/Textile-treasure.jpg";
 import Woodencrafts from "../../assets/categoryImages/Wooden crafts.jpg";
 import metallicmarvels1 from "../../assets/categoryImages/metallic-marvels1.jpg";
 import Heading from "../Heading";
+import Abc from "./Abc";
 function Categories() {
   return (
     <Grid>
       <Heading title="Categories" />
+      <Abc></Abc>
       <AboutCategoriesCard
         title="Metallic Marvels"
         description="Metal crafts of India date back to the time of Indus Valley Civilization as evident from the discovery of the beautiful figurine of the dancing girl- a prehistoric bronze sculpture. And till date, the legacy of metal works can be witnessed in the form of various metalworking Sculptures.

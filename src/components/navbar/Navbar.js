@@ -3,7 +3,7 @@ import React from "react";
 import * as ReactBootStrap from "react-bootstrap";
 import "../../assets/css/Navbar.css";
 import { Link, withRouter } from "react-router-dom";
-import NavImage from "../../assets/nav.jpeg";
+import NavImage from "../../assets/nav.png";
 
 function Navv() {
   return (

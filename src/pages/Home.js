@@ -28,7 +28,8 @@ const Home = () => {
   return (
     <Grid>
       <Navbar />
-      <Grid style={{ marginTop: "70px" }}>
+      {/* <Grid style={{ marginTop: "70px" }}> */}
+      <Grid>
         <HomeVideoBanner />
       </Grid>
       <Grid style={{ width: "97%", margin: "auto" }}>

@@ -1,5 +1,5 @@
 import React from "react";
-import aabc from "../../assets/aaa.jpg";
+// import aabc from "../../assets/aaa.jpg";
 import "../../assets/css/abc.css";
 import { Grid, Typography } from "@mui/material";
 function AboutCategoriesCard(props) {

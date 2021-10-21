@@ -1,22 +1,22 @@
 import React from "react";
 import { Grid, Typography } from "@material-ui/core";
-import anu from "../../assets/aaa.jpg";
 import "../Team.css";
-function TeamCard() {
+
+function TeamCard({member}) {
   return (
     <Grid>
       <a className="card" href="#!">
         <Grid
           className="front"
           style={{
-            backgroundImage: `url(${anu})`,
+            backgroundImage: `url(${member.image})`,
           }}
         >
-          <Typography variant="h5">anu</Typography>
+          <Typography variant="h5">{member.name}</Typography>
         </Grid>
         <Grid className="back">
           <Grid>
-            <Typography>des</Typography>
+            <Typography>{member.description}</Typography>
           </Grid>
         </Grid>
       </a>

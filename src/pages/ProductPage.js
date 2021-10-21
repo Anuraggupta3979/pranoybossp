@@ -1,44 +1,46 @@
 import React, { useState, useEffect } from "react";
-import { useHistory, useParams } from "react-router";
+import { useParams } from "react-router";
 import { getProductByIdAndSimilarProducts } from "../helper/firestore";
 import Navbar from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
 import { Grid } from "@mui/material";
 import ProductCard from "../components/home/product/ProductCard";
+import { getAllDocs } from "../helper/firestore";
 
-const style = {
-  container: { display: "grid", justifyContent: "center" },
-  image: {
-    maxWidth: "40vw",
-  },
-  content: {
-    marginTop: "30px",
-  },
-  imageAndContent: {
-    display: "flex",
-    flexFlow: "row wrap",
-    justifyContent: "space-between",
-  },
-};
-
-function ProductPage() {
-  const { productId } = useParams();
-  const history = useHistory();
+const ProductPage = () => {
+  const [productList, setProductList] = useState([]);
   const [productData, setProductData] = useState({
     product: { id: "", name: "", image: "", description: "", categoryId: "" },
     similarProducts: [],
   });
-
+  
+  const { productId } = useParams();
   useEffect(() => {
-    getProductByIdAndSimilarProducts(productId)
+    getAllDocs("products")
       .then((data) => {
-        setProductData(data);
+        setProductList(data);
+        setProductData(
+          getProductByIdAndSimilarProducts(productId, productList)
+        );
       })
-      .catch((e) => {
-        console.log("error", e);
-        // history.push(`/`);
-      });
-  }, [productId, history]);
+      .catch((e) => console.log(e));
+  }, [productId, productList]);
+  const style = {
+    container: { display: "grid", justifyContent: "center" },
+    image: {
+      maxWidth: "40vw",
+    },
+    content: {
+      marginTop: "30px",
+    },
+    imageAndContent: {
+      display: "flex",
+      flexFlow: "row wrap",
+      justifyContent: "space-between",
+    },
+  };
+  console.log({ productList });
+
   return (
     <div style={style.container}>
       <Navbar />
@@ -72,6 +74,6 @@ function ProductPage() {
       <Footer />
     </div>
   );
-}
+};
 
 export default ProductPage;

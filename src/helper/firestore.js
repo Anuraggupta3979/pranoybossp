@@ -4,7 +4,6 @@ import {
   limit,
   getDoc,
   doc,
-  where,
   query,
 } from "firebase/firestore";
 import { db } from "../firebase";
@@ -29,11 +28,12 @@ export const getAllDocs = async (resource, length = null) => {
   return getDataFromSnapshot(querySnapshot);
 };
 
-export const getFeaturedProducts = async () => {
-  var querySnapshot = await getDocs(
-    query(collection(db, "products"), where("featured", "==", true))
-  );
-  return getDataFromSnapshot(querySnapshot);
+export const getFeaturedProducts = (productList) => {
+  let lst = [];
+  productList.forEach((product) => {
+    if (product.featured) lst.push(product);
+  });
+  return lst;
 };
 
 export const getDocById = async (resource, docId) => {
@@ -43,55 +43,40 @@ export const getDocById = async (resource, docId) => {
   return object;
 };
 
-export const getProductByIdAndSimilarProducts = async (productId) => {
-  try {
-    const product = await getDocById("products", productId);
-    console.log(product);
-    const lst = await getProductsByCategory(product.categoryId);
-    console.log({ product: product, similarProducts: lst });
-    return { product: product, similarProducts: lst };
-  } catch (e) {
-    throw new Error(e);
-  }
+export const getCategoryById = (categoryList, categoryId) => {
+  return categoryList.filter(
+    (category) =>
+      category.title.toLowerCase().split(" ").join("-") === categoryId
+  )[0];
 };
 
-export const getAllCategory = async (resource, docId) => {
-  const docInstance = await getDocs(collection(db, "category"));
-  // console.log(docInstance.data());
-  console.log(docInstance);
-  // return object;
+export const getProductByIdAndSimilarProducts = (productId, productList) => {
+  console.log(productList);
+  const product = productList.filter((product) => product.id === productId)[0];
+  console.log(product);
+  const lst = getProductsByCategoryId(product.categoryId, productList);
+  console.log({ product: product, similarProducts: lst });
+  return { product: product, similarProducts: lst };
 };
 
-export const getProductsByCategory = async (categoryId) => {
-  var querySnapshot = await getDocs(
-    query(collection(db, "products"), where("categoryId", "==", categoryId))
-  );
-  let lst = getDataFromSnapshot(querySnapshot);
-  if (lst.length === 0) throw new Error("no products with this categoryId");
-  return lst;
+export const getProductsByCategoryId = (categoryId, productList) => {
+  return productList.filter((product) => product.categoryId === categoryId);
 };
 
 /**
  * @param {integer} length (optional): amount of products to be returned
  * @return {Object} categories array sync with products array
  */
-export const getAllProductsByCategory = async (length = 4) => {
-  const categories = await getAllDocs("categories");
-  const productsArray = [];
-  // var querySnapshot
-
-  // var object
-  for (const category of categories) {
-    // console.log(category.id);
-    let querySnapshot = await getDocs(
-      query(
-        collection(db, "products"),
-        where("categoryId", "==", category.id),
-        limit(length)
-      )
+export const getAllProductsByCategory = (categoryList, productList) => {
+  let categoryId = "";
+  let productsArray = [];
+  const categories = categoryList.map((category) => {
+    categoryId = category.title.toLowerCase().split(" ").join("-");
+    productsArray.push(
+      productList.filter((product) => product.categoryId === categoryId)
     );
-    // console.log(lst);
-    productsArray.push(getDataFromSnapshot(querySnapshot));
-  }
+    return { categoryId, ...category };
+  });
+
   return { categories: categories, productsArray: productsArray };
 };

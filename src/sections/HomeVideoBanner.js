@@ -2,6 +2,7 @@ import React from "react";
 import { Grid, Typography } from "@material-ui/core";
 import HomeVideo from "../assets/homeVideo.mp4";
 import "../assets/css/HomeVideoBanner.css";
+
 function HomeVideoBanner() {
   return (
     <Grid>

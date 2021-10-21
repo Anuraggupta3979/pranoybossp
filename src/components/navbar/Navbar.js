@@ -3,12 +3,8 @@ import React from "react";
 import * as ReactBootStrap from "react-bootstrap";
 import "../../assets/css/Navbar.css";
 import { Link, withRouter } from "react-router-dom";
-<<<<<<< HEAD
 import NavImage from "../../assets/nav.png";
-=======
-import NavImage from "../../assets/nav.jpeg";
 import categoriesList from "../../categoryList";
->>>>>>> 30a241ccd05490a4ac0cb47774b0ebfeaffb422c
 
 function Navv() {
   return (

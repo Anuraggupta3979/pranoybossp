@@ -122,9 +122,16 @@ const ProductCard = ({
           <p style={{ color: "white", fontSize: "small" }}>HOT</p>
         </div>
 
-        <div style={{ display: "grid" }}>
+        <div style={{ display: "grid", justifyContent: "center" }}>
           <a className="product-anchor" href={`/product/${id}`}>
-            {name}
+            <p
+              style={{
+                width: "250px",
+                
+              }}
+            >
+              {name}
+            </p>
           </a>
           <p>{hot}</p>
         </div>

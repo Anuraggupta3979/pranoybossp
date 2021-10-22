@@ -1,34 +1,20 @@
 import React from "react";
-import CollectionCard from "./CollectionCard";
-import { Grid, Typography } from "@material-ui/core";
-function FeaturedProducts({ categoryList }) {
-  const style = {
-    cards: {
-      display: "flex",
-      flexFlow: "row wrap",
-      justifyContent: "space-around",
-    },
-  };
+import { Grid } from "@material-ui/core";
+import Heading from "../../Heading";
+import CategoriesCard from "./CategoriesCard";
+function Collections({ categoryList }) {
+
   return (
     <Grid>
-      <Typography
-        variant="h4"
-        style={{
-          textAlign: "center",
-          fontWeight: "bold",
-          marginTop: "100px",
-          marginBottom: "50px",
-        }}
-      >
-        Categories
-      </Typography>
-      <Grid style={style.cards}>
+      <Heading title="Categories" />
+
+      <Grid container item style={{ display: "flex" }} className="card-container">
         {categoryList.map((category) => (
-          <CollectionCard
+          <CategoriesCard
             image={category.image}
             name={category.name}
-            key={category.name}
             id={category.id}
+            key={category.name}
           />
         ))}
       </Grid>
@@ -36,4 +22,4 @@ function FeaturedProducts({ categoryList }) {
   );
 }
 
-export default FeaturedProducts;
+export default Collections;

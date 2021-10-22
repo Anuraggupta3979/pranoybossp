@@ -2,17 +2,8 @@ import React from "react";
 import "./Team.css";
 import { Grid } from "@material-ui/core";
 import Heading from "./Heading";
-
 import TeamCard from "./team/TeamCard";
-
-function Team({teamList}) {
-  // const style = {
-  //   cards: {
-  //     display: "flex",
-  //     flexFlow: "row wrap",
-  //     justifyContent: "space-around",
-  //   },
-  // };
+function Team({teamList}){
   return (
     <Grid>
       <Heading title="Our Team" />
@@ -20,7 +11,7 @@ function Team({teamList}) {
         className="content"
         style={{
           display: "flex",
-          flexFlow: " row wrap",
+          flexFlow: "row wrap",
           justifyContent: "space-around",
         }}
       >

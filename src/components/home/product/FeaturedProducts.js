@@ -2,6 +2,7 @@ import React from "react";
 import ProductCard from "./ProductCard";
 import { Grid, Typography } from "@material-ui/core";
 // import { Grid, Typography } from "@material-ui/core";
+import Heading from "../../Heading";
 function FeaturedProducts({ productList }) {
   const style = {
     cards: {
@@ -12,17 +13,7 @@ function FeaturedProducts({ productList }) {
   };
   return (
     <Grid>
-      <Typography
-        variant="h4"
-        style={{
-          textAlign: "center",
-          fontWeight: "bold",
-          marginTop: "100px",
-          marginBottom: "50px",
-        }}
-      >
-        Featured Products
-      </Typography>
+      <Heading title="Featured Products" />
 
       <Grid style={style.cards}>
         {productList.map((product) => (

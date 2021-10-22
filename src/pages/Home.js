@@ -22,6 +22,7 @@ const Home = ({ teamList, categoryList, productList }) => {
       <Grid style={{ width: "97%", margin: "auto" }}>
         <AboutHeader />
         <FeaturedProducts productList={getFeaturedProducts(productList)} />
+        
         <Collections categoryList={categoryList} />
         <AboutHome />
         <Team teamList={teamList} />

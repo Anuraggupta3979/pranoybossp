@@ -13,7 +13,8 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "50px",
   },
   aboutheading: {
-    fontSize: "20px",
+    fontSize: "25px",
+    // fontWeight: "bold",
     marginBottom: "30px",
   },
 }));
@@ -28,7 +29,10 @@ function AboutHeader() {
         >
           Adorning the traditional Creativity
         </Typography>
-        <Typography style={{ fontFamily: ` "Poppins",sans-serif` }}>
+
+        <Typography
+          style={{ fontFamily: `'Oswald', sans-serif`, fontSize: "20px" }}
+        >
           We ensure to satiate your desire with the most exclusive handcraft
           collection, embracing the spirit of magnificent Indian Handicrafts.
           Revamp your surroundings with the authentic and intricate crafts by

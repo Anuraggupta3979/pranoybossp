@@ -46,7 +46,7 @@ export const getDocById = async (resource, docId) => {
 export const getCategoryById = (categoryList, categoryId) => {
   return categoryList.filter(
     (category) =>
-      category.title.toLowerCase().split(" ").join("-") === categoryId
+      category.name.toLowerCase().split(" ").join("-") === categoryId
   )[0];
 };
 

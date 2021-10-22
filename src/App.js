@@ -11,7 +11,7 @@ import { Switch, Route } from "react-router-dom";
 import categoryList from "./categoryList";
 import teamList from "./teamList";
 import { getAllDocs } from "./helper/firestore";
-
+import "./App.css";
 function App() {
   // let productList = [];
   const [productList, setProductList] = useState([]);
@@ -76,6 +76,13 @@ function App() {
         />
         {/* <Route path="/admin" component={AdminPage} exact /> */}
       </Switch>
+      <a
+        href="https://wa.me/917232013979"
+        className="whatsapp_float"
+        target="_blank"
+      >
+        <i className="fa fa-whatsapp whatsapp-icon"></i>
+      </a>
     </div>
   );
 }

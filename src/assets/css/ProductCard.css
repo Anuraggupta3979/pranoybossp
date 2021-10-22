@@ -24,29 +24,21 @@
     opacity: 1;
   }
 }
-figure.box {
+.box {
   position: relative;
   overflow: hidden;
   margin: 10px;
-
   color: #ffffff;
   font-size: 16px;
   background-color: #000000;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
-}
-.box {
-  position: relative;
-  overflow: hidden;
-  /* min-width: 255px;
-  max-width: 345px;
-  height: 440px;
-  width: 100%; */
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
   background-color: #000000;
   padding: 0;
   text-align: center;
 }
+
 .box img {
   max-height: 100%;
   vertical-align: top;

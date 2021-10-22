@@ -2,6 +2,7 @@ import React from "react";
 import { Grid, makeStyles, Typography } from "@material-ui/core";
 import about from "../../../assets/header.jpg";
 import Button from "../../Button";
+import Heading from "../../Heading";
 const useStyles = makeStyles((theme) => ({
   about: {
     margin: "30px",
@@ -38,17 +39,7 @@ function AboutHome() {
     //   </Grid>
     // </Grid>
     <Grid className={classes.about}>
-      <Typography
-        variant="h4"
-        style={{
-          textAlign: "center",
-          fontWeight: "bold",
-          marginTop: "100px",
-          marginBottom: "50px",
-        }}
-      >
-        About Us
-      </Typography>
+      <Heading title=" About Us" />
       <Grid container item style={{ display: "flex" }}>
         <Grid
           item
@@ -94,8 +85,9 @@ function AboutHome() {
           >
             Craftjet
           </Typography>
-          <p className="mt-2 py-2 text-justify">
-            <span class="font-weight-bold" />
+          <Typography
+            style={{ fontSize: "20px" }}
+          >
             With strokes of perfection, oodles of creativity and revived
             heritage, originated the "Craftjet". An exclusive platform
             glorifying the incredibility of Indian Handicrafts, transmogrified
@@ -103,7 +95,8 @@ function AboutHome() {
             We aim to prompt the incredible Indian heritage and its rich art
             form to reach the people at its ultimate grandeur all over the world
             with par excellence.
-          </p>
+          </Typography>
+          
 
           <Button title="Learn More" />
         </Grid>

@@ -50,16 +50,16 @@ function Navv() {
                   </Link>
                 </ReactBootStrap.Nav>
                 <hr />
-                {categoriesList.map(({ title }) => (
+                {categoriesList.map(({ name }) => (
                   <ReactBootStrap.Nav>
                     <Link
                       className="nav-link mr-5 link "
-                      to={`/category/${title
+                      to={`/category/${name}
                         .toLowerCase()
                         .split(" ")
                         .join("-")}`}
                     >
-                      {title}
+                      {name}
                     </Link>
                   </ReactBootStrap.Nav>
                 ))}

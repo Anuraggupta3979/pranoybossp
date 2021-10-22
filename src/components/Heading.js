@@ -8,8 +8,8 @@ function Heading(props) {
         style={{
           textAlign: "center",
           fontWeight: "bold",
-          marginTop: "50px",
-          marginBottom: "50px",
+          marginTop: "80px",
+          marginBottom: "70px",
         }}
       >
         {props.title}

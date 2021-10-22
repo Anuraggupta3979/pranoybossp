@@ -26,8 +26,8 @@ const CategoryPage = ({ categoryList, productList }) => {
     <div>
       <Navbar />
       <div style={{ display: "grid", justifyContent: "center" }}>
-        <img src={category.image} alt={category.title} style={style} />
-        <Heading title={category.title} />
+        <img src={category.image} alt={category.name} style={style} />
+        <Heading title={category.name} />
         <div
           style={{
             display: "flex",

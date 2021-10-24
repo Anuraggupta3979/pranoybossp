@@ -7,25 +7,25 @@
   justify-content: center;
   position: relative;
 }
-.card-container:hover .categoriesCard {
-  opacity: 0.7;
-  cursor: pointer;
-  filter: grayscale(1);
-}
-.card-container .categoriesCard {
-  margin: 30px;
-  margin-left: 15px;
-  margin-right: 15px;
-  max-width: 460px;
+.categoriesCard {
+  /* width: 390px; */
+  /* height: 300px; */
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  /* position: absolute; */
   position: relative;
-  width: 100px !important;
-  float: left;
-  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.05);
-  background: #fff;
-  -webkit-transition: 0.3s all ease;
-  transition: 0.15s all ease;
 }
-.card-container .categoriesCard:hover {
+.card-container:hover .categoriesCard {
+  /* opacity: 0.7; */
+  cursor: pointer;
+  /* filter: grayscale(1); */
+  /* background-image: url("https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/categories%2Ffestive%20decor%20mania.jpg?alt=media&token=31095094-85a6-4b8a-beaf-b47de4613101"); */
+}
+
+.categoriesCard:hover {
   box-shadow: 0 0 8px 3px rgba(0, 0, 0, 0.15);
   transform: scale(1.025);
   opacity: 1;
@@ -36,6 +36,8 @@
   width: 100%;
   padding: 0;
   margin: 0;
+  /* height: 200px; */
+  border-radius: 15px;
 }
 @media screen and (max-width: 800px) {
   .card-container .categoriesCard {
@@ -52,34 +54,22 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  justify-content: center;
+  width: 100%;
+  text-align: center;
 }
-.categoriesCard:hover a,
-.categoriesCard.hover a {
-  text-decoration: underline;
-  visibility: visible;
-}
-
-.collection-card-center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.categoriesCard:hover a {
+  text-decoration: none;
+  border-bottom: 2px solid white;
 }
 
-.center-text {
-  color: #ffffff;
-  font-size: 20px;
-  letter-spacing: 3px;
-}
-
-.collection-card-link {
-  font-size: 20px;
+.category-card-link {
+  font-size: 1.4rem;
   color: #ffffff;
   text-decoration: none;
-  visibility: hidden;
+  font-family: "'Oswald', sans-serif";
+  font-weight: 400;
 }
 
-.collection-card-link:hover {
+.category-card-link:hover {
   color: #ffffff;
 }

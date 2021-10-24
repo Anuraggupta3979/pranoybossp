@@ -41,7 +41,6 @@ function AboutHeader() {
         <Link to="/about">
           <CustomButton title="Learn More" />
         </Link>
-        {/* <CustomButton title="Learn More" /> */}
       </Grid>
     </Grid>
   );

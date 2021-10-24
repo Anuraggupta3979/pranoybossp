@@ -1,6 +1,6 @@
 import React from "react";
 import ProductCard from "./ProductCard";
-import { Grid, Typography } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 // import { Grid, Typography } from "@material-ui/core";
 import Heading from "../../Heading";
 function FeaturedProducts({ productList }) {

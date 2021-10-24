@@ -23,6 +23,10 @@ function App() {
       })
       .catch((e) => console.log(e));
   }, []);
+  const handleClick = () => {
+    window.open("https://wa.me/917232013979");
+  };
+
   return (
     <div className="App">
       <Switch>
@@ -76,13 +80,13 @@ function App() {
         />
         {/* <Route path="/admin" component={AdminPage} exact /> */}
       </Switch>
-      <a
-        href="https://wa.me/917232013979"
+      <p
+        onClick={handleClick}
         className="whatsapp_float"
-        target="_blank"
+        // target="_blank"
       >
         <i className="fa fa-whatsapp whatsapp-icon"></i>
-      </a>
+      </p>
     </div>
   );
 }

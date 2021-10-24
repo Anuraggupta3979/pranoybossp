@@ -1,27 +1,27 @@
 const teamData = [
   {
-    name: "Pranoy Bhanshali",
+    name: "Shubha Kothari",
     description: "A Very Good Leader",
     image:
-      "https://th.bing.com/th/id/OIP.-pGNU1owy7WpeKXyxiEk5AHaHa?pid=ImgDet&rs=1",
+      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/team%2FShubha%20Kothari.jpeg?alt=media&token=17ddd953-3657-4664-aef1-03342226e47d",
   },
   {
-    name: "Anurag",
+    name: "Priyanka Kothari",
     description: "A Student",
     image:
-      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/categories%2FTable%20and%20console.jpg?alt=media&token=f71978d8-55d2-42a4-8bb5-4a6944df990f",
+      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/team%2FPriyanka%20Kothari.jpeg?alt=media&token=d2871238-ad00-46c9-b5de-c1fe4ac8d00b",
   },
   {
-    name: "Pranoy Bhanshali",
+    name: "Pratima Garg",
     description: "A Very Good Leader",
     image:
-      "https://th.bing.com/th/id/OIP.-pGNU1owy7WpeKXyxiEk5AHaHa?pid=ImgDet&rs=1",
+      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/team%2FPratima%20Garg.jpeg?alt=media&token=d7e9ec0b-427e-4bc1-b37d-61ce2f4aaf47",
   },
   {
-    name: "Anurag",
+    name: "Rachna Jaisinghani",
     description: "A Student",
     image:
-      "https://th.bing.com/th/id/OIP.HkIbhO8npHy_0T2VN9fTewHaMg?pid=ImgDet&rs=1",
+      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/team%2FRachna%20Jaisinghani.jpeg?alt=media&token=df317e69-60f5-4ece-a15e-bc5613973dbc",
   },
 ];
 

@@ -21,7 +21,7 @@ function Navv() {
             <img
               src={NavImage}
               alt="Logo"
-              style={{ width: "150px", height: "50px" }}
+              style={{ width: "100px", height: "20px" }}
             />
             {/* <small>Craftjet</small> */}
           </ReactBootStrap.Navbar.Brand>

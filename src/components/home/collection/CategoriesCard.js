@@ -22,6 +22,7 @@ function CategoriesCard() {
           style={{
             display: "flex",
             flexDirection: "column",
+            height: "70%",
 
             alignItems: "center",
           }}

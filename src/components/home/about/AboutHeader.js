@@ -30,13 +30,11 @@ function AboutHeader() {
           Adorning the Traditional Creativity
         </Typography>
 
-        <Typography style={{ fontFamily: `'Oswald', sans-serif` }}>
-          <span style={{ fontFamily: "맑은 고딕", fontSize: "16px" }}>
-            We ensure
-          </span>{" "}
-          to satiate your desire with the most exclusive handcraft collection,
-          embracing the spirit of magnificent Indian Handicrafts. Revamp your
-          surroundings with the authentic and intricate crafts by Craftjet.
+        <Typography style={{ fontFamily: "맑은 고딕", fontSize: "16px" }}>
+          We ensure to satiate your desire with the most exclusive handcraft
+          collection, embracing the spirit of magnificent Indian Handicrafts.
+          Revamp your surroundings with the authentic and intricate crafts by
+          Craftjet.
         </Typography>
         <Link to="/about">
           <CustomButton title="Learn More" />

@@ -85,20 +85,17 @@ function AboutHome() {
           >
             Craftjet
           </Typography>
-          <Typography style={{ fontSize: "20px" }}>
-            <span
-              style={{
-                fontSize: "16px",
-                fontWeight: "lighter",
-                fontFamily: "맑은 고딕 ",
-              }}
-            >
-              With strokes of perfection
-            </span>
-            ,oodles of creativity and revived heritage, originated the
-            "Craftjet". An exclusive platform glorifying the incredibility of
-            Indian Handicrafts, transmogrified into a range of alluring
-            contemporary products. <br />
+          <Typography
+            style={{
+              fontSize: "16px",
+              fontWeight: "lighter",
+              fontFamily: "맑은 고딕 ",
+            }}
+          >
+            With strokes of perfection ,oodles of creativity and revived
+            heritage, originated the "Craftjet". An exclusive platform
+            glorifying the incredibility of Indian Handicrafts, transmogrified
+            into a range of alluring contemporary products. <br />
             We aim to prompt the incredible Indian heritage and its rich art
             form to reach the people at its ultimate grandeur all over the world
             with par excellence.

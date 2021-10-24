@@ -6,7 +6,7 @@ import Home from "./pages/Home";
 import Categories from "./pages/Categories";
 import CategoryPage from "./pages/CategoryPage";
 import ProductPage from "./pages/ProductPage";
-// import AdminPage from "./pages/admin";
+import AdminPage from "./pages/admin";
 import { Switch, Route } from "react-router-dom";
 import categoryList from "./categoryList";
 import teamList from "./teamList";

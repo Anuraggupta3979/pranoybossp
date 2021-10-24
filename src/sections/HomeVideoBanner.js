@@ -15,7 +15,7 @@ function HomeVideoBanner() {
   const classes = useStyles({});
   return (
     <Grid>
-      <header>
+      <header className="topheader">
         <Grid className="overlay"></Grid>
 
         <video

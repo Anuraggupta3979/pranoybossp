@@ -1,4 +1,4 @@
-header {
+.topheader {
   position: relative;
   background-color: black;
   height: 100vh;
@@ -7,7 +7,7 @@ header {
   overflow: hidden;
 }
 
-header .headerSection {
+.topheader .headerSection {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -22,12 +22,12 @@ header .headerSection {
   transform: translateX(-50%) translateY(-50%);
 }
 
-header .container {
+.topheader .container {
   position: relative;
   z-index: 2;
 }
 
-header .overlay {
+.topheader .overlay {
   position: absolute;
   top: 0;
   left: 0;

@@ -15,7 +15,7 @@ function HeaderSection(props) {
   const classes = useStyles({});
   return (
     <Grid>
-      <header>
+      <header className="topheader">
         <Grid className="overlay"></Grid>
 
         <Grid className="headerSection">

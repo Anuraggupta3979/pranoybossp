@@ -23,7 +23,8 @@ function TeamCard({ member }) {
                 marginBottom: "15px",
                 marginTop: "20px",
                 fontFamily: "맑은 고딕",
-                justifyContent: "center",
+                // justifyContent: "center",
+          
               }}
             >
               {member.name}

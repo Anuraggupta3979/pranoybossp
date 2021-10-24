@@ -127,7 +127,8 @@ const ProductCard = ({
             <p
               style={{
                 width: "250px",
-                
+                fontFamily: "맑은 고딕",
+                fontSize: "14px",
               }}
             >
               {name}

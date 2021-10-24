@@ -25,18 +25,18 @@ function AboutHeader() {
       <Grid item sm={4}>
         <Typography
           className={classes.aboutheading}
-          style={{ fontFamily: ` "Poppins",sans-serif` }}
+          style={{ fontFamily: "Courier New" }}
         >
-          Adorning the traditional Creativity
+          Adorning the Traditional Creativity
         </Typography>
 
-        <Typography
-          style={{ fontFamily: `'Oswald', sans-serif`, fontSize: "20px" }}
-        >
-          We ensure to satiate your desire with the most exclusive handcraft
-          collection, embracing the spirit of magnificent Indian Handicrafts.
-          Revamp your surroundings with the authentic and intricate crafts by
-          Craftjet.
+        <Typography style={{ fontFamily: `'Oswald', sans-serif` }}>
+          <span style={{ fontFamily: "맑은 고딕", fontSize: "16px" }}>
+            We ensure
+          </span>{" "}
+          to satiate your desire with the most exclusive handcraft collection,
+          embracing the spirit of magnificent Indian Handicrafts. Revamp your
+          surroundings with the authentic and intricate crafts by Craftjet.
         </Typography>
         <Link to="/about">
           <CustomButton title="Learn More" />

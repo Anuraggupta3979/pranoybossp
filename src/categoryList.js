@@ -1,10 +1,11 @@
 const categoriesData = [
   {
     name: "Cane and Bamboo Crafts",
+    categoryId:"cane-bamboo-crafts",
     description:
       "Twisting the bundles of cane grass, weaving the finely processed Jute and bamboo, are created the awe-inspiring artifacts and handicrafts that have the power to embellish every nook and corner of your surroundings, also exhibiting the rich and glorious spiritual heritage of India, especially the eastern side. The artistic creation of bamboo, cane, and jute articles is a perfect example of how there is a seamless blend of traditional creativity with modernism. The demand for these natural fiber-based crafts has escalated over time, with India being one of the sole producers of such beautiful products.",
     image:
-      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/categories%2Fcane-bamboo%20(1).jpg?alt=media&token=7ceff93a-c3ea-4112-b26f-c6a9725d5653",
+      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/categories%2Fcane-bamboo-without-rotate.jpg?alt=media&token=7fb0c009-d47e-42f5-beb6-ffd3244c5b6c",
   },
   {
     name: "Metallic Marvels",

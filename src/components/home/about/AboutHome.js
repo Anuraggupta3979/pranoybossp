@@ -83,7 +83,7 @@ function AboutHome() {
               fontFamily: "맑은 고딕",
             }}
           >
-            Craftjet
+          The Craftjet
           </Typography>
           <Typography
             style={{

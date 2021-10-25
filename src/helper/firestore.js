@@ -71,7 +71,7 @@ export const getAllProductsByCategory = (categoryList, productList) => {
   let categoryId = "";
   let productsArray = [];
   const categories = categoryList.map((category) => {
-    categoryId = category.title.toLowerCase().split(" ").join("-");
+    categoryId = category.name.toLowerCase().split(" ").join("-");
     productsArray.push(
       productList.filter((product) => product.categoryId === categoryId)
     );

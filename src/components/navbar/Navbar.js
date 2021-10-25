@@ -54,7 +54,7 @@ function Navv() {
                   <ReactBootStrap.Nav>
                     <Link
                       className="nav-link mr-5 link "
-                      to={`/category/${name}
+                      to={`/category/${name
                         .toLowerCase()
                         .split(" ")
                         .join("-")}`}

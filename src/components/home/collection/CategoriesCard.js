@@ -128,7 +128,7 @@ function CategoriesCard() {
               </Typography>
               <Link
                 className="category-card-link"
-                to="/category/cane-bamboo-crafts"
+                to="/category/cane-and-bamboo-crafts"
               >
                 Explore
               </Link>

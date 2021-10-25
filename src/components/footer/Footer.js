@@ -1,7 +1,6 @@
 import React from "react";
 import { Grid, makeStyles, Typography } from "@material-ui/core";
 import Newsletter from "../newsletter/Newsletter";
-// import footerleft from "../../../public/footer-left.png";
 import footerleft from "../../assets/image/footer-left.png";
 import footerright from "../../assets/image/footer-right.png";
 import fb from "../../assets/image/fb.svg";
@@ -10,6 +9,7 @@ import mail from "../../assets/image/mail-footer.png";
 import address from "../../assets/image/location-footer.png";
 import insta from "../../assets/image/instagram.svg";
 import NavImage from "../../assets/nav.png";
+import { Link } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
   footer: {
     padding: "0 60px 0 110px",
@@ -65,6 +65,7 @@ const useStyles = makeStyles((theme) => ({
       visibility: "hidden",
     },
   },
+
   socialMediaimages: {
     width: "2vw",
     [theme.breakpoints.down("sm")]: {
@@ -74,6 +75,7 @@ const useStyles = makeStyles((theme) => ({
   },
   footerLink: {
     color: "black",
+    textDecoration: "none",
   },
   contactImages: {
     width: "1vw",
@@ -202,61 +204,45 @@ const Footer = () => {
                 </Typography>
               </Grid>
               <Grid item>
-                {/* <Link
-                href="https://khatabook.com/"
-                className={classes.footerLink}
-              >
-                <Typography variant="subtitle2">Home</Typography>
-              </Link> */}
-                <Typography
-                  variant="subtitle2"
-                  style={{ fontFamily: "맑은 고딕" }}
-                >
-                  FAQ
-                </Typography>
+                <Link to="/terms" className={classes.footerLink}>
+                  <Typography
+                    variant="subtitle2"
+                    style={{ fontFamily: "맑은 고딕" }}
+                  >
+                    Tearms & Condition
+                  </Typography>
+                </Link>
               </Grid>
               <Grid item>
-                {/* <Link
-                href="https://khatabook.com/blog/"
-                className={classes.footerLink}
-              >
-                <Typography variant="subtitle2">Blog</Typography>
-              </Link> */}
-                <Typography
-                  variant="subtitle2"
-                  style={{ fontFamily: "맑은 고딕" }}
-                >
-                  Tearms & condition
-                </Typography>
+                <Link to="/categories" className={classes.footerLink}>
+                  <Typography
+                    variant="subtitle2"
+                    style={{ fontFamily: "맑은 고딕" }}
+                  >
+                    Categories
+                  </Typography>
+                </Link>
               </Grid>
               <Grid item>
-                {/* <Link
-                href="https://khatabook.com/hiring"
-                className={classes.footerLink}
-              >
-                <Typography variant="subtitle2">We&apos;re hiring</Typography>
-              </Link> */}
-                <Typography
-                  variant="subtitle2"
-                  style={{ fontFamily: "맑은 고딕" }}
-                >
-                  Collections
-                </Typography>
+                <Link to="/about" className={classes.footerLink}>
+                  <Typography
+                    variant="subtitle2"
+                    style={{ fontFamily: "맑은 고딕" }}
+                  >
+                    About
+                  </Typography>
+                </Link>
               </Grid>
 
               <Grid item>
-                {/* <Link
-                href="https://khatabook.com/contact/"
-                className={classes.footerLink}
-              >
-                <Typography variant="subtitle2">Contact Us</Typography>
-              </Link> */}
-                <Typography
-                  variant="subtitle2"
-                  style={{ fontFamily: "맑은 고딕" }}
-                >
-                  Contact
-                </Typography>
+                <Link to="/faq" className={classes.footerLink}>
+                  <Typography
+                    variant="subtitle2"
+                    style={{ fontFamily: "맑은 고딕" }}
+                  >
+                    FAQ
+                  </Typography>
+                </Link>
               </Grid>
             </Grid>
           </Grid>
@@ -297,7 +283,7 @@ const Footer = () => {
                   variant="subtitle2"
                   style={{ fontFamily: "맑은 고딕" }}
                 >
-                  We are always available to address the needs of our users
+                  We are always available to address the needs of our customers.
                 </Typography>
               </Grid>
               <Grid item>
@@ -314,7 +300,7 @@ const Footer = () => {
                       variant="subtitle2"
                       style={{ fontFamily: "맑은 고딕" }}
                     >
-                      +91-7232013979
+                      +91-8764416175
                     </Typography>
                   </Grid>
                 </Grid>
@@ -333,8 +319,7 @@ const Footer = () => {
                       variant="subtitle2"
                       style={{ fontFamily: "맑은 고딕" }}
                     >
-                      Senapati Bhawan Ratanada , Jodhpur,Rajasthan 560102 GST
-                      Number - 29AAPCA8770K1ZT
+                      Jodhpur, Rajasthan, India
                     </Typography>
                   </Grid>
                 </Grid>
@@ -353,7 +338,7 @@ const Footer = () => {
                       variant="subtitle2"
                       style={{ fontFamily: "맑은 고딕" }}
                     >
-                      abcd@gmail.com
+                      decor@thecraftjet.com
                     </Typography>
                   </Grid>
                 </Grid>

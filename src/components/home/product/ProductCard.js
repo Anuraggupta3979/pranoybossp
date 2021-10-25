@@ -15,33 +15,33 @@ const style = {
     left: "50%",
     transform: "translate(-50%, -50%)",
     width: "1000px",
-    height: "720px",
+    height: "650px",
     bgcolor: "background.paper",
     border: "2px solid #000",
     boxShadow: 24,
     // p: 4,
   },
   image: {
-    width: "500px",
-    height: "717px",
+    width: "100%",
+    height: "647px",
     objectFit: "cover",
   },
   content: {
-    marginTop: "50px",
+    marginTop: "30px",
     display: "grid",
     justifyContent: "center",
     // alignItems: "space-between",
-    width: "500px",
+    width: "1000px",
     textAlign: "center",
   },
   title: {
-    fontSize: "30px",
-    letterSpacing: "4px",
+    fontSize: "20px",
+    letterSpacing: "1px",
+    fontFamily: " 맑은 고딕",
+    marginTop: "1px",
   },
   description: {
-    position: "absolute",
-    top: "170px",
-    fontSize: "20px",
+    fontSize: "15px",
     color: "rgb(135,134,136)",
     marginLeft: "10px",
     marginRight: "10px",
@@ -50,14 +50,13 @@ const style = {
     display: "flex",
     flexFlow: "row wrap",
     justifyContent: "center",
-    alignItems: "center",
-    position: "absolute",
-    top: "400px",
-    textAlign: "center",
   },
   tag: {
     color: "rgb(135,134,136)",
     padding: "10px",
+    textAlign: "center",
+    justifyContent: "center",
+    alignItems: "center",
   },
   link: {
     textDecoration: "none",
@@ -67,7 +66,7 @@ const style = {
     fontSize: "35px",
     position: "absolute",
     right: "10px",
-    top: "20px",
+    top: "2px",
   },
 };
 
@@ -153,10 +152,10 @@ const ProductCard = ({
             <div style={style.content}>
               <p style={style.title}>{name}</p>
               <p style={style.description}>{description}</p>
-              <hr />
+                <hr style={{width:"50%", margin:"auto"}}/>
               <div style={style.extraInfo}>
                 <div style={style.tag}>
-                  Category:{" "}
+                  Category:
                   <a style={style.link} href={`/category/${categoryId}`}>
                     {categoryId}
                   </a>

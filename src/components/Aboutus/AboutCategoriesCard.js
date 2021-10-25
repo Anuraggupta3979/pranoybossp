@@ -39,7 +39,6 @@ function AboutCategoriesCard(props) {
                     fontSize: "1.825rem",
                     fontWeight: 500,
                     marginBottom: "15px",
-                    marginTop: "20px",
                     fontFamily: "맑은 고딕",
                   }}
                 >
@@ -53,8 +52,12 @@ function AboutCategoriesCard(props) {
                   }}
                 >
                   <Typography
-                    className="mt-2 py-2 text-justify"
-                    style={{ fontFamily: "맑은 고딕 " }}
+                    className="mt-1  text-justify"
+                    style={{
+                      fontFamily: "맑은 고딕 ",
+                   
+                      textAlign:"justify"
+                    }}
                   >
                     {props.description}
                   </Typography>

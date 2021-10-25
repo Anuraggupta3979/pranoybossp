@@ -49,12 +49,12 @@ function Newsletter() {
     <Grid item>
       <Grid item>
         <Typography variant="subtitle2" style={{ fontFamily: "맑은 고딕" }}>
-          Get timely updates from your favorite products
+          Get timely updates for your favorite products -
         </Typography>
       </Grid>
       <Grid item className={classes.mailbox}>
         <Grid item>
-          <TextField type="email" placeholder=" your mail adddress"></TextField>
+          <TextField type="email" placeholder="Your email address"></TextField>
         </Grid>
         <Grid item>
           <Button

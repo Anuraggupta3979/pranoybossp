@@ -14,7 +14,7 @@ const About = ({ categoryList, teamList }) => {
       <HeaderSection
         image={HeaderImage}
         title="About Us"
-        subtitle="This Is About Page"
+        subtitle="Crafting your desire for Indian Handicrafts & Decor"
       />
       <AboutStory />
       <Categories categoryList={categoryList} />

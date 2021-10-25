@@ -21,9 +21,9 @@ function Navv() {
             <img
               src={NavImage}
               alt="Logo"
-              style={{ width: "100px", height: "20px" }}
+              style={{ width: "160px", height: "33px" }}
             />
-            {/* <small>Craftjet</small> */}
+            
           </ReactBootStrap.Navbar.Brand>
           <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav">

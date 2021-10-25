@@ -6,11 +6,7 @@ import ProductCard from "../components/home/product/ProductCard";
 import Footer from "../components/footer/Footer";
 import Heading from "../components/Heading";
 import HeaderSection from "../sections/HeaderSection";
-const style = {
-  height: "60%",
-  width: "98.7vw",
-  objectFit: "cover",
-};
+
 
 const CategoryPage = ({ categoryList, productList }) => {
   const { categoryId } = useParams();

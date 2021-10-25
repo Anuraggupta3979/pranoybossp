@@ -6,14 +6,23 @@ import Footer from "../components/footer/Footer";
 import { Grid } from "@mui/material";
 import ProductCard from "../components/home/product/ProductCard";
 import { getAllDocs } from "../helper/firestore";
-
+import Heading from "../components/Heading";
 const ProductPage = () => {
   const [productList, setProductList] = useState([]);
   const [productData, setProductData] = useState({
-    product: { id: "", name: "", image: "", description: "", categoryId: "" },
+    product: {
+      id: "",
+      name: "",
+      image: "",
+      description: "",
+      categoryId: "",
+      material: "",
+      weight: "",
+      dimensions: "",
+    },
     similarProducts: [],
   });
-  
+
   const { productId } = useParams();
   useEffect(() => {
     getAllDocs("products")
@@ -27,52 +36,132 @@ const ProductPage = () => {
   }, [productId, productList]);
   const style = {
     container: { display: "grid", justifyContent: "center" },
+    main: {
+      display: "flex",
+      marginTop: "80px",
+      justifyContent: "space-around",
+      bgcolor: "background.paper",
+    },
     image: {
-      maxWidth: "40vw",
+      width: "99.9%",
+      height: "655px",
+      objectFit: "cover",
     },
-    content: {
-      marginTop: "30px",
-    },
+
     imageAndContent: {
       display: "flex",
       flexFlow: "row wrap",
       justifyContent: "space-between",
     },
+    content: {
+      marginTop: "30px",
+      display: "grid",
+      justifyContent: "center",
+      // alignItems: "space-between",
+      width: "1000px",
+      textAlign: "center",
+    },
+    title: {
+      fontSize: "20px",
+      letterSpacing: "1px",
+      fontFamily: "맑은 고딕",
+      marginTop: "1px",
+    },
+    description: {
+      fontSize: "18px",
+      color: "rgb(135,134,136)",
+      marginLeft: "10px",
+      marginRight: "10px",
+      fontFamily: "맑은 고딕",
+    },
+    extraInfo: {
+      display: "flex",
+      flexDirection: "column",
+      flexFlow: "column wrap",
+      justifyContent: "center",
+    },
+    tag: {
+      color: "rgb(135,134,136)",
+      padding: "10px",
+      textAlign: "center",
+      justifyContent: "center",
+      alignItems: "center",
+    },
+    link: {
+      textDecoration: "none",
+      color: "black",
+    },
   };
   console.log({ productList });
 
   return (
-    <div style={style.container}>
+    <Grid>
       <Navbar />
-      <br />
-      <br />
-      <br />
-      <br />
-      <div style={style.imageAndContent}>
-        <img
-          src={productData.product.image}
-          alt={productData.product.name}
-          style={style.image}
-        />
-        <div style={style.content}>
-          <h1>{productData.product.name}</h1>
-          <p>{productData.product.description}</p>
-        </div>
-      </div>
-      <Grid>Similar Products</Grid>
-      {productData.similarProducts.map((product) => {
-        return (
-          <ProductCard
-            image={product.image}
-            name={product.name}
-            category={product.categoryId}
-            desc={product.description}
-            key={product.id}
+      <Grid container item style={style.main}>
+        <Grid item lg={5} sm={12} xs={12}>
+          <img
+            src={productData.product.image}
+            alt={productData.product.name}
+            style={style.image}
           />
-        );
-      })}
+        </Grid>
+        <Grid lg={6} sm={12} xs={12} style={style.content}>
+          <p style={style.title}>{productData.product.name}</p>
+          <p style={style.description}>{productData.product.description}</p>
+          <hr style={{ width: "50%", margin: "auto" }} />
+          <Grid style={style.extraInfo}>
+            <Grid style={style.tag}>
+              Category : {productData.product.categoryId}
+            </Grid>
+            {productData.product.material ? (
+              <Grid style={style.tag}>
+                Material : {productData.product.material}
+              </Grid>
+            ) : (
+              <></>
+            )}
+            {productData.product.weight ? (
+              <Grid style={style.tag}>
+                Weight : {productData.product.weight}
+              </Grid>
+            ) : (
+              <></>
+            )}
+            {productData.product.dimensions ? (
+              <Grid style={style.tag}>
+                Dimension : {productData.product.dimensions}
+              </Grid>
+            ) : (
+              <></>
+            )}
+          </Grid>
+        </Grid>
+      </Grid>
+
+      <Heading title="Similar Products"></Heading>
+
+      <Grid
+        style={{
+          display: "flex",
+          flexFlow: "row wrap",
+          justifyContent: "space-around",
+        }}
+      >
+        {productData.similarProducts.map((product) => {
+          return (
+            <ProductCard
+              image={product.image}
+              name={product.name}
+              category={product.categoryId}
+              desc={product.description}
+              key={product.id}
+            />
+          );
+        })}
+      </Grid>
+
       <Footer />
-    </div>
+    </Grid>
   );
 };
 

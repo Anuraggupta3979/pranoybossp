@@ -12,22 +12,6 @@ const Categories = ({ categoryList, productList }) => {
   console.log(productList);
   const productDict = getAllProductsByCategory(categoryList, productList);
   console.log(productDict);
-  // let imageHeight = "80vh";
-  // const isTabletOrMobileDevice = useMediaQuery({
-  //   query: "(max-device-width: 768px)",
-  // });
-  // if (isTabletOrMobileDevice) {
-  //   imageHeight = "100vh";
-  // }
-  const style = {
-    imageBanner: {
-      width: "98.7vw",
-      maxHeight: "80vh",
-      objectFit: "cover",
-      opacity: "0.75",
-      backgroundColor: "black",
-    },
-  };
 
   const ProductCards = ({ productList }) => {
     return (

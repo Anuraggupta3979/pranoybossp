@@ -5,7 +5,7 @@ import Modal from "@mui/material/Modal";
 import "../../../assets/css/ProductCard.css";
 import { useMediaQuery } from "react-responsive";
 import CloseIcon from "@mui/icons-material/Close";
-
+import { Link } from "react-router-dom";
 const style = {
   main: {
     display: "flex",
@@ -157,44 +157,25 @@ const ProductCard = ({
               <div style={style.extraInfo}>
                 <div style={style.tag}>
                   Category:
-                  <a style={style.link} href={`/category/${categoryId}`}>
+                  <Link style={style.link} href={`/category/${categoryId}`}>
                     {categoryId}
-                  </a>
+                  </Link>
                 </div>
                 {material ? (
-                  <div style={style.tag}>
-                    Material:{" "}
-                    <a style={style.link} href="#!">
-                      {material}
-                    </a>
-                  </div>
+                  <div style={style.tag}>Material: {material}</div>
                 ) : (
                   <></>
                 )}
-                {weight ? (
-                  <div style={style.tag}>
-                    weight:{" "}
-                    <a style={style.link} href="#!">
-                      {weight}
-                    </a>
-                  </div>
-                ) : (
-                  <></>
-                )}
+                {weight ? <div style={style.tag}>weight: {weight}</div> : <></>}
                 {dimensions ? (
-                  <div style={style.tag}>
-                    dimensions:{" "}
-                    <a style={style.link} href="#!">
-                      {dimensions}
-                    </a>
-                  </div>
+                  <div style={style.tag}>dimensions: {dimensions}</div>
                 ) : (
                   <></>
                 )}
               </div>
-              <a style={style.link} href={`/product/${id}`}>
+              <Link style={style.link} href={`/product/${id}`}>
                 For more info visit here
-              </a>
+              </Link>
             </div>
           </Box>
         </Modal>

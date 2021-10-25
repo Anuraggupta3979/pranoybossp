@@ -2,6 +2,7 @@ import React from "react";
 // import aabc from "../../assets/aaa.jpg";
 import "../../assets/css/abc.css";
 import { Grid, Typography } from "@mui/material";
+import Button from "../Button";
 function AboutCategoriesCard(props) {
   const imageorder = props.imageorder;
   const textorder = props.textorder;
@@ -17,15 +18,19 @@ function AboutCategoriesCard(props) {
                 overflow: "hidden",
                 boxShadow: "2px 2px 2px 2px #dcdde1",
                 borderRadius: "10px",
+                textOverflow: "ellipsis",
+                // height: "500px",
               }}
             >
               <Grid
-                className="col-xl-5 col-12 col-md-5   "
+                className="col-xl-6 col-12 col-md-6   "
                 style={{
                   justifyContent: "center",
                   order: textorder,
                   alignItems: "center",
-                  height: "100px",
+                  // height: "100px",
+                  textOverflow: "ellipsis",
+                  height: "350px",
                 }}
               >
                 <Typography
@@ -40,23 +45,32 @@ function AboutCategoriesCard(props) {
                 >
                   {props.title}
                 </Typography>
-                <Typography
-                  className="mt-2 py-2 text-justify"
-                  style={{ fontFamily: "맑은 고딕 " }}
+                <Grid
+                  style={{
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                    height: "180px",
+                  }}
                 >
-                  {props.description}
-                </Typography>
+                  <Typography
+                    className="mt-2 py-2 text-justify"
+                    style={{ fontFamily: "맑은 고딕 " }}
+                  >
+                    {props.description}
+                  </Typography>
+                </Grid>
+                <Button title="Explore"></Button>
               </Grid>
               <Grid className="col-lg-1 col-md-1 order-2"></Grid>
               <Grid
-                className="col-lg-6 col-12 col-md-6 p-2 "
+                className="col-lg-5 col-12 col-md-5 p-2 "
                 style={{ order: imageorder }}
               >
                 <img
                   src={props.image}
                   alt="category"
                   className="mx-1 img card-img-top "
-                  style={{ height: "300px" }}
+                  style={{ height: "332px" }}
                 />
               </Grid>
             </Grid>

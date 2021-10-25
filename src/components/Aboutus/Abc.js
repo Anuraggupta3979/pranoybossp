@@ -13,7 +13,7 @@ function AboutCategoriesCard(props) {
                     <div
               className="row"
               style={{
-                overflow: "hidden",
+                // overflow: "hidden",
                 boxShadow: "2px 2px 2px 2px #dcdde1",
               }}
             >

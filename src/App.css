@@ -12,6 +12,7 @@
   font-size: 30px;
   box-shadow: 2px 2px 3px #999;
   z-index: 100;
+  cursor: pointer;
 }
 
 .whatsapp-icon {

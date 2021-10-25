@@ -51,7 +51,7 @@ function CategoriesCard() {
           <Grid className="categoriesCard">
             <img
               alt="Home Accessory-Splash"
-              src="https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/categories%2FTextile%20treasure.jpg?alt=media&token=c61ea941-a25d-4399-a74d-776d2f2ec83a"
+              src="https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/categories%2Fhome%20accessory-splash.jpg?alt=media&token=5c88b28a-3fa7-40cc-95a7-82c2b85a6008"
             />
             <Grid class="centered">
               <Typography

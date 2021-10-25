@@ -1,7 +1,7 @@
 const categoriesData = [
   {
     name: "Cane and Bamboo Crafts",
-    categoryId:"cane-bamboo-crafts",
+    categoryId: "cane-bamboo-crafts",
     description:
       "Twisting the bundles of cane grass, weaving the finely processed Jute and bamboo, are created the awe-inspiring artifacts and handicrafts that have the power to embellish every nook and corner of your surroundings, also exhibiting the rich and glorious spiritual heritage of India, especially the eastern side. The artistic creation of bamboo, cane, and jute articles is a perfect example of how there is a seamless blend of traditional creativity with modernism. The demand for these natural fiber-based crafts has escalated over time, with India being one of the sole producers of such beautiful products.",
     image:
@@ -42,7 +42,7 @@ const categoriesData = [
     description:
       "“Home is where the heart is”, be it our house or any restaurant. The outlook of the items plays a substantial role in influencing one’s frame of mind as these have always been a place of gathering and sanctuary providing an escape from the busyness and intrusiveness of the world. So, the utilities need to be selected with the utmost care; be it the beautiful planters, eye-catchy coasters, creative tissue box holders, or the decorative trays, to bestow the space with an abstract modern look yet with a tinge of rustic and traditional look.",
     image:
-      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/categories%2Ffestive%20decor%20mania.jpg?alt=media&token=31095094-85a6-4b8a-beaf-b47de4613101",
+      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/categories%2Fhome%20accessory-splash.jpg?alt=media&token=5c88b28a-3fa7-40cc-95a7-82c2b85a6008",
   },
   {
     name: "Festive Decor-Mania",

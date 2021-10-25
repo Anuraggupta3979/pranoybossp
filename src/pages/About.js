@@ -16,9 +16,9 @@ const About = ({ categoryList, teamList }) => {
         title="About Us"
         subtitle="This Is About Page"
       />
-      <Grid style={{ width: "90vw", margin: "auto" }}>
-        <AboutStory />
-        <Categories categoryList={categoryList} />
+      <AboutStory />
+      <Categories categoryList={categoryList} />
+      <Grid style={{ width: "95vw", margin: "auto" }}>
         <Team teamList={teamList} />
       </Grid>
       <Footer />

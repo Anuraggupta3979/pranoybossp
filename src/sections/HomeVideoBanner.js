@@ -35,7 +35,7 @@ function HomeVideoBanner() {
                 className="display-3"
                 style={{ fontFamily: " Century Gothic  " }}
               >
-                CraftJet
+                The CraftJet
               </h1>
               <p className={classes.subHeading}>
                 Adorning the Traditional Creativity

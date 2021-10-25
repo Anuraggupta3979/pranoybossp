@@ -66,7 +66,7 @@ function Navv() {
               </ReactBootStrap.NavDropdown>
               <ReactBootStrap.Nav>
                 <Link className="nav-link   link" to="/blog">
-                  Blog
+                  Contact
                 </Link>
               </ReactBootStrap.Nav>
             </ReactBootStrap.Nav>

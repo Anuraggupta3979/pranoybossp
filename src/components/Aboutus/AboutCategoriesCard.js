@@ -10,7 +10,7 @@ function AboutCategoriesCard(props) {
     <Grid className="mt-5">
       <Grid className="container-fluid mt-lg-2 mt-md-2 mt-2">
         <Grid className="row">
-          <Grid className="col-sm-10 col-12 mx-auto">
+          <Grid className="col-sm-11 col-12 mx-auto px-lg-0 px-md-4 px-5">
             <Grid
               className="row"
               style={{
@@ -21,15 +21,29 @@ function AboutCategoriesCard(props) {
             >
               <Grid
                 className="col-xl-5 col-12 col-md-5   "
-                style={{ justifyContent: "center", order: textorder }}
+                style={{
+                  justifyContent: "center",
+                  order: textorder,
+                  alignItems: "center",
+                  height: "100px",
+                }}
               >
-                <h2
-                  className=" mt-0  text-center craftheading"
-                  style={{ color: "grey" }}
+                <Typography
+                  variant="h4"
+                  style={{
+                    fontSize: "1.825rem",
+                    fontWeight: 500,
+                    marginBottom: "15px",
+                    marginTop: "20px",
+                    fontFamily: "맑은 고딕",
+                  }}
                 >
                   {props.title}
-                </h2>
-                <Typography className="mt-2 py-2 text-justify">
+                </Typography>
+                <Typography
+                  className="mt-2 py-2 text-justify"
+                  style={{ fontFamily: "맑은 고딕 " }}
+                >
                   {props.description}
                 </Typography>
               </Grid>

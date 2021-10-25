@@ -197,7 +197,9 @@ const Footer = () => {
               spacing={2}
             >
               <Grid item>
-                <Typography variant="h6">Find More</Typography>
+                <Typography variant="h6" style={{ fontFamily: "맑은 고딕" }}>
+                  Find More
+                </Typography>
               </Grid>
               <Grid item>
                 {/* <Link
@@ -206,7 +208,12 @@ const Footer = () => {
               >
                 <Typography variant="subtitle2">Home</Typography>
               </Link> */}
-                <Typography variant="subtitle2">FAQ</Typography>
+                <Typography
+                  variant="subtitle2"
+                  style={{ fontFamily: "맑은 고딕" }}
+                >
+                  FAQ
+                </Typography>
               </Grid>
               <Grid item>
                 {/* <Link
@@ -215,7 +222,12 @@ const Footer = () => {
               >
                 <Typography variant="subtitle2">Blog</Typography>
               </Link> */}
-                <Typography variant="subtitle2">Tearms & condition</Typography>
+                <Typography
+                  variant="subtitle2"
+                  style={{ fontFamily: "맑은 고딕" }}
+                >
+                  Tearms & condition
+                </Typography>
               </Grid>
               <Grid item>
                 {/* <Link
@@ -224,7 +236,12 @@ const Footer = () => {
               >
                 <Typography variant="subtitle2">We&apos;re hiring</Typography>
               </Link> */}
-                <Typography variant="subtitle2">COLLECTIONS</Typography>
+                <Typography
+                  variant="subtitle2"
+                  style={{ fontFamily: "맑은 고딕" }}
+                >
+                  Collections
+                </Typography>
               </Grid>
 
               <Grid item>
@@ -234,7 +251,12 @@ const Footer = () => {
               >
                 <Typography variant="subtitle2">Contact Us</Typography>
               </Link> */}
-                <Typography variant="subtitle2">Blog</Typography>
+                <Typography
+                  variant="subtitle2"
+                  style={{ fontFamily: "맑은 고딕" }}
+                >
+                  Contact
+                </Typography>
               </Grid>
             </Grid>
           </Grid>
@@ -247,7 +269,9 @@ const Footer = () => {
               spacing={2}
             >
               <Grid item>
-                <Typography variant="h6">Newsletter</Typography>
+                <Typography variant="h6" style={{ fontFamily: "맑은 고딕" }}>
+                  Newsletter
+                </Typography>
               </Grid>
               <Newsletter></Newsletter>
             </Grid>
@@ -263,11 +287,16 @@ const Footer = () => {
               md={11}
             >
               <Grid item>
-                <Typography variant="h6">Address</Typography>
+                <Typography variant="h6" style={{ fontFamily: "맑은 고딕" }}>
+                  Address
+                </Typography>
               </Grid>
 
               <Grid item>
-                <Typography variant="subtitle2">
+                <Typography
+                  variant="subtitle2"
+                  style={{ fontFamily: "맑은 고딕" }}
+                >
                   We are always available to address the needs of our users
                 </Typography>
               </Grid>
@@ -281,7 +310,12 @@ const Footer = () => {
                     />
                   </Grid>
                   <Grid item>
-                    <Typography variant="subtitle2">+91-7232013979</Typography>
+                    <Typography
+                      variant="subtitle2"
+                      style={{ fontFamily: "맑은 고딕" }}
+                    >
+                      +91-7232013979
+                    </Typography>
                   </Grid>
                 </Grid>
               </Grid>
@@ -295,7 +329,10 @@ const Footer = () => {
                     />
                   </Grid>
                   <Grid item xs={9}>
-                    <Typography variant="subtitle2">
+                    <Typography
+                      variant="subtitle2"
+                      style={{ fontFamily: "맑은 고딕" }}
+                    >
                       Senapati Bhawan Ratanada , Jodhpur,Rajasthan 560102 GST
                       Number - 29AAPCA8770K1ZT
                     </Typography>
@@ -312,7 +349,12 @@ const Footer = () => {
                     />
                   </Grid>
                   <Grid item>
-                    <Typography variant="subtitle2">abcd@gmail.com</Typography>
+                    <Typography
+                      variant="subtitle2"
+                      style={{ fontFamily: "맑은 고딕" }}
+                    >
+                      abcd@gmail.com
+                    </Typography>
                   </Grid>
                 </Grid>
               </Grid>

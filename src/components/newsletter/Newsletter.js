@@ -48,14 +48,21 @@ function Newsletter() {
   return (
     <Grid item>
       <Grid item>
-        <Typography>Get timely updates from your favorite products</Typography>
+        <Typography variant="subtitle2" style={{ fontFamily: "맑은 고딕" }}>
+          Get timely updates from your favorite products
+        </Typography>
       </Grid>
       <Grid item className={classes.mailbox}>
         <Grid item>
           <TextField type="email" placeholder=" your mail adddress"></TextField>
         </Grid>
         <Grid item>
-          <Button className={classes.button}>Subscribe</Button>
+          <Button
+            className={classes.button}
+            style={{ fontFamily: "맑은 고딕" }}
+          >
+            Subscribe
+          </Button>
         </Grid>
       </Grid>
     </Grid>

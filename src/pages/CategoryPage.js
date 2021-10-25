@@ -5,7 +5,7 @@ import Navbar from "../components/navbar/Navbar";
 import ProductCard from "../components/home/product/ProductCard";
 import Footer from "../components/footer/Footer";
 import Heading from "../components/Heading";
-
+import HeaderSection from "../sections/HeaderSection";
 const style = {
   height: "60%",
   width: "98.7vw",
@@ -25,8 +25,12 @@ const CategoryPage = ({ categoryList, productList }) => {
   return (
     <div>
       <Navbar />
+      <HeaderSection
+        image={category.image}
+        title={category.name}
+        subtitle={category.description}
+      ></HeaderSection>
       <div style={{ display: "grid", justifyContent: "center" }}>
-        <img src={category.image} alt={category.name} style={style} />
         <Heading title={category.name} />
         <div
           style={{

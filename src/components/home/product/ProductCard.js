@@ -37,14 +37,15 @@ const style = {
   title: {
     fontSize: "20px",
     letterSpacing: "1px",
-    fontFamily: " 맑은 고딕",
+    fontFamily: "맑은 고딕",
     marginTop: "1px",
   },
   description: {
-    fontSize: "15px",
+    fontSize: "18px",
     color: "rgb(135,134,136)",
     marginLeft: "10px",
     marginRight: "10px",
+    fontFamily: "맑은 고딕",
   },
   extraInfo: {
     display: "flex",
@@ -152,7 +153,7 @@ const ProductCard = ({
             <div style={style.content}>
               <p style={style.title}>{name}</p>
               <p style={style.description}>{description}</p>
-                <hr style={{width:"50%", margin:"auto"}}/>
+              <hr style={{ width: "50%", margin: "auto" }} />
               <div style={style.extraInfo}>
                 <div style={style.tag}>
                   Category:

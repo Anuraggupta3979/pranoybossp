@@ -11,7 +11,7 @@ function TeamCard({ member }) {
             <img
               src={member.image}
               alt="Avatar"
-              style={{ width: "300px", height: "400px", borderRadius: "20px" }}
+              style={{ width: "300px", height: "410px", borderRadius: "20px" }}
             />
           </div>
           <div class="flip-card-back">
@@ -24,13 +24,21 @@ function TeamCard({ member }) {
                 marginTop: "20px",
                 fontFamily: "맑은 고딕",
                 // justifyContent: "center",
-          
               }}
             >
               {member.name}
             </Typography>
-            {/* <Typography>{member.description}</Typography>
-            <Typography>We love that guy</Typography> */}
+
+            <Typography
+              style={{
+                fontSize: "15px",
+                fontWeight: "lighter",
+                fontFamily: "맑은 고딕 ",
+                padding: "10px",
+              }}
+            >
+              {member.description}
+            </Typography>
           </div>
         </div>
       </div>

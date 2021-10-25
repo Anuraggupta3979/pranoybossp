@@ -5,6 +5,7 @@ import CustomButton from "../components/Button";
 import Footer from "../components/footer/Footer";
 import { getAllProductsByCategory } from "../helper/firestore";
 import "../assets/Categories.css";
+import HeaderSection from "../sections/HeaderSection";
 // import { useMediaQuery } from "react-responsive";
 
 const Categories = ({ categoryList, productList }) => {
@@ -49,28 +50,27 @@ const Categories = ({ categoryList, productList }) => {
             />
           ))}
         </div>
-        <CustomButton title="Learn More" />
       </>
     );
   };
   return (
     <div>
       <Navbar />
-      <div style={{ display: "grid", placeItems: "center" }}>
+      <div>
         {productDict.categories.map((category, index) => (
           <>
-            <br />
-            <br />
-            <div className="categories-image-container">
-              <img src={category.image} alt="#!" style={style.imageBanner} />
-              <div className="categories-page-banner-content">
-                <h3 href={`/category/${category.id}`}>{category.name}</h3>
-                <br />
-                {/* <p>{category.description}</p> */}
-              </div>
+            <div style={{ marginTop: "30px", marginBottom: "30px" }}>
+              <HeaderSection
+                image={category.image}
+                title={category.name}
+                subtitle={category.description}
+              ></HeaderSection>
             </div>
-            <br />
+
             <ProductCards productList={productDict.productsArray[index]} />
+            <div style={{ textAlign: "center" }}>
+              <CustomButton title="Learn More" />
+            </div>
           </>
         ))}
       </div>

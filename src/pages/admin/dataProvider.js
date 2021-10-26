@@ -42,13 +42,6 @@ function getDataWithId(DocumentSnapshot) {
   return dataWithId;
 }
 
-/**
- * Utility function to upload a file in a Firebase storage bucket
- *
- * @param {File} rawFile the file to upload
- * @param {File} storageRef the storage reference
- * @returns {Promise}  the promise of the URL where the file can be download from the bucket
- */
 async function uploadFileToBucket(rawFile, storageRef) {
   console.log("Beginning upload");
   return uploadBytes(storageRef, rawFile)
@@ -62,21 +55,10 @@ async function uploadFileToBucket(rawFile, storageRef) {
     });
 }
 
-
-/**
- * Maps react-admin queries to Firebase
- *
- * @param {string} type Request type, e.g GET_LIST
- * @param {string} resource Resource name, e.g. "posts"
- * @param {Object} payload Request parameters. Depends on the request type
- * @returns {Promise} the Promise for a data response
- */
 export const myDataProvider = {
   getList: (resource, params) => {
     const { page, perPage } = params.pagination;
     const { field, order } = params.sort;
-    // const filter = params.filter;
-    // query all the docs from the first to page*perPage
     var q =
       field === "id"
         ? query(collection(db, resource), limit(page * perPage))
@@ -87,7 +69,6 @@ export const myDataProvider = {
           );
     return getDocs(q)
       .then((QuerySnapshot) => {
-        // slice the results
         var totalCount = QuerySnapshot.docs.length;
         var firstDocToDisplayCount =
           page === 1 ? 1 : Math.min((page - 1) * perPage, totalCount);
@@ -152,7 +133,6 @@ export const myDataProvider = {
   create: (resource, params) => {
     const key = params.data.name.toLowerCase().split(" ").join("-");
     console.log(`create key: ${key}`);
-    // Check if there is a file to upload
     var listOfFiles = Object.keys(params.data).filter(
       (key) => params.data[key].rawFile
     );
@@ -212,14 +192,6 @@ export const myDataProvider = {
       .catch((err) => Promise.reject(err));
   },
 };
-
-/**
- * Ultra simple authentication provider
- *
- * @param {string} type Request type, e.g AUTH_LOGI
- * @param {Object} params Request parameters. Includes login and pwd
- * @returns {Promise} the Promise for a data response
- */
 export const firebaseAuthProvider = (type, params) => {
   if (type === AUTH_LOGIN) {
     const { username, password } = params;
@@ -230,7 +202,6 @@ export const firebaseAuthProvider = (type, params) => {
         throw new Error({ message: error.message, status: 401 });
       });
   }
-
   if (type === AUTH_LOGOUT) {
     return firebase
       .auth()
@@ -239,11 +210,9 @@ export const firebaseAuthProvider = (type, params) => {
         throw new Error({ message: error.message, status: 500 });
       });
   }
-
   if (type === AUTH_CHECK) {
     return firebase.auth().currentUser ? Promise.resolve() : Promise.reject();
   }
-
   if (type === AUTH_GET_PERMISSIONS) {
     // Try to find a "user" collection and return the role attribute
     return db
@@ -260,6 +229,5 @@ export const firebaseAuthProvider = (type, params) => {
         return "user";
       });
   }
-
   return Promise.resolve();
 };

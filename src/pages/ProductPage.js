@@ -27,8 +27,10 @@ const ProductPage = ({ productList }) => {
   // });
   const { productId } = useParams();
   // const getProductData = () => {
-  const productData = productList.filter((product) => product.id === productId)[0];
-  console.log(productData)
+  const productData = productList.filter(
+    (product) => product.id === productId
+  )[0];
+  // console.log(productData);
   // };
   // useEffect(() => {
   //   //   getAllDocs("products")
@@ -120,20 +122,14 @@ const ProductPage = ({ productList }) => {
           <p style={style.description}>{productData.description}</p>
           <hr style={{ width: "50%", margin: "auto" }} />
           <Grid style={style.extraInfo}>
-            <Grid style={style.tag}>
-              Category : {productData.categoryId}
-            </Grid>
+            <Grid style={style.tag}>Category : {productData.name}</Grid>
             {productData.material ? (
-              <Grid style={style.tag}>
-                Material : {productData.material}
-              </Grid>
+              <Grid style={style.tag}>Material : {productData.material}</Grid>
             ) : (
               <></>
             )}
             {productData.weight ? (
-              <Grid style={style.tag}>
-                Weight : {productData.weight}
-              </Grid>
+              <Grid style={style.tag}>Weight : {productData.weight}</Grid>
             ) : (
               <></>
             )}
@@ -144,6 +140,7 @@ const ProductPage = ({ productList }) => {
             ) : (
               <></>
             )}
+            <Grid style={style.tag}>*product dimensions may vary</Grid>
           </Grid>
         </Grid>
       </Grid>

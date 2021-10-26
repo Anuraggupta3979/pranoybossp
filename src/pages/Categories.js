@@ -9,10 +9,9 @@ import HeaderSection from "../sections/HeaderSection";
 // import { useMediaQuery } from "react-responsive";
 
 const Categories = ({ categoryList, productList }) => {
-  console.log(productList);
   const productDict = getAllProductsByCategory(categoryList, productList);
   console.log(productDict);
-
+  // console.log(productList);
   const ProductCards = ({ productList }) => {
     return (
       <>

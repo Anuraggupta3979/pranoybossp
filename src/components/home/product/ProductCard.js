@@ -41,7 +41,7 @@ const style = {
     marginTop: "1px",
   },
   description: {
-    fontSize: "18px",
+    fontSize: "16px",
     color: "rgb(135,134,136)",
     marginLeft: "10px",
     marginRight: "10px",
@@ -80,7 +80,7 @@ const ProductCard = ({
   hot,
   material,
   weight,
-  dimensions,
+  dimension,
 }) => {
   const isTabletOrMobileDevice = useMediaQuery({
     query: "(max-device-width: 768px)",
@@ -90,7 +90,7 @@ const ProductCard = ({
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  console.log({ hot, material, weight, dimensions, description });
+  console.log({ hot, material, weight, dimension, description });
 
   return (
     <div className="mb-3" style={{ position: "relative" }}>
@@ -158,9 +158,9 @@ const ProductCard = ({
               <hr style={{ width: "50%", margin: "auto" }} />
               <div style={style.extraInfo}>
                 <div style={style.tag}>
-                  Category:
+                  Category :
                   <Link style={style.link} href={`/category/${categoryId}`}>
-                    {categoryId}
+                    {name}
                   </Link>
                 </div>
                 {material ? (
@@ -169,12 +169,13 @@ const ProductCard = ({
                   <></>
                 )}
                 {weight ? <div style={style.tag}>weight: {weight}</div> : <></>}
-                {dimensions ? (
-                  <div style={style.tag}>dimensions: {dimensions}</div>
+                {dimension ? (
+                  <div style={style.tag}>dimensions: {dimension}</div>
                 ) : (
                   <></>
                 )}
               </div>
+              <div style={style.tag}>*product dimensions may vary</div>
               <Link style={style.link} to={`/product/${id}`}>
                 For more info visit here
               </Link>

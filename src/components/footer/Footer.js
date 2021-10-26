@@ -300,7 +300,7 @@ const Footer = () => {
                       variant="subtitle2"
                       style={{ fontFamily: "맑은 고딕" }}
                     >
-                      +91-8764416175
+                      +91-9414131148
                     </Typography>
                   </Grid>
                 </Grid>

@@ -7,9 +7,9 @@ import Footer from "../components/footer/Footer";
 import Heading from "../components/Heading";
 import HeaderSection from "../sections/HeaderSection";
 
-
 const CategoryPage = ({ categoryList, productList }) => {
   const { categoryId } = useParams();
+  console.log(categoryId);
   let category = {
     id: "",
     name: "",
@@ -18,6 +18,7 @@ const CategoryPage = ({ categoryList, productList }) => {
   };
   category = getCategoryById(categoryList, categoryId);
   productList = getProductsByCategoryId(categoryId, productList);
+  console.log(productList);
   return (
     <div>
       <Navbar />

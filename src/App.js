@@ -29,7 +29,7 @@ function App() {
   //     .catch((e) => console.log(e));
   // }, []);
   const handleClick = () => {
-    window.open("https://wa.me/917232013979");
+    window.open("https://wa.me/919414131148");
   };
 
   return (

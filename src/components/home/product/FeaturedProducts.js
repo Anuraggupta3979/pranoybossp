@@ -20,14 +20,14 @@ function FeaturedProducts({ productList }) {
           <ProductCard
             image={product.image}
             name={product.name}
-            categoryId={product.categoryId}
+            categoryId={product.cid}
             description={product.description}
-            key={product.id}
-            id={product.id}
+            key={product.cid}
+            id={product.cid}
             hot={product.hot}
             material={product.material}
             weight={product.weight}
-            dimensions={product.dimensions}
+            dimension={product.dimension}
           />
         ))}
       </Grid>

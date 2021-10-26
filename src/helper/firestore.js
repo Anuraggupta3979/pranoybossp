@@ -60,7 +60,7 @@ export const getProductByIdAndSimilarProducts = (productId, productList) => {
 };
 
 export const getProductsByCategoryId = (categoryId, productList) => {
-  return productList.filter((product) => product.categoryId === categoryId);
+  return productList.filter((product) => product.cid === categoryId);
 };
 
 /**
@@ -72,8 +72,9 @@ export const getAllProductsByCategory = (categoryList, productList) => {
   let productsArray = [];
   const categories = categoryList.map((category) => {
     categoryId = category.name.toLowerCase().split(" ").join("-");
+    console.log(categoryId);
     productsArray.push(
-      productList.filter((product) => product.categoryId === categoryId)
+      productList.filter((product) => product.cid === categoryId)
     );
     return { categoryId, ...category };
   });

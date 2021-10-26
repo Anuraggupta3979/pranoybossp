@@ -24,7 +24,7 @@ function FeaturedProducts({ productList }) {
             category={product.category}
             description={product.description}
             key={product.cid}
-            id={product.cid}
+            id={product.id}
             hot={product.hot}
             material={product.material}
             weight={product.weight}

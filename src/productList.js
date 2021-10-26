@@ -1,7 +1,7 @@
 const productData = [
   {
     name: "Handpainted Wooden boxes",
-    category: "Wooden Craft",
+    category: "Wooden Crafts",
     // cid: "wooden-crafts",
 
     image:
@@ -16,7 +16,7 @@ const productData = [
   },
   {
     name: "Carved Mirror Frame",
-    category: "Wooden Craft",
+    category: "Wooden Crafts",
     cid: "wooden-crafts",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2FWipeOut36_13_2021_073633.650000_2.jpg?alt=media&token=f4f7f52a-295c-445c-88dc-8ee46393f424",
@@ -27,7 +27,7 @@ const productData = [
   },
   {
     name: "Wooden carved mirror frame",
-    category: "Wooden Craft",
+    category: "Wooden Crafts",
     cid: "wooden-crafts",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2Fpng_20211013_193804_0000.png?alt=media&token=7979c697-3e52-49ec-8b05-525b25350107",
@@ -38,7 +38,7 @@ const productData = [
   },
   {
     name: "Wooden Keepsake box",
-    category: "Wooden Craft",
+    category: "Wooden Crafts",
     cid: "wooden-crafts",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2Fquattrociocchi-flight-seriesfinal_1.jpg?alt=media&token=f81bd07c-8d82-47b4-bdee-782823694077",
@@ -49,7 +49,7 @@ const productData = [
   },
   {
     name: "Hand Painted Wooden drawer set",
-    category: "Wooden Craft",
+    category: "Wooden Crafts",
     cid: "wooden-crafts",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F4_20211007_172021_0003.png?alt=media&token=361bd7dc-0d59-46b6-9d6e-c785b17ccbf4",
@@ -60,7 +60,7 @@ const productData = [
   },
   {
     name: "Mango-wood Ceramic Trinket boxes",
-    category: "Wooden Craft",
+    category: "Wooden Crafts",
     cid: "wooden-crafts",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F5_20211007_172021_0004.png?alt=media&token=8ad9b318-e035-44d0-a1c8-f190205e59b5",
@@ -73,7 +73,7 @@ const productData = [
   },
   {
     name: "Wooden Cheese Board",
-    category: "Wooden Craft",
+    category: "Wooden Crafts",
     cid: "wooden-crafts",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F10_20211007_172021_0009.png?alt=media&token=f3427726-d2f9-4e05-803c-ea923758f113",
@@ -85,7 +85,7 @@ const productData = [
   },
   {
     name: "Two-Tier Wooden Serving platter",
-    category: "Wooden Craft",
+    category: "Wooden Crafts",
     cid: "wooden-crafts",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F23_20211008_111455_0022.png?alt=media&token=8b129dda-6966-44fc-9ab6-56094d758805",

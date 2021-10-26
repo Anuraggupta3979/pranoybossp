@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import Faqs from "./pages/Faq";
 import TermsAndCondition from "./pages/TermsAndCondition";
 import AboutUs from "./pages/About";
@@ -6,23 +6,24 @@ import Home from "./pages/Home";
 import Categories from "./pages/Categories";
 import CategoryPage from "./pages/CategoryPage";
 import ProductPage from "./pages/ProductPage";
-import AdminPage from "./pages/admin";
+// import AdminPage from "./pages/admin";
 import { Switch, Route } from "react-router-dom";
 import categoryList from "./categoryList";
 import teamList from "./teamList";
-import { getAllDocs } from "./helper/firestore";
+import productList from "./productList";
+// import { getAllDocs } from "./helper/firestore";
 import "./App.css";
-function App() {
-  // let productList = [];
-  const [productList, setProductList] = useState([]);
 
-  useEffect(() => {
-    getAllDocs("products")
-      .then((data) => {
-        setProductList(data);
-      })
-      .catch((e) => console.log(e));
-  }, []);
+function App() {
+  // const [productList, setProductList] = useState([]);
+
+  // useEffect(() => {
+  //   getAllDocs("products")
+  //     .then((data) => {
+  //       setProductList(data);
+  //     })
+  //     .catch((e) => console.log(e));
+  // }, []);
   const handleClick = () => {
     window.open("https://wa.me/917232013979");
   };

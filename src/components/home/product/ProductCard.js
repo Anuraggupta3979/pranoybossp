@@ -105,22 +105,25 @@ const ProductCard = ({
         >
           <img src={image} alt="sample36" className="product-card-image" />
         </figure>
-
-        <div
-          style={{
-            position: "absolute",
-            top: "22px",
-            left: "16px",
-            backgroundColor: "red",
-            width: "50px",
-            height: "25px",
-            alignContent: "center",
-            justifyContent: "center",
-            opacity: ".8",
-          }}
-        >
-          <p style={{ color: "white", fontSize: "small" }}>HOT</p>
-        </div>
+        {hot ? (
+          <div
+            style={{
+              position: "absolute",
+              top: "22px",
+              left: "16px",
+              backgroundColor: "red",
+              width: "50px",
+              height: "25px",
+              alignContent: "center",
+              justifyContent: "center",
+              opacity: ".8",
+            }}
+          >
+            <p style={{ color: "white", fontSize: "small" }}>HOT</p>
+          </div>
+        ) : (
+          <></>
+        )}
 
         <div style={{ display: "grid", justifyContent: "center" }}>
           <a className="product-anchor" href={`/product/${id}`}>
@@ -134,7 +137,6 @@ const ProductCard = ({
               {name}
             </p>
           </a>
-          <p>{hot}</p>
         </div>
       </button>
       {isTabletOrMobileDevice ? (

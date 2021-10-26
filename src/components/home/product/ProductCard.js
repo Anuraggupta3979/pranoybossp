@@ -173,7 +173,7 @@ const ProductCard = ({
                   <></>
                 )}
               </div>
-              <Link style={style.link} href={`/product/${id}`}>
+              <Link style={style.link} to={`/product/${id}`}>
                 For more info visit here
               </Link>
             </div>

@@ -1,12 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 // import "./Navbar.css";
 import * as ReactBootStrap from "react-bootstrap";
 import "../../assets/css/Navbar.css";
 import { Link, withRouter } from "react-router-dom";
 import NavImage from "../../assets/nav.png";
 import categoriesList from "../../categoryList";
+import { NavDropdown } from "react-bootstrap";
 import { Link as MuiLink } from "@material-ui/core";
 function Navv() {
+  const [show, setShow] = useState(false);
+  const showDropdown = (e) => {
+    setShow(!show);
+  };
+  const hideDropdown = (e) => {
+    setShow(false);
+  };
+  const title = (
+    <span>
+      <Link
+        className=" mr-5  link "
+        style={{ textDecoration: "none", color: "black" }}
+        to="/categories"
+      >
+        Categories
+      </Link>
+    </span>
+  );
   return (
     <div>
       <ReactBootStrap.Navbar
@@ -39,18 +58,14 @@ function Navv() {
               </ReactBootStrap.Nav>
 
               <ReactBootStrap.NavDropdown
-                title="Categories"
-                id="nav-dropdown"
-                className="link"
+                title={title}
+                id="collasible-nav-dropdown"
+                show={show}
+                onMouseEnter={showDropdown}
+                onMouseLeave={hideDropdown}
               >
-                <ReactBootStrap.Nav>
-                  <Link className="nav-link  droplink  " to="/categories">
-                    Categories
-                  </Link>
-                </ReactBootStrap.Nav>
-                <hr />
                 {categoriesList.map(({ name }) => (
-                  <ReactBootStrap.Nav>
+                  <NavDropdown.Item>
                     <Link
                       className="nav-link mr-5 link "
                       to={`/category/${name
@@ -60,9 +75,10 @@ function Navv() {
                     >
                       {name}
                     </Link>
-                  </ReactBootStrap.Nav>
+                  </NavDropdown.Item>
                 ))}
               </ReactBootStrap.NavDropdown>
+
               <ReactBootStrap.Nav>
                 <Link className="nav-link   link" to="#footer">
                   Contact

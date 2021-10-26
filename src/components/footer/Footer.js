@@ -116,7 +116,7 @@ const useStyles = makeStyles((theme) => ({
 const Footer = () => {
   const classes = useStyles({});
   return (
-    <Grid className={classes.footernews}>
+    <Grid className={classes.footernews} id="footer">
       <Grid item>
         <Grid
           container
@@ -204,12 +204,12 @@ const Footer = () => {
                 </Typography>
               </Grid>
               <Grid item>
-                <Link to="/terms" className={classes.footerLink}>
+                <Link to="#" className={classes.footerLink}>
                   <Typography
                     variant="subtitle2"
                     style={{ fontFamily: "맑은 고딕" }}
                   >
-                    Tearms & Condition
+                    Terms & Condition
                   </Typography>
                 </Link>
               </Grid>
@@ -235,7 +235,7 @@ const Footer = () => {
               </Grid>
 
               <Grid item>
-                <Link to="/faq" className={classes.footerLink}>
+                <Link to="#" className={classes.footerLink}>
                   <Typography
                     variant="subtitle2"
                     style={{ fontFamily: "맑은 고딕" }}

@@ -22,7 +22,8 @@ const teamData = [
   },
   {
     name: "Rachna Jaisinghani",
-    description: "A Bext Leader",
+    description:
+      "Coming from the city of dreams- Mumbai, I've always been into fashion and style and have acquired my sphere of creativity. Speaking of Rajasthan, I fell in love with its vibrant and royal handicrafts - a perfect amalgamation of seamless creativity and elegance. Hence, I decided to get into the business of handicrafts unveiling the creative brilliance of these handcrafted products.",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/team%2FRachna%20Jaisinghani.jpeg?alt=media&token=df317e69-60f5-4ece-a15e-bc5613973dbc",
   },

@@ -25,7 +25,7 @@ function AboutHeader() {
       <Grid item sm={4}>
         <Typography
           className={classes.aboutheading}
-          style={{ fontFamily: "Courier New" }}
+          style={{ fontFamily: "맑은 고딕" }}
         >
           Adorning the Traditional Creativity
         </Typography>

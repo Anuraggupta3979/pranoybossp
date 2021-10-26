@@ -4,7 +4,8 @@ import HomeVideo from "../assets/homeVideo.mp4";
 import "../assets/css/headerSection.css";
 const useStyles = makeStyles((theme) => ({
   subHeading: {
-    fontFamily: "맑은 고딕",
+   
+    fontFamily: "Courier New" ,
     fontSize: "40px",
     [theme.breakpoints.down("sm")]: {
       fontSize: "20px",

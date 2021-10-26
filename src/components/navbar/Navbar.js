@@ -5,7 +5,7 @@ import "../../assets/css/Navbar.css";
 import { Link, withRouter } from "react-router-dom";
 import NavImage from "../../assets/nav.png";
 import categoriesList from "../../categoryList";
-
+import { Link as MuiLink } from "@material-ui/core";
 function Navv() {
   return (
     <div>
@@ -23,7 +23,6 @@ function Navv() {
               alt="Logo"
               style={{ width: "160px", height: "33px" }}
             />
-            
           </ReactBootStrap.Navbar.Brand>
           <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav">
@@ -65,9 +64,12 @@ function Navv() {
                 ))}
               </ReactBootStrap.NavDropdown>
               <ReactBootStrap.Nav>
-                <Link className="nav-link   link" to="/blog">
+                <Link className="nav-link   link" to="#footer">
                   Contact
                 </Link>
+              </ReactBootStrap.Nav>
+              <ReactBootStrap.Nav>
+                <MuiLink className="nav-link   link" href="#footer"></MuiLink>
               </ReactBootStrap.Nav>
             </ReactBootStrap.Nav>
           </ReactBootStrap.Navbar.Collapse>

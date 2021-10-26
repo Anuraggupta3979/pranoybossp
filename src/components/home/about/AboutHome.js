@@ -3,6 +3,7 @@ import { Grid, makeStyles, Typography } from "@material-ui/core";
 import about from "../../../assets/header.jpg";
 import Button from "../../Button";
 import Heading from "../../Heading";
+import { Link } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
   about: {
     margin: "30px",
@@ -11,33 +12,6 @@ const useStyles = makeStyles((theme) => ({
 function AboutHome() {
   const classes = useStyles({});
   return (
-    // <Grid>
-    //   <Typography>About Us</Typography>
-    //   <Grid className={classes.about}>
-    //     <Grid item sm={6} className={classes.imagebox}>
-    //       <img className={classes.image} src={about} alt="" />
-    //     </Grid>
-    //     <Grid item sm={6} className={classes.abouttext}>
-    //       <Grid item>
-    //         <Typography className={classes.aboutheading}>About Us</Typography>
-    //       </Grid>
-    //       <Grid item>
-    //         <Typography>
-    //           About Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-    //           Cupiditate vitae pariatur aut esse enim. Maxime quibusdam
-    //           voluptate blanditiis inventore veniam quasi id exercitationem
-    //           pariatur dolorum magnam provident nobis, aliquam illum neque,
-    //           labore voluptatum perferendis quae laboriosam minus nisi totam
-    //           nihil ullam commodi. Error alias distinctio provident at nisi rem
-    //           id!
-    //         </Typography>
-    //       </Grid>
-    //       <Grid item>
-    //         <Button title="Learn More" />
-    //       </Grid>
-    //     </Grid>
-    //   </Grid>
-    // </Grid>
     <Grid className={classes.about}>
       <Heading title=" About Us" />
       <Grid container item style={{ display: "flex" }}>
@@ -83,7 +57,7 @@ function AboutHome() {
               fontFamily: "맑은 고딕",
             }}
           >
-          The CraftJet
+            The CraftJet
           </Typography>
           <Typography
             style={{
@@ -100,8 +74,9 @@ function AboutHome() {
             form to reach the people at its ultimate grandeur all over the world
             with par excellence.
           </Typography>
-
-          <Button title="Learn More" />
+          <Link to="/about">
+            <Button title="Learn More" />
+          </Link>
         </Grid>
       </Grid>
     </Grid>

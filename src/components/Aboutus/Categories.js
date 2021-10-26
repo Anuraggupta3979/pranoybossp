@@ -10,7 +10,7 @@ function Categories({ categoryList }) {
   return (
     <Grid>
       <Heading title="Categories" />
-      {categoryList.map(({ name, description, image }) => {
+      {categoryList.map(({ name, description, image, id }) => {
         temp = i;
         i = t;
         t = temp;
@@ -21,6 +21,7 @@ function Categories({ categoryList }) {
             image={image}
             imageorder={i}
             textorder={t}
+            id={id}
           />
         );
       })}

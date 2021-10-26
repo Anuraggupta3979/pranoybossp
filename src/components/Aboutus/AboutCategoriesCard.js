@@ -3,6 +3,7 @@ import React from "react";
 import "../../assets/css/abc.css";
 import { Grid, Typography } from "@mui/material";
 import Button from "../Button";
+import { Link } from "react-router-dom";
 function AboutCategoriesCard(props) {
   const imageorder = props.imageorder;
   const textorder = props.textorder;
@@ -55,14 +56,16 @@ function AboutCategoriesCard(props) {
                     className="mt-1  text-justify"
                     style={{
                       fontFamily: "맑은 고딕 ",
-                   
-                      textAlign:"justify"
+
+                      textAlign: "justify",
                     }}
                   >
                     {props.description}
                   </Typography>
                 </Grid>
-                <Button title="Explore"></Button>
+                <Link to={`/category/${props.id}`}>
+                  <Button title="Explore"></Button>
+                </Link>
               </Grid>
               <Grid className="col-lg-1 col-md-1 order-2"></Grid>
               <Grid

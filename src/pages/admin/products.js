@@ -2,14 +2,14 @@ import * as React from "react";
 import {
   List,
   Datagrid,
-  ReferenceField,
+  // ReferenceField,
   TextField,
   EditButton,
   Create,
   Edit,
   SimpleForm,
-  ReferenceInput,
-  SelectInput,
+  // ReferenceInput,
+  // SelectInput,
   TextInput,
   ImageField,
   ImageInput,
@@ -33,9 +33,9 @@ export const ProductList = (props) => {
         <Datagrid rowClick="edit">
           <TextField source="id" />
           <TextField source="name" />
-          <ReferenceField source="categoryId" reference="categories">
-            <TextField source="id" />
-          </ReferenceField>
+          {/* <ReferenceField source="categoryId" reference="categories"> */}
+            <TextField source="categoryId" />
+          {/* </ReferenceField> */}
           <BooleanField source="hot" />
           <BooleanField source="featured" />
           <EditButton />
@@ -57,9 +57,9 @@ export const ProductEdit = (props) => (
       <TextInput disabled source="id" />
       <TextInput source="name" />
       <TextInput source="description" />
-      <ReferenceInput source="categoryId" reference="categories">
-        <SelectInput optionText="name" />
-      </ReferenceInput>
+      {/* <ReferenceInput source="categoryId" reference="categories"> */}
+        <TextInput source="categoryId" />
+      {/* </ReferenceInput> */}
       <TextInput source="material" />
       <TextInput source="dimensions" />
       <TextInput source="weight" />
@@ -77,9 +77,9 @@ export const ProductCreate = (props) => (
     <SimpleForm>
       <TextInput required source="name" />
       <TextInput required source="description" />
-      <ReferenceInput source="categoryId" reference="categories">
-        <SelectInput optionText="name" />
-      </ReferenceInput>
+      {/* <ReferenceInput source="categoryId" reference="categories"> */}
+        <TextInput source="categoryId" />
+      {/* </ReferenceInput> */}
       <TextInput source="material" />
       <TextInput source="dimensions" />
       <TextInput source="weight" />

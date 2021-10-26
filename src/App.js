@@ -10,13 +10,17 @@ import ProductPage from "./pages/ProductPage";
 import { Switch, Route } from "react-router-dom";
 import categoryList from "./categoryList";
 import teamList from "./teamList";
-import productList from "./productList";
+import productList1 from "./productList";
 // import { getAllDocs } from "./helper/firestore";
 import "./App.css";
 
 function App() {
   // const [productList, setProductList] = useState([]);
-
+  const productList = productList1.map((product) => {
+    const id = product.name.toLowerCase().split(" ").join("-");
+    return { id: id, ...product };
+  });
+  // console.log(productList[1])
   // useEffect(() => {
   //   getAllDocs("products")
   //     .then((data) => {

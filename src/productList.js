@@ -464,6 +464,210 @@ const productData = [
       "This primitive-style lantern candle holder with a matte black finish is perfect to recreate the traditional style of lightning. The beautiful looking metallic lanterns have one of the glass panels that can open to fit in the candles. The pine board along with it adds a perfect countryside look to it.",
     featured: 0,
   },
+  {
+    name: "Handmade Triangle-shaped 3-D Wall decor",
+    category: "Metallic Wonders",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F13_20211008_111455_0012%20(1)-imresizer.jpg?alt=media&token=a71896b2-90e9-4eed-973d-0a75b475e75e",
+
+    description:
+      "This Handcrafted wall decor is an ideal elegant piece for your room. Made with iron, with a subtle finish and triangular patterns, this chic style wall decor is perfect to embellish your interiors.",
+    featured: 0,
+  },
+  {
+    name: "3-D Ginkgo leaves metallic Wall clock decor",
+    category: "Metallic Wonders",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2FWipeOut10_08_2021_111029.485000.jpg?alt=media&token=7ccaa44e-4e25-4201-85bb-47830650a495",
+
+    description:
+      'Time is a storm in which we all are lost". Manage your precious time with this eye-catchy clock cum wall decor. Its metallic finish and the metallic ginkgo leaves are perfect to embellish your aesthetic ambiance with absolute elegance.',
+    featured: 0,
+  },
+  {
+    name: "Traditional musician figurines Showpiece",
+    category: "Metallic Wonders",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F15_20211008_111455_0014.png?alt=media&token=aed4f0fa-4d47-4d09-b68d-ce6a0ccb873b",
+
+    description:
+      "These metallic figurines(set of 3) depict the true essence of the traditional musicians. Rajasthani attire, multicolored and hand-painted, this decor piece is ideal for gifting purposes too.",
+    featured: 0,
+  },
+  {
+    name: "Multicoloured Tribal musician figurines",
+    category: "Metallic Wonders",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F16_20211008_111455_0015.png?alt=media&token=2cc55202-cf57-4083-a8c3-377098c9716d",
+
+    description:
+      "Portraying the tribal art, these iron figurines(Set of 3) provide a rustic touch along with vibrant hues. It's the best choice to adorn your space with a touch of culture and modern art.",
+    featured: 0,
+  },
+  {
+    name: "Lotus-Shaped Metallic Wind Chime",
+    category: "Metallic Wonders",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F8_20211007_172021_0007.png?alt=media&token=c3f6bf49-5058-4894-a768-bbf55a021d34",
+    material: "Metal",
+
+    description:
+      "The lotus-shaped metal framework, traditional bells with bright pink beads, is what makes it a unique wind-chime that will jazz up your boring wall with musical tinkles.",
+    featured: 0,
+  },
+  {
+    name: "Metallic Car-face Wall decor",
+    category: "Metallic Wonders",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2FMDE6184_primary-1100x1100_2.jpg?alt=media&token=c4f96c12-1bab-4b91-bcf3-574ee8bf5b9c",
+    material: "Metal",
+    Dimensions: "Dimensions:48.00in x 5.00in x 31.00in",
+
+    description:
+      "This car-face fall hanging would bring out your love for vintage cars. Handcrafted by diligent artisans, this piece would add a vintage and rustic touch to your decor.",
+    featured: 0,
+  },
+  {
+    name: "Rajasthani traditional Musician Wall Decor",
+    category: "Metallic Wonders",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F17_20211008_111455_0016.png?alt=media&token=e80ee229-2f8c-4c84-b836-c9c5c2ee9ed4",
+
+    description:
+      "The chromatic hues, the traditional outlook, and the artistic brilliance of this decorative wall hanging piece adds grace and elegance to your room making it a space worth admiring.",
+    featured: 0,
+  },
+  {
+    name: "Ganesha Wall-hanging",
+    category: "Metallic Wonders",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F19_20211008_111455_0018.png?alt=media&token=16cd5ede-b293-4525-b8ed-b020bd9779c5",
+
+    description:
+      "Drive away all your sorrows and problems by bringing this decorative wall hanging of Vighnaharta Lord Ganesha playing bansuri to your home. Impeccably handcrafted, this amazing piece of decor adorns your space along with Ganesha’s blessings.",
+    featured: 1,
+  },
+  {
+    name: "Radha Krishna decorative wall hanging",
+    category: "Metallic Wonders",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2Fradha-krishna-on-swing-wall-hanging-AE40.jpg?alt=media&token=a8d022f4-425a-404f-b3d5-0592b211e06e",
+
+    description:
+      "Radha-Krishna, a symbol of divine love, has been beautifully handcrafted into this wall decor. Portraying the folklore, this alluring piece of decor will surely add elegance to your interiors.",
+    featured: 0,
+  },
+  {
+    name: "Metallic Musicians Wall decor cum table showpiece",
+    category: "Metallic Wonders",
+    image:
+      "https://drive.google.com/file/d/1cT3lFgMQ6WnjZI_13TlmeMT5HnxOtkfu/view?usp=sharing",
+
+    description:
+      "This decorative piece is a perfect blend of traditionalism with modern art. The Metallic fusion and embossed paints will decorate your space with ultimate grace.",
+    featured: 0,
+  },
+  {
+    name: "Metallic Bike Wall Clock cum decor",
+    category: "Metallic Wonders",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2Firon-avenger-bike-wall-art-1-727x800.jpg?alt=media&token=91f02a06-d8ee-47a8-b819-60e5170980fe",
+
+    description:
+      "This bike-shaped iron wall decor piece is certain to grab everyone’s attention. The Abstract Design of this piece will add a classic vibe to your wall and interiors.",
+    featured: 0,
+  },
+  {
+    name: "Crescent Moon Floral Wall-decor",
+    category: "Metallic Wonders",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2FPhoto%20from%20Jyoti%20Pandey.jpg?alt=media&token=8e0b99fc-b8be-403c-8c7c-74e5e95e8922",
+
+    description:
+      "This exclusive metallic wall decor piece adds a feather to the cap of your beautiful interiors. The moon-shaped framework with floral designs on it spreads the radiance of love, charm, and creativity.",
+    featured: 0,
+  },
+  {
+    name: "Metallic Flower wall decor",
+    category: "Metallic Wonders",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F9_20211007_172021_0008.png?alt=media&token=5f29044d-5ab1-4a55-9a87-883ab1f84b7d",
+
+    description:
+      "Inspired by the natural flowers-an epitome of beauty, this exclusive piece of wall art embellishes your walls in the most beautiful way. Its intricate design and symmetry is what make it a perfect piece worth gifting too.",
+    featured: 0,
+  },
+  {
+    name: "Wooden hand-Mirrors",
+    category: "Home Utilities",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F7_20211007_172021_0006.png?alt=media&token=8863357b-8181-4209-9f4a-f9634a2af788",
+    material: "Wood",
+
+    description:
+      "Hand-carved with utmost care, these wooden hand mirrors give an elegant and aesthetic look to your dressing area. They seem to be straight out of a fairytale due to their pastel hue and design.",
+    featured: 0,
+  },
+  {
+    name: "Wheelbarrow-shaped Decor stand",
+    category: "Home Utilities",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F11_20211007_172021_0010.png?alt=media&token=67f15ad6-127e-4740-b402-bfde840afd34",
+
+    description:
+      "This 3-tier display stand is a perfect decor piece to accessorize the corner of your space with ultimate grace. You can decorate this according to your taste with contrasting artificial flowers.",
+    featured: 1,
+  },
+  {
+    name: "Macrame Fringe Tea coasters",
+    category: "Home Utilities",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F11_20211007_172021_0010.png?alt=media&token=67f15ad6-127e-4740-b402-bfde840afd34",
+
+    description:
+      "Cozy and elegant, these handmade coasters are must-haves to compliment your table. Start your day with a cup of coffee kept on these beautiful coasters that refresh your soul and soothes your eyes.",
+    featured: 0,
+  },
+  {
+    name: "Macrame Magazine holder",
+    category: "Home Utilities",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F2_20211009_214235_0001.png?alt=media&token=5c467025-c1e6-4e75-adfb-6833143c525b",
+
+    description:
+      "Organize your desk in the most beautiful way with this handcrafted macrame magazine holder that adds a tint of bohemian artistic design. Lightweight, durable, and sturdy, it is perfect for a side couch as well.",
+    featured: 0,
+  },
+  {
+    name: "Macrame Mandala Dream Catcher",
+    category: "Home Utilities",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F3_20211009_214235_0002.png?alt=media&token=c8e03ab9-6907-46f3-b6eb-03995b8dac08",
+
+    description:
+      "Let your good dreams pass through, catching away all the nightmares and negative vibes by this handmade Dream Catcher. The intricate ’Mandala’ design has been handcrafted by the magnificent artisans with utmost perfection to embellish your bedroom with positive vibes.",
+    featured: 1,
+  },
+  {
+    name: "Macrame Cushion Cover",
+    category: "Home Utilities",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F4_20211009_214235_0003.png?alt=media&token=b7e09711-cfc1-4875-9c9a-df92420683c8",
+
+    description:
+      "A perfect blend of Bohemian texture and modern designs, this neutral-coloured cushion cover is perfect for an aesthetic and minimalistic touch to your couch/bed.",
+    featured: 0,
+  },
+  {
+    name: "Handmade Macrame cushion cover",
+    category: "Home Utilities",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F5_20211009_214235_0004.png?alt=media&token=e967cf6e-3486-4049-a60f-7cfd81a99a54",
+
+    description:
+      "Handmade by talented artisans, the intricate design of this zipper cushion cover is a perfect amalgamation of bohemian texture and ethnic style. Knotted with diligence, this pillowcase will perfectly compliment your couch/bed.",
+    featured: 0,
+  },
 ];
 
 export default productData;

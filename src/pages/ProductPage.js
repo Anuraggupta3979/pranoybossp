@@ -1,39 +1,49 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+// import { useState, useEffect } from "react";
 import { useParams } from "react-router";
-import { getProductByIdAndSimilarProducts } from "../helper/firestore";
+// import { getProductByIdAndSimilarProducts } from "../helper/firestore";
 import Navbar from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
 import { Grid } from "@mui/material";
 import ProductCard from "../components/home/product/ProductCard";
-import { getAllDocs } from "../helper/firestore";
-import Heading from "../components/Heading";
-const ProductPage = () => {
-  const [productList, setProductList] = useState([]);
-  const [productData, setProductData] = useState({
-    product: {
-      id: "",
-      name: "",
-      image: "",
-      description: "",
-      categoryId: "",
-      material: "",
-      weight: "",
-      dimensions: "",
-    },
-    similarProducts: [],
-  });
+// import { getAllDocs } from "../helper/firestore";
 
+import Heading from "../components/Heading";
+
+const ProductPage = ({ productList }) => {
+  console.log(productList);
+  // const [productData, setProductData] = useState({
+  //   product: {
+  //     id: "",
+  //     name: "",
+  //     image: "",
+  //     description: "",
+  //     categoryId: "",
+  //     material: "",
+  //     weight: "",
+  //     dimensions: "",
+  //   },
+  //   similarProducts: [],
+  // });
   const { productId } = useParams();
-  useEffect(() => {
-    getAllDocs("products")
-      .then((data) => {
-        setProductList(data);
-        setProductData(
-          getProductByIdAndSimilarProducts(productId, productList)
-        );
-      })
-      .catch((e) => console.log(e));
-  }, [productId, productList]);
+  // const getProductData = () => {
+  const productData = productList.filter((product) => product.id === productId)[0];
+  console.log(productData)
+  // };
+  // useEffect(() => {
+  //   //   getAllDocs("products")
+  //   //     .then((data) => {
+  //   //       setProductList(data);
+  //   //       setProductData(
+  //   //         getProductByIdAndSimilarProducts(productId, productList)
+  //   //       );
+  //   //     })
+  //   //     .catch((e) => console.log(e));
+  //   const pr = productList.filter(
+  //     (product) => productId === product.toLowerCase().split(" ").join("-")
+  //   );
+  //   console.log({ pr });
+  // }, [productList]);
   const style = {
     container: { display: "grid", justifyContent: "center" },
     main: {
@@ -100,36 +110,36 @@ const ProductPage = () => {
       <Grid container item style={style.main}>
         <Grid item lg={5} sm={12} xs={12}>
           <img
-            src={productData.product.image}
-            alt={productData.product.name}
+            src={productData.image}
+            alt={productData.name}
             style={style.image}
           />
         </Grid>
         <Grid lg={6} sm={12} xs={12} style={style.content}>
-          <p style={style.title}>{productData.product.name}</p>
-          <p style={style.description}>{productData.product.description}</p>
+          <p style={style.title}>{productData.name}</p>
+          <p style={style.description}>{productData.description}</p>
           <hr style={{ width: "50%", margin: "auto" }} />
           <Grid style={style.extraInfo}>
             <Grid style={style.tag}>
-              Category : {productData.product.categoryId}
+              Category : {productData.categoryId}
             </Grid>
-            {productData.product.material ? (
+            {productData.material ? (
               <Grid style={style.tag}>
-                Material : {productData.product.material}
+                Material : {productData.material}
               </Grid>
             ) : (
               <></>
             )}
-            {productData.product.weight ? (
+            {productData.weight ? (
               <Grid style={style.tag}>
-                Weight : {productData.product.weight}
+                Weight : {productData.weight}
               </Grid>
             ) : (
               <></>
             )}
-            {productData.product.dimensions ? (
+            {productData.dimensions ? (
               <Grid style={style.tag}>
-                Dimension : {productData.product.dimensions}
+                Dimension : {productData.dimensions}
               </Grid>
             ) : (
               <></>
@@ -147,7 +157,7 @@ const ProductPage = () => {
           justifyContent: "space-around",
         }}
       >
-        {productData.similarProducts.map((product) => {
+        {/* {productData.similarProducts.map((product) => {
           return (
             <ProductCard
               image={product.image}
@@ -157,7 +167,7 @@ const ProductPage = () => {
               key={product.id}
             />
           );
-        })}
+        })} */}
       </Grid>
 
       <Footer />

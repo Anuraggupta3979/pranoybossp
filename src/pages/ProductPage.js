@@ -30,8 +30,9 @@ const ProductPage = ({ productList }) => {
   // const productData = productList.filter(
   //   (product) => product.id === productId
   // )[0];
-  const productData = getProductByIdAndSimilarProducts(productId, productList)
+  const productData = getProductByIdAndSimilarProducts(productId, productList);
   console.log(productData);
+
   // };
   // useEffect(() => {
   //   //   getAllDocs("products")
@@ -125,12 +126,16 @@ const ProductPage = ({ productList }) => {
           <Grid style={style.extraInfo}>
             <Grid style={style.tag}>Category : {productData.product.name}</Grid>
             {productData.product.material ? (
-              <Grid style={style.tag}>Material : {productData.product.material}</Grid>
+              <Grid style={style.tag}>
+                Material : {productData.product.material}
+              </Grid>
             ) : (
               <></>
             )}
             {productData.product.weight ? (
-              <Grid style={style.tag}>Weight : {productData.product.weight}</Grid>
+              <Grid style={style.tag}>
+                Weight : {productData.product.weight}
+              </Grid>
             ) : (
               <></>
             )}

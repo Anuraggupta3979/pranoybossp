@@ -75,6 +75,7 @@ const ProductCard = ({
   image,
   name,
   categoryId,
+  category,
   description,
   id,
   hot,
@@ -90,8 +91,8 @@ const ProductCard = ({
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  console.log({ hot, material, weight, dimension, description });
-
+  console.log({ hot, material, category, weight, dimension, description });
+  console.log(id);
   return (
     <div className="mb-3" style={{ position: "relative" }}>
       <button onClick={handleOpen} className="product-modal-button">
@@ -159,8 +160,8 @@ const ProductCard = ({
               <div style={style.extraInfo}>
                 <div style={style.tag}>
                   Category :
-                  <Link style={style.link} href={`/category/${categoryId}`}>
-                    {name}
+                  <Link style={style.link} to={`/category/${categoryId}`}>
+                    {category}
                   </Link>
                 </div>
                 {material ? (

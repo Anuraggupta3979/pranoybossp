@@ -18,8 +18,10 @@ function App() {
   // const [productList, setProductList] = useState([]);
   const productList = productList1.map((product) => {
     const id = product.name.toLowerCase().split(" ").join("-");
-    return { id: id, ...product };
+    const categoryId = product.category.toLowerCase().split(" ").join("-");
+    return { id: id, categoryId: categoryId, ...product };
   });
+  console.log(productList[0]);
   // console.log(productList[1])
   // useEffect(() => {
   //   getAllDocs("products")

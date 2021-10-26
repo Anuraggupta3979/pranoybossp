@@ -2,7 +2,7 @@ const productData = [
   {
     name: "Handpainted Wooden boxes",
     category: "Wooden Craft",
-    cid: "wooden-crafts",
+    // cid: "wooden-crafts",
 
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F12_20211007_172021_0011.png?alt=media&token=2f7ca61d-dd4c-4412-98cf-3610cb879fe2",

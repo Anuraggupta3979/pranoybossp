@@ -5,7 +5,7 @@ import { useParams } from "react-router";
 import Navbar from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
 import { Grid } from "@mui/material";
-import ProductCard from "../components/home/product/ProductCard";
+// import ProductCard from "../components/home/product/ProductCard";
 // import { getAllDocs } from "../helper/firestore";
 
 import Heading from "../components/Heading";
@@ -30,7 +30,7 @@ const ProductPage = ({ productList }) => {
   const productData = productList.filter(
     (product) => product.id === productId
   )[0];
-  // console.log(productData);
+  console.log(productData);
   // };
   // useEffect(() => {
   //   //   getAllDocs("products")

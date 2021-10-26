@@ -78,7 +78,7 @@ function App() {
           )}
           exact
         />
-        <Route path="/admin" component={AdminPage} exact />
+        {/* <Route path="/admin" component={AdminPage} exact /> */}
       </Switch>
       <p
         onClick={handleClick}

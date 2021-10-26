@@ -7,7 +7,7 @@ import NavImage from "../../assets/nav.png";
 import categoriesList from "../../categoryList";
 import { NavDropdown } from "react-bootstrap";
 import { Link as MuiLink } from "@material-ui/core";
-function Navv() {
+function Navbar() {
   const [show, setShow] = useState(false);
   const showDropdown = (e) => {
     setShow(!show);
@@ -72,6 +72,7 @@ function Navv() {
                         .toLowerCase()
                         .split(" ")
                         .join("-")}`}
+                      key={name}
                     >
                       {name}
                     </Link>
@@ -95,4 +96,4 @@ function Navv() {
   );
 }
 
-export default withRouter(Navv);
+export default withRouter(Navbar);

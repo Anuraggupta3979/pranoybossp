@@ -12,7 +12,6 @@ import Team from "../components/Team";
 import CategoriesCard from "../components/home/collection/CategoriesCard";
 
 const Home = ({ teamList, categoryList, productList }) => {
-  console.log(categoryList);
   return (
     <Grid>
       <Navbar />

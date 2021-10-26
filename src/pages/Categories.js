@@ -26,10 +26,14 @@ const Categories = ({ categoryList, productList }) => {
             <ProductCard
               image={product.image}
               name={product.name}
-              categoryId={product.categoryId}
-              desc={product.description}
-              key={product.id}
+              categoryId={product.cid}
+              description={product.description}
+              key={product.cid}
               id={product.id}
+              hot={product.hot}
+              material={product.material}
+              weight={product.weight}
+              dimension={product.dimension}
             />
           ))}
         </div>

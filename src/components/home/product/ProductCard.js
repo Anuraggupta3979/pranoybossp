@@ -90,7 +90,7 @@ const ProductCard = ({
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  // console.log({ hot, material, weight, dimensions, description });
+  console.log({ hot, material, weight, dimensions, description });
 
   return (
     <div className="mb-3" style={{ position: "relative" }}>
@@ -173,7 +173,7 @@ const ProductCard = ({
                   <></>
                 )}
               </div>
-              <Link style={style.link} href={`/product/${id}`}>
+              <Link style={style.link} to={`/product/${id}`}>
                 For more info visit here
               </Link>
             </div>

@@ -7,7 +7,7 @@ import { getAllProductsByCategory } from "../helper/firestore";
 import "../assets/Categories.css";
 import HeaderSection from "../sections/HeaderSection";
 // import { useMediaQuery } from "react-responsive";
-
+import { Link } from "react-router-dom";
 const Categories = ({ categoryList, productList }) => {
   const productDict = getAllProductsByCategory(categoryList, productList);
   console.log(productDict);
@@ -52,7 +52,9 @@ const Categories = ({ categoryList, productList }) => {
 
             <ProductCards productList={productDict.productsArray[index]} />
             <div style={{ textAlign: "center" }}>
-              <CustomButton title="Learn More" />
+              <Link to={`/category/${category.categoryId}`}>
+                <CustomButton title="Learn More" />
+              </Link>
             </div>
           </>
         ))}

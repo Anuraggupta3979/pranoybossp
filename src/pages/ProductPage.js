@@ -30,6 +30,7 @@ const ProductPage = ({ productList }) => {
   const productData = productList.filter(
     (product) => product.id === productId
   )[0];
+  console.log(productData);
   // console.log(productData);
   // };
   // useEffect(() => {

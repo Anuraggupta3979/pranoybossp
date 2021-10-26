@@ -21,6 +21,7 @@ function FeaturedProducts({ productList }) {
             image={product.image}
             name={product.name}
             categoryId={product.cid}
+            category={product.category}
             description={product.description}
             key={product.cid}
             id={product.cid}

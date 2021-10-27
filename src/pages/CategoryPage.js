@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { useParams } from "react-router";
 import { getCategoryById, getProductsByCategoryId } from "../helper/firestore";
 import Navbar from "../components/navbar/Navbar";
@@ -9,15 +9,23 @@ import HeaderSection from "../sections/HeaderSection";
 
 
 const CategoryPage = ({ categoryList, productList }) => {
-  const { categoryId } = useParams();
-  let category = {
-    id: "",
-    name: "",
-    image: "",
-    description: "",
-  };
-  category = getCategoryById(categoryList, categoryId);
-  productList = getProductsByCategoryId(categoryId, productList);
+    const { categoryId } = useParams();
+    let category = {
+        id: "",
+        name: "",
+        image: "",
+        description: "",
+    };
+    const [productListUpdated, setProductListUpdated] = useState([]);
+
+    useEffect(() => {
+
+      category = getCategoryById(categoryList, categoryId);
+      setProductListUpdated(getProductsByCategoryId(categoryId, productList));
+      console.log(category,productListUpdated, '##');
+
+    },[categoryId, productList]);
+
   return (
     <div>
       <Navbar />
@@ -35,7 +43,7 @@ const CategoryPage = ({ categoryList, productList }) => {
             justifyContent: "space-around",
           }}
         >
-          {productList.map((product) => (
+          {productListUpdated.map((product) => (
             <ProductCard
               image={product.image}
               name={product.name}

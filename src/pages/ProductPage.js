@@ -7,33 +7,21 @@ import { Grid } from "@mui/material";
 import ProductCard from "../components/home/product/ProductCard";
 import { getAllDocs } from "../helper/firestore";
 import Heading from "../components/Heading";
-const ProductPage = () => {
-  const [productList, setProductList] = useState([]);
-  const [productData, setProductData] = useState({
-    product: {
-      id: "",
-      name: "",
-      image: "",
-      description: "",
-      categoryId: "",
-      material: "",
-      weight: "",
-      dimensions: "",
-    },
-    similarProducts: [],
-  });
+const ProductPage = ( { productList }) => {
+
 
   const { productId } = useParams();
+  const [productData, setProductData] = useState(null);
+  const [similarData,setSimilarData] = useState(null);
+
   useEffect(() => {
-    getAllDocs("products")
-      .then((data) => {
-        setProductList(data);
-        setProductData(
-          getProductByIdAndSimilarProducts(productId, productList)
-        );
-      })
-      .catch((e) => console.log(e));
-  }, [productId, productList]);
+    if(productList.length > 0) {
+      const data = getProductByIdAndSimilarProducts(productId, productList);
+      setProductData(data.product);
+      setSimilarData(data.similarProducts);
+    }
+
+  }, [productList]);
   const style = {
     container: { display: "grid", justifyContent: "center" },
     main: {
@@ -97,46 +85,48 @@ const ProductPage = () => {
   return (
     <Grid>
       <Navbar />
-      <Grid container item style={style.main}>
-        <Grid item lg={5} sm={12} xs={12}>
-          <img
-            src={productData.product.image}
-            alt={productData.product.name}
-            style={style.image}
-          />
-        </Grid>
-        <Grid lg={6} sm={12} xs={12} style={style.content}>
-          <p style={style.title}>{productData.product.name}</p>
-          <p style={style.description}>{productData.product.description}</p>
-          <hr style={{ width: "50%", margin: "auto" }} />
-          <Grid style={style.extraInfo}>
-            <Grid style={style.tag}>
-              Category : {productData.product.categoryId}
+      { productData &&
+        <Grid container item style={style.main}>
+          <Grid item lg={5} sm={12} xs={12}>
+            <img
+                src={productData.image}
+                alt={productData.name}
+                style={style.image}
+            />
+          </Grid>
+          <Grid lg={6} sm={12} xs={12} style={style.content}>
+            <p style={style.title}>{productData.name}</p>
+            <p style={style.description}>{productData.description}</p>
+            <hr style={{ width: "50%", margin: "auto" }} />
+            <Grid style={style.extraInfo}>
+              <Grid style={style.tag}>
+                Category : {productData.categoryId}
+              </Grid>
+              {productData.material ? (
+                  <Grid style={style.tag}>
+                    Material : {productData.material}
+                  </Grid>
+              ) : (
+                  <></>
+              )}
+              {productData.weight ? (
+                  <Grid style={style.tag}>
+                    Weight : {productData.weight}
+                  </Grid>
+              ) : (
+                  <></>
+              )}
+              {productData.dimensions ? (
+                  <Grid style={style.tag}>
+                    Dimension : {productData.dimensions}
+                  </Grid>
+              ) : (
+                  <></>
+              )}
             </Grid>
-            {productData.product.material ? (
-              <Grid style={style.tag}>
-                Material : {productData.product.material}
-              </Grid>
-            ) : (
-              <></>
-            )}
-            {productData.product.weight ? (
-              <Grid style={style.tag}>
-                Weight : {productData.product.weight}
-              </Grid>
-            ) : (
-              <></>
-            )}
-            {productData.product.dimensions ? (
-              <Grid style={style.tag}>
-                Dimension : {productData.product.dimensions}
-              </Grid>
-            ) : (
-              <></>
-            )}
           </Grid>
         </Grid>
-      </Grid>
+      }
 
       <Heading title="Similar Products"></Heading>
 
@@ -147,7 +137,7 @@ const ProductPage = () => {
           justifyContent: "space-around",
         }}
       >
-        {productData.similarProducts.map((product) => {
+        {similarData && similarData.map((product) => {
           return (
             <ProductCard
               image={product.image}

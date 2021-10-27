@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Box from "@mui/material/Box";
 // import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
@@ -90,6 +90,10 @@ const ProductCard = ({
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  useEffect(()=> {
+    console.log(id,'id');
+  })
+
   // console.log({ hot, material, weight, dimensions, description });
 
   return (
@@ -173,9 +177,10 @@ const ProductCard = ({
                   <></>
                 )}
               </div>
-              <Link style={style.link} href={`/product/${id}`}>
+
+              <a style={style.link} href={`/product/${id}`}>
                 For more info visit here
-              </Link>
+              </a>
             </div>
           </Box>
         </Modal>

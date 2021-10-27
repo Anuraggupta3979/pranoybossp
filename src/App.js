@@ -20,6 +20,7 @@ function App() {
     getAllDocs("products")
       .then((data) => {
         setProductList(data);
+        console.log(data,'data');
       })
       .catch((e) => console.log(e));
   }, []);

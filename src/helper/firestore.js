@@ -51,10 +51,11 @@ export const getCategoryById = (categoryList, categoryId) => {
 };
 
 export const getProductByIdAndSimilarProducts = (productId, productList) => {
-  console.log(productList);
   const product = productList.filter((product) => product.id === productId)[0];
+  console.log(product);
   let lst = getProductsByCategoryId(product.categoryId, productList);
   lst = lst.filter((product) => product.id != productId);
+  console.log(lst);
   return { product: product, similarProducts: lst };
 };
 

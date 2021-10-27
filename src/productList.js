@@ -3,10 +3,11 @@ const productData = [
     name: "Handpainted Wooden boxes",
     category: "Wooden Crafts",
     cid: "wooden-crafts",
+    categoryId: "wooden-crafts",
+
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F12_20211007_172021_0011.png?alt=media&token=2f7ca61d-dd4c-4412-98cf-3610cb879fe2",
     material: "Wood",
-    dimension: "aaa",
     weight: "11",
     description:
       "Exclusively handcrafted and hand-painted with chromatic hues and intricate motifs, this set of boxes portrays the opulence of traditional art. Perfect for storing, jewelleries, accessories or as a memory keepsake box, the beauty of these boxes enhances the aura, giving it a touch of royalty.",
@@ -17,6 +18,7 @@ const productData = [
     name: "Carved Mirror Frame",
     category: "Wooden Crafts",
     cid: "wooden-crafts",
+    categoryId: "wooden-crafts",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2FWipeOut36_13_2021_073633.650000_2.jpg?alt=media&token=f4f7f52a-295c-445c-88dc-8ee46393f424",
 
@@ -28,6 +30,7 @@ const productData = [
     name: "Wooden carved mirror frame",
     category: "Wooden Crafts",
     cid: "wooden-crafts",
+    categoryId: "wooden-crafts",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2Fpng_20211013_193804_0000.png?alt=media&token=7979c697-3e52-49ec-8b05-525b25350107",
     description:
@@ -38,7 +41,8 @@ const productData = [
   // {
   //   name: "Wooden Keepsake box",
   //   category: "Wooden Crafts",
-  //   cid: "wooden-crafts",
+  //    cid: "wooden-crafts",
+  // categoryId: "wooden-crafts",
   //   image:
   //     "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2Fquattrociocchi-flight-seriesfinal_1.jpg?alt=media&token=f81bd07c-8d82-47b4-bdee-782823694077",
   //   material: "Wood",
@@ -50,6 +54,7 @@ const productData = [
     name: "Hand Painted Wooden drawer set",
     category: "Wooden Crafts",
     cid: "wooden-crafts",
+    categoryId: "wooden-crafts",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F4_20211007_172021_0003.png?alt=media&token=361bd7dc-0d59-46b6-9d6e-c785b17ccbf4",
     material: "Wood",
@@ -61,6 +66,7 @@ const productData = [
     name: "Mango-wood Ceramic Trinket boxes",
     category: "Wooden Crafts",
     cid: "wooden-crafts",
+    categoryId: "wooden-crafts",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F10_20211007_172021_0009.png?alt=media&token=f3427726-d2f9-4e05-803c-ea923758f113",
     material: "Wood",
@@ -74,6 +80,7 @@ const productData = [
     name: "Wooden Cheese Board",
     category: "Wooden Crafts",
     cid: "wooden-crafts",
+    categoryId: "wooden-crafts",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2FWipeOut44_14_2021_084447.408000%20(1).jpg?alt=media&token=2d1a6cfd-efe9-4b7d-925e-877042c7aaa2",
     material: "Wood",
@@ -86,6 +93,7 @@ const productData = [
     name: "Two-Tier Wooden Serving platter",
     category: "Wooden Crafts",
     cid: "wooden-crafts",
+    categoryId: "wooden-crafts",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F5_20211007_172021_0004.png?alt=media&token=8ad9b318-e035-44d0-a1c8-f190205e59b5",
     material: "Wood",
@@ -99,6 +107,7 @@ const productData = [
     name: "Bell shaped Wind Chime",
     category: "Terracotta",
     cid: "terracotta-art",
+    categoryId: "terracotta-art",
 
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F23_20211008_111455_0022.png?alt=media&token=8b129dda-6966-44fc-9ab6-56094d758805",
@@ -112,8 +121,9 @@ const productData = [
     name: "Hand-painted Bell hanging",
     category: "Terracotta",
     cid: "terracotta-art",
+    categoryId: "terracotta-art",
     image:
-      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2FWipeOut22_09_2021_102213.418000.jpg?alt=media&token=1dd269db-5680-45f8-a034-de2420b46903",
+      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F24_20211008_111455_0023.png?alt=media&token=30ed59ff-8aac-4bc4-a0d7-20aa51094386",
 
     description:
       "Beautifully hand-painted in Red and Green, this minimalistic yet exquisite piece will surely enhance the beauty of your walls/doors.",
@@ -123,8 +133,9 @@ const productData = [
     name: "Decorative Hand-painted Tealight Candles",
     category: "Terracotta",
     cid: "terracotta-art",
+    categoryId: "terracotta-art",
     image:
-      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F7_20211008_111455_0006.png?alt=media&token=6977c822-73a6-49d6-bf15-415c339666d8",
+      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2FWipeOut22_09_2021_102213.418000.jpg?alt=media&token=1dd269db-5680-45f8-a034-de2420b46903",
 
     description:
       "Made of clay and handpainted with vibrant hues, these candles come along with zari platters with the most famous Rajasthani gota work. This festive season, spread the fragrance of love and warmth with these cute candles.",
@@ -134,8 +145,9 @@ const productData = [
     name: "Traditional Earthen terracotta Diyas",
     category: "Terracotta",
     cid: "terracotta-art",
+    categoryId: "terracotta-art",
     image:
-      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F8_20211008_111455_0007.png?alt=media&token=b9cb3e89-349e-4dd1-a9cd-525090244627",
+      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F7_20211008_111455_0006.png?alt=media&token=6977c822-73a6-49d6-bf15-415c339666d8",
 
     description:
       "Clay Diyas have been a part of Indian culture and rituals for a very long, the virtue of which can never be replaced by lamps or lights. Revive the traditional pottery of Indian culture and bring to your home these handmade Diyas, spreading goodness and purity.",
@@ -145,8 +157,9 @@ const productData = [
     name: "Traditional Earthen decorative Diyas",
     category: "Terracotta",
     cid: "terracotta-art",
+    categoryId: "terracotta-art",
     image:
-      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F9_20211008_111455_0008.png?alt=media&token=fefc6222-c4da-47fe-a41b-8e5d084c08c2",
+      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F8_20211008_111455_0007.png?alt=media&token=b9cb3e89-349e-4dd1-a9cd-525090244627",
 
     description:
       "A Diya is of utmost importance during Diwali and many other occasions. Get your home these beautiful traditional diyas, crafted impeccably with terracotta to lighten up your homes with purity and drive away all the evil forces.",
@@ -156,8 +169,9 @@ const productData = [
     name: "Handpainted Terracotta Lanterns",
     category: "Terracotta",
     cid: "terracotta-art",
+    categoryId: "terracotta-art",
     image:
-      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F25_20211008_111455_0024.png?alt=media&token=55c24a82-adc2-4681-bf66-c7bad1f69569",
+      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F9_20211008_111455_0008.png?alt=media&token=fefc6222-c4da-47fe-a41b-8e5d084c08c2",
 
     description:
       "A perfect amalgamation of contemporary art and traditional craftsmanship by the local artisans. These multicoloured lanterns are all you need to lighten up your space in the most beautiful way.",
@@ -168,8 +182,9 @@ const productData = [
     name: "Handmade terracotta Planter",
     category: "Terracotta",
     cid: "terracotta-art",
+    categoryId: "terracotta-art",
     image:
-      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F10_20211008_111455_0009.png?alt=media&token=0ee18fe9-2680-42ce-b503-b0b735052178",
+      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F25_20211008_111455_0024.png?alt=media&token=55c24a82-adc2-4681-bf66-c7bad1f69569",
 
     dimension: "Small",
 
@@ -181,8 +196,9 @@ const productData = [
     name: "Handmade oval-shaped terracotta planter",
     category: "Terracotta",
     cid: "terracotta-art",
+    categoryId: "terracotta-art",
     image:
-      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F10_20211007_172021_0009.png?alt=media&token=f3427726-d2f9-4e05-803c-ea923758f113",
+      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F10_20211008_111455_0009.png?alt=media&token=0ee18fe9-2680-42ce-b503-b0b735052178",
 
     dimension: "Small and Medium",
 
@@ -194,6 +210,7 @@ const productData = [
     name: "Handpainted Tulsi planter",
     category: "Terracotta",
     cid: "terracotta-art",
+    categoryId: "terracotta-art",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F14_20211009_222025_0001%20(1).png?alt=media&token=ef18e6e6-0be7-4c62-9bb4-9f811e75e6fe",
 
@@ -206,6 +223,7 @@ const productData = [
     name: "Terracotta Planters",
     category: "Terracotta",
     cid: "terracotta-art",
+    categoryId: "terracotta-art",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F15_20211009_222025_0002%20(1).png?alt=media&token=78979a9e-283b-47c2-b520-e593a78190f6",
 
@@ -221,6 +239,7 @@ const productData = [
     name: "Handmade round Terracotta Urli Bowl",
     category: "Terracotta",
     cid: "terracotta-art",
+    categoryId: "terracotta-art",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2Fterracotta-urli-round-about-with-pumpkin-orange-scales-500x500.jpg?alt=media&token=60f9d018-742e-4a1a-84ba-c53f649ae81e",
 
@@ -234,6 +253,7 @@ const productData = [
     name: "Floral Montage Metallic Wall Decor",
     category: "Metallic Wonders",
     cid: "metallic-marvels",
+    categoryId: "metallic-marvels",
 
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F12_20211008_111455_0011%20(1).png?alt=media&token=d23fd07d-a1ae-439b-97d3-66453421c1f1",
@@ -248,6 +268,8 @@ const productData = [
     name: "Macrame Mirror wall hanging",
     category: "Home Utilities",
     cid: "home-accessory-splash",
+    categoryId: "home-accessory-splash",
+
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F1_20211014_083919_0000.png?alt=media&token=64f92c5a-b5bc-4691-9d9e-85d4a7f0ffe8",
 
@@ -259,6 +281,7 @@ const productData = [
     name: "Macrame Table mats",
     category: "Home Utilities",
     cid: "home-accessory-splash",
+    categoryId: "home-accessory-splash",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F6_20211009_214235_0005.png?alt=media&token=11b8e700-4798-4ac9-be41-7ebc7ca96842",
 
@@ -270,6 +293,7 @@ const productData = [
     name: "Antique Hand-painted wooden tray",
     category: "Home Utilities",
     cid: "home-accessory-splash",
+    categoryId: "home-accessory-splash",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F2_20211014_083919_0001.png?alt=media&token=80f9a273-385f-4ee0-aaf6-713db0972140",
 
@@ -281,6 +305,7 @@ const productData = [
     name: "Mason Jar wooden Sconce",
     category: "Home Utilities",
     cid: "home-accessory-splash",
+    categoryId: "home-accessory-splash",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2Fimage.jpg?alt=media&token=94d33c11-eb78-4c88-8a31-72913dd34f07",
 
@@ -292,6 +317,7 @@ const productData = [
     name: "Cotton Bedsheet with Quilt",
     category: "Textile Treasures",
     cid: "textile-treasure",
+    categoryId: "textile-treasure",
 
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2FWipeOut13_13_2021_071315.291000.jpg?alt=media&token=609b1083-e7d9-407b-97eb-fec61132e802",
@@ -306,6 +332,7 @@ const productData = [
     name: "Block Printed Cotton Bedsheet",
     category: "Textile Treasures",
     cid: "textile-treasure",
+    categoryId: "textile-treasure",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F8_20211009_214235_0007.png?alt=media&token=384ae16c-d238-49fd-b311-55c7648b3a15",
     material: "Cotton",
@@ -319,6 +346,7 @@ const productData = [
     name: "Cotton Bedcover cum comforter",
     category: "Textile Treasures",
     cid: "textile-treasure",
+    categoryId: "textile-treasure",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F7_20211009_214235_0006.png?alt=media&token=fe067a42-0600-4640-b6b5-523b6531f10c",
 
@@ -332,6 +360,7 @@ const productData = [
     name: "Cotton Double Bedsheets(with 2 pillow covers)",
     category: "Textile Treasures",
     cid: "textile-treasure",
+    categoryId: "textile-treasure",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2FWipeOut19_13_2021_051913.437000.jpg?alt=media&token=dd9daf1d-a2ce-40a6-9efa-ce195dca0fc2",
 
@@ -343,6 +372,7 @@ const productData = [
     name: "Sanganeri Cotton Double Bedsheet",
     category: "Textile Treasures",
     cid: "textile-treasure",
+    categoryId: "textile-treasure",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2FWipeOut20_13_2021_052053.604000_2.jpg?alt=media&token=a2c4ca3f-cae2-44a7-8400-e98f70421c7a",
 
@@ -354,6 +384,7 @@ const productData = [
     name: "Round Jute Planter Baskets",
     category: "Cane-Bamboo-Jute",
     cid: "cane-and-bamboo-crafts",
+    categoryId: "cane-and-bamboo-crafts",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F3.jpg?alt=media&token=8294a566-c3b0-479a-b070-ba6bbcb2a1ce",
     material: "Jute",
@@ -367,6 +398,7 @@ const productData = [
     name: "Stylish Kouna Bag",
     category: "Cane-Bamboo-Jute",
     cid: "cane-and-bamboo-crafts",
+    categoryId: "cane-and-bamboo-crafts",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2FWipeOut14_13_2021_051450.398000.jpg?alt=media&token=d8afc0be-a9fc-4a43-b813-899feb90c636",
     material: "Bamboo",
@@ -380,6 +412,7 @@ const productData = [
     name: "Ethnic Natural fibre handbags",
     category: "Cane-Bamboo-Jute",
     cid: "cane-and-bamboo-crafts",
+    categoryId: "cane-and-bamboo-crafts",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2Fezgif.com-gif-maker.jpg?alt=media&token=e0714009-324e-471b-b88d-b270714bada1",
     material: "Natural Fiber",
@@ -392,6 +425,7 @@ const productData = [
     name: "Banana Fibre handmade laundry basket",
     category: "Cane-Bamboo-Jute",
     cid: "cane-and-bamboo-crafts",
+    categoryId: "cane-and-bamboo-crafts",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2Fproduct-500x500.jpeg?alt=media&token=671539e4-189b-4394-9d8c-4d5fb31b27e4",
     material: "Cane and Banana Fiber",
@@ -405,6 +439,7 @@ const productData = [
     name: "Multi purpose Wicker Basket Set",
     category: "Cane-Bamboo-Jute",
     cid: "cane-and-bamboo-crafts",
+    categoryId: "cane-and-bamboo-crafts",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F10_20211009_220339_0000.png?alt=media&token=f86d613d-ec0d-463b-a8fc-d67066b2bd1b",
 
@@ -416,6 +451,7 @@ const productData = [
     name: "Hanging bamboo lampshades",
     category: "Cane-Bamboo-Jute",
     cid: "cane-and-bamboo-crafts",
+    categoryId: "cane-and-bamboo-crafts",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F1561361236_bl-b-7_1529741745.jpg?alt=media&token=751dab52-b120-49b8-8df2-8844bf821edb",
     material: "Bamboo",
@@ -428,6 +464,7 @@ const productData = [
     name: "Symmetrical Bamboo Wall shelf",
     category: "Cane-Bamboo-Jute",
     cid: "cane-and-bamboo-crafts",
+    categoryId: "cane-and-bamboo-crafts",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F11_20211009_220339_0001.png?alt=media&token=8f199f0c-4f2d-44ad-ac67-b93aebd7906a",
     material: "Bamboo",
@@ -441,6 +478,7 @@ const productData = [
     name: "Straw Clutch Handbag with handle",
     category: "Cane-Bamboo-Jute",
     cid: "cane-and-bamboo-crafts",
+    categoryId: "cane-and-bamboo-crafts",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F12_20211009_220339_0002.png?alt=media&token=625907ba-242b-49ef-8ded-90504377a6cb",
     material: "Straw",
@@ -453,6 +491,7 @@ const productData = [
     name: "Curved Metallic Candle Holder",
     category: "Festival Decor",
     cid: "festive-decor-mania",
+    categoryId: "festive-decor-mania",
 
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F1_20211007_172021_0000.png?alt=media&token=565633fe-dbbe-4a7d-8649-858749d5a4b3",
@@ -469,6 +508,7 @@ const productData = [
     name: "Nordic Abstract Metallic candle holder",
     category: "Festival Decor",
     cid: "festive-decor-mania",
+    categoryId: "festive-decor-mania",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F2_20211007_172021_0001.png?alt=media&token=8e368bd4-841f-42a6-8d51-0c94cf2dd9db",
     material: "Metal",
@@ -481,6 +521,7 @@ const productData = [
     name: "Rustic Candle Sconce",
     category: "Festival Decor",
     cid: "festive-decor-mania",
+    categoryId: "festive-decor-mania",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F6_20211007_172021_0005.png?alt=media&token=e1357736-b6e2-47a1-81eb-877bb5a75ca7",
     material: "Wood",
@@ -493,6 +534,7 @@ const productData = [
     name: "Black Lantern Wall sconce",
     category: "Festival Decor",
     cid: "festive-decor-mania",
+    categoryId: "festive-decor-mania",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2Flamp.webp?alt=media&token=f8bb2bde-9592-4692-9c36-c96feb923671",
 
@@ -504,6 +546,7 @@ const productData = [
     name: "Handmade Triangle-shaped 3-D Wall decor",
     category: "Metallic Wonders",
     cid: "metallic-marvels",
+    categoryId: "metallic-marvels",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F13_20211008_111455_0012%20(1)-imresizer.jpg?alt=media&token=a71896b2-90e9-4eed-973d-0a75b475e75e",
 
@@ -515,6 +558,7 @@ const productData = [
     name: "3-D Ginkgo leaves metallic Wall clock decor",
     category: "Metallic Wonders",
     cid: "metallic-marvels",
+    categoryId: "metallic-marvels",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2FWipeOut10_08_2021_111029.485000.jpg?alt=media&token=7ccaa44e-4e25-4201-85bb-47830650a495",
 
@@ -526,6 +570,7 @@ const productData = [
     name: "Traditional musician figurines Showpiece",
     category: "Metallic Wonders",
     cid: "metallic-marvels",
+    categoryId: "metallic-marvels",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F15_20211008_111455_0014.png?alt=media&token=aed4f0fa-4d47-4d09-b68d-ce6a0ccb873b",
 
@@ -537,6 +582,7 @@ const productData = [
     name: "Multicoloured Tribal musician figurines",
     category: "Metallic Wonders",
     cid: "metallic-marvels",
+    categoryId: "metallic-marvels",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F16_20211008_111455_0015.png?alt=media&token=2cc55202-cf57-4083-a8c3-377098c9716d",
 
@@ -548,6 +594,7 @@ const productData = [
     name: "Lotus-Shaped Metallic Wind Chime",
     category: "Metallic Wonders",
     cid: "metallic-marvels",
+    categoryId: "metallic-marvels",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F8_20211007_172021_0007.png?alt=media&token=c3f6bf49-5058-4894-a768-bbf55a021d34",
     material: "Metal",
@@ -560,6 +607,7 @@ const productData = [
     name: "Metallic Car-face Wall decor",
     category: "Metallic Wonders",
     cid: "metallic-marvels",
+    categoryId: "metallic-marvels",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2FMDE6184_primary-1100x1100_2.jpg?alt=media&token=c4f96c12-1bab-4b91-bcf3-574ee8bf5b9c",
     material: "Metal",
@@ -573,6 +621,7 @@ const productData = [
     name: "Rajasthani traditional Musician Wall Decor",
     category: "Metallic Wonders",
     cid: "metallic-marvels",
+    categoryId: "metallic-marvels",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F17_20211008_111455_0016.png?alt=media&token=e80ee229-2f8c-4c84-b836-c9c5c2ee9ed4",
 
@@ -584,6 +633,7 @@ const productData = [
     name: "Ganesha Wall-hanging",
     category: "Metallic Wonders",
     cid: "metallic-marvels",
+    categoryId: "metallic-marvels",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F19_20211008_111455_0018.png?alt=media&token=16cd5ede-b293-4525-b8ed-b020bd9779c5",
 
@@ -596,6 +646,7 @@ const productData = [
     name: "Radha Krishna decorative wall hanging",
     category: "Metallic Wonders",
     cid: "metallic-marvels",
+    categoryId: "metallic-marvels",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2Fradha-krishna-on-swing-wall-hanging-AE40.jpg?alt=media&token=a8d022f4-425a-404f-b3d5-0592b211e06e",
 
@@ -607,6 +658,7 @@ const productData = [
     name: "Metallic Musicians Wall decor cum table showpiece",
     category: "Metallic Wonders",
     cid: "metallic-marvels",
+    categoryId: "metallic-marvels",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F20_20211008_111455_0019.png?alt=media&token=7c3b9447-d0d9-4ac6-bf91-bbb23cdca058",
 
@@ -618,6 +670,7 @@ const productData = [
     name: "Metallic Bike Wall Clock cum decor",
     category: "Metallic Wonders",
     cid: "metallic-marvels",
+    categoryId: "metallic-marvels",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2Firon-avenger-bike-wall-art-1-727x800.jpg?alt=media&token=91f02a06-d8ee-47a8-b819-60e5170980fe",
 
@@ -629,6 +682,7 @@ const productData = [
     name: "Crescent Moon Floral Wall-decor",
     category: "Metallic Wonders",
     cid: "metallic-marvels",
+    categoryId: "metallic-marvels",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2FPhoto%20from%20Jyoti%20Pandey.jpg?alt=media&token=8e0b99fc-b8be-403c-8c7c-74e5e95e8922",
 
@@ -640,6 +694,7 @@ const productData = [
     name: "Metallic Flower wall decor",
     category: "Metallic Wonders",
     cid: "metallic-marvels",
+    categoryId: "metallic-marvels",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F9_20211007_172021_0008.png?alt=media&token=5f29044d-5ab1-4a55-9a87-883ab1f84b7d",
 
@@ -651,6 +706,7 @@ const productData = [
     name: "Wooden hand-Mirrors",
     category: "Home Utilities",
     cid: "home-accessory-splash",
+    categoryId: "home-accessory-splash",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F7_20211007_172021_0006.png?alt=media&token=8863357b-8181-4209-9f4a-f9634a2af788",
     material: "Wood",
@@ -663,6 +719,7 @@ const productData = [
     name: "Wheelbarrow-shaped Decor stand",
     category: "Home Utilities",
     cid: "home-accessory-splash",
+    categoryId: "home-accessory-splash",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F11_20211007_172021_0010.png?alt=media&token=67f15ad6-127e-4740-b402-bfde840afd34",
 
@@ -675,6 +732,7 @@ const productData = [
     name: "Macrame Fringe Tea coasters",
     category: "Home Utilities",
     cid: "home-accessory-splash",
+    categoryId: "home-accessory-splash",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F1_20211009_214235_0000.png?alt=media&token=d9e61a44-a058-4652-ad1d-6bd6ed191ab0",
 
@@ -686,6 +744,7 @@ const productData = [
     name: "Macrame Magazine holder",
     category: "Home Utilities",
     cid: "home-accessory-splash",
+    categoryId: "home-accessory-splash",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F2_20211009_214235_0001.png?alt=media&token=5c467025-c1e6-4e75-adfb-6833143c525b",
 
@@ -697,6 +756,7 @@ const productData = [
     name: "Macrame Mandala Dream Catcher",
     category: "Home Utilities",
     cid: "home-accessory-splash",
+    categoryId: "home-accessory-splash",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F3_20211009_214235_0002.png?alt=media&token=c8e03ab9-6907-46f3-b6eb-03995b8dac08",
 
@@ -709,6 +769,7 @@ const productData = [
     name: "Macrame Cushion Cover",
     category: "Home Utilities",
     cid: "home-accessory-splash",
+    categoryId: "home-accessory-splash",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F4_20211009_214235_0003.png?alt=media&token=b7e09711-cfc1-4875-9c9a-df92420683c8",
 
@@ -720,6 +781,7 @@ const productData = [
     name: "Handmade Macrame cushion cover",
     category: "Home Utilities",
     cid: "home-accessory-splash",
+    categoryId: "home-accessory-splash",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F5_20211009_214235_0004.png?alt=media&token=e967cf6e-3486-4049-a60f-7cfd81a99a54",
 

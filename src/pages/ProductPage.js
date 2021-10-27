@@ -31,7 +31,8 @@ const ProductPage = ({ productList }) => {
   //   (product) => product.id === productId
   // )[0];
   const productData = getProductByIdAndSimilarProducts(productId, productList);
-  console.log(productData);
+  console.log(productId);
+  console.log(productList);
 
   // };
   // useEffect(() => {
@@ -141,9 +142,9 @@ const ProductPage = ({ productList }) => {
             ) : (
               <></>
             )}
-            {productData.product.dimensions ? (
+            {productData.product.dimension ? (
               <Grid style={style.tag}>
-                Dimension : {productData.product.dimensions}
+                Dimension : {productData.product.dimension}
               </Grid>
             ) : (
               <></>

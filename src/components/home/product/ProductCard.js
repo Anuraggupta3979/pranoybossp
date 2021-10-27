@@ -83,6 +83,7 @@ const ProductCard = ({
   weight,
   dimension,
 }) => {
+  console.log(id);
   const isTabletOrMobileDevice = useMediaQuery({
     query: "(max-device-width: 768px)",
   });

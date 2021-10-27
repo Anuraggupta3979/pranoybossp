@@ -1,6 +1,5 @@
 import React from "react";
 import { Grid, makeStyles, Typography } from "@material-ui/core";
-import { Link } from "react-router-dom";
 import CustomButton from "../../Button";
 const useStyles = makeStyles((theme) => ({
   about: {
@@ -36,9 +35,9 @@ function AboutHeader() {
           Revamp your surroundings with the authentic and intricate crafts by
           Craftjet.
         </Typography>
-        <Link to="/about">
+        <a href="/about">
           <CustomButton title="Learn More" />
-        </Link>
+        </a>
       </Grid>
     </Grid>
   );

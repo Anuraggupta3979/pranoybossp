@@ -6,7 +6,6 @@ import { Link, withRouter } from "react-router-dom";
 import NavImage from "../../assets/nav.png";
 import categoriesList from "../../categoryList";
 import { NavDropdown } from "react-bootstrap";
-import { Link as MuiLink } from "@material-ui/core";
 function Navbar() {
   const [show, setShow] = useState(false);
   const showDropdown = (e) => {
@@ -47,14 +46,14 @@ function Navbar() {
           <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav">
             <ReactBootStrap.Nav className=" navbarLinks">
               <ReactBootStrap.Nav>
-                <Link className="nav-link mr-5 link " to="/">
+                <a className="nav-link mr-5 link " href="/">
                   Home
-                </Link>
+                </a>
               </ReactBootStrap.Nav>
               <ReactBootStrap.Nav>
-                <Link className="nav-link mr-5  link" to="/about">
+                <a className="nav-link mr-5  link" href="/about">
                   About
-                </Link>
+                </a>
               </ReactBootStrap.Nav>
 
               <ReactBootStrap.NavDropdown
@@ -65,28 +64,22 @@ function Navbar() {
                 onMouseLeave={hideDropdown}
               >
                 {categoriesList.map(({ name }) => (
-                  <NavDropdown.Item>
-                    <Link
-                      className="nav-link mr-5 link "
-                      to={`/category/${name
-                        .toLowerCase()
-                        .split(" ")
-                        .join("-")}`}
-                      key={name}
-                    >
-                      {name}
-                    </Link>
+                  <NavDropdown.Item
+                    className="nav-link mr-5 link "
+                    href={`/category/${name
+                      .toLowerCase()
+                      .split(" ")
+                      .join("-")}`}
+                  >
+                    {name}
                   </NavDropdown.Item>
                 ))}
               </ReactBootStrap.NavDropdown>
 
               <ReactBootStrap.Nav>
-                <Link className="nav-link   link" to="#footer">
+                <a className="nav-link   link" href="#contact">
                   Contact
-                </Link>
-              </ReactBootStrap.Nav>
-              <ReactBootStrap.Nav>
-                <MuiLink className="nav-link   link" href="#footer"></MuiLink>
+                </a>
               </ReactBootStrap.Nav>
             </ReactBootStrap.Nav>
           </ReactBootStrap.Navbar.Collapse>

@@ -124,7 +124,9 @@ const ProductPage = ({ productList }) => {
           <p style={style.description}>{productData.product.description}</p>
           <hr style={{ width: "50%", margin: "auto" }} />
           <Grid style={style.extraInfo}>
-            <Grid style={style.tag}>Category : {productData.product.name}</Grid>
+            <Grid style={style.tag}>
+              Category : {productData.product.category}
+            </Grid>
             {productData.product.material ? (
               <Grid style={style.tag}>
                 Material : {productData.product.material}
@@ -173,7 +175,9 @@ const ProductPage = ({ productList }) => {
         })}
       </Grid>
 
-      <Footer />
+      <Grid id="contact">
+        <Footer />
+      </Grid>
     </Grid>
   );
 };

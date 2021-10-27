@@ -3,7 +3,6 @@ import { Grid, makeStyles, Typography } from "@material-ui/core";
 import about from "../../../assets/header.jpg";
 import Button from "../../Button";
 import Heading from "../../Heading";
-import { Link } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
   about: {
     margin: "30px",
@@ -74,9 +73,9 @@ function AboutHome() {
             form to reach the people at its ultimate grandeur all over the world
             with par excellence.
           </Typography>
-          <Link to="/about">
+          <a href="/about">
             <Button title="Learn More" />
-          </Link>
+          </a>
         </Grid>
       </Grid>
     </Grid>

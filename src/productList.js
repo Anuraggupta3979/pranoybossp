@@ -2,8 +2,7 @@ const productData = [
   {
     name: "Handpainted Wooden boxes",
     category: "Wooden Crafts",
-    // cid: "wooden-crafts",
-
+    cid: "wooden-crafts",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F12_20211007_172021_0011.png?alt=media&token=2f7ca61d-dd4c-4412-98cf-3610cb879fe2",
     material: "Wood",
@@ -36,17 +35,17 @@ const productData = [
     featured: 1,
     hot: 1,
   },
-  {
-    name: "Wooden Keepsake box",
-    category: "Wooden Crafts",
-    cid: "wooden-crafts",
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2Fquattrociocchi-flight-seriesfinal_1.jpg?alt=media&token=f81bd07c-8d82-47b4-bdee-782823694077",
-    material: "Wood",
-    description:
-      "This handcrafted wooden box comes with a stylish and unique design. A perfect keepsake box to store your cherishable items, be it jewellery, crystals, or memorable photographs. Its vintage and rustic look makes it a great product for gifting purposes as well.",
-    featured: 0,
-  },
+  // {
+  //   name: "Wooden Keepsake box",
+  //   category: "Wooden Crafts",
+  //   cid: "wooden-crafts",
+  //   image:
+  //     "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2Fquattrociocchi-flight-seriesfinal_1.jpg?alt=media&token=f81bd07c-8d82-47b4-bdee-782823694077",
+  //   material: "Wood",
+  //   description:
+  //     "This handcrafted wooden box comes with a stylish and unique design. A perfect keepsake box to store your cherishable items, be it jewellery, crystals, or memorable photographs. Its vintage and rustic look makes it a great product for gifting purposes as well.",
+  //   featured: 0,
+  // },
   {
     name: "Hand Painted Wooden drawer set",
     category: "Wooden Crafts",
@@ -63,7 +62,7 @@ const productData = [
     category: "Wooden Crafts",
     cid: "wooden-crafts",
     image:
-      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F5_20211007_172021_0004.png?alt=media&token=8ad9b318-e035-44d0-a1c8-f190205e59b5",
+      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F10_20211007_172021_0009.png?alt=media&token=f3427726-d2f9-4e05-803c-ea923758f113",
     material: "Wood",
     dimension: "dimension: 210 x 95 x 80 mm Draw size approx 4.2 cm x 6.5 cm",
 
@@ -76,7 +75,7 @@ const productData = [
     category: "Wooden Crafts",
     cid: "wooden-crafts",
     image:
-      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F10_20211007_172021_0009.png?alt=media&token=f3427726-d2f9-4e05-803c-ea923758f113",
+      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2FWipeOut44_14_2021_084447.408000%20(1).jpg?alt=media&token=2d1a6cfd-efe9-4b7d-925e-877042c7aaa2",
     material: "Wood",
 
     description:
@@ -88,7 +87,7 @@ const productData = [
     category: "Wooden Crafts",
     cid: "wooden-crafts",
     image:
-      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F23_20211008_111455_0022.png?alt=media&token=8b129dda-6966-44fc-9ab6-56094d758805",
+      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F5_20211007_172021_0004.png?alt=media&token=8ad9b318-e035-44d0-a1c8-f190205e59b5",
     material: "Wood",
 
     description:
@@ -102,7 +101,7 @@ const productData = [
     cid: "terracotta-art",
 
     image:
-      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F24_20211008_111455_0023.png?alt=media&token=e8a0035b-cded-4419-9452-33036b71c201",
+      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F23_20211008_111455_0022.png?alt=media&token=8b129dda-6966-44fc-9ab6-56094d758805",
 
     description:
       "Hand-painted by artisans with vibrant hues,this wind chime tinkles with euphony.. The perfect arrangement of the terracotta bells and birds, the colorful beads, and the catchy design is perfect to adorn your balcony with beauty as well as melody.",
@@ -112,7 +111,7 @@ const productData = [
   {
     name: "Hand-painted Bell hanging",
     category: "Terracotta",
-    cid: "terracotta",
+    cid: "terracotta-art",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2FWipeOut22_09_2021_102213.418000.jpg?alt=media&token=1dd269db-5680-45f8-a034-de2420b46903",
 
@@ -123,7 +122,7 @@ const productData = [
   {
     name: "Decorative Hand-painted Tealight Candles",
     category: "Terracotta",
-    cid: "terracotta",
+    cid: "terracotta-art",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F7_20211008_111455_0006.png?alt=media&token=6977c822-73a6-49d6-bf15-415c339666d8",
 
@@ -134,7 +133,7 @@ const productData = [
   {
     name: "Traditional Earthen terracotta Diyas",
     category: "Terracotta",
-    cid: "terracotta",
+    cid: "terracotta-art",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F8_20211008_111455_0007.png?alt=media&token=b9cb3e89-349e-4dd1-a9cd-525090244627",
 
@@ -145,7 +144,7 @@ const productData = [
   {
     name: "Traditional Earthen decorative Diyas",
     category: "Terracotta",
-    cid: "terracotta",
+    cid: "terracotta-art",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F9_20211008_111455_0008.png?alt=media&token=fefc6222-c4da-47fe-a41b-8e5d084c08c2",
 
@@ -156,7 +155,7 @@ const productData = [
   {
     name: "Handpainted Terracotta Lanterns",
     category: "Terracotta",
-    cid: "terracotta",
+    cid: "terracotta-art",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F25_20211008_111455_0024.png?alt=media&token=55c24a82-adc2-4681-bf66-c7bad1f69569",
 
@@ -168,7 +167,7 @@ const productData = [
   {
     name: "Handmade terracotta Planter",
     category: "Terracotta",
-    cid: "terracotta",
+    cid: "terracotta-art",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F10_20211008_111455_0009.png?alt=media&token=0ee18fe9-2680-42ce-b503-b0b735052178",
 
@@ -181,7 +180,7 @@ const productData = [
   {
     name: "Handmade oval-shaped terracotta planter",
     category: "Terracotta",
-    cid: "terracotta",
+    cid: "terracotta-art",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F10_20211007_172021_0009.png?alt=media&token=f3427726-d2f9-4e05-803c-ea923758f113",
 
@@ -194,7 +193,7 @@ const productData = [
   {
     name: "Handpainted Tulsi planter",
     category: "Terracotta",
-    cid: "terracotta",
+    cid: "terracotta-art",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F14_20211009_222025_0001%20(1).png?alt=media&token=ef18e6e6-0be7-4c62-9bb4-9f811e75e6fe",
 
@@ -206,7 +205,7 @@ const productData = [
   {
     name: "Terracotta Planters",
     category: "Terracotta",
-    cid: "terracotta",
+    cid: "terracotta-art",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F15_20211009_222025_0002%20(1).png?alt=media&token=78979a9e-283b-47c2-b520-e593a78190f6",
 
@@ -221,7 +220,7 @@ const productData = [
   {
     name: "Handmade round Terracotta Urli Bowl",
     category: "Terracotta",
-    cid: "terracotta",
+    cid: "terracotta-art",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2Fterracotta-urli-round-about-with-pumpkin-orange-scales-500x500.jpg?alt=media&token=60f9d018-742e-4a1a-84ba-c53f649ae81e",
 
@@ -254,39 +253,6 @@ const productData = [
 
     description:
       "The round hand-knotted macrame frame of this mirror adds a boho touch to your interiors. High quality with a super stylish appearance, the best piece to decorate your living space.",
-    featured: 0,
-  },
-  {
-    name: "Cotton Double Bedsheets(with 2 pillow covers)",
-    category: "Home Utilities",
-    cid: "home-accessory-splash",
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2FWipeOut19_13_2021_051913.437000.jpg?alt=media&token=dd9daf1d-a2ce-40a6-9efa-ce195dca0fc2",
-
-    description:
-      "The beautiful pink patterns on the fabric portray the rich cultural artistic patterns of India. This beautiful bedsheet adds a dash of style and royalty to your bedroom setup, being cozy and comfortable at the same time.",
-    featured: 0,
-  },
-  {
-    name: "Floral Double Bedsheet (with 2 pillow covers)",
-    category: "Home Utilities",
-    cid: "home-accessory-splash",
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2FWipeOut19_13_2021_051913.437000.jpg?alt=media&token=436389d6-ce64-4b11-9d78-fe7be78f6f1f",
-
-    description:
-      "This floral printed bedsheet is an epitome of Block printing- a process of printing patterns by the means of engraved wooden blocks. This classic bedsheet adds minimalistic yet a classic look to your bedroom.",
-    featured: 0,
-  },
-  {
-    name: "Sanganeri Cotton Double Bedsheet",
-    category: "Home Utilities",
-    cid: "home-accessory-splash",
-    image:
-      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2FWipeOut20_13_2021_052053.604000_2.jpg?alt=media&token=a2c4ca3f-cae2-44a7-8400-e98f70421c7a",
-
-    description:
-      "Sanganeri print style is a type of block printing technique that originated in the royal state of Rajasthan. This bedsheet(along with 2 pillow covers), made using the same technique consisting of intricate designs and patterns is a perfect amalgamation of luxuriousness and comfort that adds an ethnic touch to your bedroom.",
     featured: 0,
   },
   {
@@ -360,6 +326,28 @@ const productData = [
 
     description:
       "The beautiful pink motifs on the fabric portray the rich cultural artistic patterns of India. This beautiful bedcover can be used as a comforter too. A perfect combo of comfort and elegance.",
+    featured: 0,
+  },
+  {
+    name: "Cotton Double Bedsheets(with 2 pillow covers)",
+    category: "Textile Treasures",
+    cid: "textile-treasure",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2FWipeOut19_13_2021_051913.437000.jpg?alt=media&token=dd9daf1d-a2ce-40a6-9efa-ce195dca0fc2",
+
+    description:
+      "The beautiful pink patterns on the fabric portray the rich cultural artistic patterns of India. This beautiful bedsheet adds a dash of style and royalty to your bedroom setup, being cozy and comfortable at the same time.",
+    featured: 0,
+  },
+  {
+    name: "Sanganeri Cotton Double Bedsheet",
+    category: "Textile Treasures",
+    cid: "textile-treasure",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2FWipeOut20_13_2021_052053.604000_2.jpg?alt=media&token=a2c4ca3f-cae2-44a7-8400-e98f70421c7a",
+
+    description:
+      "Sanganeri print style is a type of block printing technique that originated in the royal state of Rajasthan. This bedsheet(along with 2 pillow covers), made using the same technique consisting of intricate designs and patterns is a perfect amalgamation of luxuriousness and comfort that adds an ethnic touch to your bedroom.",
     featured: 0,
   },
   {
@@ -688,7 +676,7 @@ const productData = [
     category: "Home Utilities",
     cid: "home-accessory-splash",
     image:
-      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F11_20211007_172021_0010.png?alt=media&token=67f15ad6-127e-4740-b402-bfde840afd34",
+      "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/products%2F1_20211009_214235_0000.png?alt=media&token=d9e61a44-a058-4652-ad1d-6bd6ed191ab0",
 
     description:
       "Cozy and elegant, these handmade coasters are must-haves to compliment your table. Start your day with a cup of coffee kept on these beautiful coasters that refresh your soul and soothes your eyes.",

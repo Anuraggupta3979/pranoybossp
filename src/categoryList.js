@@ -3,7 +3,7 @@ const categoriesData = [
     id: "wooden-crafts",
     name: "Wooden Crafts",
 
-    description: `Textile industries have been booming over the ages, holding a special place in the heart of Indian heritage. Apart from the machine-made products, the handmade products have a quiddity of their own, being perfect in their ways. Sheets, cushions, quilts, etc. not only provide a special personalized touch but also contribute to cultural wealth. The artisans creating these handloom fabrics are like diamonds hidden in the depths of this country. These dazzling handmade fabrics, reflecting the beautiful Indian folklore should be highlighted not only nationwide but also globally.
+    description: `Comes from a land of exotic art and traditions, the breathtaking and mesmerizing wood-crafts. Royal -Rajasthan is known exclusively for wooden handicrafts. And probably no other state can match the aesthetic and cultural aspect of Rajasthan when it comes to creative woodwork. The perfection with which our skilled craftsman chisels away a piece of wood to transform it into something incredible adds to our factor of delicacy and vintage touch. The fact that India is a tropical country with deciduous and evergreen forests is ice on the cake for the production of these marvels using a variety of different woods.
     `,
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/categories%2FWooden%20crafts%20(1).jpg?alt=media&token=b202a897-f83a-4855-b30b-76836dcc24f4",
@@ -43,12 +43,11 @@ const categoriesData = [
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/categories%2Fcane%20bamboo%202.jpg?alt=media&token=b1fcd638-b5b9-41a0-a3cf-66850e22b510",
   },
-
   {
     id: "textile-treasure",
     name: "Textile Treasure",
     description:
-      "Comes from a land of exotic art and traditions, the breathtaking and mesmerizing wood-crafts. Royal -Rajasthan is known exclusively for wooden handicrafts. And probably no other state can match the aesthetic and cultural aspect of Rajasthan when it comes to creative woodwork. The perfection with which our skilled craftsman chisels away a piece of wood to transform it into something incredible adds to our factor of delicacy and vintage touch. The fact that India is a tropical country with deciduous and evergreen forests is ice on the cake for the production of these marvels using a variety of different woods.",
+      "Textile industries have been booming over the ages, holding a special place in the heart of Indian heritage. Apart from the machine-made products, the handmade products have a quiddity of their own, being perfect in their ways. Sheets, cushions, quilts, etc. not only provide a special personalized touch but also contribute to cultural wealth. The artisans creating these handloom fabrics are like diamonds hidden in the depths of this country. These dazzling handmade fabrics, reflecting the beautiful Indian folklore should be highlighted not only nationwide but also globally.",
     image:
       "https://firebasestorage.googleapis.com/v0/b/craftjet-a6e1b.appspot.com/o/categories%2FTextile%20treasure.jpg?alt=media&token=c61ea941-a25d-4399-a74d-776d2f2ec83a",
   },

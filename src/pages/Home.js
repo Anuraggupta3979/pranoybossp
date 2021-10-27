@@ -27,7 +27,9 @@ const Home = ({ teamList, categoryList, productList }) => {
         <AboutHome />
         <Team teamList={teamList} />
       </Grid>
-      <Footer />
+      <Grid id="contact">
+        <Footer />
+      </Grid>
     </Grid>
   );
 };

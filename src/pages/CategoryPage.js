@@ -40,16 +40,23 @@ const CategoryPage = ({ categoryList, productList }) => {
             <ProductCard
               image={product.image}
               name={product.name}
-              category={product.categoryId}
-              desc={product.description}
-              key={product.name}
+              categoryId={product.categoryId}
+              description={product.description}
+              material={product.material}
+              weight={product.weight}
+              dimension={product.dimension}
+              hot={product.hot}
+              category={product.category}
+              key={product.id}
               id={product.id}
             />
           ))}
         </div>
         <br />
       </div>
-      <Footer />
+      <div id="contact">
+        <Footer />
+      </div>
     </div>
   );
 };

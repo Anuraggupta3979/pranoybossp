@@ -11,6 +11,7 @@ const About = ({ categoryList, teamList }) => {
   return (
     <Grid>
       <Navbar />
+
       <HeaderSection
         image={HeaderImage}
         title="About Us"
@@ -21,7 +22,9 @@ const About = ({ categoryList, teamList }) => {
       <Grid style={{ width: "95vw", margin: "auto" }}>
         <Team teamList={teamList} />
       </Grid>
-      <Footer />
+      <Grid id="contact">
+        <Footer />
+      </Grid>
     </Grid>
   );
 };

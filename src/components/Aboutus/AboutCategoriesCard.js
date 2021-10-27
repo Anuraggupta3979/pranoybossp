@@ -3,7 +3,6 @@ import React from "react";
 import "../../assets/css/abc.css";
 import { Grid, Typography } from "@mui/material";
 import Button from "../Button";
-import { Link } from "react-router-dom";
 function AboutCategoriesCard(props) {
   const imageorder = props.imageorder;
   const textorder = props.textorder;
@@ -63,9 +62,9 @@ function AboutCategoriesCard(props) {
                     {props.description}
                   </Typography>
                 </Grid>
-                <Link to={`/category/${props.id}`}>
+                <a href={`/category/${props.id}`}>
                   <Button title="Explore"></Button>
-                </Link>
+                </a>
               </Grid>
               <Grid className="col-lg-1 col-md-1 order-2"></Grid>
               <Grid

@@ -7,7 +7,7 @@ import { getAllProductsByCategory } from "../helper/firestore";
 import "../assets/Categories.css";
 import HeaderSection from "../sections/HeaderSection";
 // import { useMediaQuery } from "react-responsive";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 const Categories = ({ categoryList, productList }) => {
   const productDict = getAllProductsByCategory(categoryList, productList);
   console.log(productDict);
@@ -22,12 +22,17 @@ const Categories = ({ categoryList, productList }) => {
             justifyContent: "space-around",
           }}
         >
-          {productList.map((product) => (
+          {productList.slice(0, 4).map((product) => (
             <ProductCard
               image={product.image}
               name={product.name}
               categoryId={product.categoryId}
-              desc={product.description}
+              description={product.description}
+              material={product.material}
+              weight={product.weight}
+              dimension={product.dimension}
+              hot={product.hot}
+              category={product.category}
               key={product.id}
               id={product.id}
             />
@@ -52,14 +57,19 @@ const Categories = ({ categoryList, productList }) => {
 
             <ProductCards productList={productDict.productsArray[index]} />
             <div style={{ textAlign: "center" }}>
-              <Link to={`/category/${category.categoryId}`}>
+              <a href={`/category/${category.categoryId}`}>
                 <CustomButton title="Learn More" />
-              </Link>
+              </a>
+              {/* <Link to={`/category/${category.categoryId}`}>
+                <CustomButton title="Learn More" />
+              </Link> */}
             </div>
           </>
         ))}
       </div>
-      <Footer />
+      <div id="contact">
+        <Footer />
+      </div>
     </div>
   );
 };

@@ -76,7 +76,7 @@ const ProductPage = ({ productList }) => {
       textAlign: "center",
     },
     title: {
-      fontSize: "20px",
+      fontSize: "2rem",
       letterSpacing: "1px",
       fontFamily: "맑은 고딕",
       marginTop: "1px",
@@ -167,9 +167,15 @@ const ProductPage = ({ productList }) => {
             <ProductCard
               image={product.image}
               name={product.name}
-              category={product.categoryId}
-              desc={product.description}
-              key={product.id}
+              categoryId={product.cid}
+              category={product.category}
+              description={product.description}
+              key={product.cid}
+              id={product.id}
+              hot={product.hot}
+              material={product.material}
+              weight={product.weight}
+              dimension={product.dimension}
             />
           );
         })}

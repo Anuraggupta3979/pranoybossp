@@ -40,7 +40,7 @@ productRouter
   .route("/product/:id")
   .get(async (req, res) => {
     try {
-      const post = await Post.findOne({ _id: req.params.id });
+      const post = await Product.findOne({ _id: req.params.id });
       res.send(post);
     } catch (e) {
       res.status(404);

@@ -58,9 +58,25 @@ productRouter
     }
   })
   .put((req, res, next) => {
-    // TODO:Not Done yet
-    res.statusCode = 403;
-    res.end(`PUT operation not supported`);
+    (req, res, next) => {
+      Product.findByIdAndUpdate(
+        req.params.id,
+        {
+          $set: req.body,
+        },
+        { new: true }
+      )
+        .then(
+          (product) => {
+            console.log("Product Created:", product);
+            (res.statusCode = 200),
+              res.setHeader("Content-Type", "application/json");
+            res.json(product);
+          },
+          (err) => next(err)
+        )
+        .catch((err) => next(err));
+    };
   })
   .delete(async (req, res, next) => {
     console.log("Request:\n", req.body);

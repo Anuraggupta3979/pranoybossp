@@ -15,14 +15,8 @@ productRouter
     }
   })
   .post(async (req, res) => {
-    try {
-      const id = req.body.name.toLowerCase().split(" ").join("-");
-      const product = await Product.create({ _id: id, ...req.body });
-      console.log("Product Created:", product);
-      res.send(product);
-    } catch (e) {
-      return res.send(e);
-    }
+    res.statusCode = 403;
+    res.end(`POST operation not supported`);
   })
   .put((req, res, next) => {
     res.statusCode = 403;
@@ -54,7 +48,6 @@ productRouter
     }
   })
   .post(async (req, res) => {
-    // TODO:Not Done yet
     try {
       const id = req.body.name.toLowerCase().split(" ").join("-");
       const product = await Product.create({ _id: id, ...req.body });

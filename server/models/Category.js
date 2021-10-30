@@ -1,12 +1,12 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const productSchema = new Schema(
+const categorySchema = new Schema(
   {
     _id: String,
     name: {
       type: String,
-      // required: true,
+      required: true,
       unique: true,
     },
     description: {
@@ -17,16 +17,12 @@ const productSchema = new Schema(
       type: String,
       // required: true,
     },
-    category: {
-      type: String,
-      required: true,
-    },
   },
   {
     timestamps: true,
   }
 );
 
-var Products = mongoose.model("Product", productSchema);
+var Category = mongoose.model("Category", categorySchema);
 
-module.exports = Products;
+module.exports = Category;

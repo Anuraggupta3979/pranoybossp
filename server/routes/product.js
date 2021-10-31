@@ -8,7 +8,7 @@ productRouter
   .route("/product")
   .get(async (req, res) => {
     try {
-      console.log("GET /product:\n", req.body);
+      console.log("GET /product");
       let products = await Product.find();
       products = products.map((product) => ({
         id: product._id,
@@ -92,11 +92,12 @@ productRouter
         })
       );
   })
-  .delete(async (req, res, next) => {
-    console.log("Request:\n", req.body);
+  .delete(async (req, res) => {
+    console.log("GET /product/:id", req.params.id);
     try {
-      await Product.deleteOne({ _id: req.params.id });
-      res.status(204).send();
+      let product = await Product.deleteOne({ _id: req.params.id });
+      product = { id: product._id, ...product._doc };
+      return res.json({ data: product });
     } catch {
       res.status(404);
       res.send({ error: "Product doesn't exist!" });

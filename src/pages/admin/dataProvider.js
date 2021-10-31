@@ -72,19 +72,23 @@ export const myDataProvider = {
       .catch((error) => Promise.reject(error));
   },
   updateMany: (resource, params) => Promise,
-  delete: (resource, params) => {
-    // console.log("Delete record id", params.id);
-    // const { id } = params.previousData;
-    // return deleteDoc(doc(db, resource, id))
-    //   .then(() => ({ data: params.previousData }))
-    //   .catch((err) => Promise.reject(err));
+  delete: async (resource, params) => {
+    try {
+      console.log("Delete record id", params.id);
+      let response = await axios.delete(`${resource}/${params.id}`);
+      return { ...response.data };
+    } catch (error) {
+      return Promise.reject(error);
+    }
   },
   deleteMany: (resource, params) => {
-    // console.log("Delete Many", params.ids);
-    // return Promise.all(params.ids.map((id) => deleteDoc(doc(db, resource, id))))
-    //   .then(() => ({
-    //     data: params.ids,
-    //   }))
-    //   .catch((err) => Promise.reject(err));
+    console.log("Delete Many", params.ids);
+    return Promise.all(
+      params.ids.map((id) => axios.delete(`${resource}/${id}`))
+    )
+      .then(() => ({
+        data: params.ids,
+      }))
+      .catch((err) => Promise.reject(err));
   },
 };

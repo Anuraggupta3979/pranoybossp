@@ -8,15 +8,25 @@ productRouter
   .route("/product")
   .get(async (req, res) => {
     try {
-      const products = await Product.find();
-      res.send(products);
+      console.log("GET /product:\n", req.body);
+      let products = await Product.find();
+      products = products.map((product) => ({ id: product._id, ...product }));
+      // console.log(products);
+      res.json({ data: products, total: products.length});
     } catch (e) {
-      return res.status(404);
+      res.status(404);
+      return res.json({ error: e });
     }
   })
   .post(async (req, res) => {
-    res.statusCode = 403;
-    res.end(`POST operation not supported`);
+    try {
+      const id = req.body.name.toLowerCase().split(" ").join("-");
+      const product = await Product.create({ _id: id, ...req.body });
+      console.log("Product Created:", product);
+      res.send(product);
+    } catch (e) {
+      return res.send(e);
+    }
   })
   .put((req, res, next) => {
     res.statusCode = 403;
@@ -48,14 +58,8 @@ productRouter
     }
   })
   .post(async (req, res) => {
-    try {
-      const id = req.body.name.toLowerCase().split(" ").join("-");
-      const product = await Product.create({ _id: id, ...req.body });
-      console.log("Product Created:", product);
-      res.send(product);
-    } catch (e) {
-      return res.send(e);
-    }
+    res.statusCode = 403;
+    res.end(`POST operation not supported`);
   })
   .put((req, res, next) => {
     (req, res, next) => {

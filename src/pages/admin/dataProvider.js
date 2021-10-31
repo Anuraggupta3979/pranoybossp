@@ -9,26 +9,19 @@ axios.defaults.headers = {
 export const myDataProvider = {
   getList: (resource, params) => {
     return axios
-      .get(`product`)
-      .then((response) => ({...response.data}))
+      .get(resource)
+      .then((response) => ({ ...response.data }))
       .catch((error) => Promise.reject(error));
   },
   getOne: (resource, params) => {
-    // console.log("getOne", params.id);
-    // return getDoc(doc(db, resource, params.id))
-    //   .then((doc) => {
-    //     if (doc.exists()) {
-    //       return { data: getDataWithId(doc) };
-    //     } else {
-    //       throw new Error({ message: "No such doc", status: 404 });
-    //     }
-    //   })
-    //   .catch((error) => {
-    //     throw new Error({ message: error, status: 404 });
-    //   });
+    console.log("getOne", params.id);
+    return axios
+      .get(`${resource}/${params.id}`, params.data)
+      .then((response) => ({ ...response.data }))
+      .catch((error) => Promise.reject(error));
   },
   getMany: (resource, params) => {
-    // console.log("getMany", params.ids);
+    console.log("getMany", params.ids);
     // return Promise.all(params.ids.map((id) => getDoc(doc(db, resource, id))))
     //   .then((arrayOfResults) => {
     //     return {
@@ -38,6 +31,7 @@ export const myDataProvider = {
     //     };
     //   })
     //   .catch((err) => Promise.reject(err));
+    return Promise;
   },
   getManyReference: (resource, params) => {
     // console.log("getManyReference");
@@ -62,49 +56,20 @@ export const myDataProvider = {
     //   .catch((err) => Promise.reject(err));
   },
   create: (resource, params) => {
-    // const key = params.data.name.toLowerCase().split(" ").join("-");
-    // console.log(`create key: ${key}`);
-    // var listOfFiles = Object.keys(params.data).filter(
-    //   (key) => params.data[key].rawFile
-    // );
-    // var storageRef = ref(
-    //   storage,
-    //   resource + "/" + params.data[listOfFiles[0]].rawFile.name
-    // );
-    // console.log(listOfFiles);
-    // if (listOfFiles.length === 0) return Promise.reject("Upload a Image First");
-    // return uploadFileToBucket(
-    //   params.data[listOfFiles[0]].rawFile,
-    //   storageRef
-    // ).then((downloadURL) => {
-    //   console.log("downloadURL: " + downloadURL);
-    //   delete params.data[listOfFiles[0]].rawFile;
-    //   params.data.image = downloadURL;
-    //   return setDoc(doc(db, resource, key), {
-    //     ...params.data,
-    //   })
-    //     .then((DocumentReference) => {
-    //       console.log(DocumentReference);
-    //       return {
-    //         data: { id: key, ...params.data },
-    //       };
-    //     })
-    //     .catch((err) => Promise.reject(err));
-    // });
+    let data = params.data;
+    console.log(`create: ${data}`);
+    return axios
+      .post(resource, data)
+      .then((response) => ({ ...response.data }))
+      .catch((error) => Promise.reject(error));
   },
   update: (resource, params) => {
-    // console.log("Update record id", params.id);
-    // const { id, ...everythingElse } = params.data;
-    // return setDoc(doc(db, resource, id), {
-    //   ...everythingElse,
-    // })
-    //   .then((DocumentReference) => {
-    //     console.log(DocumentReference);
-    //     return {
-    //       data: { id: params.id, ...params.data },
-    //     };
-    //   })
-    //   .catch((err) => Promise.reject(err));
+    console.log("Update record id", params.id);
+    const { id, ...everythingElse } = params.data;
+    return axios
+      .put(`${resource}/${id}`, everythingElse)
+      .then((response) => ({ ...response.data }))
+      .catch((error) => Promise.reject(error));
   },
   updateMany: (resource, params) => Promise,
   delete: (resource, params) => {

@@ -65,6 +65,7 @@ export const ProductEdit = (props) => (
       <TextInput source="weight" />
       <BooleanInput label="hot" source="hot" />
       <BooleanInput label="featured" source="featured" />
+      <ImageField source="image" />
       <ImageInput source="image" label="Images" accept="image/*">
         <ImageField source="image" />
       </ImageInput>

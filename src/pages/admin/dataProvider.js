@@ -1,9 +1,31 @@
 import axios from "axios";
-import BACKEND_URL from "../../backendUrl";
+import { BACKEND_URL, BUCKET_NAME } from "../../config";
+// import { PutObjectCommand } from "@aws-sdk/client-s3";
+import { s3 } from "../../aws";
 
 axios.defaults.baseURL = BACKEND_URL;
 axios.defaults.headers = {
   "Content-Type": "application/json",
+};
+
+const uploadFileToBucket = async (rawFile) => {
+  try {
+    const uploadParams = {
+      Bucket: BUCKET_NAME,
+      Key: rawFile.name,
+      Body: rawFile,
+    };
+    return s3.upload(uploadParams, function (err, data) {
+      if (err) {
+        throw err;
+      }
+      console.log(`File uploaded successfully. ${data.Location}`);
+      return data;
+    });
+  } catch (error) {
+    console.log("uploadFileToBucket Error", error);
+    return error;
+  }
 };
 
 export const myDataProvider = {
@@ -66,9 +88,12 @@ export const myDataProvider = {
     //   .catch((err) => Promise.reject(err));
     return Promise;
   },
-  create: (resource, params) => {
+  create: async (resource, params) => {
     let data = params.data;
     console.log(`create: ${data}`);
+    // if (params.data.image) return Promise.reject("Upload a Image First");
+    await uploadFileToBucket(params.data.image.rawFile);
+    delete params.data["image"];
     return axios
       .post(resource, data)
       .then((response) => ({ ...response.data }))

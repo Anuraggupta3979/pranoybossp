@@ -61,7 +61,7 @@ categoryRouter
       console.log("GET /category/:id", req.params.id);
       let category = await Category.findById(req.params.id);
       category = { id: category._id, ...category._doc };
-      console.log(category)
+      // console.log(category)
       res.json({ data: category });
     } catch (e) {
       console.log(e);

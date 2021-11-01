@@ -77,8 +77,8 @@ export const ProductCreate = (props) => (
     <SimpleForm>
       <TextInput required source="name" />
       <TextInput required source="description" />
-      <ReferenceInput source="categoryId" reference="categories">
-        <TextInput source="categoryId" />
+      <ReferenceInput source="categoryId" reference="category">
+        <SelectInput source="name" />
       </ReferenceInput>
       <TextInput source="material" />
       <TextInput source="dimensions" />

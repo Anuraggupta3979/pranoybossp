@@ -1,233 +1,130 @@
-// Implement a firestore data provider for react-admin
-import {
-  AUTH_LOGIN,
-  AUTH_LOGOUT,
-  AUTH_CHECK,
-  AUTH_GET_PERMISSIONS,
-} from "react-admin";
+import axios from "axios";
+import { BACKEND_URL, BUCKET_NAME } from "../../config";
+// import { PutObjectCommand } from "@aws-sdk/client-s3";
+import { s3 } from "../../aws";
 
-import firebase, { db } from "../../firebase";
-import {
-  collection,
-  getDocs,
-  query,
-  orderBy,
-  limit,
-  doc,
-  deleteDoc,
-  setDoc,
-  getDoc,
-  where,
-} from "firebase/firestore";
+axios.defaults.baseURL = BACKEND_URL;
+axios.defaults.headers = {
+  "Content-Type": "application/json",
+};
 
-import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
-
-var storage = getStorage(firebase);
-/**
- * Utility function to flatten firestore objects, since 'id' is not a field in FireStore
- *
- * @param {DocumentSnapshot} DocumentSnapshot Firestore document snapshot
- * @returns {Object} the DocumentSnapshot.data() with an additionnal "Id" attribute
- */
-function getDataWithId(DocumentSnapshot) {
-  var dataWithId = {};
-  // console.log('getDataWithId Id=', DocumentSnapshot.id)
-  if (DocumentSnapshot) {
-    dataWithId = {
-      id: DocumentSnapshot.id,
-      ...DocumentSnapshot.data(),
+const uploadFileToBucket = async (rawFile) => {
+  try {
+    const uploadParams = {
+      Bucket: BUCKET_NAME,
+      Key: rawFile.name,
+      Body: rawFile,
     };
-  }
-  // console.log(dataWithId);
-  return dataWithId;
-}
-
-async function uploadFileToBucket(rawFile, storageRef) {
-  console.log("Beginning upload");
-  return uploadBytes(storageRef, rawFile)
-    .then((snapshot) => {
-      console.log("Uploaded a blob or file!");
-      return getDownloadURL(storageRef);
-    })
-    .catch((error) => {
-      console.log(error);
-      return new Error({ message: error.message_, status: 401 });
+    return s3.upload(uploadParams, function (err, data) {
+      if (err) {
+        throw err;
+      }
+      console.log(`File uploaded successfully. ${data.Location}`);
+      return data;
     });
-}
+  } catch (error) {
+    console.log("uploadFileToBucket Error", error);
+    return error;
+  }
+};
 
 export const myDataProvider = {
   getList: (resource, params) => {
-    const { page, perPage } = params.pagination;
-    const { field, order } = params.sort;
-    var q =
-      field === "id"
-        ? query(collection(db, resource), limit(page * perPage))
-        : query(
-            collection(db, resource),
-            orderBy(field, order.toLowerCase()),
-            limit(page * perPage)
-          );
-    return getDocs(q)
-      .then((QuerySnapshot) => {
-        var totalCount = QuerySnapshot.docs.length;
-        var firstDocToDisplayCount =
-          page === 1 ? 1 : Math.min((page - 1) * perPage, totalCount);
-        var firstDocToDisplay = QuerySnapshot.docs.slice(
-          firstDocToDisplayCount - 1
-        );
-        return {
-          data: firstDocToDisplay.map((doc) => getDataWithId(doc)),
-          total: totalCount,
-        };
-      })
+    return axios
+      .get(resource)
+      .then((response) => ({ ...response.data }))
       .catch((error) => Promise.reject(error));
   },
   getOne: (resource, params) => {
     console.log("getOne", params.id);
-    return getDoc(doc(db, resource, params.id))
-      .then((doc) => {
-        if (doc.exists()) {
-          return { data: getDataWithId(doc) };
-        } else {
-          throw new Error({ message: "No such doc", status: 404 });
-        }
-      })
-      .catch((error) => {
-        throw new Error({ message: error, status: 404 });
-      });
+    return axios
+      .get(`${resource}/${params.id}`, params.data)
+      .then((response) => ({ ...response.data }))
+      .catch((error) => Promise.reject(error));
   },
   getMany: (resource, params) => {
     console.log("getMany", params.ids);
-    return Promise.all(params.ids.map((id) => getDoc(doc(db, resource, id))))
+    return Promise.all(params.ids.map((id) => axios.get(`${resource}/${id}`)))
       .then((arrayOfResults) => {
         return {
-          data: arrayOfResults.map((documentSnapshot) =>
-            getDataWithId(documentSnapshot)
-          ),
+          data: arrayOfResults.map((response) => {
+            return response.data.data;
+          }),
         };
       })
       .catch((err) => Promise.reject(err));
+    // return Promise.all(params.ids.map((id) => getDoc(doc(db, resource, id))))
+    //   .then((arrayOfResults) => {
+    //     return {
+    //       data: arrayOfResults.map((documentSnapshot) =>
+    //         getDataWithId(documentSnapshot)
+    //       ),
+    //     };
+    //   })
+    //   .catch((err) => Promise.reject(err));
+    // return Promise;
   },
   getManyReference: (resource, params) => {
     console.log("getManyReference");
-    const { target, id } = params;
-    const { field, order } = params.sort;
-    return getDocs(
-      query(
-        collection(db, resource),
-        where(target, "==", id),
-        orderBy(field, order.toLowerCase())
-      )
-    )
-      .then((QuerySnapshot) => {
-        console.log("getManyReference", QuerySnapshot);
-        return {
-          data: QuerySnapshot.docs.map((DocumentSnapshot) =>
-            getDataWithId(DocumentSnapshot)
-          ),
-          total: QuerySnapshot.docs.length,
-        };
-      })
-      .catch((err) => Promise.reject(err));
+    // const { target, id } = params;
+    // const { field, order } = params.sort;
+
+    // return getDocs(
+    //   query(
+    //     collection(db, resource),
+    //     where(target, "==", id),
+    //     orderBy(field, order.toLowerCase())
+    //   )
+    // )
+    //   .then((QuerySnapshot) => {
+    //     console.log("getManyReference", QuerySnapshot);
+    //     return {
+    //       data: QuerySnapshot.docs.map((DocumentSnapshot) =>
+    //         getDataWithId(DocumentSnapshot)
+    //       ),
+    //       total: QuerySnapshot.docs.length,
+    //     };
+    //   })
+    //   .catch((err) => Promise.reject(err));
+    return Promise;
   },
-  create: (resource, params) => {
-    const key = params.data.name.toLowerCase().split(" ").join("-");
-    console.log(`create key: ${key}`);
-    var listOfFiles = Object.keys(params.data).filter(
-      (key) => params.data[key].rawFile
-    );
-    var storageRef = ref(
-      storage,
-      resource + "/" + params.data[listOfFiles[0]].rawFile.name
-    );
-    console.log(listOfFiles);
-    if (listOfFiles.length === 0) return Promise.reject("Upload a Image First");
-    return uploadFileToBucket(
-      params.data[listOfFiles[0]].rawFile,
-      storageRef
-    ).then((downloadURL) => {
-      console.log("downloadURL: " + downloadURL);
-      delete params.data[listOfFiles[0]].rawFile;
-      params.data.image = downloadURL;
-      return setDoc(doc(db, resource, key), {
-        ...params.data,
-      })
-        .then((DocumentReference) => {
-          console.log(DocumentReference);
-          return {
-            data: { id: key, ...params.data },
-          };
-        })
-        .catch((err) => Promise.reject(err));
-    });
+  create: async (resource, params) => {
+    let data = params.data;
+    console.log(`create: ${data}`);
+    // if (params.data.image) return Promise.reject("Upload a Image First");
+    await uploadFileToBucket(params.data.image.rawFile);
+    delete params.data["image"];
+    return axios
+      .post(resource, data)
+      .then((response) => ({ ...response.data }))
+      .catch((error) => Promise.reject(error));
   },
   update: (resource, params) => {
     console.log("Update record id", params.id);
     const { id, ...everythingElse } = params.data;
-    return setDoc(doc(db, resource, id), {
-      ...everythingElse,
-    })
-      .then((DocumentReference) => {
-        console.log(DocumentReference);
-        return {
-          data: { id: params.id, ...params.data },
-        };
-      })
-      .catch((err) => Promise.reject(err));
+    return axios
+      .put(`${resource}/${id}`, everythingElse)
+      .then((response) => ({ ...response.data }))
+      .catch((error) => Promise.reject(error));
   },
   updateMany: (resource, params) => Promise,
-  delete: (resource, params) => {
-    console.log("Delete record id", params.id);
-    const { id } = params.previousData;
-    return deleteDoc(doc(db, resource, id))
-      .then(() => ({ data: params.previousData }))
-      .catch((err) => Promise.reject(err));
+  delete: async (resource, params) => {
+    try {
+      console.log("Delete record id", params.id);
+      let response = await axios.delete(`${resource}/${params.id}`);
+      return { ...response.data };
+    } catch (error) {
+      return Promise.reject(error);
+    }
   },
   deleteMany: (resource, params) => {
     console.log("Delete Many", params.ids);
-    return Promise.all(params.ids.map((id) => deleteDoc(doc(db, resource, id))))
+    return Promise.all(
+      params.ids.map((id) => axios.delete(`${resource}/${id}`))
+    )
       .then(() => ({
         data: params.ids,
       }))
       .catch((err) => Promise.reject(err));
   },
-};
-export const firebaseAuthProvider = (type, params) => {
-  if (type === AUTH_LOGIN) {
-    const { username, password } = params;
-    return firebase
-      .auth()
-      .signInWithEmailAndPassword(username, password)
-      .catch((error) => {
-        throw new Error({ message: error.message, status: 401 });
-      });
-  }
-  if (type === AUTH_LOGOUT) {
-    return firebase
-      .auth()
-      .signOut()
-      .catch((error) => {
-        throw new Error({ message: error.message, status: 500 });
-      });
-  }
-  if (type === AUTH_CHECK) {
-    return firebase.auth().currentUser ? Promise.resolve() : Promise.reject();
-  }
-  if (type === AUTH_GET_PERMISSIONS) {
-    // Try to find a "user" collection and return the role attribute
-    return db
-      .collection("user")
-      .doc(firebase.auth().currentUser)
-      .then((doc) => {
-        if (doc.exists) {
-          return doc.data().role;
-        } else {
-          return "user";
-        }
-      })
-      .catch((error) => {
-        return "user";
-      });
-  }
-  return Promise.resolve();
 };

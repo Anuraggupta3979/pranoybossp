@@ -8,15 +8,33 @@ productRouter
   .route("/product")
   .get(async (req, res) => {
     try {
-      const products = await Product.find();
-      res.send(products);
+      console.log("GET /product");
+      let products = await Product.find();
+      products = products.map((product) => ({
+        id: product._id,
+        ...product._doc,
+      }));
+      // console.log(products);
+      res.json({ data: products, total: products.length });
     } catch (e) {
-      return res.status(404);
+      res.status(404);
+      return res.json({ error: e });
     }
   })
   .post(async (req, res) => {
-    res.statusCode = 403;
-    res.end(`POST operation not supported`);
+    try {
+      console.log("POST /product:\n", req.body);
+      const id = req.body.name.toLowerCase().split(" ").join("-");
+      let product = await Product.create({ _id: id, ...req.body });
+      product = { id: product._id, ...product._doc };
+      console.log("Product Created:", product);
+      res.json({ data: product });
+    } catch (e) {
+      console.log(e);
+      return res.status(400).send({
+        error: e,
+      });
+    }
   })
   .put((req, res, next) => {
     res.statusCode = 403;
@@ -40,49 +58,46 @@ productRouter
   .route("/product/:id")
   .get(async (req, res) => {
     try {
-      const post = await Post.findOne({ _id: req.params.id });
-      res.send(post);
+      console.log("GET /product/:id", req.params.id);
+      let product = await Product.findById(req.params.id);
+      product = { id: product._id, ...product._doc };
+      res.json({ data: product });
     } catch (e) {
+      console.log(e);
       res.status(404);
-      res.send({ error: "Product doesn't exist!" });
+      res.send({ error: e });
     }
   })
   .post(async (req, res) => {
-    try {
-      const id = req.body.name.toLowerCase().split(" ").join("-");
-      const product = await Product.create({ _id: id, ...req.body });
-      console.log("Product Created:", product);
-      res.send(product);
-    } catch (e) {
-      return res.send(e);
-    }
+    res.statusCode = 403;
+    res.end(`POST operation not supported`);
   })
-  .put((req, res, next) => {
-    (req, res, next) => {
-      Product.findByIdAndUpdate(
-        req.params.id,
-        {
-          $set: req.body,
-        },
-        { new: true }
-      )
-        .then(
-          (product) => {
-            console.log("Product Created:", product);
-            (res.statusCode = 200),
-              res.setHeader("Content-Type", "application/json");
-            res.json(product);
-          },
-          (err) => next(err)
-        )
-        .catch((err) => next(err));
-    };
+  .put((req, res) => {
+    console.log("PUT /product/:id:\n", req.body);
+    Product.findByIdAndUpdate(
+      req.params.id,
+      {
+        $set: req.body,
+      },
+      { new: true }
+    )
+      .then((product) => {
+        console.log("Product Updated:", product);
+        product = { id: product._id, ...product._doc };
+        return res.json({ data: product });
+      })
+      .catch((err) =>
+        res.status(400).send({
+          error: err,
+        })
+      );
   })
-  .delete(async (req, res, next) => {
-    console.log("Request:\n", req.body);
+  .delete(async (req, res) => {
+    console.log("GET /product/:id", req.params.id);
     try {
-      await Product.deleteOne({ _id: req.params.id });
-      res.status(204).send();
+      let product = await Product.deleteOne({ _id: req.params.id });
+      product = { id: product._id, ...product._doc };
+      return res.json({ data: product });
     } catch {
       res.status(404);
       res.send({ error: "Product doesn't exist!" });

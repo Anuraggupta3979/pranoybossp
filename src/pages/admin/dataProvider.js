@@ -9,22 +9,22 @@ axios.defaults.headers = {
 };
 
 const uploadFileToBucket = async (rawFile) => {
+  const uploadParams = {
+    Bucket: BUCKET_NAME,
+    Key: rawFile.name,
+    Body: rawFile,
+  };
   try {
-    const uploadParams = {
-      Bucket: BUCKET_NAME,
-      Key: rawFile.name,
-      Body: rawFile,
-    };
-    return s3.upload(uploadParams, function (err, data) {
+    await s3.upload(uploadParams, function (err, data) {
       if (err) {
         throw err;
       }
-      console.log(`File uploaded successfully. ${data.Location}`);
-      return data;
+      console.log(`File uploaded successfully.`);
+      console.table(data.Location);
     });
-  } catch (error) {
-    console.log("uploadFileToBucket Error", error);
-    return error;
+    return `https://${BUCKET_NAME}.s3.amazonaws.com/${uploadParams.Key}`;
+  } catch (err) {
+    console.log("Error", err);
   }
 };
 
@@ -89,11 +89,14 @@ export const myDataProvider = {
     return Promise;
   },
   create: async (resource, params) => {
-    let data = params.data;
-    console.log(`create: ${data}`);
-    // if (params.data.image) return Promise.reject("Upload a Image First");
-    await uploadFileToBucket(params.data.image.rawFile);
-    delete params.data["image"];
+    let { image, ...data } = params.data;
+    console.log(`create`);
+    if (!image) return Promise.reject("Upload a Image First");
+    // console.log({ rawFile: image.rawFile });
+    const dataLocation = await uploadFileToBucket(image.rawFile);
+    console.log(dataLocation);
+    data.image = dataLocation;
+    // console.table(data);
     return axios
       .post(resource, data)
       .then((response) => ({ ...response.data }))

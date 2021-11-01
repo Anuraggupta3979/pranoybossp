@@ -9,7 +9,7 @@ import {
   Create,
   TextInput,
   ImageInput,
-  ImageField
+  ImageField,
 } from "react-admin";
 
 const CategoryTitle = ({ record }) => {
@@ -33,11 +33,10 @@ export const CategoryEdit = (props) => (
     <SimpleForm>
       <TextInput disabled source="id" />
       <TextInput source="name" />
-      {/* <TextInput source="image" /> */}
       <TextInput source="description" />
-      {/* <ImageInput source="image" label="Images" accept="image/*"> */}
+      <ImageInput source="image" label="Images" accept="image/*">
         <ImageField source="image" />
-      {/* </ImageInput> */}
+      </ImageInput>
     </SimpleForm>
   </Edit>
 );

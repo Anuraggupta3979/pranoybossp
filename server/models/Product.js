@@ -13,13 +13,30 @@ const productSchema = new Schema(
       type: String,
       // required: true,
     },
-    image: {
-      type: String,
-      // required: true,
-    },
     categoryId: {
       type: String,
       required: true,
+    },
+    material: {
+      type: String,
+    },
+    dimensions: {
+      type: String,
+    },
+    weight: {
+      type: String,
+    },
+    hot: {
+      type: Boolean,
+      default: false,
+    },
+    featured: {
+      type: Boolean,
+      default: false,
+    },
+    image: {
+      type: String,
+      // required: true,
     },
   },
   {

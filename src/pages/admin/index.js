@@ -2,7 +2,8 @@ import * as React from "react";
 import { Admin, Resource } from "react-admin";
 import Dashboard from "./Dashboard";
 // import authProvider from "./authProvider";
-import { ProductList, ProductCreate, ProductEdit } from "./products";
+import { ProductList, ProductCreate, ProductEdit } from "./product";
+import { CategoryList, CategoryCreate, CategoryEdit } from "./category";
 import { myDataProvider } from "./dataProvider";
 
 const AdminPage = () => (
@@ -16,6 +17,12 @@ const AdminPage = () => (
       list={ProductList}
       edit={ProductEdit}
       create={ProductCreate}
+    />
+    <Resource
+      name="category"
+      list={CategoryList}
+      edit={CategoryEdit}
+      create={CategoryCreate}
     />
   </Admin>
 );

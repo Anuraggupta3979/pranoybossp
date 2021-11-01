@@ -22,6 +22,15 @@ export const myDataProvider = {
   },
   getMany: (resource, params) => {
     console.log("getMany", params.ids);
+    return Promise.all(params.ids.map((id) => axios.get(`${resource}/${id}`)))
+      .then((arrayOfResults) => {
+        return {
+          data: arrayOfResults.map((response) => {
+            return response.data.data;
+          }),
+        };
+      })
+      .catch((err) => Promise.reject(err));
     // return Promise.all(params.ids.map((id) => getDoc(doc(db, resource, id))))
     //   .then((arrayOfResults) => {
     //     return {
@@ -31,12 +40,13 @@ export const myDataProvider = {
     //     };
     //   })
     //   .catch((err) => Promise.reject(err));
-    return Promise;
+    // return Promise;
   },
   getManyReference: (resource, params) => {
-    // console.log("getManyReference");
+    console.log("getManyReference");
     // const { target, id } = params;
     // const { field, order } = params.sort;
+
     // return getDocs(
     //   query(
     //     collection(db, resource),
@@ -54,6 +64,7 @@ export const myDataProvider = {
     //     };
     //   })
     //   .catch((err) => Promise.reject(err));
+    return Promise;
   },
   create: (resource, params) => {
     let data = params.data;

@@ -2,14 +2,14 @@ import * as React from "react";
 import {
   List,
   Datagrid,
-  // ReferenceField,
+  ReferenceField,
   TextField,
   EditButton,
   Create,
   Edit,
   SimpleForm,
-  // ReferenceInput,
-  // SelectInput,
+  ReferenceInput,
+  SelectInput,
   TextInput,
   ImageField,
   ImageInput,
@@ -33,9 +33,9 @@ export const ProductList = (props) => {
         <Datagrid rowClick="edit">
           <TextField source="id" />
           <TextField source="name" />
-          {/* <ReferenceField source="categoryId" reference="categories"> */}
-            <TextField source="categoryId" />
-          {/* </ReferenceField> */}
+          <ReferenceField source="categoryId" reference="category">
+            <TextField source="name" />
+          </ReferenceField>
           <BooleanField source="hot" />
           <BooleanField source="featured" />
           <EditButton />
@@ -57,17 +57,17 @@ export const ProductEdit = (props) => (
       <TextInput disabled source="id" />
       <TextInput source="name" />
       <TextInput source="description" />
-      {/* <ReferenceInput source="categoryId" reference="categories"> */}
-        <TextInput source="categoryId" />
-      {/* </ReferenceInput> */}
+      <ReferenceInput source="categoryId" reference="category">
+        <SelectInput source="name" />
+      </ReferenceInput>
       <TextInput source="material" />
       <TextInput source="dimensions" />
       <TextInput source="weight" />
       <BooleanInput label="hot" source="hot" />
       <BooleanInput label="featured" source="featured" />
-      {/* <ImageInput source="image" label="Images" accept="image/*"> */}
-      <ImageField source="image" />
-      {/* </ImageInput> */}
+      <ImageInput source="image" label="Images" accept="image/*">
+        <ImageField source="image" />
+      </ImageInput>
     </SimpleForm>
   </Edit>
 );
@@ -77,14 +77,14 @@ export const ProductCreate = (props) => (
     <SimpleForm>
       <TextInput required source="name" />
       <TextInput required source="description" />
-      {/* <ReferenceInput source="categoryId" reference="categories"> */}
+      <ReferenceInput source="categoryId" reference="categories">
         <TextInput source="categoryId" />
-      {/* </ReferenceInput> */}
+      </ReferenceInput>
       <TextInput source="material" />
       <TextInput source="dimensions" />
       <TextInput source="weight" />
-      <BooleanInput label="Hot" source="hot" initialValue={true} />
-      <BooleanInput label="Featured" source="featured" initialValue={true} />
+      <BooleanInput label="Hot" source="hot" initialValue={false} />
+      <BooleanInput label="Featured" source="featured" initialValue={false} />
       <ImageInput required source="image" label="Images" accept="image/*">
         <ImageField source="image" />
       </ImageInput>

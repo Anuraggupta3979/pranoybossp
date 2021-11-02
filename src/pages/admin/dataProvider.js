@@ -102,13 +102,23 @@ export const myDataProvider = {
       .then((response) => ({ ...response.data }))
       .catch((error) => Promise.reject(error));
   },
-  update: (resource, params) => {
-    console.log("Update record id", params.id);
-    const { id, ...everythingElse } = params.data;
-    return axios
-      .put(`${resource}/${id}`, everythingElse)
-      .then((response) => ({ ...response.data }))
-      .catch((error) => Promise.reject(error));
+  update: async (resource, params) => {
+    try {
+      console.log("Update record id", params.id);
+      let { id, image, ...everythingElse } = params.data;
+      const response = await axios.get(`${resource}/${params.id}`, params.data);
+      if (response.data.image !== image) {
+        const dataLocation = await uploadFileToBucket(image.rawFile);
+        console.log(dataLocation);
+        image = dataLocation;
+      }
+      return axios
+        .put(`${resource}/${id}`, { image: image, ...everythingElse })
+        .then((response) => ({ ...response.data }))
+        .catch((error) => Promise.reject(error));
+    } catch (error) {
+      return Promise.reject(error);
+    }
   },
   updateMany: (resource, params) => Promise,
   delete: async (resource, params) => {

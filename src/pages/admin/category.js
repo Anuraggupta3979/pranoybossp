@@ -28,18 +28,21 @@ export const CategoryList = (props) => (
   </List>
 );
 
-export const CategoryEdit = (props) => (
-  <Edit title={<CategoryTitle />} {...props}>
-    <SimpleForm>
-      <TextInput disabled source="id" />
-      <TextInput source="name" />
-      <TextInput source="description" />
-      <ImageInput source="image" label="Images" accept="image/*">
+export const CategoryEdit = (props) => {
+  return (
+    <Edit title={<CategoryTitle />} {...props}>
+      <SimpleForm>
+        <TextInput disabled source="id" />
+        <TextInput source="name" />
+        <TextInput source="description" />
         <ImageField source="image" />
-      </ImageInput>
-    </SimpleForm>
-  </Edit>
-);
+        <ImageInput source="image" label="Image" accept="image/*">
+          <ImageField source="image" />
+        </ImageInput>
+      </SimpleForm>
+    </Edit>
+  );
+};
 
 export const CategoryCreate = (props) => (
   <Create title={<CategoryTitle />} {...props}>

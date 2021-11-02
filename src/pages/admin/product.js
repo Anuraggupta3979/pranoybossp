@@ -2,13 +2,13 @@ import * as React from "react";
 import {
   List,
   Datagrid,
-  ReferenceField,
+  // ReferenceField,
   TextField,
   EditButton,
   Create,
   Edit,
   SimpleForm,
-  ReferenceInput,
+  // ReferenceInput,
   SelectInput,
   TextInput,
   ImageField,
@@ -18,6 +18,8 @@ import {
   SimpleList,
 } from "react-admin";
 import { useMediaQuery } from "react-responsive";
+
+import categoryList from "../../categoryList";
 
 const ProductTitle = ({ record }) => {
   return <span>product {record ? `"${record.name}"` : ""}</span>;
@@ -33,9 +35,11 @@ export const ProductList = (props) => {
         <Datagrid rowClick="edit">
           <TextField source="id" />
           <TextField source="name" />
-          <ReferenceField source="categoryId" reference="category">
+          {/* Uncomment below code you have enabled category Resource in index.js */}
+          {/* <ReferenceField source="categoryId" reference="category">
             <TextField source="name" />
-          </ReferenceField>
+          </ReferenceField> */}
+          <TextField source="categoryId" />
           <BooleanField source="hot" />
           <BooleanField source="featured" />
           <EditButton />
@@ -57,9 +61,17 @@ export const ProductEdit = (props) => (
       <TextInput disabled source="id" />
       <TextInput source="name" />
       <TextInput source="description" />
-      <ReferenceInput source="categoryId" reference="category">
+      {/* Uncomment below code you have enabled category Resource in index.js */}
+      {/* <ReferenceInput source="categoryId" reference="category">
         <SelectInput source="name" />
-      </ReferenceInput>
+      </ReferenceInput> */}
+      <SelectInput
+        source="categoryId"
+        choices={categoryList.map((category) => ({
+          id: category.name.toLowerCase().split(" ").join("-"),
+          name: category.name,
+        }))}
+      />
       <TextInput source="material" />
       <TextInput source="dimensions" />
       <TextInput source="weight" />
@@ -78,9 +90,17 @@ export const ProductCreate = (props) => (
     <SimpleForm>
       <TextInput required source="name" />
       <TextInput required source="description" />
-      <ReferenceInput source="categoryId" reference="category">
+      {/* Uncomment below code you have enabled category Resource in index.js */}
+      {/* <ReferenceInput source="categoryId" reference="category">
         <SelectInput source="name" />
-      </ReferenceInput>
+      </ReferenceInput> */}
+      <SelectInput
+        source="categoryId"
+        choices={categoryList.map((category) => ({
+          id: category.name.toLowerCase().split(" ").join("-"),
+          name: category.name,
+        }))}
+      />
       <TextInput source="material" />
       <TextInput source="dimensions" />
       <TextInput source="weight" />

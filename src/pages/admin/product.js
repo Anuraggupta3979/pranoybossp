@@ -90,7 +90,7 @@ export const ProductCreate = (props) => (
     <SimpleForm>
       <TextInput required source="name" />
       <TextInput required source="description" />
-      {/* Uncomment below code you have enabled category Resource in index.js */}
+      {/* Uncomment below code if you have enabled category Resource in index.js */}
       {/* <ReferenceInput source="categoryId" reference="category">
         <SelectInput source="name" />
       </ReferenceInput> */}

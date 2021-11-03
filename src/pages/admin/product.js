@@ -61,7 +61,7 @@ export const ProductEdit = (props) => (
       <TextInput disabled source="id" />
       <TextInput source="name" />
       <TextInput source="description" />
-      {/* Uncomment below code you have enabled category Resource in index.js */}
+      {/* Uncomment below code if you have enabled category Resource in index.js */}
       {/* <ReferenceInput source="categoryId" reference="category">
         <SelectInput source="name" />
       </ReferenceInput> */}

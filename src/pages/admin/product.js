@@ -35,7 +35,7 @@ export const ProductList = (props) => {
         <Datagrid rowClick="edit">
           <TextField source="id" />
           <TextField source="name" />
-          {/* Uncomment below code you have enabled category Resource in index.js */}
+          {/* Uncomment below code if you have enabled category Resource in index.js */}
           {/* <ReferenceField source="categoryId" reference="category">
             <TextField source="name" />
           </ReferenceField> */}

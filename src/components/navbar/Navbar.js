@@ -39,7 +39,7 @@ function Navbar() {
             <img
               src={NavImage}
               alt="Logo"
-              style={{ width: "160px", height: "33px" }}
+              style={{ width: "100%", height: "53px" }}
             />
           </ReactBootStrap.Navbar.Brand>
           <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />

@@ -19,9 +19,9 @@ const About = ({ categoryList, teamList }) => {
       />
       <AboutStory />
       <Categories categoryList={categoryList} />
-      <Grid style={{ width: "95vw", margin: "auto" }}>
+      {/* <Grid style={{ width: "95vw", margin: "auto" }}>
         <Team teamList={teamList} />
-      </Grid>
+      </Grid> */}
       <Grid id="contact">
         <Footer />
       </Grid>

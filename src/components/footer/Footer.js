@@ -128,7 +128,7 @@ const Footer = () => {
             <img
               src={NavImage}
               alt="Logo"
-              style={{ width: "150px", height: "50px", marginTop: "20px" }}
+              style={{ width: "90px", height: "60px", marginTop: "20px" }}
             />
           </Grid>
           <Grid className={classes.iconBox} sm={6} xs={12}>

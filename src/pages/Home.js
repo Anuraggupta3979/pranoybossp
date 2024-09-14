@@ -25,7 +25,7 @@ const Home = ({ teamList, categoryList, productList }) => {
         <CategoriesCard />
 
         <AboutHome />
-        <Team teamList={teamList} />
+        {/* <Team teamList={teamList} /> */}
       </Grid>
       <Grid id="contact">
         <Footer />

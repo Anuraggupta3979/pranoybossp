@@ -300,7 +300,7 @@ const Footer = () => {
                       variant="subtitle2"
                       style={{ fontFamily: "맑은 고딕" }}
                     >
-                      +91-9414131148
+                      +91-8278643879
                     </Typography>
                   </Grid>
                 </Grid>
@@ -319,7 +319,7 @@ const Footer = () => {
                       variant="subtitle2"
                       style={{ fontFamily: "맑은 고딕" }}
                     >
-                      Jodhpur, Rajasthan, India
+                      Jaipur, Rajasthan, India
                     </Typography>
                   </Grid>
                 </Grid>
@@ -338,7 +338,7 @@ const Footer = () => {
                       variant="subtitle2"
                       style={{ fontFamily: "맑은 고딕" }}
                     >
-                      decor@thecraftjet.com
+                      trendmingle82@gmail.com
                     </Typography>
                   </Grid>
                 </Grid>

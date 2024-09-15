@@ -31,7 +31,7 @@ function App() {
   //     .catch((e) => console.log(e));
   // }, []);
   const handleClick = () => {
-    window.open("https://wa.me/919414131148");
+    window.open("https://wa.me/918278643879");
   };
 
   return (
